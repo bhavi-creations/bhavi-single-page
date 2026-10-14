@@ -113,7 +113,7 @@
 
 <div class="track" id="wt"></div>
 
-<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><span class="tag" id="htag"></span></div><div class="bar"><i></i></div></div>
+<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><span class="tag" id="htag"></span><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="https://prception.in/casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a>
 
 </section>
 
@@ -190,6 +190,10 @@
   </a>
 </div>
 
+
+
+<script src="assets/js/main.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -217,7 +221,15 @@ btnTop.addEventListener('click', function(e) {
 
 /* ---- data (edit here) ---- */
 
-var SITES=[['Leggo','Handcrafted Footwear','#1f3a5f'],['BlackBox','AI Academy','#2a2a2a'],['Past n Present','Custom 3D Keepsakes','#7a4b2a'],['Peaceboard','Global Peace Platform','#12685f'],['Arena Animation','Animation Academy','#6b1f2a'],['Brightwyn','Software Development','#2c3e8f'],['Tealcore','Software Development','#018f87'],['Staton','Industrial Automation','#444']];
+/* SITES: [name, tagline, fallback colour, video file, live site url] */
+var SITES=[['Leggo','Handcrafted Footwear','#1f3a5f','assets/video/leggo.mp4','https://leggoworld.com/'],
+['BlackBox','AI Academy','#2a2a2a','assets/video/blackbox.mp4','https://blackboxlearning.in/'],
+['Past n Present','Custom 3D Keepsakes','#7a4b2a','assets/video/pastandpresent.mp4','https://pastandpresent.in/'],
+['Peaceboard','Global Peace Platform','#12685f','assets/video/peaceboard.mp4','https://peaceboard.uk/'],
+['Arena Animation','Animation Academy','#6b1f2a','assets/video/arena.mp4','https://arenatrivandrum.com/'],
+['Brightwyn','Software Development','#2c3e8f','assets/video/Brightwyn.mp4','https://brightwyn.in/'],
+['Tealcore','Software Development','#018f87','assets/video/Tealcore.mp4','https://tealcoreventures.in/'],
+['Staton','Industrial Automation','#444','assets/video/staton.mp4','https://staton.in/']];
 
 var BRANDS=[['Lynklead','CRM · Brand Identity','Two L’s linked into one mark, and a robot mascot, for a CRM built to connect, manage and convert.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],3],
 
@@ -237,7 +249,8 @@ var WISHES=['a logo that pops','10x my sales','go viral','#1 on Google','a brand
 
 /* ---- build DOM ---- */
 
-SITES.forEach(function(s){var d=document.createElement('div');d.className='tile';d.textContent=s[0];d.dataset.t=s[1];d.style.background='linear-gradient(135deg,'+s[2]+',#0a0a0a)';$('#wt').appendChild(d)});
+/* Web Work tiles: each tile is a live-site link with its preview video */
+window.buildWorkTiles(SITES);
 
 BRANDS.forEach(function(b){var s=document.createElement('article');s.className='scene';s.style.cssText='--b:'+b[3]+';--i:'+b[4];
 
@@ -300,7 +313,7 @@ gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true
 
 gsap.from('.h',{y:50,opacity:0,duration:1,stagger:.12,ease:'power3.out',delay:.6});
 
-$$('[data-n]').forEach(function(e){var o={v:0},n=+e.dataset.n;gsap.to(o,{v:n,duration:2,delay:1,ease:'power2.out',onUpdate:function(){e.textContent=(n%1?o.v.toFixed(1):Math.round(o.v))+e.dataset.s}})});
+$$('[data-n][data-s]').forEach(function(e){var o={v:0},n=+e.dataset.n;gsap.to(o,{v:n,duration:2,delay:1,ease:'power2.out',onUpdate:function(){e.textContent=(n%1?o.v.toFixed(1):Math.round(o.v))+e.dataset.s}})});
 
 /* large PRCEPTION text -> compressed centered brand moment on scroll */
 
@@ -416,15 +429,21 @@ var tiles=$$('.tile'),track=$('#wt'),n=tiles.length,arr=[],cur=-1;
 
 function tx(t){return innerWidth/2-(t.offsetLeft+t.offsetWidth/2)}
 
-gsap.set('.hud',{opacity:0});
+gsap.set('.hud',{opacity:0,pointerEvents:'none'});
 
 var wt=gsap.timeline({scrollTrigger:{trigger:'#work',start:'top top',end:function(){return'+='+n*innerHeight*.9},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true,
 
 onUpdate:function(s){var t=wt.time(),idx=-1;arr.forEach(function(a,i){if(a-.45<=t)idx=i});
 
-if(idx!==cur){cur=idx;tiles.forEach(function(e,i){e.classList.toggle('on',i===idx)});gsap.to('.hud',{opacity:idx>=0?1:0,duration:.4,overwrite:true});
+if(idx!==cur){cur=idx;tiles.forEach(function(e,i){e.classList.toggle('on',i===idx);
 
-if(idx>=0){$('#hn').textContent=pad(idx+1)+' / '+pad(n);$('#hname').textContent=tiles[idx].textContent;$('#htag').textContent=tiles[idx].dataset.t;gsap.fromTo('#hname',{yPercent:25,opacity:0},{yPercent:0,opacity:1,duration:.5})}}
+/* play only the active tile's video */
+
+var vd=e.querySelector('video');if(vd){if(i===idx){var pr=vd.play();if(pr&&pr.catch)pr.catch(function(){})}else{vd.pause()}}});
+
+gsap.to('.hud',{opacity:idx>=0?1:0,pointerEvents:idx>=0?'auto':'none',duration:.4,overwrite:true});
+
+if(idx>=0){$('#hn').textContent=pad(idx+1)+' / '+pad(n);$('#hname').textContent=tiles[idx].dataset.n;$('#htag').textContent=tiles[idx].dataset.t;$('#hvisit').href=tiles[idx].href;gsap.fromTo('#hname',{yPercent:25,opacity:0},{yPercent:0,opacity:1,duration:.5})}}
 
 gsap.set('.bar i',{scaleX:s.progress})}}});
 

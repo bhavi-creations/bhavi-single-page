@@ -245,3 +245,37 @@
   if (document.readyState === 'complete') start();
   else window.addEventListener('load', start, { once: true });
 })();
+
+window.buildWorkTiles = function (sites) {
+  sites.forEach(function (s) {
+    var d = document.createElement('a');
+    d.className = 'tile';
+    d.href = s[4] || '#';
+    d.target = '_blank';
+    d.rel = 'noopener';
+    d.dataset.t = s[1];
+    d.dataset.n = s[0];
+    d.style.background = 'linear-gradient(135deg,' + s[2] + ',#0a0a0a)';
+    d.style.position = 'relative';
+    d.style.overflow = 'hidden';
+
+    var label = document.createElement('span');
+    label.textContent = s[0];
+    label.style.cssText = 'position:relative;z-index:2;text-shadow:0 2px 12px rgba(0,0,0,.75)';
+    d.appendChild(label);
+
+    var video = document.createElement('video');
+    video.src = s[3] + '#t=0.1';
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = 'metadata';
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;pointer-events:none';
+    d.appendChild(video);
+
+    document.getElementById('wt').appendChild(d);
+  });
+};
