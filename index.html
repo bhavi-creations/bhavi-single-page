@@ -47,7 +47,9 @@
 
 <span class="badge"><svg viewBox="0 0 100 100"><path id="bp" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" fill="none"/><text><textPath href="#bp" textLength="236">Brand Architecture · Performance Intelligence ·</textPath></text></svg><i>↓</i></span>
 
-<span class="orb"></span></div>
+<span class="orb"></span>
+
+<span class="pic"><img src="https://prception.in/assets/imgs/gallery/prception_marketing.jpeg" alt=""></span></div>
 
 <div class="wrap"><div>
 
@@ -479,11 +481,13 @@ function giantMove(){
 
  var baseCenterX=r.left+r.width/2-prevX,baseCenterY=r.top+r.height/2-prevY;
 
- var intendedWidth=Math.min(innerWidth*.67,1050);
+//  var intendedWidth=Math.min(innerWidth*.67,1050);
+var intendedWidth=innerWidth>1000?Math.min(innerWidth*.36,720):innerWidth*.7;
 
  var scale=Math.min(1,intendedWidth/unscaledWidth);
 
- return {x:innerWidth/2-baseCenterX,y:innerHeight*.405-baseCenterY,scale:scale};
+//  return {x:innerWidth/2-baseCenterX,y:innerHeight*.405-baseCenterY,scale:scale};
+return {x:innerWidth/2-baseCenterX,y:innerHeight*(innerWidth>1000?.25:.405)-baseCenterY,scale:scale};
 
 }
 
@@ -847,6 +851,21 @@ if(top){
 
 })();
 
+</script>
+
+
+
+
+<script>
+(function(){
+  var o=document.querySelector('.deco .orb'),p=document.querySelector('.deco .pic');
+  if(!o||!p||matchMedia('(prefers-reduced-motion:reduce)').matches||matchMedia('(pointer:coarse)').matches)return;
+  addEventListener('mousemove',function(e){
+    var x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+    p.style.translate=(x*-40)+'px '+(y*-40)+'px';
+    o.style.translate=(x*30)+'px '+(y*30)+'px';
+  },{passive:true});
+})();
 </script>
 
 </body>
