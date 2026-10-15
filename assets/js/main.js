@@ -279,6 +279,3 @@ window.buildWorkTiles = function (sites) {
     document.getElementById('wt').appendChild(d);
   });
 };
-
-
-
