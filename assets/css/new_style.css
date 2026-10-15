@@ -2715,3 +2715,140 @@ footer {
 @media(min-width:701px) and (max-width:900px){
   .brands .scene .tr{--h:40vh}
 }
+
+
+
+
+
+ /* ADDED : "We don't just build brands" section - styles for this + the chips section below  */
+
+/* feel section: sticky stage, scroll-scrubbed (no pin spacers, so existing pins are untouched) */
+.px-feel{position:relative;height:260vh;background:#111}
+.px-stick{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff}
+.px-stick img{position:absolute;display:block;object-fit:cover;will-change:transform}
+.px-s{left:37.7%;top:9vh;width:16.3vw;height:41vh}
+.px-l{left:58%;top:2vh;width:34vw;height:112vh}
+.px-copy{position:absolute;left:8%;bottom:25vh;width:min(36vw,680px)}
+.px-t{font:400 clamp(22px,1.9vw,34px)/1.16 var(--f-head);letter-spacing:-.05em;color:#fff}
+.px-btn{position:absolute;left:8%;bottom:7vh;display:inline-flex;align-items:center;justify-content:center;height:90px;padding:0 52px;border:1px solid #fff3;border-radius:100px;color:#fff;font:500 22px var(--f-head);letter-spacing:-.03em;overflow:hidden;z-index:1}
+.px-btn::before{content:"";position:absolute;inset:0;background:var(--theme);transform:translateY(101%);transition:transform .5s;z-index:-1}
+.px-btn:hover::before{transform:none}
+
+/* logo zoom (dark stage -> white) */
+.px-zoom{position:relative;height:320vh;background:#111}
+.px-zstage{position:sticky;top:0;height:100vh;overflow:hidden;background:#111;display:grid;place-items:center}
+.px-zlogo{display:block;height:clamp(90px,13.7vh,125px);width:auto;transform-origin:50% 15%}
+.px-zfade{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+
+/* help section + physics chips */
+.px-help{position:relative;background:#fff;padding:120px 0 0;overflow:hidden}
+.px-hd{max-width:1650px;margin:auto;padding:0 4%}
+.px-help h2{font:400 clamp(36px,5.3vw,104px)/.98 var(--f-head);letter-spacing:-.055em;color:var(--primary)}
+.px-hw{display:inline-block}
+.px-hw:first-child{color:var(--theme)}
+.px-p{max-width:620px;margin:clamp(40px,7vw,120px) 0 0 43%;font-size:clamp(18px,1.55vw,26px);line-height:1.3;letter-spacing:-.02em;color:var(--secondary)}
+.px-rows{position:relative;width:min(1612px,92%);height:clamp(380px,50vh,520px);margin:clamp(30px,5vw,80px) auto 0;overflow:hidden;border-bottom:4px double #111}
+.px-chip{position:absolute;left:0;top:0;width:clamp(120px,10.8vw,206px);height:clamp(50px,4.6vw,88px);display:flex;align-items:center;justify-content:center;padding:0 14px;border-radius:100px;color:#fff;font:700 clamp(10px,.85vw,15px)/1.15 var(--f-head);text-transform:uppercase;letter-spacing:.03em;text-align:center;opacity:0;cursor:grab;user-select:none;-webkit-user-select:none;will-change:transform}
+.px-chip.t{background:var(--theme)}
+.px-chip.k{background:#111}
+.px-rows.static{height:auto;display:flex;flex-wrap:wrap;gap:12px;padding-bottom:24px;overflow:visible}
+.px-rows.static .px-chip{position:static;opacity:1;cursor:default}
+
+/* Medialab Dispatch widget */
+.px-news{background:#fff;padding:0 0 10px}
+.px-frame{display:block;width:100%;height:520px;border:0;border-radius:18px}
+
+/* clients as logos */
+.mt span{display:flex;align-items:center}
+.mt span img{display:block;height:clamp(40px,3.8vw,70px);width:auto;max-width:none;filter:grayscale(1);opacity:.55;transition:.3s}
+.mt span:hover img{filter:none;opacity:1}
+
+/* footer: follow us icons + awards */
+.px-soc{display:flex;gap:16px}
+.fg .px-soc a{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(17,17,17,.2);border-radius:8px;font-size:18px;color:var(--primary);transition:.3s}
+.fg .px-soc a:hover{background:var(--theme);border-color:var(--theme);color:#fff}
+.px-awards{display:flex;align-items:center;gap:18px;margin-top:30px}
+.px-awards img{display:block;height:100px;width:auto}
+
+@media(max-width:800px){
+.px-feel{height:240vh}
+.px-s{left:6%;top:15vh;width:34vw;height:26vh}
+.px-l{left:44%;top:9vh;width:50vw;height:48vh}
+.px-copy{left:20px;right:20px;width:auto;bottom:21vh}
+.px-btn{left:20px;bottom:5vh;height:60px;padding:0 34px;font-size:17px}
+.px-help{padding:80px 0 0}
+.px-p{margin-left:0}
+.px-rows{height:clamp(340px,52vh,440px)}
+.px-frame{height:560px}
+.px-awards img{height:84px}
+}
+
+/* floating widgets: whatsapp glow + "Chat with us" open/hide, back-to-top scroll ring */
+.wa-circle{background:linear-gradient(135deg,#25d366,#0f8a73);box-shadow:0 0 0 8px rgba(37,211,102,.12),0 6px 30px rgba(37,211,102,.55)}
+.wa-circle::before,.wa-circle::after{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.35);z-index:-1;pointer-events:none;animation:pxwa 2.6s ease-out infinite}
+.wa-circle::after{animation-delay:1.3s}
+@keyframes pxwa{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.3);opacity:0}}
+.wa-badge{background:linear-gradient(90deg,#25d366,#1ba872);border-radius:20px;box-shadow:0 4px 18px rgba(37,211,102,.4)}
+.wa-widget.js .wa-badge{max-width:0;padding:8px 0;margin-right:0;opacity:0;overflow:hidden;transition:max-width .55s cubic-bezier(.7,0,.2,1),padding .55s cubic-bezier(.7,0,.2,1),margin .55s cubic-bezier(.7,0,.2,1),opacity .35s}
+.wa-widget.js.open .wa-badge{max-width:190px;padding:8px 20px 8px 16px;margin-right:12px;opacity:1}
+.wa-widget.js::before{content:"";position:absolute;right:58px;top:50%;width:12px;height:12px;margin-top:-6px;background:#1ba872;border-radius:2px;transform:rotate(45deg) scale(0);transition:transform .4s .15s cubic-bezier(.3,1.4,.5,1)}
+.wa-widget.js.open::before{transform:rotate(45deg) scale(1)}
+.back-to-top{position:relative;border:0;background:conic-gradient(var(--theme) var(--p,0%),rgba(1,143,135,.18) 0)}
+.back-to-top::before{content:"";position:absolute;inset:2px;border-radius:50%;background:#fff;transition:background .3s}
+.back-to-top:hover::before{background:#f5f5f5}
+.back-to-top i{position:relative}
+
+
+
+
+
+
+/* ===== Needle section ===== */
+section.nw{
+  position:relative;
+  height:450vh;
+  min-height:0;
+  padding:0;
+  margin:0;
+  background:#fff;
+}
+.nw .nw-stage{
+  position:sticky;
+  top:0;
+  height:100vh;
+  height:100svh;
+  box-sizing:border-box;
+  padding-bottom:36vh;          /* lifts the heading up = less white before it appears */
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+}
+.nw h2.nw-title{
+  position:relative;
+  margin:0;
+  padding:0;
+  text-align:center;
+  font-family:'Instrument Sans','DM Sans',Helvetica,Arial,sans-serif;
+  font-weight:500;
+  font-size:clamp(2.5rem,8vw,8rem);
+  line-height:.92;
+  letter-spacing:-.045em;
+  color:#cbc8c5;
+  will-change:transform,opacity;
+}
+.nw .nw-line{display:block;white-space:nowrap}
+.nw .nw-ch{display:inline-block;color:#cbc8c5}
+.nw .nw-sp{width:.24em}
+
+@media (max-width:600px){
+  .nw .nw-stage{padding-bottom:24vh}
+  .nw h2.nw-title{font-size:clamp(2.2rem,11vw,3.4rem)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  section.nw{height:auto}
+  .nw .nw-stage{position:static;height:auto;padding:20vh 0}
+  .nw .nw-ch{color:#141414!important}
+}
