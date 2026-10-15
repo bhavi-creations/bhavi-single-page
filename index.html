@@ -221,10 +221,12 @@
 </div></section>
 
 <!-- ===== ADDED (live site): Medialab Dispatch widget ===== -->
-<section class="px-news">
-
-<div class="wrap"><iframe class="px-frame" src="https://medialab.prception.in/news/news_widget/" title="Medialab Dispatch" loading="lazy" scrolling="no"></iframe></div>
-
+<section class="px-news" id="pxNews">
+ <div class="nws">
+  <div class="nws-hd"><h3><b>MEDIALAB</b> DISPATCH</h3><div class="nws-ar"><button type="button" id="nwsP" aria-label="Previous">‹</button><button type="button" id="nwsN" aria-label="Next">›</button></div></div>
+  <div class="nws-vp" id="nwsVp"><div class="nws-tr" id="nwsTr"></div></div>
+  <div class="nws-ft"><div class="nws-dots" id="nwsD"></div><a href="https://medialab.prception.in/news/articles/" target="_blank" rel="noopener">Powered by Prception ↗</a></div>
+ </div>
 </section>
 
 <footer>
@@ -342,7 +344,7 @@ BRANDS.forEach(function(b){var s=document.createElement('article');s.className='
 
 var imgs=b[6];
 
-s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p><div class="pal">'+b[5].map(function(c){return'<i style="background:'+c+'"></i>'}).join('')+'</div></div><div style="min-width:0;clip-path:inset(-100px -100vw -100px 0)"><div class="tr">'+imgs+'</div></div></div>';
+s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p><div class="pal">'+b[5].map(function(c){return'<i style="background:'+c+'"></i>'}).join('')+'</div></div><div class="brand-gallery" aria-label="'+b[0]+' brand images"><div class="tr">'+imgs+'</div></div></div>';
 
 $('#bs').appendChild(s)});
 
@@ -545,8 +547,6 @@ tiles.forEach(function(t,i){if(!i)return;wt.to(track,{x:function(){return tx(t)}
 
 var scenes=$$('.scene');gsap.set(scenes,{clipPath:'circle(0% at 50% 50%)'});
 
-function dist(s){var tr=$('.tr',s),l=tr.parentNode.getBoundingClientRect().left;return Math.max(0,tr.scrollWidth-(innerWidth-l-30))}
-
 var bt=gsap.timeline({scrollTrigger:{trigger:'#brands',start:'top top',end:function(){return'+='+bt.duration()*innerHeight*.5},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true}});
 
 bt.to('#brands .intro',{opacity:0,scale:.9,duration:.8},0);
@@ -557,7 +557,7 @@ bt.to(s,{clipPath:'circle(150% at 50% 50%)',duration:1,ease:'power2.inOut'},i?'>
 
 .fromTo($('.in',s),{y:60,opacity:0},{y:0,opacity:1,duration:.8},'<.4')
 
-.to(tr,{x:function(){return-dist(s)},duration:pan,ease:'none'},'>')
+.to({},{duration:pan,ease:'none'},'>')
 
 .fromTo($('.gt',s),{xPercent:0},{xPercent:-22,duration:pan+1,ease:'none'},'<-.6')});
 
@@ -587,6 +587,22 @@ ScrollTrigger.refresh()}
 
 if(document.readyState==='complete')boot();else addEventListener('load',boot);
 
+})();
+
+(function(){
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+document.querySelectorAll('.brand-gallery').forEach(function(gallery){
+ var track=gallery.querySelector('.tr');
+ if(!track||track.children.length<2)return;
+ setInterval(function(){
+  if(document.hidden)return;
+  var max=gallery.scrollWidth-gallery.clientWidth;
+  if(max<=1)return;
+  var card=track.children[0],gap=parseFloat(getComputedStyle(track).columnGap)||0;
+  var next=gallery.scrollLeft+card.getBoundingClientRect().width+gap;
+  gallery.scrollTo({left:next>=max-2?0:Math.min(next,max),behavior:'smooth'});
+ },3000);
+});
 })();
 
 </script>
@@ -866,6 +882,41 @@ if(top){
   origin();update();
 })();
 </script>
+
+
+
+
+<script>
+(function(){
+var A='Fathima Farzana YS',U='https://medialab.prception.in/news/';
+/* [tag, title, description, date, link slug, image url (paste here)] */
+var NEWS=[
+['ai advertising','AI-Created Ads Spark Trust Crisis as Brands Double Down on Artificial Intelligence','Consumer distrust of AI-generated ads is rising as brands expand AI use, exposing a growing gap in transparency, governance, and consumer trust.','Jul 18, 2026','ai-created-ads-spark-trust-crisis-as-brands-double-down-on-artificial-intelligence','assets/img/img-6.jpg'],
+['fifa world cup 2026','Football AI Pro Powers FIFA World Cup 2026 with AI Referee View and Avatars','Football AI Pro, AI player avatars and Referee View are transforming match analysis and broadcasts at the FIFA World Cup 2026.','Jul 17, 2026','football-ai-pro-powers-fifa-world-cup-2026-with-ai-referee-view-and-avatars','assets/img/img-8.jpg'],
+['ltimindtree','LTIMindtree Reports $150 Million Quarterly AI Revenue as Enterprise Demand Accelerates',"LTIMindtree's AI business reached a $150 million quarterly run rate, highlighting strong enterprise demand and India's growing AI services market.",'Jul 14, 2026','ltimindtree-reports-150-million-quarterly-ai-revenue-as-enterprise-demand-accelerates','assets/img/img-1.jpg'],
+['hubspot','HubSpot Faces Triple Blow as AI, Privacy Concerns and Acquisition Drama Hit Hard','HubSpot faces mounting pressure as AI disruption, a failed acquisition and customer privacy concerns contribute to a sharp decline in investor confidence.','Jul 14, 2026','hubspot-faces-triple-blow-as-ai-privacy-concerns-and-acquisition-drama-hit-hard','assets/img/img-2.jpg'],
+['','How One Indie Game Built a Global Fan Army Without a Marketing Budget','Mecha Chameleon is proving how viral content and community engagement can outperform traditional advertising in building a successful global game.','Jul 14, 2026','how-one-indie-game-built-a-global-fan-army-without-a-marketing-budget','assets/img/img-3.jpg'],
+['spain vs france','The Biggest Match of the Tournament? Spain vs France Has Fans Losing Their Minds','Spain and France face off in a blockbuster World Cup semi final as millions of fans and brands fuel one of the biggest online conversations of the tournament.','Jul 14, 2026','the-biggest-match-of-the-tournament-spain-vs-france-has-fans-losing-their-minds','assets/img/img-7.jpg'],
+['spacexai','SpaceXAI Unveils Grok 4.5, Targets Software Developers With Faster AI Coding Performance','SpaceXAI has launched Grok 4.5, a high-performance AI model for coding and engineering with faster speeds, lower costs and advanced benchmarks.','Jul 09, 2026','spacexai-unveils-grok-4-5-targets-software-developers-with-faster-ai-coding-performance','assets/img/img-4.jpg'],
+['anthropic','Anthropic Expands Claude With New Cowork Feature Across Web, Android and iPhone','Anthropic has launched Claude Cowork with cross-device support, background task processing and a unified workspace for paid users.','Jul 08, 2026','anthropic-expands-claude-with-new-cowork-feature-across-web-android-and-iphone','assets/img/img-5.jpg'],
+['google','Gemini 3.5 Pro Delayed: Google Extends Development Ahead of GPT-5.6 Showdown','Google has delayed Gemini 3.5 Pro to July 17 as DeepMind refines its flagship AI model to compete with OpenAI and Anthropic.','Jul 07, 2026','gemini-3-5-pro-delayed-google-extends-development-ahead-of-gpt-5-6-showdown','assets/img/img-9.jpg'],
+['meta','India Orders Meta to Remove Instagram Ads Linked to Child Abuse Material','India has ordered Meta to remove Instagram ads linked to child sexual abuse material and submit a detailed response within seven days.','Jul 06, 2026','india-orders-meta-to-remove-instagram-ads-linked-to-child-abuse-material','assets/img/img-10.jpg']
+];
+var tr=document.getElementById('nwsTr'),vp=document.getElementById('nwsVp'),dt=document.getElementById('nwsD');if(!tr)return;
+var e=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
+tr.innerHTML=NEWS.map(function(n){return'<a class="nws-c" href="'+U+n[4]+'/" target="_blank" rel="noopener">'+(n[5]?'<img src="'+e(n[5])+'" alt="" loading="lazy">':'')+'<div class="nws-t">'+(n[0]?'<small>'+e(n[0])+'</small>':'')+'<h4>'+e(n[1])+'</h4><p>'+e(n[2])+'</p><span>'+A+' · '+n[3]+'</span></div></a>'}).join('');
+dt.innerHTML=NEWS.map(function(){return'<i></i>'}).join('');
+var cards=[].slice.call(tr.children),dots=[].slice.call(dt.children);
+function step(){return cards[0].offsetWidth+16}
+function cur(){return Math.min(cards.length-1,Math.round(vp.scrollLeft/step()))}
+function mark(){var c=cur();dots.forEach(function(d,i){d.classList.toggle('on',i===c)})}
+vp.addEventListener('scroll',mark,{passive:true});mark();
+document.getElementById('nwsN').onclick=function(){vp.scrollBy({left:step(),behavior:'smooth'})};
+document.getElementById('nwsP').onclick=function(){vp.scrollBy({left:-step(),behavior:'smooth'})};
+dots.forEach(function(d,i){d.onclick=function(){vp.scrollTo({left:i*step(),behavior:'smooth'})}});
+})();
+</script>
+
 </body>
 
 </html>
