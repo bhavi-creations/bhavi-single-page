@@ -1083,6 +1083,14 @@ nav a:hover {
   width: min(95vh, 62vw)
 }
 
+.scene .tr img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: clamp(16px, 3vw, 40px);
+  object-fit: contain
+}
+
 
 
 @media(max-width:900px) {

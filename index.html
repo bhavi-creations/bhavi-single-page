@@ -137,7 +137,130 @@
 
 </section>
 
+<!-- ===== ADDED (live site): "We don't just build brands" section - styles for this + the chips section below ===== -->
+<style>
+/* feel section: sticky stage, scroll-scrubbed (no pin spacers, so existing pins are untouched) */
+.px-feel{position:relative;height:260vh;background:#111}
+.px-stick{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff}
+.px-stick img{position:absolute;display:block;object-fit:cover;will-change:transform}
+.px-s{left:37.7%;top:9vh;width:16.3vw;height:41vh}
+.px-l{left:58%;top:2vh;width:34vw;height:112vh}
+.px-copy{position:absolute;left:8%;bottom:25vh;width:min(36vw,680px)}
+.px-t{font:400 clamp(22px,1.9vw,34px)/1.16 var(--f-head);letter-spacing:-.05em;color:#fff}
+.px-btn{position:absolute;left:8%;bottom:7vh;display:inline-flex;align-items:center;justify-content:center;height:90px;padding:0 52px;border:1px solid #fff3;border-radius:100px;color:#fff;font:500 22px var(--f-head);letter-spacing:-.03em;overflow:hidden;z-index:1}
+.px-btn::before{content:"";position:absolute;inset:0;background:var(--theme);transform:translateY(101%);transition:transform .5s;z-index:-1}
+.px-btn:hover::before{transform:none}
+
+/* logo zoom (dark stage -> white) */
+.px-zoom{position:relative;height:320vh;background:#111}
+.px-zstage{position:sticky;top:0;height:100vh;overflow:hidden;background:#111;display:grid;place-items:center}
+.px-zlogo{display:block;height:clamp(90px,13.7vh,125px);width:auto;transform-origin:50% 15%}
+.px-zfade{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+
+/* help section + physics chips */
+.px-help{position:relative;background:#fff;padding:120px 0 0;overflow:hidden}
+.px-hd{max-width:1650px;margin:auto;padding:0 4%}
+.px-help h2{font:400 clamp(36px,5.3vw,104px)/.98 var(--f-head);letter-spacing:-.055em;color:var(--primary)}
+.px-hw{display:inline-block}
+.px-hw:first-child{color:var(--theme)}
+.px-p{max-width:620px;margin:clamp(40px,7vw,120px) 0 0 43%;font-size:clamp(18px,1.55vw,26px);line-height:1.3;letter-spacing:-.02em;color:var(--secondary)}
+.px-rows{position:relative;width:min(1612px,92%);height:clamp(380px,50vh,520px);margin:clamp(30px,5vw,80px) auto 0;overflow:hidden;border-bottom:4px double #111}
+.px-chip{position:absolute;left:0;top:0;width:clamp(120px,10.8vw,206px);height:clamp(50px,4.6vw,88px);display:flex;align-items:center;justify-content:center;padding:0 14px;border-radius:100px;color:#fff;font:700 clamp(10px,.85vw,15px)/1.15 var(--f-head);text-transform:uppercase;letter-spacing:.03em;text-align:center;opacity:0;cursor:grab;user-select:none;-webkit-user-select:none;will-change:transform}
+.px-chip.t{background:var(--theme)}
+.px-chip.k{background:#111}
+.px-rows.static{height:auto;display:flex;flex-wrap:wrap;gap:12px;padding-bottom:24px;overflow:visible}
+.px-rows.static .px-chip{position:static;opacity:1;cursor:default}
+
+/* Medialab Dispatch widget */
+.px-news{background:#fff;padding:0 0 10px}
+.px-frame{display:block;width:100%;height:520px;border:0;border-radius:18px}
+
+/* clients as logos */
+.mt span{display:flex;align-items:center}
+.mt span img{display:block;height:clamp(40px,3.8vw,70px);width:auto;max-width:none;filter:grayscale(1);opacity:.55;transition:.3s}
+.mt span:hover img{filter:none;opacity:1}
+
+/* footer: follow us icons + awards */
+.px-soc{display:flex;gap:16px}
+.fg .px-soc a{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(17,17,17,.2);border-radius:8px;font-size:18px;color:var(--primary);transition:.3s}
+.fg .px-soc a:hover{background:var(--theme);border-color:var(--theme);color:#fff}
+.px-awards{display:flex;align-items:center;gap:18px;margin-top:30px}
+.px-awards img{display:block;height:100px;width:auto}
+
+@media(max-width:800px){
+.px-feel{height:240vh}
+.px-s{left:6%;top:15vh;width:34vw;height:26vh}
+.px-l{left:44%;top:9vh;width:50vw;height:48vh}
+.px-copy{left:20px;right:20px;width:auto;bottom:21vh}
+.px-btn{left:20px;bottom:5vh;height:60px;padding:0 34px;font-size:17px}
+.px-help{padding:80px 0 0}
+.px-p{margin-left:0}
+.px-rows{height:clamp(340px,52vh,440px)}
+.px-frame{height:560px}
+.px-awards img{height:84px}
+}
+
+/* floating widgets: whatsapp glow + "Chat with us" open/hide, back-to-top scroll ring */
+.wa-circle{background:linear-gradient(135deg,#25d366,#0f8a73);box-shadow:0 0 0 8px rgba(37,211,102,.12),0 6px 30px rgba(37,211,102,.55)}
+.wa-circle::before,.wa-circle::after{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.35);z-index:-1;pointer-events:none;animation:pxwa 2.6s ease-out infinite}
+.wa-circle::after{animation-delay:1.3s}
+@keyframes pxwa{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.3);opacity:0}}
+.wa-badge{background:linear-gradient(90deg,#25d366,#1ba872);border-radius:20px;box-shadow:0 4px 18px rgba(37,211,102,.4)}
+.wa-widget.js .wa-badge{max-width:0;padding:8px 0;margin-right:0;opacity:0;overflow:hidden;transition:max-width .55s cubic-bezier(.7,0,.2,1),padding .55s cubic-bezier(.7,0,.2,1),margin .55s cubic-bezier(.7,0,.2,1),opacity .35s}
+.wa-widget.js.open .wa-badge{max-width:190px;padding:8px 20px 8px 16px;margin-right:12px;opacity:1}
+.wa-widget.js::before{content:"";position:absolute;right:58px;top:50%;width:12px;height:12px;margin-top:-6px;background:#1ba872;border-radius:2px;transform:rotate(45deg) scale(0);transition:transform .4s .15s cubic-bezier(.3,1.4,.5,1)}
+.wa-widget.js.open::before{transform:rotate(45deg) scale(1)}
+.back-to-top{position:relative;border:0;background:conic-gradient(var(--theme) var(--p,0%),rgba(1,143,135,.18) 0)}
+.back-to-top::before{content:"";position:absolute;inset:2px;border-radius:50%;background:#fff;transition:background .3s}
+.back-to-top:hover::before{background:#f5f5f5}
+.back-to-top i{position:relative}
+</style>
+
+<section class="px-feel" id="px-feel">
+
+<div class="px-stick">
+
+<img class="px-s" src="https://prception.in/assets/imgs/gallery/service_2.png" alt="" loading="lazy">
+
+<img class="px-l" src="https://prception.in/assets/imgs/gallery/service_1.png" alt="" loading="lazy">
+
+<div class="px-copy"><p class="px-t">We don't just build brands we shape how they're perceived. Every satisfying detail is crafted to make your audience feel something real.</p></div>
+
+<a href="https://prception.in/casestudy" class="px-btn">View All Work</a>
+
+</div>
+
+</section>
+
 <section class="stmt"><p>People do not buy what is best they buy what makes them feel certain. Perception is the engineering of certainty.</p></section>
+
+<!-- ===== ADDED (live site): logo zoom transition ===== -->
+<section class="px-zoom" id="px-zoom">
+
+<div class="px-zstage">
+
+<img class="px-zlogo" src="https://prception.in/assets/imgs/logo/white.png" alt="PRception">
+
+<span class="px-zfade"></span>
+
+</div>
+
+</section>
+
+<!-- ===== ADDED (live site): "Prception helps brands choose the right story" + physics chips ===== -->
+<section class="px-help">
+
+<div class="px-hd">
+
+<h2 class="px-h2">Prception helps brands choose the right story, the right moment, and the right meaning.</h2>
+
+<p class="px-p">We're a great team of creatives with a strongest capabilities to helping progressive fields achieve their goals. With the best talent on every project done successfully</p>
+
+</div>
+
+<div class="px-rows" id="pxr"></div>
+
+</section>
 
 <section class="cl"><small>( Brands we've worked with )</small>
 
@@ -159,6 +282,13 @@
 
 </div></section>
 
+<!-- ===== ADDED (live site): Medialab Dispatch widget ===== -->
+<section class="px-news">
+
+<div class="wrap"><iframe class="px-frame" src="https://medialab.prception.in/news/news_widget/" title="Medialab Dispatch" loading="lazy" scrolling="no"></iframe></div>
+
+</section>
+
 <footer>
 
 <div class="fg">
@@ -169,7 +299,7 @@
 
 <div><h4>Resources</h4><ul><li><a href="#">Blog</a></li><li><a href="#brands">Case Studies</a></li></ul></div>
 
-<div><h4>Follow us</h4><ul><li><a href="https://www.instagram.com/prception.in/">Instagram</a></li><li><a href="https://www.linkedin.com/company/prception-in/">LinkedIn</a></li><li><a href="https://www.facebook.com/profile.php?id=61580927244285">Facebook</a></li></ul></div>
+<div><h4>Follow us</h4><div class="px-soc"><a href="https://www.facebook.com/profile.php?id=61580927244285" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/prception.in/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.linkedin.com/company/prception-in/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="px-awards"><img src="https://prception.in/assets/imgs/awards/Top%20Branding%20Agencies.png" alt="DesignRush Top Branding Agencies" loading="lazy"><a href="https://businessfirms.co/company/prception-medialab" target="_blank" rel="noopener"><img src="https://businessfirms.co/images/bfirms-certified.png" alt="BusinessFirms Certified" loading="lazy"></a></div></div>
 
 </div>
 
@@ -231,15 +361,33 @@ var SITES=[['Leggo','Handcrafted Footwear','#1f3a5f','assets/video/leggo.mp4','h
 ['Tealcore','Software Development','#018f87','assets/video/Tealcore.mp4','https://tealcoreventures.in/'],
 ['Staton','Industrial Automation','#444','assets/video/staton.mp4','https://staton.in/']];
 
-var BRANDS=[['Lynklead','CRM · Brand Identity','Two L’s linked into one mark, and a robot mascot, for a CRM built to connect, manage and convert.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],3],
-
-['BlackBox','Learning · Identity & Mascot','A confident identity system and a red-panda mascot for a future-ready learning brand.','#FF6A3D','#fff',['#3D3D3D','#FF6A3D','#FAF9F7'],5],
-
-['CocoGo','Beverage · Character Brand','Goodness on the go: a fresh coconut brand with a character to match.','#0E713A','#fff',['#FEF303','#0E713A','#FFF9DA','#C36A41'],4],
-
-['Digital Mugavari','Local Discovery · Identity','A D, a location pin and a road: a digital address for every store, everywhere.','#EF2D2D','#fff',['#EF2D2D','#404145','#FFFFFF'],4],
-
-['Photonvolt','Solar Energy','Solar energy solutions with a sustainable brand design.','#FED700','#0a0a0a',['#D8B700','#FED700'],3]];
+var BRANDS=[
+['Lynklead','CRM · Brand Identity','Two L’s linked into one mark, and a robot mascot, for a CRM built to connect, manage and convert.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],
+ '<div><img src="assets/img/lynklead.webp" alt="Lynklead mascot"></div>'+
+ '<div><img src="assets/img/lynklead-mascot.webp" alt="Lynklead name"></div>'+
+ '<div><img src="assets/img/lynklead-name.webp" alt="Lynklead board 1"></div>'],
+['BlackBox','Learning · Identity & Mascot','A confident identity system and a red-panda mascot for a future-ready learning brand.','#FF6A3D','#fff',['#3D3D3D','#FF6A3D','#FAF9F7'],
+ '<div><img src="assets/img/blackbox-identity.webp" alt="BlackBox identity"></div>'+
+ '<div><img src="assets/img/blackbox-1.webp" alt="BlackBox mascot"></div>'+
+ '<div><img src="assets/img/blackbox-2.webp" alt="BlackBox board 1"></div>'+
+ '<div><img src="assets/img/blackbox-3.webp" alt="BlackBox board 2"></div>'+
+ '<div><img src="assets/img/blackbox-4.webp" alt="BlackBox board 3"></div>'],
+['CocoGo','Beverage · Character Brand','Goodness on the go: a fresh coconut brand with a character to match.','#0E713A','#fff',['#FEF303','#0E713A','#FFF9DA','#C36A41'],
+ '<div><img src="assets/img/cocogo.webp" alt="CocoGo brand"></div>'+
+ '<div><img src="assets/img/cocogo-2.webp" alt="CocoGo board 1"></div>'+
+ '<div><img src="assets/img/cocogo-3.webp" alt="CocoGo board 2"></div>'+
+ '<div><img src="assets/img/cocogo-4.webp" alt="CocoGo board 3"></div>'],
+['Digital Mugavari','Local Discovery · Identity','A D, a location pin and a road: a digital address for every store, everywhere.','#EF2D2D','#fff',['#EF2D2D','#404145','#FFFFFF'],
+ '<div><img src="assets/img/digital-mugavari.webp" alt="Digital Mugavari brand"></div>'+
+ '<div><img src="assets/img/digital-mugavari-1.webp" alt="Digital Mugavari board 1"></div>'+
+ '<div><img src="assets/img/digital-mugavari-2.webp" alt="Digital Mugavari board 2"></div>'+
+ '<div><img src="assets/img/digital-mugavari-3.webp" alt="Digital Mugavari board 3"></div>'+
+ '<div><img src="assets/img/digital-mugavari-4.webp" alt="Digital Mugavari board 3"></div>'],
+['Photonvolt','Solar Energy','Solar energy solutions with a sustainable brand design.','#FED700','#0a0a0a',['#D8B700','#FED700'],
+ '<div><img src="assets/img/photonvolt.webp" alt="Photonvolt brand"></div>'+
+ '<div><img src="assets/img/photonvolt-1.webp" alt="Photonvolt board 1"></div>'+
+ '<div><img src="assets/img/photonvolt-2.webp" alt="Photonvolt board 2"></div>']
+];
 
 var STEPS=[['Discovery','A conversation, not a pitch. We hear how you see your brand, and you leave with a first read of how the market sees it.'],['Perception audit','We map how customers, competitors and search really see you, and measure the gap.'],['Strategy','We define the new reality: the positioning, the story and the identity that will carry it.'],['Build','Designers, developers and marketers bring it to life: identity, website, content, campaigns.'],['Launch','The new perception goes live everywhere your brand is seen, at the same moment.'],['Repeat','We track how perception moves and keep sharpening it. From here, it compounds.']];
 
@@ -254,7 +402,7 @@ window.buildWorkTiles(SITES);
 
 BRANDS.forEach(function(b){var s=document.createElement('article');s.className='scene';s.style.cssText='--b:'+b[3]+';--i:'+b[4];
 
-var imgs='';for(var k=0;k<b[6];k++)imgs+='<div>'+(k?'Board '+k:b[0])+'</div>';
+var imgs=b[6];
 
 s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p><div class="pal">'+b[5].map(function(c){return'<i style="background:'+c+'"></i>'}).join('')+'</div></div><div style="min-width:0;clip-path:inset(-100px -100vw -100px 0)"><div class="tr">'+imgs+'</div></div></div>';
 
@@ -498,6 +646,204 @@ gsap.timeline({scrollTrigger:{trigger:'#how',start:'top top',end:function(){retu
 ScrollTrigger.refresh()}
 
 if(document.readyState==='complete')boot();else addEventListener('load',boot);
+
+})();
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+<!-- ===== ADDED: logo zoom, physics chips, clients logos, news, footer motion ===== -->
+<script>
+
+(function(){
+
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* clients: live site shows logo images instead of text */
+
+var LOGOS=['amrut-veni','arena-animation','blackbox-learning','brightwyn','digital-mugavari','eco-cleanser','faceco','leggo','moster','neuralnest','parle','world-peace-board','photonvolt-energy','saki','staton','tech-grandha','zica'];
+
+var mt=$('#mt');
+
+if(mt){var one=LOGOS.map(function(n){return'<span><img src="https://prception.in/assets/imgs/client-logos/'+n+'.webp" alt="'+n.replace(/-/g,' ')+'" loading="lazy"></span>'}).join('');mt.innerHTML=one+one}
+
+/* chips */
+
+var CHIPS=['Growth Systems','Brand Authority','Demand Engines','Conversion Focus','Digital Presence','Traffic Control','Creative Strategy','Revenue Design','Audience Signals','Performance Stack','Scale Ready','Content Velocity','Funnel Logic','Market Impact'];
+
+var TONE=[0,1,1,0,1,0,1,1,0,0,1,0,1,0],box=$('#pxr'),chips=[];
+
+if(box)CHIPS.forEach(function(c,i){var d=document.createElement('div');d.className='px-chip '+(TONE[i]?'t':'k');d.textContent=c;box.appendChild(d);chips.push(d)});
+
+/* gravity: chips fall into the box when it scrolls into view and pile on the floor; drag them with the mouse */
+
+function physics(){
+
+var M=window.Matter,Engine=M.Engine,Bodies=M.Bodies,Composite=M.Composite;
+
+var engine=Engine.create();engine.gravity.y=1.2;
+
+var walls=[];
+
+function mkWalls(){var w=box.clientWidth,h=box.clientHeight;if(walls.length)Composite.remove(engine.world,walls);
+
+ walls=[Bodies.rectangle(w/2,h+30,w+800,60,{isStatic:true}),Bodies.rectangle(-30,-h,60,h*4,{isStatic:true}),Bodies.rectangle(w+30,-h,60,h*4,{isStatic:true})];
+
+ Composite.add(engine.world,walls)}
+
+mkWalls();
+
+var items=[],spawned=false,running=false,last=0;
+
+function spawn(){spawned=true;var w=box.clientWidth;
+
+ chips.forEach(function(el,i){var cw=el.offsetWidth,ch=el.offsetHeight;
+
+  var b=Bodies.rectangle(cw/2+Math.random()*(w-cw),-ch*(1+i*1.3),cw,ch,{chamfer:{radius:ch/2},restitution:.25,friction:.5,frictionAir:.012,density:.002,angle:(Math.random()-.5)*1.4});
+
+  Composite.add(engine.world,b);items.push({el:el,b:b,cw:cw,ch:ch})})}
+
+function tick(t){if(!running)return;
+
+ var dt=Math.min(32,(t-last)||16.7);last=t;Engine.update(engine,dt);
+
+ items.forEach(function(o){var p=o.b.position;o.el.style.transform='translate('+(p.x-o.cw/2)+'px,'+(p.y-o.ch/2)+'px) rotate('+o.b.angle+'rad)';o.el.style.opacity=1});
+
+ requestAnimationFrame(tick)}
+
+new IntersectionObserver(function(es){es.forEach(function(e){
+
+ if(e.isIntersecting){if(!spawned)spawn();if(!running){running=true;last=performance.now();requestAnimationFrame(tick)}}else{running=false}})},{threshold:.2}).observe(box);
+
+/* mouse drag on desktop (wheel listeners removed so page scrolling is never blocked) */
+
+if(!matchMedia('(pointer:coarse)').matches){
+
+ var mouse=M.Mouse.create(box);
+
+ ['wheel','mousewheel','DOMMouseScroll'].forEach(function(n){mouse.element.removeEventListener(n,mouse.mousewheel)});
+
+ Composite.add(engine.world,M.MouseConstraint.create(engine,{mouse:mouse,constraint:{stiffness:.18,render:{visible:false}}}))}
+
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(mkWalls,200)})}
+
+/* split text into words (needed for the scroll-fill + headline reveal) */
+
+function split(el,cls){el.innerHTML=el.textContent.trim().split(/\s+/).map(function(w){return'<span class="'+cls+'">'+w+'</span>'}).join(' ')}
+
+$$('.px-t').forEach(function(e){split(e,'px-w')});
+
+$$('.px-h2').forEach(function(e){split(e,'px-hw')});
+
+function start(){
+
+if(box){if(window.Matter&&!reduce)physics();else box.classList.add('static')}
+
+if(!window.gsap||!window.ScrollTrigger||reduce)return;
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* 1. feel section: images rise in, words fill in as you scroll, images drift at different speeds, button appears */
+
+gsap.set('.px-w',{opacity:.25});
+
+gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.px-feel',start:'top top',end:'bottom bottom',scrub:.7}})
+
+ .fromTo('.px-l',{yPercent:16,opacity:0},{yPercent:0,opacity:1,duration:.5,ease:'power2.out'},0)
+
+ .fromTo('.px-s',{yPercent:45,opacity:0},{yPercent:0,opacity:1,duration:.5,ease:'power2.out'},.08)
+
+ .to('.px-w',{opacity:1,stagger:.06,duration:.12},.3)
+
+ .to('.px-l',{yPercent:-6,duration:1.7},.5)
+
+ .to('.px-s',{yPercent:-18,duration:1.7},.5)
+
+ .fromTo('.px-btn',{opacity:0,y:30},{opacity:1,y:0,duration:.3},1.5);
+
+/* 2. logo zoom: the logo scales up until it fills the screen, then fades to the white section */
+
+gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.px-zoom',start:'top top',end:'bottom bottom',scrub:.6}})
+
+ .fromTo('.px-zlogo',{scale:1},{scale:40,duration:1,ease:'power2.in'},0)
+
+ .to('.px-zfade',{opacity:1,duration:.14},.86);
+
+/* 3. help section */
+
+var hs={trigger:'.px-help',start:'top 72%'};
+
+gsap.from('.px-hw',{opacity:0,y:44,duration:.9,stagger:.05,ease:'power3.out',scrollTrigger:hs});
+
+gsap.from('.px-p',{opacity:0,y:30,duration:.9,delay:.3,ease:'power3.out',scrollTrigger:hs});
+
+/* 4. clients */
+
+gsap.from('.cl small',{opacity:0,y:24,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.cl',start:'top 85%'}});
+
+gsap.from('.mq',{opacity:0,y:50,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.cl',start:'top 80%'}});
+
+/* 5. contact form + details */
+
+gsap.from('.cta input,.cta textarea,.cta .go',{opacity:0,y:30,duration:.7,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'#f',start:'top 85%'}});
+
+gsap.from('.cta .loc > div',{opacity:0,y:30,duration:.8,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.cta .loc',start:'top 95%'}});
+
+/* 6. news widget + footer */
+
+gsap.from('.px-frame',{opacity:0,y:50,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.px-news',start:'top 90%'}});
+
+gsap.from('.fg > div',{opacity:0,y:40,duration:.8,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.fg',start:'top 92%'}});
+
+gsap.from('.wm',{yPercent:40,opacity:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.wm',start:'top 100%'}});
+
+gsap.from('.cp',{opacity:0,duration:1,scrollTrigger:{trigger:'.cp',start:'top 100%'}});
+
+ScrollTrigger.refresh()}
+
+if(document.readyState==='complete')start();else addEventListener('load',start);
+
+})();
+
+</script>
+
+<!-- ===== ADDED: whatsapp "Chat with us" open/hide + back-to-top progress ring ===== -->
+<script>
+
+(function(){
+
+var wa=document.querySelector('.wa-widget'),top=document.getElementById('btnBackToTop');
+
+if(wa){
+
+ wa.classList.add('js');
+
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){wa.classList.add('open')}
+
+ else{
+
+  var hover=false,open=function(){wa.classList.add('open')},shut=function(){wa.classList.remove('open')};
+
+  var cycle=function(){open();setTimeout(function(){if(!hover)shut()},6000)};
+
+  setTimeout(cycle,2000);setInterval(cycle,16000);
+
+  wa.addEventListener('mouseenter',function(){hover=true;open()});
+
+  wa.addEventListener('mouseleave',function(){hover=false;shut()});
+
+  wa.addEventListener('focus',open);wa.addEventListener('blur',shut)}
+
+}
+
+if(top){
+
+ var prog=function(){var h=document.documentElement.scrollHeight-innerHeight,p=h>0?Math.min(100,Math.max(0,scrollY/h*100)):0;top.style.setProperty('--p',p+'%')};
+
+ addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);prog()}
 
 })();
 
