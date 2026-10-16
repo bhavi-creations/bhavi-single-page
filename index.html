@@ -431,26 +431,20 @@ $$('[data-n][data-s]').forEach(function(e){var o={v:0},n=+e.dataset.n;gsap.to(o,
 
 /* large PRCEPTION text -> compressed centered brand moment on scroll */
 
-var giant=$('.hero .giant'), morphStart={};
+/* PRCEPTION -> centered brand moment: text + caption + button centered together in the viewport */
 
-function giantMove(){
+var giant=$('.hero .giant'),cap=$('.morph-caption'),cta=$('.morph-cta');
 
- var prevX=Number(gsap.getProperty(giant,'x'))||0,prevY=Number(gsap.getProperty(giant,'y'))||0;
-
- var prevScale=Number(gsap.getProperty(giant,'scale'))||1;
-
- var r=giant.getBoundingClientRect();
-
- var unscaledWidth=r.width/prevScale,unscaledHeight=r.height/prevScale;
-
- var baseCenterX=r.left+r.width/2-prevX,baseCenterY=r.top+r.height/2-prevY;
-
- var intendedWidth=innerWidth>1000?Math.min(innerWidth*.36,720):innerWidth*.7;
-
- var scale=Math.min(1,intendedWidth/unscaledWidth);
-
- return {x:innerWidth/2-baseCenterX,y:innerHeight*(innerWidth>1000?.25:.405)-baseCenterY,scale:scale};
-
+function L(){
+ var px=Number(gsap.getProperty(giant,'x'))||0,py=Number(gsap.getProperty(giant,'y'))||0,ps=Number(gsap.getProperty(giant,'scale'))||1;
+ var r=giant.getBoundingClientRect(),w0=r.width/ps,h0=r.height/ps;
+ var cx0=r.left+r.width/2-px,cy0=r.top+r.height/2-py;
+ var W=innerWidth,H=innerHeight;
+ var target=W>1000?Math.min(W*.36,720):W*.7;
+ var s=Math.min(1,target/w0),th=h0*s;
+ var capH=cap.offsetHeight,btnH=cta.offsetHeight,g1=H*.06,g2=H*.09;
+ var top=(H-(th+g1+capH+g2+btnH))/2+H*.03;
+ return {x:W/2-cx0,y:top+th/2-cy0,scale:s,capTop:top+th+g1,ctaTop:top+th+g1+capH+g2};
 }
 
 var morph=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'+=125%',pin:true,scrub:0.65,anticipatePin:1,invalidateOnRefresh:true,
@@ -461,11 +455,13 @@ morph.to('.hero .wrap,.hero .deco',{autoAlpha:0,y:-65,duration:.36,ease:'power1.
 
  .to('.hero-morph',{autoAlpha:1,duration:.5,ease:'none'},.10)
 
- .to(giant,{x:function(){return giantMove().x},y:function(){return giantMove().y},scale:function(){return giantMove().scale},duration:.85,ease:'power2.inOut'},.08)
+ .fromTo('.hero-morph',{'--mz':1.14,'--mb':26},{'--mz':1,'--mb':14,duration:.9,ease:'power2.out'},.10)
 
- .to('.morph-caption',{autoAlpha:1,y:0,duration:.28},.64)
+ .to(giant,{x:function(){return L().x},y:function(){return L().y},scale:function(){return L().scale},duration:.85,ease:'power2.inOut'},.08)
 
- .to('.morph-cta',{autoAlpha:1,duration:.24},.75)
+ .fromTo(cap,{top:function(){return L().capTop+28}},{top:function(){return L().capTop},autoAlpha:1,duration:.28,ease:'power2.out',immediateRender:false},.64)
+
+ .fromTo(cta,{top:function(){return L().ctaTop+28}},{top:function(){return L().ctaTop},autoAlpha:1,duration:.24,ease:'power2.out',immediateRender:false},.75)
 
  .to({},{duration:.24});
 
