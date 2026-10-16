@@ -3222,3 +3222,25 @@ header{
 @media(max-width:768px){
   #genie .gone{width:90%}
 }
+
+
+
+@media (max-width:767px){
+
+.nws-t p {
+  display: none;
+  }
+.nws-t h4 {
+  display: none;
+}
+}
+
+
+@media (min-width:992px) and (max-width:1200px) {
+  .nws-t p {
+  display: none;
+  }
+.nws-t h4 {
+  display: none;
+}
+}
