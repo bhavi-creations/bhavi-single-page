@@ -198,7 +198,7 @@ header {
   align-items: center;
   justify-content: space-between;
   mix-blend-mode: normal;
-  border: 2px solid #018f87;
+  /* border: 2px solid #018f87; */
 }
 
 
@@ -841,7 +841,8 @@ nav a:hover {
   display: flex;
   gap: 6vw;
   padding: 0 10vw;
-  will-change: transform
+  will-change: transform;
+  margin-top: 3vh;
 }
 
 
@@ -1038,7 +1039,7 @@ nav a:hover {
 
 .scene p {
   max-width: 360px;
-  font-size: 18px;
+  font-size: 16px;
   opacity: .85
 }
 
@@ -1100,7 +1101,8 @@ nav a:hover {
   .scene .in {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 70px 20px 30px
+    padding: 70px 20px 30px;
+    margin-top: 42px;
   }
 
   .scene .tr {
@@ -2299,7 +2301,9 @@ footer {
   }
 
   .scene h3 {
-    font-size: clamp(44px, 13vw, 64px)
+    /* font-size: clamp(44px, 13vw, 64px) */
+    font-size: 44px;
+    margin-top: 80px;
   }
 
   .scene .tg {
@@ -2846,7 +2850,7 @@ section.nw{
 .nw .nw-sp{width:.24em}
 
 @media (max-width:600px){
-  .nw .nw-stage{padding-bottom:24vh}
+  .nw .nw-stage{padding-bottom:1vh}
   .nw h2.nw-title{font-size:clamp(2.2rem,11vw,3.4rem)}
 }
 
@@ -3158,4 +3162,32 @@ header{
   }
   nav a:first-child{background:transparent;color:var(--theme)}
   nav a:hover,nav a:active{background:rgba(1,143,135,.08)}
+}
+
+
+
+
+
+/* brand titles: one line + per-letter animation */
+.scene h3{white-space:nowrap}
+.scene .in > div:first-child{min-width:0}
+.scene h3 .tc{display:inline-block;will-change:transform,opacity}
+.scene h3 .ts{width:.22em}
+
+
+
+@media(max-width:768px) and (max-width:991px) {
+  .scene h3 {
+    margin-top: 40px;
+  }
+  .num{
+    margin-top: 600px !important;
+  }
+  .scene p {
+    max-width: 735px;
+}
+    .brands .scene .tr img {
+        display: block;
+        height: 244px;
+    }
 }
