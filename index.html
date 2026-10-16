@@ -603,11 +603,10 @@ scenes.forEach(function(s,i){
   bt.to(s,{clipPath:'circle(150% at 50% 50%)',duration:1,ease:'power2.inOut'},i?'>':.3)
    .addLabel('sc'+i,'<.4')
    .fromTo($('.in',s),{y:60,opacity:0},{y:0,opacity:1,duration:.8},'sc'+i)
-   .to(tr,{x:function(){return -dist()},duration:pan,ease:'none'},'>')
+   /* title letters: rise + fade in (placed inside the chain, pan position is explicit) */
+   .fromTo(chars,{yPercent:90,opacity:0},{yPercent:0,opacity:1,duration:.6,stagger:.035,ease:'power3.out'},'sc'+i+'+=.15')
+   .to(tr,{x:function(){return -dist()},duration:pan,ease:'none'},'sc'+i+'+=.8')
    .fromTo($('.gt',s),{xPercent:0},{xPercent:-22,duration:pan+1,ease:'none'},'<-.6');
-
-  /* title: letters rise + fade in one by one as the world opens */
-  bt.fromTo(chars,{yPercent:90,opacity:0},{yPercent:0,opacity:1,duration:.6,stagger:.035,ease:'power3.out'},'sc'+i+'+=.15');
 });
 
 /* shift lens */
