@@ -24,7 +24,10 @@
 <!-- Common Stylesheet -->
 <link rel="stylesheet" href="assets/css/new_style.css">
 
-
+<!-- FIX: grid column was growing to the width of all cards, so there was nothing left to scroll. min-width:0 lets the column keep its size and the cards overflow (GSAP then moves them). -->
+<style>
+.scene .in > .brand-gallery{min-width:0;overflow:visible}
+</style>
 
 </head>
 
@@ -115,7 +118,7 @@
 
 <div class="track" id="wt"></div>
 
-<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><span class="tag" id="htag"></span><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="https://prception.in/casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a>
+<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><span class="tag" id="htag"></span><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="https://prception.in/casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a></div>
 
 </section>
 
@@ -126,8 +129,6 @@
 <div id="bs"></div>
 
 </section>
-
-<!-- <section class="brands" id="brands"> ... </section> -->
 
 <!-- ===== NEEDLE: text fill + zoom ===== -->
 <section class="nw" id="work-needle">
@@ -214,7 +215,7 @@
 
 <textarea name="remarks" rows="4" placeholder="MESSAGE"></textarea>
 
-<button class="go" aria-label="Submit">→</button></form>
+<button class="go" aria-label="Submit"><span class="go-a">→</span><span class="go-a">→</span></button></form>
 
 <div class="loc"><div><h4>CONNECT</h4>+91 7012998181<br>hello@prception.in</div><div><h4>ADDRESS</h4>Citylink Tower, Bakery Jct Rd,<br>near Reserve Bank Of India,<br>Thampanoor, Kerala 695001</div></div></div>
 
@@ -301,6 +302,9 @@ var SITES=[['Leggo','Handcrafted Footwear','#1f3a5f','assets/video/leggo.mp4','h
 ['Tealcore','Software Development','#018f87','assets/video/Tealcore.mp4','https://tealcoreventures.in/'],
 ['Staton','Industrial Automation','#444','assets/video/staton.mp4','https://staton.in/']];
 
+/* new brands: images load from assets/img/<name>.webp; a missing file is simply skipped */
+function bi(alt,files){return files.map(function(f,i){return'<div><img src="assets/img/'+f+'.webp" alt="'+alt+(i?' board '+i:'')+'" onerror="this.parentNode.remove()"></div>'}).join('')}
+
 var BRANDS=[
 ['Lynklead','CRM · Brand Identity','Two L’s linked into one mark, and a robot mascot, for a CRM built to connect, manage and convert.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],
  '<div><img src="assets/img/lynklead.webp" alt="Lynklead mascot"></div>'+
@@ -323,10 +327,20 @@ var BRANDS=[
  '<div><img src="assets/img/digital-mugavari-2.webp" alt="Digital Mugavari board 2"></div>'+
  '<div><img src="assets/img/digital-mugavari-3.webp" alt="Digital Mugavari board 3"></div>'+
  '<div><img src="assets/img/digital-mugavari-4.webp" alt="Digital Mugavari board 3"></div>'],
+['Tech Grandha','EdTech · Identity & Mascot','A T, a G and a magnifying-glass robot: a friendly identity for learning, building and growing.','#02A7D9','#fff',['#02A7D9','#F7941D','#FFFFFF'],
+ bi('Tech Grandha',['tech-grandha','tech-grandha-1','tech-grandha-2','tech-grandha-3','tech-grandha-4'])],
 ['Photonvolt','Solar Energy','Solar energy solutions with a sustainable brand design.','#FED700','#0a0a0a',['#D8B700','#FED700'],
  '<div><img src="assets/img/photonvolt.webp" alt="Photonvolt brand"></div>'+
  '<div><img src="assets/img/photonvolt-1.webp" alt="Photonvolt board 1"></div>'+
- '<div><img src="assets/img/photonvolt-2.webp" alt="Photonvolt board 2"></div>']
+ '<div><img src="assets/img/photonvolt-2.webp" alt="Photonvolt board 2"></div>'],
+['Carb N Care','Car Air Purifier','Clean air, thoughtfully designed. Protection that blends into your lifestyle.','#68221B','#fff',['#D2AE6A'],
+ bi('Carb N Care',['carb-n-care','carb-n-care-1','carb-n-care-2','carb-n-care-3'])],
+['Saki','Women’s Clothing','Crafted for women who wear confidence effortlessly.','#06332E','#fff',['#06332E','#F4D7B5'],
+ bi('Saki',['saki','saki-1','saki-2','saki-3','saki-4'])],
+['ZICA','Animation Academy · Mascot','Inspiring future animators to lead and create.','#EB6820','#fff',['#EB6820','#727272'],
+ bi('ZICA',['zica'])],
+['Eco Cleanser','Pet Care · Packaging & Retail','A pet-care range redesigned on the shelf and at the stall: fresh green, friendly and clean.','#1F8A3B','#fff',['#1F8A3B','#FFFFFF'],
+ bi('Eco Cleanser',['eco-cleanser-1','eco-cleanser-2'])]
 ];
 
 var STEPS=[['Discovery','A conversation, not a pitch. We hear how you see your brand, and you leave with a first read of how the market sees it.'],['Perception audit','We map how customers, competitors and search really see you, and measure the gap.'],['Strategy','We define the new reality: the positioning, the story and the identity that will carry it.'],['Build','Designers, developers and marketers bring it to life: identity, website, content, campaigns.'],['Launch','The new perception goes live everywhere your brand is seen, at the same moment.'],['Repeat','We track how perception moves and keep sharpening it. From here, it compounds.']];
@@ -344,7 +358,7 @@ BRANDS.forEach(function(b){var s=document.createElement('article');s.className='
 
 var imgs=b[6];
 
-s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p><div class="pal">'+b[5].map(function(c){return'<i style="background:'+c+'"></i>'}).join('')+'</div></div><div class="brand-gallery" aria-label="'+b[0]+' brand images"><div class="tr">'+imgs+'</div></div></div>';
+s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p><div class="pal">'+b[5].map(function(c){return'<span><i style="background:'+c+'"></i>'+c+'</span>'}).join('')+'</div></div><div class="brand-gallery" aria-label="'+b[0]+' brand images"><div class="tr">'+imgs+'</div></div></div>';
 
 $('#bs').appendChild(s)});
 
@@ -419,13 +433,11 @@ function giantMove(){
 
  var baseCenterX=r.left+r.width/2-prevX,baseCenterY=r.top+r.height/2-prevY;
 
-//  var intendedWidth=Math.min(innerWidth*.67,1050);
-var intendedWidth=innerWidth>1000?Math.min(innerWidth*.36,720):innerWidth*.7;
+ var intendedWidth=innerWidth>1000?Math.min(innerWidth*.36,720):innerWidth*.7;
 
  var scale=Math.min(1,intendedWidth/unscaledWidth);
 
-//  return {x:innerWidth/2-baseCenterX,y:innerHeight*.405-baseCenterY,scale:scale};
-return {x:innerWidth/2-baseCenterX,y:innerHeight*(innerWidth>1000?.25:.405)-baseCenterY,scale:scale};
+ return {x:innerWidth/2-baseCenterX,y:innerHeight*(innerWidth>1000?.25:.405)-baseCenterY,scale:scale};
 
 }
 
@@ -450,12 +462,6 @@ morph.to('.hero .wrap,.hero .deco',{autoAlpha:0,y:-65,duration:.36,ease:'power1.
 $$('.rv').forEach(function(e){gsap.from(e,{y:60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:e,start:'top 88%'}})});
 
 gsap.from('.stmt p',{opacity:0,y:40,duration:1,scrollTrigger:{trigger:'.stmt',start:'top 70%'}});
-
-/* needle: text fills in */
-
-gsap.fromTo('#nd',{color:'#cdc9c6'},{color:'#111',ease:'none',scrollTrigger:{trigger:'.needle',start:'top 60%',end:'center 40%',scrub:true}});
-
-gsap.fromTo('#nd span',{opacity:.18},{opacity:1,ease:'none',scrollTrigger:{trigger:'.needle',start:'top 60%',end:'center 40%',scrub:true}});
 
 /* genie */
 
@@ -551,15 +557,17 @@ var bt=gsap.timeline({scrollTrigger:{trigger:'#brands',start:'top top',end:funct
 
 bt.to('#brands .intro',{opacity:0,scale:.9,duration:.8},0);
 
-scenes.forEach(function(s,i){var tr=$('.tr',s),pan=1+tr.children.length*.5;
-
-bt.to(s,{clipPath:'circle(150% at 50% 50%)',duration:1,ease:'power2.inOut'},i?'>':.3)
-
-.fromTo($('.in',s),{y:60,opacity:0},{y:0,opacity:1,duration:.8},'<.4')
-
-.to({},{duration:pan,ease:'none'},'>')
-
-.fromTo($('.gt',s),{xPercent:0},{xPercent:-22,duration:pan+1,ease:'none'},'<-.6')});
+scenes.forEach(function(s,i){
+  var tr=$('.tr',s),pan=1+tr.children.length*.5;
+  function dist(){
+    var left=$('.brand-gallery',s).getBoundingClientRect().left;
+    return Math.max(0,tr.scrollWidth-(innerWidth-left-30));
+  }
+  bt.to(s,{clipPath:'circle(150% at 50% 50%)',duration:1,ease:'power2.inOut'},i?'>':.3)
+   .fromTo($('.in',s),{y:60,opacity:0},{y:0,opacity:1,duration:.8},'<.4')
+   .to(tr,{x:function(){return -dist()},duration:pan,ease:'none'},'>')
+   .fromTo($('.gt',s),{xPercent:0},{xPercent:-22,duration:pan+1,ease:'none'},'<-.6');
+});
 
 /* shift lens */
 
@@ -587,22 +595,6 @@ ScrollTrigger.refresh()}
 
 if(document.readyState==='complete')boot();else addEventListener('load',boot);
 
-})();
-
-(function(){
-if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-document.querySelectorAll('.brand-gallery').forEach(function(gallery){
- var track=gallery.querySelector('.tr');
- if(!track||track.children.length<2)return;
- setInterval(function(){
-  if(document.hidden)return;
-  var max=gallery.scrollWidth-gallery.clientWidth;
-  if(max<=1)return;
-  var card=track.children[0],gap=parseFloat(getComputedStyle(track).columnGap)||0;
-  var next=gallery.scrollLeft+card.getBoundingClientRect().width+gap;
-  gallery.scrollTo({left:next>=max-2?0:Math.min(next,max),behavior:'smooth'});
- },3000);
-});
 })();
 
 </script>

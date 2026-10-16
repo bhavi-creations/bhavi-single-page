@@ -2961,3 +2961,9 @@ section.nw{
     display: flex;
   }
 }
+
+/* branding: palette swatches with hex labels (as on live) */
+.scene .pal{flex-wrap:wrap;gap:12px 18px}
+.scene .pal span{display:flex;align-items:center;gap:8px;font:12px var(--f-body);letter-spacing:.02em;text-transform:uppercase}
+.scene .tr > div{will-change:transform,opacity}
+.scene .in > .brand-gallery{min-width:0;overflow:visible;clip-path:inset(-40px -80px -40px 0)}

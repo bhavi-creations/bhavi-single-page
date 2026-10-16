@@ -151,39 +151,82 @@
   }
 
   /* ---------- 3. BRAND WORLDS (circular portals) ---------- */
-  function brands() {
-    var sec = $('.brand-worlds');
-    if (!sec) return;
-    var stage = $('.brand-stage', sec), intro = $('.brand-intro', sec), scenes = $$('.brand-scene', sec);
-    if (!scenes.length) return;
-    free(sec);
-    sec.classList.add('is-live');
-    scenes.forEach(function (s, i) { s.style.zIndex = i + 1; });
-    gsap.set(scenes, { clipPath: 'circle(0% at 50% 50%)' });
+  // function brands() {
+  //   var sec = $('.brand-worlds');
+  //   if (!sec) return;
+  //   var stage = $('.brand-stage', sec), intro = $('.brand-intro', sec), scenes = $$('.brand-scene', sec);
+  //   if (!scenes.length) return;
+  //   free(sec);
+  //   sec.classList.add('is-live');
+  //   scenes.forEach(function (s, i) { s.style.zIndex = i + 1; });
+  //   gsap.set(scenes, { clipPath: 'circle(0% at 50% 50%)' });
 
-    function dist(scene) {
-      var track = $('.brand-scene-track', scene), board = $('.brand-scene-board', scene);
-      var left = board.getBoundingClientRect().left;
-      return Math.max(0, track.scrollWidth - (window.innerWidth - left - 30));
-    }
+  //   function dist(scene) {
+  //     var track = $('.brand-scene-track', scene), board = $('.brand-scene-board', scene);
+  //     var left = board.getBoundingClientRect().left;
+  //     return Math.max(0, track.scrollWidth - (window.innerWidth - left - 30));
+  //   }
 
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: stage, start: 'top top', end: function () { return '+=' + tl.duration() * vh() * 0.5; },
-        pin: true, scrub: 0.8, anticipatePin: 1, invalidateOnRefresh: true
-      }
-    });
-    tl.to(intro, { opacity: 0, scale: 0.9, duration: 0.8, ease: 'power1.in' }, 0);
-    scenes.forEach(function (scene, i) {
-      var inner = $('.brand-scene-inner', scene), track = $('.brand-scene-track', scene);
-      var giant = $('.brand-scene-giant', scene), imgs = $$('img', track).length;
-      var pan = 1 + imgs * 0.5;
-      tl.to(scene, { clipPath: 'circle(150% at 50% 50%)', duration: 1, ease: 'power2.inOut' }, i === 0 ? 0.3 : '>')
-        .fromTo(inner, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }, '<0.4')
-        .to(track, { x: function () { return -dist(scene); }, duration: pan, ease: 'none' }, '>')
-        .fromTo(giant, { xPercent: 0 }, { xPercent: -22, duration: pan + 1, ease: 'none' }, '<-0.6');
+  //   var tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: stage, start: 'top top', end: function () { return '+=' + tl.duration() * vh() * 0.5; },
+  //       pin: true, scrub: 0.8, anticipatePin: 1, invalidateOnRefresh: true
+  //     }
+  //   });
+  //   tl.to(intro, { opacity: 0, scale: 0.9, duration: 0.8, ease: 'power1.in' }, 0);
+  //   scenes.forEach(function (scene, i) {
+  //     var inner = $('.brand-scene-inner', scene), track = $('.brand-scene-track', scene);
+  //     var giant = $('.brand-scene-giant', scene), imgs = $$('img', track).length;
+  //     var pan = 1 + imgs * 0.5;
+  //     tl.to(scene, { clipPath: 'circle(150% at 50% 50%)', duration: 1, ease: 'power2.inOut' }, i === 0 ? 0.3 : '>')
+  //       .fromTo(inner, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }, '<0.4')
+  //       .to(track, { x: function () { return -dist(scene); }, duration: pan, ease: 'none' }, '>')
+  //       .fromTo(giant, { xPercent: 0 }, { xPercent: -22, duration: pan + 1, ease: 'none' }, '<-0.6');
+  //   });
+  // }
+
+
+  /* brand portals */
+
+var scenes=$$('.scene');gsap.set(scenes,{clipPath:'circle(0% at 50% 50%)'});
+
+/* images load ayyaka card widths marutayi (width:auto), so pan distance recalc cheyali */
+var rfT;function rfSoon(){clearTimeout(rfT);rfT=setTimeout(function(){ScrollTrigger.refresh()},150)}
+$$('.scene .tr img').forEach(function(im){
+  if(!im.complete)im.addEventListener('load',rfSoon);
+  im.addEventListener('error',rfSoon);
+});
+
+var bt=gsap.timeline({scrollTrigger:{trigger:'#brands',start:'top top',end:function(){return'+='+bt.duration()*innerHeight*.5},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true}});
+
+bt.to('#brands .intro',{opacity:0,scale:.9,duration:.8},0);
+
+scenes.forEach(function(s,i){
+  var tr=$('.tr',s),pan=1+tr.children.length*.5;
+
+  function dist(){
+    var left=$('.brand-gallery',s).getBoundingClientRect().left;
+    return Math.max(0,tr.scrollWidth-(innerWidth-left-30));
+  }
+
+  /* every image card: enters from the right with fade + scale + rise as the strip pans */
+  function fx(){
+    var W=innerWidth;
+    [].slice.call(tr.children).forEach(function(c){
+      var r=c.getBoundingClientRect();
+      var v=Math.max(0,Math.min(1,(W-r.left)/(W*.3)));
+      gsap.set(c,{opacity:.25+.75*v,scale:.9+.1*v,y:(1-v)*26,transformOrigin:'left center'});
     });
   }
+
+  bt.to(s,{clipPath:'circle(150% at 50% 50%)',duration:1,ease:'power2.inOut'},i?'>':.3)
+   .fromTo($('.in',s),{y:60,opacity:0},{y:0,opacity:1,duration:.8},'<.4')
+   .to(tr,{x:function(){return -dist()},duration:pan,ease:'none',onUpdate:fx},'>')
+   .fromTo($('.gt',s),{xPercent:0},{xPercent:-22,duration:pan+1,ease:'none'},'<-.6');
+
+  fx();
+  ScrollTrigger.addEventListener('refresh',fx);
+});
 
   /* ---------- 4. SHIFT LENS ---------- */
   function shift() {
