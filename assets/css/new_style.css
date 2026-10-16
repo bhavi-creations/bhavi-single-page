@@ -3115,3 +3115,47 @@ header{
   -webkit-backdrop-filter:blur(14px) saturate(140%);
   backdrop-filter:blur(14px) saturate(140%);
 }
+
+
+
+/* ===== mobile / tablet menu toggle ===== */
+.menu-toggle{display:none}
+
+@media(max-width:1000px){
+  /* Let's Talk button -> toggle bar */
+  header > .btn{display:none}
+
+  .menu-toggle{
+    display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+    width:48px;height:48px;padding:0;border:0;border-radius:50%;
+    background:#111;cursor:pointer;
+  }
+  .menu-toggle span{
+    display:block;width:20px;height:2px;border-radius:2px;background:#fff;
+    transition:transform .35s ease,opacity .25s ease;
+  }
+  header.open .menu-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  header.open .menu-toggle span:nth-child(2){opacity:0}
+  header.open .menu-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* dropdown panel: white bg, links centered */
+  nav{
+    display:flex;flex-direction:column;align-items:stretch;gap:2px;
+    position:absolute;top:calc(100% + 10px);left:16px;right:16px;
+    padding:10px;border-radius:24px;
+    background:rgba(255,255,255,.92);
+    -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+    box-shadow:0 12px 40px rgba(0,0,0,.12);
+    opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;
+    transition:opacity .3s ease,transform .3s ease,visibility .3s;
+  }
+  header.open nav{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+
+  /* link buttons: text centered, transparent background */
+  nav a{
+    display:block;text-align:center;padding:15px 20px;font-size:17px;
+    background:transparent;border-radius:14px;
+  }
+  nav a:first-child{background:transparent;color:var(--theme)}
+  nav a:hover,nav a:active{background:rgba(1,143,135,.08)}
+}

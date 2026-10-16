@@ -40,9 +40,13 @@
     <img src="assets/img/PRception_logo.png" alt="PRception Logo" style="height:60px; width:200px">
   </a>
 
-<nav><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a><a href="#cta">Contact</a></nav>
+<nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a><a href="#cta">Contact</a></nav>
 
-<a href="#cta" class="btn">Let's Talk <b>→</b></a></header>
+<a href="#cta" class="btn">Let's Talk <b>→</b></a>
+
+<button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+
+</header>
 
 <section class="hero">
 
@@ -934,6 +938,26 @@ dots.forEach(function(d,i){d.onclick=function(){vp.scrollTo({left:i*step(),behav
   dots.forEach(function(d){d.addEventListener('click',touch)});
   new IntersectionObserver(function(es){visible=es[0].isIntersecting},{threshold:.3}).observe(vp);
 })();
+})();
+</script>
+
+
+
+
+<script>
+(function(){
+  var h=document.querySelector('header'),t=document.getElementById('menuToggle'),nav=document.getElementById('siteNav');
+  if(!h||!t||!nav)return;
+  function set(open){
+    h.classList.toggle('open',open);
+    t.setAttribute('aria-expanded',open);
+    t.setAttribute('aria-label',open?'Close menu':'Open menu');
+  }
+  t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('open'))});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+  document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+  addEventListener('resize',function(){if(innerWidth>1000)set(false)});
 })();
 </script>
 
