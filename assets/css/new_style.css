@@ -3244,3 +3244,86 @@ header{
   display: none;
 }
 }
+
+
+
+
+
+
+/* ===== Services dropdown ===== */
+.nav-dd{position:relative;display:flex;align-items:center}
+.nav-dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:18px} /* hover bridge, menu close avvakunda */
+
+/* trigger + chevron */
+nav .nav-dd > a.dd-trigger{display:inline-flex;align-items:center;cursor:pointer;background:transparent;color:var(--primary)}
+nav .dd-trigger i{
+  font-size:11px;margin-left:6px;
+  transition:transform .45s cubic-bezier(.175,.885,.32,1.275);   /* bouncy flip */
+}
+nav .nav-dd.open > a.dd-trigger{color:var(--theme)}
+.nav-dd.open .dd-trigger i{transform:rotate(180deg)}
+
+/* panel */
+.sub-menu{
+  position:absolute;top:calc(100% + 12px);left:50%;
+  min-width:240px;padding:10px;list-style:none;
+  background:rgba(255,255,255,.96);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  border-radius:22px;box-shadow:0 18px 50px rgba(0,0,0,.14);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translate(-50%,12px) scale(.96);transform-origin:top center;
+  transition:opacity .3s ease,transform .45s cubic-bezier(.175,.885,.32,1.275),visibility .3s;
+  z-index:5;
+}
+.nav-dd.open > .sub-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1)}
+
+/* items stagger in */
+.sub-menu li{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .45s cubic-bezier(.175,.885,.32,1.275)}
+.nav-dd.open .sub-menu li{opacity:1;transform:none}
+.nav-dd.open .sub-menu li:nth-child(1){transition-delay:.06s}
+.nav-dd.open .sub-menu li:nth-child(2){transition-delay:.12s}
+.nav-dd.open .sub-menu li:nth-child(3){transition-delay:.18s}
+
+nav .sub-menu li a{
+  display:block;padding:13px 18px;border-radius:14px;white-space:nowrap;
+  font-size:16px;color:var(--primary);background:transparent;
+  transition:background .25s,color .25s,padding-left .3s;
+}
+nav .sub-menu li a:hover{background:rgba(1,143,135,.1);color:var(--theme);padding-left:24px}
+
+/* desktop with a mouse: open on hover / keyboard focus */
+@media(min-width:1001px) and (hover:hover) and (pointer:fine){
+  nav .nav-dd:hover > a.dd-trigger,nav .nav-dd:focus-within > a.dd-trigger{color:var(--theme)}
+  .nav-dd:hover .dd-trigger i,.nav-dd:focus-within .dd-trigger i{transform:rotate(180deg)}
+  .nav-dd:hover > .sub-menu,.nav-dd:focus-within > .sub-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1)}
+  .nav-dd:hover .sub-menu li,.nav-dd:focus-within .sub-menu li{opacity:1;transform:none}
+  .nav-dd:hover .sub-menu li:nth-child(1){transition-delay:.06s}
+  .nav-dd:hover .sub-menu li:nth-child(2){transition-delay:.12s}
+  .nav-dd:hover .sub-menu li:nth-child(3){transition-delay:.18s}
+}
+
+/* mobile / tablet: dropdown becomes an inline accordion inside the toggle menu */
+@media(max-width:1000px){
+  .nav-dd{display:block}
+  .nav-dd::after{display:none}
+  nav .nav-dd > a.dd-trigger{display:flex;justify-content:center}
+  .sub-menu{
+    position:static;min-width:0;padding:0;border-radius:0;
+    background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;
+    opacity:1;visibility:visible;pointer-events:auto;transform:none;
+    max-height:0;overflow:hidden;
+    transition:max-height .5s cubic-bezier(.65,0,.35,1);
+  }
+  .nav-dd.open > .sub-menu{max-height:260px;transform:none}
+  nav .sub-menu li a{text-align:center;font-size:16px;padding:12px 16px;color:var(--secondary)}
+  nav .sub-menu li a:hover{padding-left:16px}
+}
+
+
+/* After adding service dropdown in navbar 992-1200px buttons alignment fix stylings */
+
+@media (min-width:992px) and (max-width:1200px) {
+nav a {
+  font-size: 13px;
+}
+}

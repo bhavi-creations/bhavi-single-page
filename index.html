@@ -40,7 +40,19 @@
     <img src="assets/img/PRception_logo.png" alt="PRception Logo" style="height:60px; width:200px">
   </a>
 
-<nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a><a href="#cta">Contact</a></nav>
+<!-- <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a><a href="#how">Services</a><a href="#cta">Contact</a></nav> -->
+ <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a>
+
+<div class="nav-dd">
+  <a href="#" class="dd-trigger" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down"></i></a>
+  <ul class="sub-menu">
+    <li><a href="https://prception.in/influencer-marketing-agency-in-kerala">Creator Marketing</a></li>
+    <li><a href="https://prception.in/web-development">Web Development</a></li>
+    <li><a href="https://prception.in/best-seo-company-in-kerala">SEO Services</a></li>
+  </ul>
+</div>
+
+<a href="#cta">Contact</a></nav>
 
 <a href="#cta" class="btn">Let's Talk <b>→</b></a>
 
@@ -1028,6 +1040,32 @@ dots.forEach(function(d,i){d.onclick=function(){vp.scrollTo({left:i*step(),behav
   document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
   addEventListener('resize',function(){if(innerWidth>1000)set(false)});
+})();
+</script>
+
+
+
+
+
+<script>
+(function(){
+  var dd=document.querySelector('.nav-dd'),h=document.querySelector('header');
+  if(!dd||!h)return;
+  var trg=dd.querySelector('.dd-trigger');
+  var hoverable=function(){return matchMedia('(hover:hover) and (pointer:fine)').matches&&innerWidth>1000};
+  function set(o){dd.classList.toggle('open',o);trg.setAttribute('aria-expanded',o)}
+
+  /* touch / mobile: tap toggles (desktop mouse uses CSS hover) */
+  trg.addEventListener('click',function(e){
+    e.preventDefault();e.stopPropagation();   /* stops the mobile menu from closing */
+    if(hoverable())return;
+    set(!dd.classList.contains('open'));
+  });
+  document.addEventListener('click',function(e){if(!dd.contains(e.target))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+  addEventListener('resize',function(){set(false)});
+  /* mobile menu closed -> dropdown also resets */
+  new MutationObserver(function(){if(!h.classList.contains('open'))set(false)}).observe(h,{attributes:true,attributeFilter:['class']});
 })();
 </script>
 
