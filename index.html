@@ -908,7 +908,7 @@ var NEWS=[
 ];
 var tr=document.getElementById('nwsTr'),vp=document.getElementById('nwsVp'),dt=document.getElementById('nwsD');if(!tr)return;
 var e=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
-tr.innerHTML=NEWS.map(function(n){return'<a class="nws-c" href="'+U+n[4]+'/" target="_blank" rel="noopener">'+(n[5]?'<img src="'+e(n[5])+'" alt="" loading="lazy">':'')+'<div class="nws-t">'+(n[0]?'<small>'+e(n[0])+'</small>':'')+'<h4>'+e(n[1])+'</h4><p>'+e(n[2])+'</p><span>'+A+' · '+n[3]+'</span></div></a>'}).join('');
+tr.innerHTML=NEWS.map(function(n){return'<a class="nws-c" href="'+U+n[4]+'/" target="_blank" rel="noopener">'+(n[5]?'<img src="'+e(n[5])+'" alt="" loading="lazy">':'')+'<div class="nws-t">'+(n[0]?'<small>'+e(n[0])+'</small>':'')+'<h4>'+e(n[1])+'</h4><p>'+e(n[2])+'</p><span><i class="fa-regular fa-user"></i>'+A+'<b>·</b><i class="fa-regular fa-calendar"></i>'+n[3]+'</span></div></a>'}).join('');
 dt.innerHTML=NEWS.map(function(){return'<i></i>'}).join('');
 var cards=[].slice.call(tr.children),dots=[].slice.call(dt.children);
 function step(){return cards[0].offsetWidth+16}
@@ -918,6 +918,26 @@ vp.addEventListener('scroll',mark,{passive:true});mark();
 document.getElementById('nwsN').onclick=function(){vp.scrollBy({left:step(),behavior:'smooth'})};
 document.getElementById('nwsP').onclick=function(){vp.scrollBy({left:-step(),behavior:'smooth'})};
 dots.forEach(function(d,i){d.onclick=function(){vp.scrollTo({left:i*step(),behavior:'smooth'})}});
+/* auto-scroll: one card every 3.5s, loops back to start, pauses on hover/touch/offscreen/user action */
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var visible=false,hovering=false,lastUser=0;
+  var touch=function(){lastUser=Date.now()};
+  function atEnd(){return vp.scrollLeft+vp.clientWidth>=vp.scrollWidth-4}
+  function auto(){
+    if(!visible||hovering||Date.now()-lastUser<6000)return;
+    if(atEnd())vp.scrollTo({left:0,behavior:'smooth'});
+    else vp.scrollBy({left:step(),behavior:'smooth'});
+  }
+  setInterval(auto,3500);
+  vp.addEventListener('mouseenter',function(){hovering=true});
+  vp.addEventListener('mouseleave',function(){hovering=false});
+  ['touchstart','pointerdown','wheel'].forEach(function(ev){vp.addEventListener(ev,touch,{passive:true})});
+  document.getElementById('nwsN').addEventListener('click',touch);
+  document.getElementById('nwsP').addEventListener('click',touch);
+  dots.forEach(function(d){d.addEventListener('click',touch)});
+  new IntersectionObserver(function(es){visible=es[0].isIntersecting},{threshold:.3}).observe(vp);
+})();
 })();
 </script>
 

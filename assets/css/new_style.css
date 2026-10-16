@@ -2967,3 +2967,43 @@ section.nw{
 .scene .pal span{display:flex;align-items:center;gap:8px;font:12px var(--f-body);letter-spacing:.02em;text-transform:uppercase}
 .scene .tr > div{will-change:transform,opacity}
 .scene .in > .brand-gallery{min-width:0;overflow:visible;clip-path:inset(-40px -80px -40px 0)}
+
+
+
+
+
+/* mdeialab new content bottom new stylings */
+/* Medialab Dispatch: card ratio + text styling to match live */
+.nws-c{aspect-ratio:526/385}
+@media(max-width:600px){.nws-c{aspect-ratio:4/3}}
+
+.nws-t{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif}
+.nws-t small{font:700 11px/1 'Inter','Segoe UI',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--theme);margin-bottom:10px}
+
+/* title */
+.nws-t h4{
+  font:700 17px/1.25 'Inter','Segoe UI',system-ui,sans-serif;
+  letter-spacing:-.015em;
+  color:#fff;
+  margin:0 0 6px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* paragraph */
+.nws-t p{
+  font:400 13px/1.3 'Inter','Segoe UI',system-ui,sans-serif;
+  letter-spacing:-.02em;
+  color:rgba(255,255,255,.82);
+  margin:0 0 8px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* bottom text: author + date with icons */
+.nws-t span{
+  display:flex;align-items:center;gap:6px;
+  font:400 12px/1 'Inter','Segoe UI',system-ui,sans-serif;
+  letter-spacing:-.01em;
+  color:rgba(255,255,255,.72);
+}
+.nws-t span i{font-size:11px;opacity:.85}
+.nws-t span b{font-weight:400;opacity:.7;margin:0 1px}
