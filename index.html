@@ -134,7 +134,7 @@
 
 <div class="track" id="wt"></div>
 
-<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><span class="tag" id="htag"></span><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="https://prception.in/casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a></div>
+<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="https://prception.in/casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a></div>
 
 </section>
 
@@ -288,6 +288,10 @@
 <script>
 
 (function(){
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+var pendingHash=location.hash;
+if(pendingHash)history.replaceState(null,'',location.pathname+location.search);
+window.scrollTo(0,0);
 
 var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))},pad=function(n){return String(n).padStart(2,'0')};
 
@@ -314,7 +318,7 @@ var SITES=[['Leggo','Handcrafted Footwear','#1f3a5f','assets/video/leggo.mp4','h
 ['Past n Present','Custom 3D Keepsakes','#7a4b2a','assets/video/pastandpresent.mp4','https://pastandpresent.in/'],
 ['Peaceboard','Global Peace Platform','#12685f','assets/video/peaceboard.mp4','https://peaceboard.uk/'],
 ['Arena Animation','Animation Academy','#6b1f2a','assets/video/arena.mp4','https://arenatrivandrum.com/'],
-['Brightwyn','Software Development','#2c3e8f','assets/video/Brightwyn.mp4','https://brightwyn.in/'],
+['Brightwyn','','#2c3e8f','assets/video/Brightwyn.mp4','https://brightwyn.in/'],
 ['Tealcore','Software Development','#018f87','assets/video/Tealcore.mp4','https://tealcoreventures.in/'],
 ['Staton','Industrial Automation','#444','assets/video/staton.mp4','https://staton.in/']];
 
