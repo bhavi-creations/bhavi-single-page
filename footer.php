@@ -889,6 +889,40 @@ dots.forEach(function(d,i){d.onclick=function(){vp.scrollTo({left:i*step(),behav
 })();
 </script>
 
+
+
+
+
+<script>
+(function(){
+  var h=document.querySelector('.ww .intro h2');
+  if(!h||!document.createElement('canvas').getContext)return;
+
+  function build(){
+    var cs=getComputedStyle(h),fs=parseFloat(cs.fontSize),W=h.offsetWidth,H=h.offsetHeight;
+    if(!W||!H)return;
+    var padX=.1*fs,padY=.25*fs,dpr=Math.min(2,devicePixelRatio||1);
+    var cw=W+padX*2,ch=H+padY*2,c=document.createElement('canvas');
+    c.width=Math.round(cw*dpr);c.height=Math.round(ch*dpr);
+    var x=c.getContext('2d');x.scale(dpr,dpr);
+    x.font=cs.fontWeight+' '+fs+'px '+cs.fontFamily;
+    x.fillStyle='#000';x.textAlign='center';x.textBaseline='alphabetic';
+    var t=h.textContent.trim();if(cs.textTransform==='uppercase')t=t.toUpperCase();
+    var m=x.measureText(t),asc=m.fontBoundingBoxAscent||fs*.9,desc=m.fontBoundingBoxDescent||fs*.2;
+    var lh=parseFloat(cs.lineHeight)||H;
+    x.fillText(t,cw/2,padY+(lh-(asc+desc))/2+asc);        /* same baseline the browser uses for the real text */
+    h.style.setProperty('--glass-mask','url('+c.toDataURL()+')');
+    h.classList.add('glass-on');
+  }
+
+  var cs0=getComputedStyle(h);
+  var fontReady=document.fonts&&document.fonts.load?document.fonts.load(cs0.fontWeight+' 100px '+cs0.fontFamily):Promise.resolve();
+  fontReady.then(function(){return document.fonts?document.fonts.ready:0}).then(build);
+
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build,200)});
+})();
+</script>
+
 </body>
 
 </html>

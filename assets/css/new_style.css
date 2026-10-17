@@ -3427,3 +3427,28 @@ nav a {
   transition:opacity .3s,transform .3s;
 }
 .ww .tile:hover::after{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+
+
+
+
+/* ===== "WEB WORK": frosted glass text (same look as the header) ===== */
+.ww .intro h2{
+  position:relative;
+  color:transparent;-webkit-text-fill-color:transparent;   /* real text stays for layout + accessibility */
+}
+/* fallback while the mask is being built / if unsupported: translucent letters */
+.ww .intro h2:not(.glass-on){
+  color:rgba(255,255,255,calc(.2 * var(--ga,1)));
+  -webkit-text-fill-color:rgba(255,255,255,calc(.2 * var(--ga,1)));
+}
+.ww .intro h2::after{
+  content:"";position:absolute;inset:-.25em -.1em;          /* room for glyph overflow */
+  background:rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-mask:var(--glass-mask) center/100% 100% no-repeat;
+          mask:var(--glass-mask) center/100% 100% no-repeat;
+  opacity:0;transition:opacity .4s;
+}
+.ww .intro h2.glass-on::after{opacity:var(--ga,1)}
