@@ -3327,3 +3327,14 @@ nav a {
   font-size: 13px;
 }
 }
+/* Shorter mobile scroll journeys; preserve animation phases and desktop layout. */
+@media (max-width:600px) and (prefers-reduced-motion:no-preference){
+  section.nw{height:280vh}
+  .px-feel{height:190vh}
+  .px-zoom{height:210vh}
+}
+@media (max-width:600px){
+  .stmt{padding:48px 20px}
+  .cl{padding:40px 0}
+  .px-help{padding-top:48px}
+}

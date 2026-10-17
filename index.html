@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Common Stylesheet -->
-<link rel="stylesheet" href="assets/css/new_style.css">
+<link rel="stylesheet" href="assets/css/new_style.css?v=20261017-1">
 
 <!-- FIX: grid column was growing to the width of all cards, so there was nothing left to scroll. min-width:0 lets the column keep its size and the cards overflow (GSAP then moves them). -->
 <style>
@@ -33,7 +33,7 @@
 
 <body>
 
-<div id="pre"><i></i></div>
+<!-- Keep content visible while remote media and animation libraries load. -->
 
 <header>
   <a href="#" class="logo">
@@ -279,7 +279,7 @@
 
 
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20261017-1"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
@@ -444,9 +444,13 @@ $('#f').onsubmit=function(e){e.preventDefault();$('.go').textContent='✓'};
 
 function boot(){
 
-document.getElementById('pre').classList.add('done');
+var mobileScroll=matchMedia('(max-width:600px)');
+function scrollDistance(desktop,mobile){return mobileScroll.matches?mobile:desktop}
 
-if(!window.gsap||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+if(!window.gsap||!window.ScrollTrigger||matchMedia('(prefers-reduced-motion:reduce)').matches){
+  $$('[data-n][data-s]').forEach(function(e){e.textContent=e.dataset.n+e.dataset.s});
+  return;
+}
 
 gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});
 
@@ -523,7 +527,7 @@ gsap.set(lampBot,{opacity:0,y:40});
 gsap.set(lampP,{clipPath:HIDE_FROM_BOTTOM});
 gsap.set(lampRare,{clipPath:HIDE_FROM_TOP});
 
-var genieTimeline=gsap.timeline({scrollTrigger:{trigger:'#genie',start:'top top',end:'+=400%',pin:true,scrub:.7,anticipatePin:1}});
+var genieTimeline=gsap.timeline({scrollTrigger:{trigger:'#genie',start:'top top',end:function(){return '+='+scrollDistance(400,240)+'%'},pin:true,scrub:.7,anticipatePin:1}});
 
 genieTimeline.to('#gw',{y:-80,scale:1.07,duration:5,ease:'none'},0);
 
@@ -604,7 +608,7 @@ function tx(t){return innerWidth/2-(t.offsetLeft+t.offsetWidth/2)}
 
 gsap.set('.hud',{opacity:0,pointerEvents:'none'});
 
-var wt=gsap.timeline({scrollTrigger:{trigger:'#work',start:'top top',end:function(){return'+='+n*innerHeight*.9},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true,
+var wt=gsap.timeline({scrollTrigger:{trigger:'#work',start:'top top',end:function(){return'+='+n*innerHeight*scrollDistance(.9,.65)},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true,
 
 onUpdate:function(s){var t=wt.time(),idx=-1;arr.forEach(function(a,i){if(a-.45<=t)idx=i});
 
@@ -644,7 +648,7 @@ var ft;addEventListener('resize',function(){clearTimeout(ft);ft=setTimeout(funct
 
 var scenes=$$('.scene');gsap.set(scenes,{clipPath:'circle(0% at 50% 50%)'});
 
-var bt=gsap.timeline({scrollTrigger:{trigger:'#brands',start:'top top',end:function(){return'+='+bt.duration()*innerHeight*.5},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true}});
+var bt=gsap.timeline({scrollTrigger:{trigger:'#brands',start:'top top',end:function(){return'+='+bt.duration()*innerHeight*scrollDistance(.5,.35)},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true}});
 
 bt.to('#brands .intro',{opacity:0,scale:.9,duration:.8},0);
 
@@ -681,13 +685,19 @@ var idx=Math.min(steps.length-1,Math.round(f));if(idx!==last){last=idx;steps.for
 
 lay();ScrollTrigger.addEventListener('refresh',lay);
 
-gsap.timeline({scrollTrigger:{trigger:'#how',start:'top top',end:function(){return'+='+(steps.length*.8+1.2)*innerHeight},pin:true,scrub:.6,anticipatePin:1}})
+gsap.timeline({scrollTrigger:{trigger:'#how',start:'top top',end:function(){return'+='+(steps.length*scrollDistance(.8,.5)+scrollDistance(1.2,.8))*innerHeight},pin:true,scrub:.6,anticipatePin:1}})
 
 .to({},{duration:.4}).to(st,{p:1,duration:steps.length-1,ease:'none',onUpdate:lay}).to(st,{o:1,duration:1.2,ease:'power2.in',onUpdate:lay});
 
 ScrollTrigger.refresh()}
 
-if(document.readyState==='complete')boot();else addEventListener('load',boot);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+
+/* Refresh measurements after media/fonts settle, without blocking content. */
+function refreshLayout(){if(window.ScrollTrigger)ScrollTrigger.refresh()}
+addEventListener('load',refreshLayout,{once:true});
+addEventListener('pageshow',function(e){if(e.persisted)refreshLayout()});
+if(document.fonts)document.fonts.ready.then(refreshLayout);
 
 })();
 
@@ -846,7 +856,7 @@ gsap.from('.cp',{opacity:0,duration:1,scrollTrigger:{trigger:'.cp',start:'top 10
 
 ScrollTrigger.refresh()}
 
-if(document.readyState==='complete')start();else addEventListener('load',start);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 
 })();
 
