@@ -1486,7 +1486,7 @@ nav a:hover {
   padding: 20px 0;
   font: 14px var(--f-body);
   letter-spacing: .1em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: var(--primary);
   outline: 0;
   resize: none
