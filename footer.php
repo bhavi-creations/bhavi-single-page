@@ -364,12 +364,40 @@ genieTimeline
 .to(lampBot,{opacity:1,y:0,duration:.6},5.5);
 
 /* web wall camera */
+/* web wall: 3D tilted wall. Camera: zoom out -> fly (any direction) -> zoom in + flatten */
 
-var tiles=$$('.tile'),track=$('#wt'),n=tiles.length,arr=[],cur=-1;
+var tiles=$$('.tile'),track=$('#wt'),ww=$('#work'),hudEl=$('.hud'),n=tiles.length,arr=[],cur=-1;
 
-function tx(t){return innerWidth/2-(t.offsetLeft+t.offsetWidth/2)}
+/* tilt layer is created here, so the HTML stays exactly as it is */
+var tilt=document.createElement('div');tilt.className='wall-tilt';
+track.parentNode.insertBefore(tilt,track);tilt.appendChild(track);
 
-gsap.set('.hud',{opacity:0,pointerEvents:'none'});
+var cam={x:0,y:0,s:1,rx:30,rz:-12};
+var small=matchMedia('(max-width:700px)');
+
+function geo(){return {W:ww.clientWidth,H:ww.clientHeight,tw:track.offsetWidth,th:track.offsetHeight}}
+function ctr(t){return {x:t.offsetLeft+t.offsetWidth/2,y:t.offsetTop+t.offsetHeight/2}}
+function focusY(g,t){return small.matches?g.H*.30+t.offsetHeight/2:90+(g.H-hudEl.offsetHeight*.85-90)/2}
+
+/* focus camera (tile centered, scale 1) */
+function Fx(k){return geo().W/2-ctr(tiles[k]).x}
+function Fy(k){return focusY(geo(),tiles[k])-ctr(tiles[k]).y}
+/* overview camera (whole wall visible) */
+function So(){var g=geo();return Math.min(.94*g.W/g.tw,.72*g.H/g.th)}
+function Ox(){var g=geo();return g.W/2-So()*g.tw/2}
+function Oy(){var g=geo();return g.H*.46-So()*g.th/2}
+/* mid-flight camera (zoomed out, between two tiles) */
+function Sm(){return Math.min(.8,Math.max(So()*1.5,.4))}
+function Mx(a,b){var A=ctr(tiles[a]),B=ctr(tiles[b]);return geo().W/2-Sm()*(A.x+B.x)/2}
+function My(a,b){var A=ctr(tiles[a]),B=ctr(tiles[b]);return geo().H*.46-Sm()*(A.y+B.y)/2}
+
+function apply(){
+  gsap.set(track,{x:cam.x,y:cam.y,scale:cam.s,transformOrigin:'0 0'});
+  tilt.style.transform='rotateX('+cam.rx+'deg) rotateZ('+cam.rz+'deg)';
+  track.style.setProperty('--inv',(1/cam.s).toFixed(3));
+}
+
+gsap.set(hudEl,{opacity:0,pointerEvents:'none'});
 
 var wt=gsap.timeline({scrollTrigger:{trigger:'#work',start:'top top',end:function(){return'+='+n*innerHeight*scrollDistance(.9,.65)},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true,
 
@@ -381,17 +409,36 @@ if(idx!==cur){cur=idx;tiles.forEach(function(e,i){e.classList.toggle('on',i===id
 
 var vd=e.querySelector('video');if(vd){if(i===idx){var pr=vd.play();if(pr&&pr.catch)pr.catch(function(){})}else{vd.pause()}}});
 
-gsap.to('.hud',{opacity:idx>=0?1:0,pointerEvents:idx>=0?'auto':'none',duration:.4,overwrite:true});
+gsap.to(hudEl,{opacity:idx>=0?1:0,pointerEvents:idx>=0?'auto':'none',duration:.4,overwrite:true});
 
-if(idx>=0){$('#hn').textContent=pad(idx+1)+' / '+pad(n);$('#hname').textContent=tiles[idx].dataset.n;$('#htag').textContent=tiles[idx].dataset.t;$('#hvisit').href=tiles[idx].href;gsap.fromTo('#hname',{yPercent:25,opacity:0},{yPercent:0,opacity:1,duration:.5})}}
+if(idx>=0){
+  $('#hn').textContent=pad(idx+1)+' / '+pad(n);
+  $('#hname').textContent=tiles[idx].dataset.n;
+  var tg=$('#htag');if(tg)tg.textContent=tiles[idx].dataset.t;   /* guarded: #htag may not exist */
+  $('#hvisit').href=tiles[idx].href;
+  gsap.fromTo('#hname',{yPercent:25,opacity:0},{yPercent:0,opacity:1,duration:.5})}}
 
 gsap.set('.bar i',{scaleX:s.progress})}}});
 
-wt.to('#work .intro',{opacity:0,scale:1.12,duration:1,ease:'power1.in'},0).fromTo('#work .shade',{opacity:1},{opacity:.7,duration:1},0).to({},{duration:.8},1);
+/* 1) title fades while the camera dives from the tilted overview into tile 1 and flattens */
+wt.to('#work .intro',{opacity:0,scale:1.12,duration:1,ease:'power1.in'},0)
+  .fromTo('#work .shade',{opacity:1},{opacity:.7,duration:1},0)
+  .fromTo(cam,
+    {x:Ox,y:Oy,s:So,rx:30,rz:-12},
+    {x:function(){return Fx(0)},y:function(){return Fy(0)},s:1,rx:0,rz:0,duration:1.3,ease:'power2.inOut',onUpdate:apply},0)
+  .to({},{duration:.8},1.3);
+arr[0]=1.3;
 
-gsap.set(track,{x:function(){return tx(tiles[0])}});arr[0]=1;
+/* 2) tile -> tile: zoom out + re-tilt, sweep in any direction, zoom in + flatten */
+tiles.forEach(function(t,i){
+  if(!i)return;
+  wt.to(cam,{x:function(){return Mx(i-1,i)},y:function(){return My(i-1,i)},s:Sm,rx:18,rz:-6,duration:.6,ease:'power2.in',onUpdate:apply})
+    .to(cam,{x:function(){return Fx(i)},y:function(){return Fy(i)},s:1,rx:0,rz:0,duration:.6,ease:'power2.out',onUpdate:apply});
+  arr[i]=wt.duration();
+  wt.to({},{duration:.8});
+});
 
-tiles.forEach(function(t,i){if(!i)return;wt.to(track,{x:function(){return tx(t)},duration:1.2,ease:'power2.inOut'});arr[i]=wt.duration();wt.to({},{duration:.8})});
+apply();ScrollTrigger.addEventListener('refresh',apply);
 
 /* fit every brand title on ONE line inside its column */
 function fitTitles(){

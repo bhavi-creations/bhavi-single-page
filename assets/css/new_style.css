@@ -2830,7 +2830,7 @@ section.nw{
   padding-bottom:36vh;          /* lifts the heading up = less white before it appears */
   overflow:hidden;
   display:flex;
-  align-items:center;
+  align-items:end;
   justify-content:center;
   background:#fff;
 }
@@ -3392,3 +3392,38 @@ nav a {
   }
 
 }
+
+
+
+
+
+/* ===== Web Work: 3D tilted wall (Netflix-style) ===== */
+.ww{perspective:1500px;perspective-origin:50% 50%}
+.ww .wall-tilt{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
+
+/* 4 x 2 wall; camera (GSAP) moves/scales this layer */
+.ww .track{
+  top:0;left:0;margin:0;padding:0;background:none;
+  display:grid;grid-template-columns:repeat(4,max-content);
+  gap:6vw;width:max-content;
+  transform-origin:0 0;
+  margin-top: 21px;
+}
+.ww .tile{width:70vw;flex:none;right:auto;opacity:.55;cursor:pointer}
+.ww .tile.on{opacity:1}
+
+@media(max-width:700px){
+  .ww .track{grid-template-columns:repeat(2,max-content);gap:8vw}
+  .ww .tile{width:82vw}
+}
+
+/* hover pill on every tile (stays the same size at any zoom via --inv from JS) */
+.ww .tile::after{
+  content:"Visit Site";position:absolute;left:50%;top:50%;z-index:3;
+  padding:.8em 1.6em;border-radius:100px;white-space:nowrap;
+  background:rgba(255,255,255,.9);color:#111;
+  font:500 calc(16px * var(--inv,1))/1 var(--f-head);
+  transform:translate(-50%,-50%) scale(.9);opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .3s;
+}
+.ww .tile:hover::after{opacity:1;transform:translate(-50%,-50%) scale(1)}
