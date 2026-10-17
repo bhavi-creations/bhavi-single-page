@@ -1,3 +1,7 @@
+<?php
+// Revalidate HTML so returning visitors receive current inline animation fixes.
+header('Cache-Control: no-cache, must-revalidate');
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -22,12 +26,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Common Stylesheet -->
-<link rel="stylesheet" href="assets/css/new_style.css?v=20261017-1">
+<link rel="stylesheet" href="assets/css/new_style.css?v=<?= filemtime(__DIR__ . '/assets/css/new_style.css') ?>">
 
 <!-- FIX: grid column was growing to the width of all cards, so there was nothing left to scroll. min-width:0 lets the column keep its size and the cards overflow (GSAP then moves them). -->
 <style>
 .scene .in > .brand-gallery{min-width:0;overflow:visible}
 </style>
+
+
+<!-- The first frame must remain readable even after a mobile cache restore. -->
+<style>
+@media(max-width:700px){
+  html.hero-at-top .hero > .wrap,
+  html.hero-at-top .hero .h{opacity:1!important;visibility:visible!important}
+  html.hero-at-top .hero > .wrap{transform:none!important}
+}
+</style>
+<script>
+(function(){
+  var root=document.documentElement;
+  function syncHeroStart(){root.classList.toggle('hero-at-top',window.scrollY<=1)}
+  syncHeroStart();
+  addEventListener('scroll',syncHeroStart,{passive:true});
+  addEventListener('pageshow',syncHeroStart);
+})();
+</script>
 
 </head>
 

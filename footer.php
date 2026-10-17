@@ -212,7 +212,14 @@ gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true
 
 /* hero */
 
-gsap.from('.h',{y:50,opacity:0,duration:1,stagger:.12,ease:'power3.out',delay:.6});
+/* Mobile content is visible immediately; keep the existing scroll morph. */
+var heroEntrance=gsap.from('.h',{y:50,opacity:matchMedia('(max-width:700px)').matches?1:0,duration:1,stagger:.12,ease:'power3.out',delay:.6});
+addEventListener('pageshow',function(e){
+  if(e.persisted){
+    heroEntrance.progress(1);
+    requestAnimationFrame(function(){ScrollTrigger.refresh();ScrollTrigger.update()});
+  }
+});
 
 $$('[data-n][data-s]').forEach(function(e){var o={v:0},n=+e.dataset.n;gsap.to(o,{v:n,duration:2,delay:1,ease:'power2.out',onUpdate:function(){e.textContent=(n%1?o.v.toFixed(1):Math.round(o.v))+e.dataset.s}})});
 
@@ -238,9 +245,9 @@ var morph=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'+=1
 
  onUpdate:function(self){$('.hero').classList.toggle('morph-active',self.progress>.78)}}});
 
-morph.to('.hero .wrap,.hero .deco',{autoAlpha:0,y:-65,duration:.36,ease:'power1.inOut'},0)
+morph.fromTo('.hero .wrap,.hero .deco',{autoAlpha:1,y:0},{autoAlpha:0,y:-65,duration:.36,ease:'power1.inOut'},0)
 
- .to('.hero-morph',{autoAlpha:1,duration:.5,ease:'none'},.10)
+ .fromTo('.hero-morph',{autoAlpha:0},{autoAlpha:1,duration:.5,ease:'none'},.10)
 
  .fromTo('.hero-morph',{'--mz':1.14,'--mb':26},{'--mz':1,'--mb':14,duration:.9,ease:'power2.out'},.10)
 

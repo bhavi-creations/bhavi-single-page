@@ -3354,7 +3354,13 @@ nav a {
 
 
 /* Mobile only - Equal size branding image cards */
-@media (max-width: 480px) {
+@media (max-width: 700px) {
+
+  #brands .scene .brand-gallery .tr {
+    --card-size: min(320px, calc(100vw - 50px), 40svh);
+    height: var(--card-size);
+    align-items: stretch;
+  }
 
   #brands .scene .brand-gallery {
     width: 100%;
@@ -3362,10 +3368,10 @@ nav a {
   }
 
   #brands .scene .brand-gallery .tr > div {
-    width: 320px !important;
-    min-width: 320px !important;
-    height: 320px !important;
-    flex: 0 0 320px !important;
+    width: var(--card-size) !important;
+    min-width: var(--card-size) !important;
+    height: var(--card-size) !important;
+    flex: 0 0 var(--card-size) !important;
     box-sizing: border-box;
     display: flex !important;
     align-items: center;
