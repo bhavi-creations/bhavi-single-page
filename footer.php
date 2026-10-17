@@ -1,0 +1,840 @@
+<footer>
+
+<div class="fg">
+
+<div><h4>Services</h4><ul><li><a href="#">Creator Marketing</a></li><li><a href="#">SEO</a></li><li><a href="#">Web Development</a></li><li><a href="#">Branding</a></li></ul></div>
+
+<div><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Our Team</a></li><li><a href="#cta">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+
+<div><h4>Resources</h4><ul><li><a href="#">Blog</a></li><li><a href="#brands">Case Studies</a></li></ul></div>
+
+<div><h4>Follow us</h4><div class="px-soc"><a href="https://www.facebook.com/profile.php?id=61580927244285" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/prception.in/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.linkedin.com/company/prception-in/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="px-awards"><img src="https://prception.in/assets/imgs/awards/Top%20Branding%20Agencies.png" alt="DesignRush Top Branding Agencies" loading="lazy"><a href="https://businessfirms.co/company/prception-medialab" target="_blank" rel="noopener"><img src="https://businessfirms.co/images/bfirms-certified.png" alt="BusinessFirms Certified" loading="lazy"></a></div></div>
+
+</div>
+
+<div class="wm">connect</div>
+
+<div class="cp">2025 <a href="https://tealcoreventures.in/">Tealcore Ventures.</a> All rights reserved</div>
+
+</footer>
+
+<!-- Floating Widgets: WhatsApp Chat with us & Back to Top Arrow -->
+<div class="floating-widgets">
+  <a href="https://wa.me/917012998181?text=Hi%2C%20I%27m%20interested%20in%20your%20services" class="wa-widget" target="_blank" aria-label="Chat on WhatsApp">
+    <span class="wa-badge">Chat with us</span>
+    <span class="wa-circle"><i class="fa-brands fa-whatsapp"></i></span>
+  </a>
+  <a href="#" class="back-to-top" id="btnBackToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+</div>
+
+
+
+<script src="assets/js/main.js?v=20261017-1"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+
+(function(){
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+var pendingHash=location.hash;
+if(pendingHash)history.replaceState(null,'',location.pathname+location.search);
+window.scrollTo(0,0);
+
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))},pad=function(n){return String(n).padStart(2,'0')};
+
+/* Back to Top Button Toggle Script */
+var btnTop = $('#btnBackToTop');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 300) {
+    btnTop.classList.add('show');
+  } else {
+    btnTop.classList.remove('show');
+  }
+});
+
+btnTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ---- data (edit here) ---- */
+
+/* SITES: [name, tagline, fallback colour, video file, live site url] */
+var SITES=[['Leggo','Handcrafted Footwear','#1f3a5f','assets/video/leggo.mp4','https://leggoworld.com/'],
+['BlackBox','AI Academy','#2a2a2a','assets/video/blackbox.mp4','https://blackboxlearning.in/'],
+['Past n Present','Custom 3D Keepsakes','#7a4b2a','assets/video/pastandpresent.mp4','https://pastandpresent.in/'],
+['Peaceboard','Global Peace Platform','#12685f','assets/video/peaceboard.mp4','https://peaceboard.uk/'],
+['Arena Animation','Animation Academy','#6b1f2a','assets/video/arena.mp4','https://arenatrivandrum.com/'],
+['Brightwyn','','#2c3e8f','assets/video/Brightwyn.mp4','https://brightwyn.in/'],
+['Tealcore','Software Development','#018f87','assets/video/Tealcore.mp4','https://tealcoreventures.in/'],
+['Staton','Industrial Automation','#444','assets/video/staton.mp4','https://staton.in/']];
+
+/* new brands: images load from assets/img/<name>.webp; a missing file is simply skipped */
+function bi(alt,files){return files.map(function(f,i){return'<div><img src="assets/img/'+f+'.webp" alt="'+alt+(i?' board '+i:'')+'" onerror="this.parentNode.remove()"></div>'}).join('')}
+
+var BRANDS=[
+['Lynklead','CRM · Brand Identity','Two L’s linked into one mark, and a robot mascot, for a CRM built to connect, manage and convert.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],
+ '<div><img src="assets/img/lynklead.webp" alt="Lynklead mascot"></div>'+
+ '<div><img src="assets/img/lynklead-mascot.webp" alt="Lynklead name"></div>'+
+ '<div><img src="assets/img/lynklead-name.webp" alt="Lynklead board 1"></div>'],
+['BlackBox','Learning · Identity & Mascot','A confident identity system and a red-panda mascot for a future-ready learning brand.','#FF6A3D','#fff',['#3D3D3D','#FF6A3D','#FAF9F7'],
+ '<div><img src="assets/img/blackbox-identity.webp" alt="BlackBox identity"></div>'+
+ '<div><img src="assets/img/blackbox-1.webp" alt="BlackBox mascot"></div>'+
+ '<div><img src="assets/img/blackbox-2.webp" alt="BlackBox board 1"></div>'+
+ '<div><img src="assets/img/blackbox-3.webp" alt="BlackBox board 2"></div>'+
+ '<div><img src="assets/img/blackbox-4.webp" alt="BlackBox board 3"></div>'],
+['CocoGo','Beverage · Character Brand','Goodness on the go: a fresh coconut brand with a character to match.','#0E713A','#fff',['#FEF303','#0E713A','#FFF9DA','#C36A41'],
+ '<div><img src="assets/img/cocogo.webp" alt="CocoGo brand"></div>'+
+ '<div><img src="assets/img/cocogo-2.webp" alt="CocoGo board 1"></div>'+
+ '<div><img src="assets/img/cocogo-3.webp" alt="CocoGo board 2"></div>'+
+ '<div><img src="assets/img/cocogo-4.webp" alt="CocoGo board 3"></div>'],
+['Digital Mugavari','Local Discovery · Identity','A D, a location pin and a road: a digital address for every store, everywhere.','#EF2D2D','#fff',['#EF2D2D','#404145','#FFFFFF'],
+ '<div><img src="assets/img/digital-mugavari.webp" alt="Digital Mugavari brand"></div>'+
+ '<div><img src="assets/img/digital-mugavari-1.webp" alt="Digital Mugavari board 1"></div>'+
+ '<div><img src="assets/img/digital-mugavari-2.webp" alt="Digital Mugavari board 2"></div>'+
+ '<div><img src="assets/img/digital-mugavari-3.webp" alt="Digital Mugavari board 3"></div>'+
+ '<div><img src="assets/img/digital-mugavari-4.webp" alt="Digital Mugavari board 4"></div>'],
+['Tech Grandha','EdTech · Identity & Mascot','A T, a G and a magnifying-glass robot: a friendly identity for learning, building and growing.','#02A7D9','#fff',['#02A7D9','#F7941D','#FFFFFF'],
+ '<div><img src="assets/img/tech-grandha.webp" alt="Tech Grandha brand"></div>'+
+ '<div><img src="assets/img/tech-grandha-1.webp" alt="Tech Grandha board 1"></div>'+
+ '<div><img src="assets/img/tech-grandha-2.webp" alt="Tech Grandha board 2"></div>'+
+ '<div><img src="assets/img/tech-grandha-3.webp" alt="Tech Grandha board 3"></div>'+
+ '<div><img src="assets/img/tech-grandha-4.webp" alt="Tech Grandha board 4"></div>'],
+['Photonvolt','Solar Energy','Solar energy solutions with a sustainable brand design.','#FED700','#0a0a0a',['#D8B700','#FED700'],
+ '<div><img src="assets/img/photonvolt.webp" alt="Photonvolt brand"></div>'+
+ '<div><img src="assets/img/photonvolt-1.webp" alt="Photonvolt board 1"></div>'+
+ '<div><img src="assets/img/photonvolt-2.webp" alt="Photonvolt board 2"></div>'],
+['Carb N Care','Car Air Purifier','Clean air, thoughtfully designed. Protection that blends into your lifestyle.','#68221B','#fff',['#D2AE6A'],
+ '<div><img src="assets/img/carb-n-care.webp" alt="carb-n-care brand"></div>'+
+ '<div><img src="assets/img/carb-n-care-1.webp" alt="carb-n-care board 1"></div>'+
+ '<div><img src="assets/img/carb-n-care-2.webp" alt="carb-n-care board 2"></div>'+
+ '<div><img src="assets/img/carb-n-care-3.webp" alt="carb-n-care board 3"></div>'],
+['Saki','Women’s Clothing','Crafted for women who wear confidence effortlessly.','#06332E','#fff',['#06332E','#F4D7B5'],
+ '<div><img src="assets/img/saki.webp" alt="Tech Grandha brand"></div>'+
+ '<div><img src="assets/img/saki-1.webp" alt="Tech Grandha board 1"></div>'+
+ '<div><img src="assets/img/saki-2.webp" alt="Tech Grandha board 2"></div>'+
+ '<div><img src="assets/img/saki-3.webp" alt="Tech Grandha board 3"></div>'+
+ '<div><img src="assets/img/saki-4.webp" alt="Tech Grandha board 4"></div>'],
+['ZICA','Animation Academy · Mascot','Inspiring future animators to lead and create.','#EB6820','#fff',['#EB6820','#727272'],
+ '<div><img src="assets/img/zica.webp" alt="Tech Grandha brand"></div>'],
+['Eco Cleanser','Pet Care · Packaging & Retail','A pet-care range redesigned on the shelf and at the stall: fresh green, friendly and clean.','#1F8A3B','#fff',['#1F8A3B','#FFFFFF'],
+ '<div><img src="assets/img/eco-cleanser-1.webp" alt="Tech Grandha board 1"></div>'+
+ '<div><img src="assets/img/eco-cleanser-2.webp" alt="Tech Grandha board 2"></div>'],
+];
+
+var STEPS=[['Discovery','A conversation, not a pitch. We hear how you see your brand, and you leave with a first read of how the market sees it.'],['Perception audit','We map how customers, competitors and search really see you, and measure the gap.'],['Strategy','We define the new reality: the positioning, the story and the identity that will carry it.'],['Build','Designers, developers and marketers bring it to life: identity, website, content, campaigns.'],['Launch','The new perception goes live everywhere your brand is seen, at the same moment.'],['Repeat','We track how perception moves and keep sharpening it. From here, it compounds.']];
+
+var CLIENTS=['Amrut Veni','Arena Animation','BlackBox Learning','Brightwyn','Digital Mugavari','Eco Cleanser','Faceco','Leggo','Moster','NeuralNest','Parle','World Peace Board','Photonvolt','Saki','Staton','Tech Grandha','Zica'];
+
+var WISHES=['a logo that pops','10x my sales','go viral','#1 on Google','a brand people trust','a website by tonight','1M followers','the perfect story','instant trust','zero ad spend','a sold-out launch','a cult following','global reach','loyal customers'];
+
+/* ---- build DOM ---- */
+
+/* Web Work tiles: each tile is a live-site link with its preview video */
+window.buildWorkTiles(SITES);
+
+BRANDS.forEach(function(b){var s=document.createElement('article');s.className='scene';s.style.cssText='--b:'+b[3]+';--i:'+b[4];
+
+var imgs=b[6];
+
+s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p><div class="pal">'+b[5].map(function(c){return'<span><i style="background:'+c+'"></i>'+c+'</span>'}).join('')+'</div></div><div class="brand-gallery" aria-label="'+b[0]+' brand images"><div class="tr">'+imgs+'</div></div></div>';
+
+$('#bs').appendChild(s)});
+
+$$('.scene .num').forEach(function(e,i){e.textContent=pad(i+1)+' / '+pad(BRANDS.length)});$('#bc').textContent=pad(BRANDS.length);
+/* split scene titles into letters (single line, animated per letter) */
+$$('.scene h3').forEach(function(h){
+  var t=h.textContent;h.setAttribute('aria-label',t);h.textContent='';
+  t.split('').forEach(function(c){
+    var s=document.createElement('span');
+    s.className='tc'+(c===' '?' ts':'');
+    s.setAttribute('aria-hidden','true');
+    s.textContent=c===' '?'\u00A0':c;
+    h.appendChild(s);
+  });
+});
+
+STEPS.forEach(function(s,i){var l=document.createElement('li');l.className='st';l.innerHTML='<b>'+pad(i+1)+'</b><h3>'+s[0]+'</h3><p>'+s[1]+'</p>';$('#sp').appendChild(l)});
+
+$('#mt').innerHTML=CLIENTS.concat(CLIENTS).map(function(c){return'<span>'+c+'</span>'}).join('');
+
+/* Spread wishes across separate lanes: no randomized text collisions. */
+var geniePhrases=[
+ 'Make my brand go viral','10x our sales by Friday','Rank #1 on Google',
+ 'A tagline that slaps','A website that converts','Go viral on Reels',
+ 'Make it look premium','An ad everyone shares','Rebrand us overnight',
+ 'Grow followers fast','Make it modern','A logo that pops',
+ 'Make it feel luxury','Make people love us','Write 30 posts for this month',
+ 'More people should know us','A brand people trust','Make our launch famous',
+ 'A story people remember','Make the campaign stand out',
+ 'Reach the whole world','Turn visitors into customers',
+ 'Something nobody has seen','The next big idea'
+];
+/* Percentage layout, alternating directions and layers; left/top can extend beyond frame. */
+var genieCoords=[
+ [-2,1],[25,4],[51,1],[75,5],
+ [4,15],[33,19],[61,16],[84,20],
+ [1,30],[30,32],[72,32],[87,37],
+ [-4,49],[19,52],[76,51],[89,57],
+ [3,68],[27,72],[59,70],[81,74],
+ [0,86],[32,89],[62,86],[83,91]
+];
+var wishField=$('#gw');
+geniePhrases.forEach(function(phrase,i){
+ var w=document.createElement('span'),loc=genieCoords[i];
+ w.className='gwish '+(i%5===0?'far':i%3===0?'near':'')+(i%7===0?' mobile-hidden':'');
+ w.textContent=phrase;w.style.left=loc[0]+'%';w.style.top=loc[1]+'%';
+ w.style.opacity=i%5===0?'.20':i%3===0?'.75':'.55';
+ w.dataset.depth=i%5===0?'far':i%3===0?'near':'mid';
+ wishField.appendChild(w);
+});
+
+$('#f').onsubmit=function(e){e.preventDefault();$('.go').textContent='✓'};
+
+/* ---- animations ---- */
+
+function boot(){
+
+var mobileScroll=matchMedia('(max-width:600px)');
+function scrollDistance(desktop,mobile){return mobileScroll.matches?mobile:desktop}
+
+if(!window.gsap||!window.ScrollTrigger||matchMedia('(prefers-reduced-motion:reduce)').matches){
+  $$('[data-n][data-s]').forEach(function(e){e.textContent=e.dataset.n+e.dataset.s});
+  return;
+}
+
+gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});
+
+/* hero */
+
+gsap.from('.h',{y:50,opacity:0,duration:1,stagger:.12,ease:'power3.out',delay:.6});
+
+$$('[data-n][data-s]').forEach(function(e){var o={v:0},n=+e.dataset.n;gsap.to(o,{v:n,duration:2,delay:1,ease:'power2.out',onUpdate:function(){e.textContent=(n%1?o.v.toFixed(1):Math.round(o.v))+e.dataset.s}})});
+
+/* large PRCEPTION text -> compressed centered brand moment on scroll */
+
+/* PRCEPTION -> centered brand moment: text + caption + button centered together in the viewport */
+
+var giant=$('.hero .giant'),cap=$('.morph-caption'),cta=$('.morph-cta');
+
+function L(){
+ var px=Number(gsap.getProperty(giant,'x'))||0,py=Number(gsap.getProperty(giant,'y'))||0,ps=Number(gsap.getProperty(giant,'scale'))||1;
+ var r=giant.getBoundingClientRect(),w0=r.width/ps,h0=r.height/ps;
+ var cx0=r.left+r.width/2-px,cy0=r.top+r.height/2-py;
+ var W=innerWidth,H=innerHeight;
+ var target=W>1000?Math.min(W*.36,720):W*.7;
+ var s=Math.min(1,target/w0),th=h0*s;
+ var capH=cap.offsetHeight,btnH=cta.offsetHeight,g1=H*.06,g2=H*.09;
+ var top=(H-(th+g1+capH+g2+btnH))/2+H*.03;
+ return {x:W/2-cx0,y:top+th/2-cy0,scale:s,capTop:top+th+g1,ctaTop:top+th+g1+capH+g2};
+}
+
+var morph=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'+=125%',pin:true,scrub:0.65,anticipatePin:1,invalidateOnRefresh:true,
+
+ onUpdate:function(self){$('.hero').classList.toggle('morph-active',self.progress>.78)}}});
+
+morph.to('.hero .wrap,.hero .deco',{autoAlpha:0,y:-65,duration:.36,ease:'power1.inOut'},0)
+
+ .to('.hero-morph',{autoAlpha:1,duration:.5,ease:'none'},.10)
+
+ .fromTo('.hero-morph',{'--mz':1.14,'--mb':26},{'--mz':1,'--mb':14,duration:.9,ease:'power2.out'},.10)
+
+ .to(giant,{x:function(){return L().x},y:function(){return L().y},scale:function(){return L().scale},duration:.85,ease:'power2.inOut'},.08)
+
+ .fromTo(cap,{top:function(){return L().capTop+28}},{top:function(){return L().capTop},autoAlpha:1,duration:.28,ease:'power2.out',immediateRender:false},.64)
+
+ .fromTo(cta,{top:function(){return L().ctaTop+28}},{top:function(){return L().ctaTop},autoAlpha:1,duration:.24,ease:'power2.out',immediateRender:false},.75)
+
+ .to({},{duration:.24});
+
+/* reveals */
+
+$$('.rv').forEach(function(e){gsap.from(e,{y:60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:e,start:'top 88%'}})});
+
+gsap.from('.stmt p',{opacity:0,y:40,duration:1,scrollTrigger:{trigger:'.stmt',start:'top 70%'}});
+
+/* genie */
+
+/* genie */
+
+var lampTop=$('.lamp .top'),lampTopTxt=$$('.lamp .top span'),lampP=$('.lamp .mid p'),lampRare=$('.lamp .rare'),lampBot=$('.lamp .bot');
+
+var OPEN='inset(0px 0px 0px 0px round 0px)';
+var HIDE_FROM_BOTTOM='inset(-20% -10% 100% -10%)';   /* reveals top -> down */
+var HIDE_FROM_TOP='inset(100% -10% -20% -10%)';      /* reveals bottom -> up */
+var SHOW='inset(-20% -10% -20% -10%)';
+
+/* the lamp starts exactly as the pill button's rectangle, then grows to full screen */
+function pillInset(){
+ var G=$('#genie'),B=$('.gone');
+ //  var w=B.offsetWidth,h=B.offsetHeight,l=B.offsetLeft-w/2,t=B.offsetTop;
+ var w=B.offsetWidth,h=B.offsetHeight,l=B.offsetLeft,t=B.offsetTop;
+ return'inset('+t+'px '+(G.offsetWidth-l-w)+'px '+(G.offsetHeight-t-h)+'px '+l+'px round '+(h/2)+'px)';
+}
+
+// gsap.set('.gone',{xPercent:-50});
+gsap.set(lampTop,{opacity:0});gsap.set(lampTopTxt,{opacity:0});
+gsap.set(lampBot,{opacity:0,y:40});
+gsap.set(lampP,{clipPath:HIDE_FROM_BOTTOM});
+gsap.set(lampRare,{clipPath:HIDE_FROM_TOP});
+
+var genieTimeline=gsap.timeline({scrollTrigger:{trigger:'#genie',start:'top top',end:function(){return '+='+scrollDistance(400,240)+'%'},pin:true,scrub:.7,anticipatePin:1}});
+
+genieTimeline.to('#gw',{y:-80,scale:1.07,duration:5,ease:'none'},0);
+
+$$('#gw .gwish').forEach(function(w,i){
+
+ var direction=i%4;
+
+ var dx=direction===0?210:direction===1?-260:direction===2?140:-175;
+
+ var dy=direction===0?-155:direction===1?115:direction===2?155:-105;
+
+ var depth=w.dataset.depth;
+
+ var multiplier=depth==='far'?.55:depth==='near'?1.27:1;
+
+ gsap.set(w,{x:-dx*.22,y:-dy*.22,filter:depth==='far'?'blur(3.2px)':depth==='near'?'blur(0px)':'blur(1.1px)'});
+
+ genieTimeline.to(w,{
+
+   x:dx*multiplier,y:dy*multiplier,
+
+   opacity:depth==='far'?.14:depth==='near'?.58:.39,
+
+   filter:depth==='far'?'blur(5px)':depth==='near'?'blur(.3px)':'blur(2px)',
+
+   duration:5,ease:'none'
+
+ },0);
+
+});
+
+genieTimeline
+
+.to('.gq',{y:-120,opacity:0,scale:.94,duration:1,ease:'power2.in'},1)
+
+/* "The wish gets easy": blur -> sharp, then back to blur */
+.fromTo('.geasy',{opacity:0,filter:'blur(24px)'},{opacity:1,filter:'blur(0px)',duration:.9,ease:'power2.out'},1.5)
+
+/* pill button pops in */
+.fromTo('.gone',{opacity:0,y:24,scale:.85},{opacity:1,y:0,scale:1,duration:.5,ease:'power2.out'},2.6)
+
+.to('.geasy',{opacity:0,filter:'blur(24px)',duration:.5,ease:'power2.in'},3)
+
+/* pill -> rounded rectangle -> full screen teal */
+.fromTo('.lamp',{autoAlpha:0},{autoAlpha:1,duration:.01},3.4);
+
+var lampTween=gsap.fromTo('.lamp',{clipPath:function(){return pillInset()}},{clipPath:OPEN,duration:1.2,ease:'power2.inOut'});
+genieTimeline.add(lampTween,3.4);
+ScrollTrigger.addEventListener('refreshInit',function(){lampTween.invalidate()});
+
+genieTimeline
+
+.to('.gone',{opacity:0,duration:.3},3.5)
+
+/* thin top line appears while still teal */
+.to(lampTop,{opacity:1,duration:.4},4.3)
+
+/* teal fades to dark */
+.to('.lamp .tint',{opacity:0,duration:.7},4.6)
+
+/* labels + headline reveal with masks */
+.to(lampTopTxt,{opacity:1,duration:.5,stagger:.1},4.9)
+
+.to(lampP,{clipPath:SHOW,duration:.6,ease:'power2.out'},4.9)
+
+.to(lampRare,{clipPath:SHOW,duration:.8,ease:'power2.out'},5.0)
+
+/* image inside RARE scrolls (pans) while it reveals */
+.fromTo(lampRare,{backgroundPosition:'50% 0%'},{backgroundPosition:'50% 100%',duration:1.4,ease:'none'},5.0)
+
+.to(lampBot,{opacity:1,y:0,duration:.6},5.5);
+
+/* web wall camera */
+
+var tiles=$$('.tile'),track=$('#wt'),n=tiles.length,arr=[],cur=-1;
+
+function tx(t){return innerWidth/2-(t.offsetLeft+t.offsetWidth/2)}
+
+gsap.set('.hud',{opacity:0,pointerEvents:'none'});
+
+var wt=gsap.timeline({scrollTrigger:{trigger:'#work',start:'top top',end:function(){return'+='+n*innerHeight*scrollDistance(.9,.65)},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true,
+
+onUpdate:function(s){var t=wt.time(),idx=-1;arr.forEach(function(a,i){if(a-.45<=t)idx=i});
+
+if(idx!==cur){cur=idx;tiles.forEach(function(e,i){e.classList.toggle('on',i===idx);
+
+/* play only the active tile's video */
+
+var vd=e.querySelector('video');if(vd){if(i===idx){var pr=vd.play();if(pr&&pr.catch)pr.catch(function(){})}else{vd.pause()}}});
+
+gsap.to('.hud',{opacity:idx>=0?1:0,pointerEvents:idx>=0?'auto':'none',duration:.4,overwrite:true});
+
+if(idx>=0){$('#hn').textContent=pad(idx+1)+' / '+pad(n);$('#hname').textContent=tiles[idx].dataset.n;$('#htag').textContent=tiles[idx].dataset.t;$('#hvisit').href=tiles[idx].href;gsap.fromTo('#hname',{yPercent:25,opacity:0},{yPercent:0,opacity:1,duration:.5})}}
+
+gsap.set('.bar i',{scaleX:s.progress})}}});
+
+wt.to('#work .intro',{opacity:0,scale:1.12,duration:1,ease:'power1.in'},0).fromTo('#work .shade',{opacity:1},{opacity:.7,duration:1},0).to({},{duration:.8},1);
+
+gsap.set(track,{x:function(){return tx(tiles[0])}});arr[0]=1;
+
+tiles.forEach(function(t,i){if(!i)return;wt.to(track,{x:function(){return tx(t)},duration:1.2,ease:'power2.inOut'});arr[i]=wt.duration();wt.to({},{duration:.8})});
+
+/* fit every brand title on ONE line inside its column */
+function fitTitles(){
+  $$('.scene h3').forEach(function(h){
+    h.style.fontSize='';
+    var avail=h.parentNode.clientWidth;
+    if(!avail)return;
+    var w=h.scrollWidth;
+    if(w>avail)h.style.fontSize=(parseFloat(getComputedStyle(h).fontSize)*avail/w*.97)+'px';
+  });
+}
+fitTitles();
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){fitTitles();ScrollTrigger.refresh()});
+var ft;addEventListener('resize',function(){clearTimeout(ft);ft=setTimeout(function(){fitTitles();ScrollTrigger.refresh()},200)});
+
+/* brand portals */
+
+var scenes=$$('.scene');gsap.set(scenes,{clipPath:'circle(0% at 50% 50%)'});
+
+var bt=gsap.timeline({scrollTrigger:{trigger:'#brands',start:'top top',end:function(){return'+='+bt.duration()*innerHeight*scrollDistance(.5,.35)},pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true}});
+
+bt.to('#brands .intro',{opacity:0,scale:.9,duration:.8},0);
+
+scenes.forEach(function(s,i){
+  var tr=$('.tr',s),pan=1+tr.children.length*.5,chars=$$('.tc',s);
+  function dist(){
+    var left=$('.brand-gallery',s).getBoundingClientRect().left;
+    return Math.max(0,tr.scrollWidth-(innerWidth-left-30));
+  }
+  bt.to(s,{clipPath:'circle(150% at 50% 50%)',duration:1,ease:'power2.inOut'},i?'>':.3)
+   .addLabel('sc'+i,'<.4')
+   .fromTo($('.in',s),{y:60,opacity:0},{y:0,opacity:1,duration:.8},'sc'+i)
+   /* title letters: rise + fade in (placed inside the chain, pan position is explicit) */
+   .fromTo(chars,{yPercent:90,opacity:0},{yPercent:0,opacity:1,duration:.6,stagger:.035,ease:'power3.out'},'sc'+i+'+=.15')
+   .to(tr,{x:function(){return -dist()},duration:pan,ease:'none'},'sc'+i+'+=.8')
+   .fromTo($('.gt',s),{xPercent:0},{xPercent:-22,duration:pan+1,ease:'none'},'<-.6');
+});
+
+/* shift lens */
+
+var steps=$$('.st'),zone=$('.zone'),lens=$('.lens'),sh=$('.sh'),fill=$('.stp .fill'),st={p:0,o:0},last=-1;
+
+function lay(){var z=zone.getBoundingClientRect(),tr=$('.stp').getBoundingClientRect(),f=st.p*(steps.length-1),a=Math.floor(f),b=Math.min(steps.length-1,a+1),m=f-a;
+
+var xa=steps[a].getBoundingClientRect().left+5,xb=steps[b].getBoundingClientRect().left+5,xa2=xa+(xb-xa)*m,cx=xa2-z.left,cy=z.height/2,D=Math.min(z.height*.9,340),R=Math.hypot(z.width,z.height),r=D/2+st.o*(R-D/2);
+
+gsap.set(lens,{x:cx-D/2,y:cy-D/2,width:D,height:D,opacity:Math.max(0,1-st.o*3)});
+
+sh.style.clipPath='circle('+r+'px at '+cx+'px '+cy+'px)';
+
+gsap.set(fill,{scaleX:Math.max(0,Math.min(1,(xa2-tr.left)/tr.width))});
+
+var idx=Math.min(steps.length-1,Math.round(f));if(idx!==last){last=idx;steps.forEach(function(s,k){s.classList.toggle('on',k===idx);s.classList.toggle('dn',k<idx)});$('#sn').textContent=pad(idx+1)}}
+
+lay();ScrollTrigger.addEventListener('refresh',lay);
+
+gsap.timeline({scrollTrigger:{trigger:'#how',start:'top top',end:function(){return'+='+(steps.length*scrollDistance(.8,.5)+scrollDistance(1.2,.8))*innerHeight},pin:true,scrub:.6,anticipatePin:1}})
+
+.to({},{duration:.4}).to(st,{p:1,duration:steps.length-1,ease:'none',onUpdate:lay}).to(st,{o:1,duration:1.2,ease:'power2.in',onUpdate:lay});
+
+ScrollTrigger.refresh()}
+
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+
+/* Refresh measurements after media/fonts settle, without blocking content. */
+function refreshLayout(){if(window.ScrollTrigger)ScrollTrigger.refresh()}
+addEventListener('load',refreshLayout,{once:true});
+addEventListener('pageshow',function(e){if(e.persisted)refreshLayout()});
+if(document.fonts)document.fonts.ready.then(refreshLayout);
+
+})();
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+<!-- ===== ADDED: logo zoom, physics chips, clients logos, news, footer motion ===== -->
+<script>
+
+(function(){
+
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* clients: live site shows logo images instead of text */
+
+var LOGOS=['amrut-veni','arena-animation','blackbox-learning','brightwyn','digital-mugavari','eco-cleanser','faceco','leggo','moster','neuralnest','parle','world-peace-board','photonvolt-energy','saki','staton','tech-grandha','zica'];
+
+var mt=$('#mt');
+
+if(mt){var one=LOGOS.map(function(n){return'<span><img src="https://prception.in/assets/imgs/client-logos/'+n+'.webp" alt="'+n.replace(/-/g,' ')+'" loading="lazy"></span>'}).join('');mt.innerHTML=one+one}
+
+/* chips */
+
+var CHIPS=['Growth Systems','Brand Authority','Demand Engines','Conversion Focus','Digital Presence','Traffic Control','Creative Strategy','Revenue Design','Audience Signals','Performance Stack','Scale Ready','Content Velocity','Funnel Logic','Market Impact'];
+
+var TONE=[0,1,1,0,1,0,1,1,0,0,1,0,1,0],box=$('#pxr'),chips=[];
+
+if(box)CHIPS.forEach(function(c,i){var d=document.createElement('div');d.className='px-chip '+(TONE[i]?'t':'k');d.textContent=c;box.appendChild(d);chips.push(d)});
+
+/* gravity: chips fall into the box when it scrolls into view and pile on the floor; drag them with the mouse */
+
+function physics(){
+
+var M=window.Matter,Engine=M.Engine,Bodies=M.Bodies,Composite=M.Composite;
+
+var engine=Engine.create();engine.gravity.y=1.2;
+
+var walls=[];
+
+function mkWalls(){var w=box.clientWidth,h=box.clientHeight;if(walls.length)Composite.remove(engine.world,walls);
+
+ walls=[Bodies.rectangle(w/2,h+30,w+800,60,{isStatic:true}),Bodies.rectangle(-30,-h,60,h*4,{isStatic:true}),Bodies.rectangle(w+30,-h,60,h*4,{isStatic:true})];
+
+ Composite.add(engine.world,walls)}
+
+mkWalls();
+
+var items=[],spawned=false,running=false,last=0;
+
+function spawn(){spawned=true;var w=box.clientWidth;
+
+ chips.forEach(function(el,i){var cw=el.offsetWidth,ch=el.offsetHeight;
+
+  var b=Bodies.rectangle(cw/2+Math.random()*(w-cw),-ch*(1+i*1.3),cw,ch,{chamfer:{radius:ch/2},restitution:.25,friction:.5,frictionAir:.012,density:.002,angle:(Math.random()-.5)*1.4});
+
+  Composite.add(engine.world,b);items.push({el:el,b:b,cw:cw,ch:ch})})}
+
+function tick(t){if(!running)return;
+
+ var dt=Math.min(32,(t-last)||16.7);last=t;Engine.update(engine,dt);
+
+ items.forEach(function(o){var p=o.b.position;o.el.style.transform='translate('+(p.x-o.cw/2)+'px,'+(p.y-o.ch/2)+'px) rotate('+o.b.angle+'rad)';o.el.style.opacity=1});
+
+ requestAnimationFrame(tick)}
+
+new IntersectionObserver(function(es){es.forEach(function(e){
+
+ if(e.isIntersecting){if(!spawned)spawn();if(!running){running=true;last=performance.now();requestAnimationFrame(tick)}}else{running=false}})},{threshold:.2}).observe(box);
+
+/* mouse drag on desktop (wheel listeners removed so page scrolling is never blocked) */
+
+if(!matchMedia('(pointer:coarse)').matches){
+
+ var mouse=M.Mouse.create(box);
+
+ ['wheel','mousewheel','DOMMouseScroll'].forEach(function(n){mouse.element.removeEventListener(n,mouse.mousewheel)});
+
+ Composite.add(engine.world,M.MouseConstraint.create(engine,{mouse:mouse,constraint:{stiffness:.18,render:{visible:false}}}))}
+
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(mkWalls,200)})}
+
+/* split text into words (needed for the scroll-fill + headline reveal) */
+
+function split(el,cls){el.innerHTML=el.textContent.trim().split(/\s+/).map(function(w){return'<span class="'+cls+'">'+w+'</span>'}).join(' ')}
+
+$$('.px-t').forEach(function(e){split(e,'px-w')});
+
+$$('.px-h2').forEach(function(e){split(e,'px-hw')});
+
+function start(){
+
+if(box){if(window.Matter&&!reduce)physics();else box.classList.add('static')}
+
+if(!window.gsap||!window.ScrollTrigger||reduce)return;
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* 1. feel section: images rise in, words fill in as you scroll, images drift at different speeds, button appears */
+
+gsap.set('.px-w',{opacity:.25});
+
+gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.px-feel',start:'top top',end:'bottom bottom',scrub:.7}})
+
+ .fromTo('.px-l',{yPercent:16,opacity:0},{yPercent:0,opacity:1,duration:.5,ease:'power2.out'},0)
+
+ .fromTo('.px-s',{yPercent:45,opacity:0},{yPercent:0,opacity:1,duration:.5,ease:'power2.out'},.08)
+
+ .to('.px-w',{opacity:1,stagger:.06,duration:.12},.3)
+
+ .to('.px-l',{yPercent:-6,duration:1.7},.5)
+
+ .to('.px-s',{yPercent:-18,duration:1.7},.5)
+
+ .fromTo('.px-btn',{opacity:0,y:30},{opacity:1,y:0,duration:.3},1.5);
+
+/* 2. logo zoom: the logo scales up until it fills the screen, then fades to the white section */
+
+gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.px-zoom',start:'top top',end:'bottom bottom',scrub:.6}})
+
+ .fromTo('.px-zlogo',{scale:1},{scale:40,duration:1,ease:'power2.in'},0)
+
+ .to('.px-zfade',{opacity:1,duration:.14},.86);
+
+/* 3. help section */
+
+var hs={trigger:'.px-help',start:'top 72%'};
+
+gsap.from('.px-hw',{opacity:0,y:44,duration:.9,stagger:.05,ease:'power3.out',scrollTrigger:hs});
+
+gsap.from('.px-p',{opacity:0,y:30,duration:.9,delay:.3,ease:'power3.out',scrollTrigger:hs});
+
+/* 4. clients */
+
+gsap.from('.cl small',{opacity:0,y:24,duration:.8,ease:'power3.out',scrollTrigger:{trigger:'.cl',start:'top 85%'}});
+
+gsap.from('.mq',{opacity:0,y:50,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.cl',start:'top 80%'}});
+
+/* 5. contact form + details */
+
+gsap.from('.cta input,.cta textarea,.cta .go',{opacity:0,y:30,duration:.7,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'#f',start:'top 85%'}});
+
+gsap.from('.cta .loc > div',{opacity:0,y:30,duration:.8,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.cta .loc',start:'top 95%'}});
+
+/* 6. news widget + footer */
+
+gsap.from('.px-frame',{opacity:0,y:50,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.px-news',start:'top 90%'}});
+
+gsap.from('.fg > div',{opacity:0,y:40,duration:.8,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.fg',start:'top 92%'}});
+
+gsap.from('.wm',{yPercent:40,opacity:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.wm',start:'top 100%'}});
+
+gsap.from('.cp',{opacity:0,duration:1,scrollTrigger:{trigger:'.cp',start:'top 100%'}});
+
+ScrollTrigger.refresh()}
+
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+
+})();
+
+</script>
+
+<!-- ===== ADDED: whatsapp "Chat with us" open/hide + back-to-top progress ring ===== -->
+<script>
+
+(function(){
+
+var wa=document.querySelector('.wa-widget'),top=document.getElementById('btnBackToTop');
+
+if(wa){
+
+ wa.classList.add('js');
+
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){wa.classList.add('open')}
+
+ else{
+
+  var hover=false,open=function(){wa.classList.add('open')},shut=function(){wa.classList.remove('open')};
+
+  var cycle=function(){open();setTimeout(function(){if(!hover)shut()},6000)};
+
+  setTimeout(cycle,2000);setInterval(cycle,16000);
+
+  wa.addEventListener('mouseenter',function(){hover=true;open()});
+
+  wa.addEventListener('mouseleave',function(){hover=false;shut()});
+
+  wa.addEventListener('focus',open);wa.addEventListener('blur',shut)}
+
+}
+
+if(top){
+
+ var prog=function(){var h=document.documentElement.scrollHeight-innerHeight,p=h>0?Math.min(100,Math.max(0,scrollY/h*100)):0;top.style.setProperty('--p',p+'%')};
+
+ addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);prog()}
+
+})();
+
+</script>
+
+
+
+
+<script>
+(function(){
+  var o=document.querySelector('.deco .orb'),p=document.querySelector('.deco .pic');
+  if(!o||!p||matchMedia('(prefers-reduced-motion:reduce)').matches||matchMedia('(pointer:coarse)').matches)return;
+  addEventListener('mousemove',function(e){
+    var x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+    p.style.translate=(x*-40)+'px '+(y*-40)+'px';
+    o.style.translate=(x*30)+'px '+(y*30)+'px';
+  },{passive:true});
+})();
+</script>
+
+
+
+<script>
+(function(){
+  var wrap=document.getElementById('work-needle');
+  if(!wrap||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var stage=wrap.querySelector('.nw-stage'),title=wrap.querySelector('.nw-title');
+  var chars=[],mChar=null;
+
+  /* split into characters */
+  [].slice.call(title.querySelectorAll('.nw-line')).forEach(function(line,li){
+    var t=line.textContent;line.textContent='';
+    t.split('').forEach(function(c){
+      var s=document.createElement('span');
+      s.className='nw-ch'+(c===' '?' nw-sp':'');
+      s.textContent=c===' '?'\u00A0':c;
+      line.appendChild(s);
+      if(c!==' ')chars.push(s);
+      if(li===1&&c==='M'&&!mChar)mChar=s;
+    });
+  });
+
+  /* zoom goes into the "M" of "Moves" */
+  function origin(){
+    var prev=title.style.transform;title.style.transform='none';
+    var t=title.getBoundingClientRect(),m=mChar.getBoundingClientRect();
+    title.style.transformOrigin=(m.left-t.left+m.width/2)+'px '+(m.top-t.top+m.height/2)+'px';
+    title.style.transform=prev;
+  }
+
+  var clamp=function(v,a,b){return Math.min(b===undefined?1:b,Math.max(a===undefined?0:a,v))};
+  var lerp=function(a,b,t){return a+(b-a)*t};
+  var mix=function(c1,c2,t){return'rgb('+c1.map(function(v,i){return Math.round(lerp(v,c2[i],t))}).join(',')+')'};
+
+  var GREY=[203,200,197],INK=[20,20,20];
+  var BG=[[255,255,255],[150,150,150],[60,60,60],[17,17,17]];  /* white > grey > dark (#111) */
+  var FILL_END=0.42, total=chars.length;
+
+  function update(){
+    var r=wrap.getBoundingClientRect();
+    var p=clamp(-r.top/(wrap.offsetHeight-innerHeight));
+
+    /* phase 1: grey -> black, letter by letter */
+    var f=clamp(p/FILL_END)*(total+6);
+    for(var i=0;i<total;i++)chars[i].style.color=mix(GREY,INK,clamp(f-i,0,1));
+
+    /* phase 2: zoom in + bg grey -> dark */
+    var z=clamp((p-FILL_END)/(1-FILL_END));
+    title.style.transform='scale('+Math.pow(22,z)+')';
+    var seg=z*(BG.length-1),k=Math.min(Math.floor(seg),BG.length-2);
+    stage.style.background=mix(BG[k],BG[k+1],seg-k);
+    title.style.opacity=1-clamp((z-0.82)/0.18);
+  }
+
+  var tick=false;
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){update();tick=false})}},{passive:true});
+  addEventListener('resize',function(){origin();update()});
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(function(){origin();update()});
+  addEventListener('load',function(){origin();update();if(window.ScrollTrigger)ScrollTrigger.refresh()});
+  origin();update();
+})();
+</script>
+
+
+
+
+<script>
+(function(){
+var A='Fathima Farzana YS',U='https://medialab.prception.in/news/';
+/* [tag, title, description, date, link slug, image url (paste here)] */
+var NEWS=[
+['ai advertising','AI-Created Ads Spark Trust Crisis as Brands Double Down on Artificial Intelligence','Consumer distrust of AI-generated ads is rising as brands expand AI use, exposing a growing gap in transparency, governance, and consumer trust.','Jul 18, 2026','ai-created-ads-spark-trust-crisis-as-brands-double-down-on-artificial-intelligence','assets/img/img-6.jpg'],
+['fifa world cup 2026','Football AI Pro Powers FIFA World Cup 2026 with AI Referee View and Avatars','Football AI Pro, AI player avatars and Referee View are transforming match analysis and broadcasts at the FIFA World Cup 2026.','Jul 17, 2026','football-ai-pro-powers-fifa-world-cup-2026-with-ai-referee-view-and-avatars','assets/img/img-8.jpg'],
+['ltimindtree','LTIMindtree Reports $150 Million Quarterly AI Revenue as Enterprise Demand Accelerates',"LTIMindtree's AI business reached a $150 million quarterly run rate, highlighting strong enterprise demand and India's growing AI services market.",'Jul 14, 2026','ltimindtree-reports-150-million-quarterly-ai-revenue-as-enterprise-demand-accelerates','assets/img/img-1.jpg'],
+['hubspot','HubSpot Faces Triple Blow as AI, Privacy Concerns and Acquisition Drama Hit Hard','HubSpot faces mounting pressure as AI disruption, a failed acquisition and customer privacy concerns contribute to a sharp decline in investor confidence.','Jul 14, 2026','hubspot-faces-triple-blow-as-ai-privacy-concerns-and-acquisition-drama-hit-hard','assets/img/img-2.jpg'],
+['BGMI Gamers','How One Indie Game Built a Global Fan Army Without a Marketing Budget','Mecha Chameleon is proving how viral content and community engagement can outperform traditional advertising in building a successful global game.','Jul 14, 2026','how-one-indie-game-built-a-global-fan-army-without-a-marketing-budget','assets/img/img-3.jpg'],
+['spain vs france','The Biggest Match of the Tournament? Spain vs France Has Fans Losing Their Minds','Spain and France face off in a blockbuster World Cup semi final as millions of fans and brands fuel one of the biggest online conversations of the tournament.','Jul 14, 2026','the-biggest-match-of-the-tournament-spain-vs-france-has-fans-losing-their-minds','assets/img/img-7.jpg'],
+['spacexai','SpaceXAI Unveils Grok 4.5, Targets Software Developers With Faster AI Coding Performance','SpaceXAI has launched Grok 4.5, a high-performance AI model for coding and engineering with faster speeds, lower costs and advanced benchmarks.','Jul 09, 2026','spacexai-unveils-grok-4-5-targets-software-developers-with-faster-ai-coding-performance','assets/img/img-4.jpg'],
+['anthropic Claude','Anthropic Expands Claude With New Cowork Feature Across Web, Android and iPhone','Anthropic has launched Claude Cowork with cross-device support, background task processing and a unified workspace for paid users.','Jul 08, 2026','anthropic-expands-claude-with-new-cowork-feature-across-web-android-and-iphone','assets/img/img-5.jpg'],
+['google Gemini 3.5','Gemini 3.5 Pro Delayed: Google Extends Development Ahead of GPT-5.6 Showdown','Google has delayed Gemini 3.5 Pro to July 17 as DeepMind refines its flagship AI model to compete with OpenAI and Anthropic.','Jul 07, 2026','gemini-3-5-pro-delayed-google-extends-development-ahead-of-gpt-5-6-showdown','assets/img/img-9.jpg'],
+['meta','India Orders Meta to Remove Instagram Ads Linked to Child Abuse Material','India has ordered Meta to remove Instagram ads linked to child sexual abuse material and submit a detailed response within seven days.','Jul 06, 2026','india-orders-meta-to-remove-instagram-ads-linked-to-child-abuse-material','assets/img/img-10.jpg']
+];
+var tr=document.getElementById('nwsTr'),vp=document.getElementById('nwsVp'),dt=document.getElementById('nwsD');if(!tr)return;
+var e=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
+tr.innerHTML=NEWS.map(function(n){return'<a class="nws-c" href="'+U+n[4]+'/" target="_blank" rel="noopener">'+(n[5]?'<img src="'+e(n[5])+'" alt="" loading="lazy">':'')+'<div class="nws-t">'+(n[0]?'<small>'+e(n[0])+'</small>':'')+'<h4>'+e(n[1])+'</h4><p>'+e(n[2])+'</p><span><i class="fa-regular fa-user"></i>'+A+'<b>·</b><i class="fa-regular fa-calendar"></i>'+n[3]+'</span></div></a>'}).join('');
+dt.innerHTML=NEWS.map(function(){return'<i></i>'}).join('');
+var cards=[].slice.call(tr.children),dots=[].slice.call(dt.children);
+function step(){return cards[0].offsetWidth+16}
+function cur(){return Math.min(cards.length-1,Math.round(vp.scrollLeft/step()))}
+function mark(){var c=cur();dots.forEach(function(d,i){d.classList.toggle('on',i===c)})}
+vp.addEventListener('scroll',mark,{passive:true});mark();
+document.getElementById('nwsN').onclick=function(){vp.scrollBy({left:step(),behavior:'smooth'})};
+document.getElementById('nwsP').onclick=function(){vp.scrollBy({left:-step(),behavior:'smooth'})};
+dots.forEach(function(d,i){d.onclick=function(){vp.scrollTo({left:i*step(),behavior:'smooth'})}});
+/* auto-scroll: one card every 3.5s, loops back to start, pauses on hover/touch/offscreen/user action */
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var visible=false,hovering=false,lastUser=0;
+  var touch=function(){lastUser=Date.now()};
+  function atEnd(){return vp.scrollLeft+vp.clientWidth>=vp.scrollWidth-4}
+  function auto(){
+    if(!visible||hovering||Date.now()-lastUser<6000)return;
+    if(atEnd())vp.scrollTo({left:0,behavior:'smooth'});
+    else vp.scrollBy({left:step(),behavior:'smooth'});
+  }
+  setInterval(auto,3500);
+  vp.addEventListener('mouseenter',function(){hovering=true});
+  vp.addEventListener('mouseleave',function(){hovering=false});
+  ['touchstart','pointerdown','wheel'].forEach(function(ev){vp.addEventListener(ev,touch,{passive:true})});
+  document.getElementById('nwsN').addEventListener('click',touch);
+  document.getElementById('nwsP').addEventListener('click',touch);
+  dots.forEach(function(d){d.addEventListener('click',touch)});
+  new IntersectionObserver(function(es){visible=es[0].isIntersecting},{threshold:.3}).observe(vp);
+})();
+})();
+</script>
+
+
+
+
+<script>
+(function(){
+  var h=document.querySelector('header'),t=document.getElementById('menuToggle'),nav=document.getElementById('siteNav');
+  if(!h||!t||!nav)return;
+  function set(open){
+    h.classList.toggle('open',open);
+    t.setAttribute('aria-expanded',open);
+    t.setAttribute('aria-label',open?'Close menu':'Open menu');
+  }
+  t.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('open'))});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+  document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+  addEventListener('resize',function(){if(innerWidth>1000)set(false)});
+})();
+</script>
+
+
+
+
+
+<script>
+(function(){
+  var dd=document.querySelector('.nav-dd'),h=document.querySelector('header');
+  if(!dd||!h)return;
+  var trg=dd.querySelector('.dd-trigger');
+  var hoverable=function(){return matchMedia('(hover:hover) and (pointer:fine)').matches&&innerWidth>1000};
+  function set(o){dd.classList.toggle('open',o);trg.setAttribute('aria-expanded',o)}
+
+  /* touch / mobile: tap toggles (desktop mouse uses CSS hover) */
+  trg.addEventListener('click',function(e){
+    e.preventDefault();e.stopPropagation();   /* stops the mobile menu from closing */
+    if(hoverable())return;
+    set(!dd.classList.contains('open'));
+  });
+  document.addEventListener('click',function(e){if(!dd.contains(e.target))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+  addEventListener('resize',function(){set(false)});
+  /* mobile menu closed -> dropdown also resets */
+  new MutationObserver(function(){if(!h.classList.contains('open'))set(false)}).observe(h,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+
+</body>
+
+</html>

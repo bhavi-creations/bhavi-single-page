@@ -1,0 +1,189 @@
+<?php include 'header.php'; ?>
+
+<section class="hero">
+
+<div class="deco" aria-hidden="true"><span class="ring"></span>
+
+<span class="badge"><svg viewBox="0 0 100 100"><path id="bp" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" fill="none"/><text><textPath href="#bp" textLength="236">Brand Architecture · Performance Intelligence ·</textPath></text></svg><i>↓</i></span>
+
+<span class="orb"></span>
+
+<span class="pic"><img src="https://prception.in/assets/imgs/gallery/prception_marketing.jpeg" alt=""></span></div>
+
+<div class="wrap"><div>
+
+<p class="eyebrow h">Strategy × Creativity × Results</p>
+
+<h1 class="h">Facts Inform <em>Perception</em> shapes Reality</h1>
+
+<p class="lead h">We help brands turn complex ideas into clear stories that people understand, trust, and act on.</p>
+
+<div class="acts h"><a href="#cta" class="btn">Let's Talk <b>→</b></a><a href="#brands" class="link">Our Work →</a></div></div>
+
+<div class="side h"><div class="stats"><div><b data-n="82" data-s="%">0</b><p>Investors rely on name recognition when making investment decisions</p></div>
+
+<div><b data-n="3.5" data-s="x">0</b><p>Higher Visibility for brands with consistent presentation</p></div></div>
+
+<p>You don't have a marketing problem. You have a <span>perception</span> problem. We're here to fix it.</p></div></div>
+
+<div class="hero-morph" aria-hidden="true">
+
+ <span class="morph-ring"></span><span class="morph-bars"><i></i><i></i><i></i><i></i><i></i></span>
+
+ <span class="morph-growth"></span><span class="morph-corner tl"></span><span class="morph-corner br"></span>
+
+</div>
+
+<h1 class="giant big h" style="font-weight:400;color:var(--theme)">PRCEPTION</h1>
+
+<p class="morph-caption">We founded PRception to bridge the gap between how a brand sees itself and how the world sees it.</p>
+
+<a href="#about" class="btn s morph-cta">Learn More</a>
+
+</section>
+
+<section class="genie" id="genie">
+
+<div id="gw"></div>
+
+<div class="gq"><small>( The question of the decade )</small>
+
+<h2>What happens when everyone in the world gets a <em>Genie?</em></h2>
+
+<p>8 billion people. 8 billion genies. Every wish, granted.</p></div>
+
+<h3 class="geasy big">The wish gets easy</h3>
+
+<span class="gone">A vision no one else has</span>
+
+<div class="lamp"><span class="tint"></span>
+
+<div class="top"><span>( The answer )</span><span>Wishes are infinite. Vision isn't.</span></div>
+
+<div class="mid"><p>The vision gets</p><h3 class="rare big">Rare</h3></div>
+
+<div class="bot"><p>PRception helps brands choose the right story, the right moment, and the right way to be remembered.</p><a href="#about">Find yours →</a></div></div>
+
+</section>
+
+<section class="ww" id="work">
+
+<div class="intro"><h2 class="big">Web Work</h2><p><span>(50+)</span>Live sites we designed and built.</p></div>
+
+<div class="shade"></div>
+
+<div class="track" id="wt"></div>
+
+<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="https://prception.in/casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a></div>
+
+</section>
+
+<section class="brands" id="brands">
+
+<div class="intro"><h2 class="big">Branding</h2><p><span id="bc">05</span>Identities we built. Scroll into each world.</p></div>
+
+<div id="bs"></div>
+
+</section>
+
+<!-- ===== NEEDLE: text fill + zoom ===== -->
+<section class="nw" id="work-needle">
+  <div class="nw-stage">
+    <h2 class="nw-title" aria-label="The Work That Moves The Needle">
+      <span class="nw-line" aria-hidden="true">The Work</span>
+      <span class="nw-line" aria-hidden="true">That Moves</span>
+      <span class="nw-line" aria-hidden="true">The Needle</span>
+    </h2>
+  </div>
+</section>
+
+
+
+<section class="shift" id="how">
+
+<div class="hd"><div><small>( How it works )</small><h2>From the first call to the obvious choice.</h2></div><div class="cnt"><span id="sn">01</span> <s>/ 06</s></div></div>
+
+<div class="zone"><p class="bl">Another<br>option</p><p class="sh">The obvious<br>choice</p><span class="lens"></span></div>
+
+<ol class="stp" id="sp" style="list-style:none"><span class="fill"></span></ol>
+
+</section>
+
+
+
+<section class="px-feel" id="px-feel">
+
+<div class="px-stick">
+
+<img class="px-s" src="https://prception.in/assets/imgs/gallery/service_2.png" alt="" loading="lazy">
+
+<img class="px-l" src="https://prception.in/assets/imgs/gallery/service_1.png" alt="" loading="lazy">
+
+<div class="px-copy"><p class="px-t">We don't just build brands we shape how they're perceived. Every satisfying detail is crafted to make your audience feel something real.</p></div>
+
+<a href="https://prception.in/casestudy" class="px-btn">View All Work</a>
+
+</div>
+
+</section>
+
+<section class="stmt"><p>People do not buy what is best they buy what makes them feel certain. Perception is the engineering of certainty.</p></section>
+
+<!-- ===== ADDED (live site): logo zoom transition ===== -->
+<section class="px-zoom" id="px-zoom">
+
+<div class="px-zstage">
+
+<img class="px-zlogo" src="https://prception.in/assets/imgs/logo/white.png" alt="PRception">
+
+<span class="px-zfade"></span>
+
+</div>
+
+</section>
+
+<!-- ===== ADDED (live site): "Prception helps brands choose the right story" + physics chips ===== -->
+<section class="px-help">
+
+<div class="px-hd">
+
+<h2 class="px-h2">Prception helps brands choose the right story, the right moment, and the right meaning.</h2>
+
+<p class="px-p">We're a great team of creatives with a strongest capabilities to helping progressive fields achieve their goals. With the best talent on every project done successfully</p>
+
+</div>
+
+<div class="px-rows" id="pxr"></div>
+
+</section>
+
+<section class="cl"><small>( Brands we've worked with )</small>
+
+<div class="mq"><div class="mt" id="mt"></div></div></section>
+
+<section class="cta" id="cta"><div class="wrap">
+
+<h2 class="rv">Let's<br>get in<br>touch</h2>
+
+<div class="rv" style="flex:0 1 550px;width:100%"><form id="f"><input name="name" placeholder="FULL NAME" required>
+
+<div class="two"><input type="email" name="email" placeholder="EMAIL" required><input type="tel" name="number" placeholder="PHONE"></div>
+
+<textarea name="remarks" rows="4" placeholder="MESSAGE"></textarea>
+
+<button class="go" aria-label="Submit"><span class="go-a">→</span><span class="go-a">→</span></button></form>
+
+<div class="loc"><div><h4>CONNECT</h4>+91 7012998181<br>hello@prception.in</div><div><h4>ADDRESS</h4>Citylink Tower, Bakery Jct Rd,<br>near Reserve Bank Of India,<br>Thampanoor, Kerala 695001</div></div></div>
+
+</div></section>
+
+<!-- ===== ADDED (live site): Medialab Dispatch widget ===== -->
+<section class="px-news" id="pxNews">
+ <div class="nws">
+  <div class="nws-hd"><h3><b>MEDIALAB</b> DISPATCH</h3><div class="nws-ar"><button type="button" id="nwsP" aria-label="Previous">‹</button><button type="button" id="nwsN" aria-label="Next">›</button></div></div>
+  <div class="nws-vp" id="nwsVp"><div class="nws-tr" id="nwsTr"></div></div>
+  <div class="nws-ft"><div class="nws-dots" id="nwsD"></div><a href="https://medialab.prception.in/news/articles/" target="_blank" rel="noopener">Powered by Prception ↗</a></div>
+ </div>
+</section>
+
+<?php include 'footer.php'; ?>

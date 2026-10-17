@@ -325,3 +325,6 @@ window.buildWorkTiles = function (sites) {
 
 
 
+window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+});
