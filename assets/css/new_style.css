@@ -2282,7 +2282,8 @@ footer {
   }
 
   .hud h3 {
-    font-size: clamp(42px, 13vw, 64px)
+    /* font-size: clamp(42px, 13vw, 64px) */
+    font-size: 23px;
   }
 
   .hud .tag {
@@ -3347,4 +3348,41 @@ nav a {
 .nw .nw-stage {
   align-items: end;
 }
+}
+
+
+
+
+/* Mobile only - Equal size branding image cards */
+@media (max-width: 480px) {
+
+  #brands .scene .brand-gallery {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #brands .scene .brand-gallery .tr > div {
+    width: 320px !important;
+    min-width: 320px !important;
+    height: 320px !important;
+    flex: 0 0 320px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+  }
+
+  #brands .scene .brand-gallery .tr > div img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
 }
