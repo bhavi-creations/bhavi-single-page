@@ -77,7 +77,8 @@ header('Cache-Control: no-cache, must-revalidate');
 
 <a href="#cta">Contact</a></nav>
 
-<a href="#cta" class="btn">Let's Talk <b>→</b></a>
+<!-- <a href="#cta" class="btn">Let's Talk <b>→</b></a> -->
+<a href="#cta" class="btn"><span class="bt"><span>Let's Talk</span><span aria-hidden="true">Let's Talk</span></span><b>→</b></a>
 
 <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
 

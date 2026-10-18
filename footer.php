@@ -212,28 +212,28 @@ gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true
 
 /* hero */
 
-/* Mobile content is visible immediately; keep the existing scroll morph. */
-var heroEntrance=gsap.from('.h',{y:50,opacity:matchMedia('(max-width:700px)').matches?1:0,duration:1,stagger:.12,ease:'power3.out',delay:.6});
+// ===== hero: index_first_section =====
+// footer.php lo boot() lopala, old hero block ni (gsap.from('.h', ...) nundi morph timeline last line  .to({},{duration:.24});  varaku)
+// delete chesi, ee motham code ni pettandi.
+
+// entrance is CSS-only (see index_first_section.css), so there is no gsap.from('.h') here.
+// bfcache restore: re-measure so the stage never stays in a wrong state.
 addEventListener('pageshow',function(e){
-  if(e.persisted){
-    heroEntrance.progress(1);
-    requestAnimationFrame(function(){ScrollTrigger.refresh();ScrollTrigger.update()});
-  }
+  if(e.persisted)requestAnimationFrame(function(){ScrollTrigger.refresh();ScrollTrigger.update()});
 });
 
 $$('[data-n][data-s]').forEach(function(e){var o={v:0},n=+e.dataset.n;gsap.to(o,{v:n,duration:2,delay:1,ease:'power2.out',onUpdate:function(){e.textContent=(n%1?o.v.toFixed(1):Math.round(o.v))+e.dataset.s}})});
 
-/* large PRCEPTION text -> compressed centered brand moment on scroll */
-
 /* PRCEPTION -> centered brand moment: text + caption + button centered together in the viewport */
 
-var giant=$('.hero .giant'),cap=$('.morph-caption'),cta=$('.morph-cta');
+var ifs=$('.index_first_section'),ifsStage=$('.ifs-stage',ifs),giant=$('.giant',ifs),cap=$('.morph-caption',ifs),cta=$('.morph-cta',ifs);
 
 function L(){
  var px=Number(gsap.getProperty(giant,'x'))||0,py=Number(gsap.getProperty(giant,'y'))||0,ps=Number(gsap.getProperty(giant,'scale'))||1;
- var r=giant.getBoundingClientRect(),w0=r.width/ps,h0=r.height/ps;
- var cx0=r.left+r.width/2-px,cy0=r.top+r.height/2-py;
- var W=innerWidth,H=innerHeight;
+ /* measured relative to the stage, so the result is the same at any scroll position */
+ var sr=ifsStage.getBoundingClientRect(),r=giant.getBoundingClientRect(),w0=r.width/ps,h0=r.height/ps;
+ var cx0=r.left-sr.left+r.width/2-px,cy0=r.top-sr.top+r.height/2-py;
+ var W=sr.width,H=sr.height;
  var target=W>1000?Math.min(W*.36,720):W*.7;
  var s=Math.min(1,target/w0),th=h0*s;
  var capH=cap.offsetHeight,btnH=cta.offsetHeight,g1=H*.06,g2=H*.09;
@@ -241,11 +241,12 @@ function L(){
  return {x:W/2-cx0,y:top+th/2-cy0,scale:s,capTop:top+th+g1,ctaTop:top+th+g1+capH+g2};
 }
 
-var morph=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'+=125%',pin:true,scrub:0.65,anticipatePin:1,invalidateOnRefresh:true,
+/* no pin: the stage is position:sticky inside a 225vh section, so there is no pin-spacer to go out of sync */
+var morph=gsap.timeline({scrollTrigger:{trigger:ifs,start:'top top',end:'bottom bottom',scrub:0.65,invalidateOnRefresh:true,
 
- onUpdate:function(self){$('.hero').classList.toggle('morph-active',self.progress>.78)}}});
+ onUpdate:function(self){ifs.classList.toggle('morph-active',self.progress>.78)}}});
 
-morph.fromTo('.hero .wrap,.hero .deco',{autoAlpha:1,y:0},{autoAlpha:0,y:-65,duration:.36,ease:'power1.inOut'},0)
+morph.fromTo('.index_first_section .wrap,.index_first_section .deco',{autoAlpha:1,y:0},{autoAlpha:0,y:-65,duration:.36,ease:'power1.inOut'},0)
 
  .fromTo('.hero-morph',{autoAlpha:0},{autoAlpha:1,duration:.5,ease:'none'},.10)
 

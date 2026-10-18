@@ -1,6 +1,8 @@
 <?php include 'header.php'; ?>
 
-<section class="hero">
+<!-- ===== index_first_section (hero) : replaces the old <section class="hero"> ... </section> in index.php ===== -->
+<section class="index_first_section">
+<div class="ifs-stage">
 
 <div class="deco" aria-hidden="true"><span class="ring"></span>
 
@@ -12,15 +14,15 @@
 
 <div class="wrap"><div>
 
-<p class="eyebrow h">Strategy × Creativity × Results</p>
+<p class="eyebrow h" style="--d:.6s">Strategy × Creativity × Results</p>
 
-<h1 class="h">Facts Inform <em>Perception</em> shapes Reality</h1>
+<h1 class="h" style="--d:.72s">Facts Inform <em>Perception</em> shapes Reality</h1>
 
-<p class="lead h">We help brands turn complex ideas into clear stories that people understand, trust, and act on.</p>
+<p class="lead h" style="--d:.84s">We help brands turn complex ideas into clear stories that people understand, trust, and act on.</p>
 
-<div class="acts h"><a href="#cta" class="btn">Let's Talk <b>→</b></a><a href="#brands" class="link">Our Work →</a></div></div>
+<div class="acts h" style="--d:.96s"><a href="#cta" class="btn"><span class="bt"><span>Let's Talk</span><span aria-hidden="true">Let's Talk</span></span><b>→</b></a><a href="#brands" class="link">Our Work <span>→</span></a></div></div>
 
-<div class="side h"><div class="stats"><div><b data-n="82" data-s="%">0</b><p>Investors rely on name recognition when making investment decisions</p></div>
+<div class="side h" style="--d:1.08s"><div class="stats"><div><b data-n="82" data-s="%">0</b><p>Investors rely on name recognition when making investment decisions</p></div>
 
 <div><b data-n="3.5" data-s="x">0</b><p>Higher Visibility for brands with consistent presentation</p></div></div>
 
@@ -34,12 +36,13 @@
 
 </div>
 
-<h1 class="giant big h" style="font-weight:400;color:var(--theme)">PRCEPTION</h1>
+<h1 class="giant big h" style="--d:1.2s;font-weight:400;color:var(--theme)">PRCEPTION</h1>
 
 <p class="morph-caption">We founded PRception to bridge the gap between how a brand sees itself and how the world sees it.</p>
 
-<a href="#about" class="btn s morph-cta">Learn More</a>
+<a href="#about" class="btn s morph-cta"><span class="bt"><span>Learn More</span><span aria-hidden="true">Learn More</span></span></a>
 
+</div>
 </section>
 
 <section class="genie" id="genie">
