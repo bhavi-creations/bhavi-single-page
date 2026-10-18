@@ -3518,7 +3518,7 @@ nav a {
 }
 .index_first_section .morph-cta{
   position:absolute;z-index:8;left:0;right:0;margin-inline:auto;top:76%;
-  width:fit-content;max-width:none;white-space:nowrap;padding:28px 53px;font-size:22px;text-align:center;
+  width:fit-content;max-width:none;white-space:nowrap;padding:22px 42px;font-size:18px;text-align:center;
   opacity:0;visibility:hidden;pointer-events:none;
 }
 @media(min-width:601px) and (max-width:1000px){.index_first_section .morph-cta{padding:22px 42px;font-size:18px}}
@@ -3532,12 +3532,12 @@ nav a {
 .index_first_section .btn .bt > span{display:block;transition:transform .5s cubic-bezier(.65,0,.35,1)}
 .index_first_section .btn:hover .bt > span{transform:translateY(-100%)}
 
-/* Let's Talk pill: wide pill, 60px arrow circle (compact on mobile) */
+/* Let's Talk pill: compact pill, 48px arrow circle (same size as live) */
 @media(min-width:701px){
-  .index_first_section .acts{gap:56px}
-  .index_first_section .acts .btn{gap:30px;padding:11px 41px;max-width:none;white-space:nowrap;font-size:21px}
-  .index_first_section .acts .btn b{width:60px;height:60px;font-size:26px;line-height:1}
-  .index_first_section .acts .link{font-size:22px}
+  .index_first_section .acts{gap:46px}
+  .index_first_section .acts .btn{gap:24px;padding:9px 33px;max-width:none;white-space:nowrap;font-size:17px}
+  .index_first_section .acts .btn b{width:48px;height:48px;font-size:20px;line-height:1}
+  .index_first_section .acts .link{font-size:18px}
 }
 @media(max-width:700px){
   .index_first_section .acts .btn{gap:16px;padding:8px 8px 8px 28px;max-width:none;white-space:nowrap;font-size:17px}
@@ -3546,7 +3546,7 @@ nav a {
 }
 
 /* Our Work link: underlined label + separate underlined arrow with a gap, arrow nudges on hover */
-.index_first_section .acts .link{display:inline-flex;align-items:center;gap:17px}
+.index_first_section .acts .link{display:inline-flex;align-items:center;gap:14px}
 .index_first_section .acts .link span{display:inline-block;transition:transform .35s cubic-bezier(.65,0,.35,1)}
 .index_first_section .acts .link:hover span{transform:translateX(6px)}
 
@@ -3559,7 +3559,7 @@ nav a {
 
 
 
-/* ===== header: Let's Talk button = same as index_first_section (hero) Let's Talk ===== */
+/* ===== header: Let's Talk button = same compact size as index_first_section (hero) Let's Talk ===== */
 /* new_style.css lo last lo (anni media queries kinda) paste cheyyandi. Paatha header_lets_talk block unte delete cheyyandi. */
 
 /* text roll on hover (same as hero) */
@@ -3567,15 +3567,15 @@ header > .btn .bt{display:block;height:1.4em;line-height:1.4;overflow:hidden}
 header > .btn .bt > span{display:block;transition:transform .5s cubic-bezier(.65,0,.35,1)}
 header > .btn:hover .bt > span{transform:translateY(-100%)}
 
-/* wide pill + 60px arrow circle: identical values to  .index_first_section .acts .btn  */
+/* compact pill + 48px arrow circle: identical values to  .index_first_section .acts .btn  */
 @media(min-width:1001px){
-  header > .btn{gap:30px;padding:11px 41px;max-width:none;white-space:nowrap;font-size:16px}
-  header > .btn b{width:60px;height:60px;font-size:26px;line-height:1}
+  header > .btn{gap:24px;padding:9px 33px;max-width:none;white-space:nowrap;font-size:17px}
+  header > .btn b{width:48px;height:48px;font-size:20px;line-height:1}
 }
 
-/* safety for 1001-1200px: nav links slightly tighter so logo + nav + big button fit (remove if not needed) */
-@media(min-width:1001px) and (max-width:1200px){
-  header nav a{padding:12px 10px}
+/* safety for 1001-1100px: nav links slightly tighter so logo + nav + button fit (remove if not needed) */
+@media(min-width:1001px) and (max-width:1100px){
+  header nav a{padding:12px 14px}
 }
 
 /* 1000px and below: the hamburger toggle replaces this button, as before */
