@@ -77,7 +77,7 @@
 
 <div class="track" id="wt"></div>
 
-<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="https://prception.in/casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a></div>
+<div class="hud"><div class="row"><div><small id="hn"></small><h3 id="hname"></h3></div><a href="#" id="hvisit" class="btn s" target="_blank" rel="noopener" style="max-width:none;white-space:nowrap">Visit Site</a></div><div class="bar"><i></i></div><a href="#casestudy" class="link" style="display:inline-block;margin:16px 0 24px">View All Work →</a></div>
 
 </section>
 
