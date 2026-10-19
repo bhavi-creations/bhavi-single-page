@@ -3598,3 +3598,12 @@ header > .btn:hover .bt > span{transform:translateY(-100%)}
 @media(max-width:700px){
   .px-rows{height:clamp(260px,40vh,330px)}
 }
+
+
+/* "The obvious choice" / "Another option": gap between the two lines */
+.zone p{line-height:1.06}
+
+
+@media(max-height:700px){
+  .zone p{font-size:min(15vw,19vh)}
+}
