@@ -539,7 +539,11 @@ var CHIPS=['Growth Systems','Brand Authority','Demand Engines','Conversion Focus
 
 var TONE=[0,1,1,0,1,0,1,1,0,0,1,0,1,0],box=$('#pxr'),chips=[];
 
-if(box)CHIPS.forEach(function(c,i){var d=document.createElement('div');d.className='px-chip '+(TONE[i]?'t':'k');d.textContent=c;box.appendChild(d);chips.push(d)});
+/* mobile (700px & below): only 8 chips, 4 black + 4 green (alternating); other screens keep all 14 */
+var MOBILE_CHIPS=[0,1,3,2,5,4,8,6];
+var chipList=matchMedia('(max-width:700px)').matches?MOBILE_CHIPS:CHIPS.map(function(c,i){return i});
+
+if(box)chipList.forEach(function(i){var d=document.createElement('div');d.className='px-chip '+(TONE[i]?'t':'k');d.textContent=CHIPS[i];box.appendChild(d);chips.push(d)});
 
 /* gravity: chips fall into the box when it scrolls into view and pile on the floor; drag them with the mouse */
 
