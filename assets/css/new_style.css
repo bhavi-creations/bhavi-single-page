@@ -2176,7 +2176,7 @@ footer {
   }
 
   .stats {
-    gap: 24px;
+    /* gap: 24px; */
     padding-bottom: 22px
   }
 
@@ -2736,7 +2736,7 @@ footer {
 .px-stick{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff}
 .px-stick img{position:absolute;display:block;object-fit:cover;will-change:transform}
 .px-s{left:37.7%;top:9vh;width:16.3vw;height:41vh}
-.px-l{left:58%;top:2vh;width:34vw;height:112vh}
+.px-l{left:58%;top:2vh;width:34vw;}
 .px-copy{position:absolute;left:8%;bottom:25vh;width:min(36vw,680px)}
 .px-t{font:400 clamp(22px,1.9vw,34px)/1.16 var(--f-head);letter-spacing:-.05em;color:#fff}
 .px-btn{position:absolute;left:8%;bottom:7vh;display:inline-flex;align-items:center;justify-content:center;height:90px;padding:0 52px;border:1px solid #fff3;border-radius:100px;color:#fff;font:500 22px var(--f-head);letter-spacing:-.03em;overflow:hidden;z-index:1}
@@ -3540,7 +3540,7 @@ nav a {
   .index_first_section .acts .link{font-size:18px}
 }
 @media(max-width:700px){
-  .index_first_section .acts .btn{gap:16px;padding:8px 8px 8px 28px;max-width:none;white-space:nowrap;font-size:17px}
+  .index_first_section .acts .btn{gap:16px;padding:8px 8px 8px 23px;max-width:none;white-space:nowrap;font-size:12px}
   .index_first_section .acts .btn b{width:46px;height:46px}
   .index_first_section .acts .link{font-size:18px}
 }
@@ -3629,3 +3629,122 @@ header > .btn:hover .bt > span{transform:translateY(-100%)}
   font-size:min(15vw,17vh);           /* fallback for very old browsers */
   font-size:min(15vw,44cqh);          /* 2 lines always fit inside the zone */
 }
+
+
+
+@media (max-width: 700px) {
+    .stats {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /* gap: 20px; */
+    }
+
+    .stats p {
+        font-size: 14px;
+        line-height: 1.6;
+        /* max-width: none; */
+        margin-top: 14px;
+    }
+}
+
+
+
+
+/* Default CSS */
+.stats {
+    display: grid;
+    gap: 40px 60px;
+    grid-template-columns: repeat(2, 230px);
+    justify-content: space-between;
+}
+
+/* Desktop & Tablet */
+@media only screen and (max-width: 1919px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 467px) {
+    .stats {
+        gap: 30px 20px;
+    }
+}
+
+/* Statistics Text */
+.stats p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 14px;
+}
+
+/* Divider */
+.stats > div:first-child {
+    border-right: 1px solid #e5e5e5;
+    padding-right: 54px;
+}
+
+
+
+
+/* Connect & Address - Same Row */
+@media only screen and (max-width: 991px) {
+
+    .cta .loc {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+        width: 100%;
+        align-items: start;
+    }
+
+    .cta .loc > div {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .cta .loc h4 {
+        margin-bottom: 12px;
+    }
+
+}
+
+/* Small Mobile */
+@media only screen and (max-width: 467px) {
+
+    .cta .loc {
+        gap: 12px !important;
+    }
+
+    .cta .loc > div {
+        font-size: 11px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+
+
+
+/* Contact Heading - Mobile Only */
+@media only screen and (max-width: 768px) {
+
+    .cta h2 {
+        font-size: 30px !important;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+
+    .cta h2 br {
+        display: none;
+    }
+
+}
+
+
+
