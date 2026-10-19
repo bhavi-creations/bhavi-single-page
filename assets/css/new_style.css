@@ -2782,7 +2782,7 @@ footer {
 @media(max-width:800px){
 .px-feel{height:240vh}
 .px-s{left:6%;top:15vh;width:34vw;height:26vh}
-.px-l{left:44%;top:9vh;width:50vw;height:48vh; margin-top: 10vh;}
+.px-l{left:44%;top:9vh;width:50vw;height:70vh; margin-top: 10vh;}
 .px-copy{left:20px;right:20px;width:auto;bottom:21vh}
 .px-btn{left:20px;bottom:5vh;height:60px;padding:0 34px;font-size:17px}
 .px-help{padding:80px 0 0}
