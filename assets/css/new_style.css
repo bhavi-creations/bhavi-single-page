@@ -3607,3 +3607,25 @@ header > .btn:hover .bt > span{transform:translateY(-100%)}
 @media(max-height:700px){
   .zone p{font-size:min(15vw,19vh)}
 }
+
+
+
+
+/* index_first_section title: 2 lines on tablet (701px - 1000px) */
+@media(min-width:701px) and (max-width:1000px){
+  .index_first_section .wrap h1{
+    max-width:none;
+    /* font-size:clamp(40px,6.4vw,60px); */
+    font-size:60px;
+    line-height:.98;
+  }
+}
+
+
+
+/* "The obvious choice": text size follows the available zone height, so it never spills up/down */
+.zone{container-type:size}
+.zone p{
+  font-size:min(15vw,17vh);           /* fallback for very old browsers */
+  font-size:min(15vw,44cqh);          /* 2 lines always fit inside the zone */
+}
