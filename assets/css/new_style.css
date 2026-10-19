@@ -3585,13 +3585,13 @@ header > .btn:hover .bt > span{transform:translateY(-100%)}
 
 
 /* branding: card background blends into each scene's own colour (no light/white bands above & below the image) */
-#brands .scene .brand-gallery .tr > div,
+/* #brands .scene .brand-gallery .tr > div,
 #brands .scene .brand-gallery .tr > div:first-child{
   background:transparent !important;
   box-shadow:none !important;
   border:0 !important;
 }
-#brands .scene .brand-gallery .tr > div img{background:transparent !important}
+#brands .scene .brand-gallery .tr > div img{background:transparent !important} */
 
 
 
