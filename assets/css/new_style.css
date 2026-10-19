@@ -2830,7 +2830,7 @@ section.nw{
   padding-bottom:36vh;          /* lifts the heading up = less white before it appears */
   overflow:hidden;
   display:flex;
-  align-items:end;
+  align-items:center;
   justify-content:center;
   background:#fff;
 }
