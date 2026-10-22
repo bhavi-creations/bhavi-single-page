@@ -8,7 +8,7 @@
 
 <div><h4>Resources</h4><ul><li><a href="#">Blog</a></li><li><a href="#brands">Case Studies</a></li></ul></div>
 
-<div><h4>Follow us</h4><div class="px-soc"><a href="https://www.facebook.com/profile.php?id=61580927244285" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/prception.in/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.linkedin.com/company/prception-in/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="px-awards"><img src="https://prception.in/assets/imgs/awards/Top%20Branding%20Agencies.png" alt="DesignRush Top Branding Agencies" loading="lazy"><a href="https://businessfirms.co/company/prception-medialab" target="_blank" rel="noopener"><img src="https://businessfirms.co/images/bfirms-certified.png" alt="BusinessFirms Certified" loading="lazy"></a></div></div>
+<div><h4>Follow us</h4><div class="px-soc"><a href="https://www.facebook.com/profile.php?id=61580927244285" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/prception.in/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.linkedin.com/company/prception-in/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="px-awards"><img src="https://prception.in/assets/imgs/awards/Top%20Branding%20Agencies.png" alt="DesignRush Top Branding Agencies" loading="lazy"><a href="https://bhavicreations.com" target="_blank" rel="noopener"><img src="assets/img/Bhavi_Branding_Stamp.png" alt="BusinessFirms Certified" loading="lazy"></a></div></div>
 
 </div>
 
@@ -64,15 +64,77 @@ btnTop.addEventListener('click', function(e) {
 
 /* ---- data (edit here) ---- */
 
-/* SITES: [name, tagline, fallback colour, video file, live site url] */
-var SITES=[['Leggo','Handcrafted Footwear','#1f3a5f','assets/video/leggo.mp4','https://leggoworld.com/'],
-['BlackBox','AI Academy','#2a2a2a','assets/video/blackbox.mp4','https://blackboxlearning.in/'],
-['Past n Present','Custom 3D Keepsakes','#7a4b2a','assets/video/pastandpresent.mp4','https://pastandpresent.in/'],
-['Peaceboard','Global Peace Platform','#12685f','assets/video/peaceboard.mp4','https://peaceboard.uk/'],
-['Arena Animation','Animation Academy','#6b1f2a','assets/video/arena.mp4','https://arenatrivandrum.com/'],
-['Brightwyn','','#2c3e8f','assets/video/Brightwyn.mp4','https://brightwyn.in/'],
-['Tealcore','Software Development','#018f87','assets/video/Tealcore.mp4','https://tealcoreventures.in/'],
-['Staton','Industrial Automation','#444','assets/video/staton.mp4','https://staton.in/']];
+/* SITES:
+   [name, tagline, fallback colour, media file, live site url]
+*/
+
+var SITES = [
+
+    [
+        'Srinivasa Dental',
+        'Srinivasa',
+        '#1f3a5f',
+        'assets/video/srinivasa_dental_video.mp4',
+        'https://srinivasadentalkakinada.com/'
+    ],
+
+    [
+        'Krishna Denta Cure',
+        'Krishna',
+        '#2a2a2a',
+        'assets/video/krishna_dentacure_video.mp4',
+        'https://krishnadentacureclinic.com/'
+    ],
+
+    [
+        'Vision Dental',
+        'Vision',
+        '#7a4b2a',
+        'assets/video/vision.mp4',
+        'https://visiondentalguntur.com/'
+    ],
+
+    [
+        'Anish Dental',
+        'Anish',
+        '#12685f',
+        'assets/video/anish_dental_bg1.png',
+        'https://anishdental.in/'
+    ],
+
+    [
+        'Apple dental',
+        'apple',
+        '#6b1f2a',
+        'assets/video/Apple_dental_specialities.png',
+        'https://appledentalspecialities.in/'
+    ],
+
+    [
+        'Nivis Labs',
+        'nivis',
+        '#2c3e8f',
+        'assets/video/nivis_labs.png',
+        'https://nivislabs.in/'
+    ],
+
+    [
+        'V&V Salons',
+        'Software Development',
+        '#018f87',
+        'assets/video/vnv_saloon.png',
+        'https://vnvsalons.com/'
+    ],
+
+    [
+        '',
+        'Care n Concern',
+        '#444',
+        'assets/video/Care_n_concern.png',
+        'https://carenconcern.com/'
+    ]
+
+];
 
 /* new brands: images load from assets/img/<name>.webp; a missing file is simply skipped */
 function bi(alt,files){return files.map(function(f,i){return'<div><img src="assets/img/'+f+'.webp" alt="'+alt+(i?' board '+i:'')+'" onerror="this.parentNode.remove()"></div>'}).join('')}
@@ -527,11 +589,60 @@ var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 /* clients: live site shows logo images instead of text */
 
-var LOGOS=['amrut-veni','arena-animation','blackbox-learning','brightwyn','digital-mugavari','eco-cleanser','faceco','leggo','moster','neuralnest','parle','world-peace-board','photonvolt-energy','saki','staton','tech-grandha','zica'];
+/* =========================================================
+   CLIENT LOGOS - LOCAL assets/img folder
+   Existing marquee animation remains exactly the same
+========================================================= */
 
-var mt=$('#mt');
+var LOGOS = [
+    {
+        name: 'Krishna Dental',
+        src: 'assets/img/krishna-dental-1.png'
+    },
+    {
+        name: 'Care N Concern',
+        src: 'assets/img/care_n_concern.jpg'
+    },
+    {
+        name: 'Apple Dental',
+        src: 'assets/img/apple-dental-1.png'
+    },
+    {
+        name: 'Dr Subhash Center',
+        src: 'assets/img/Subash_logo_white-1.png'
+    },
+    {
+        name: 'V & V Salons',
+        src: 'assets/img/V_AND_V_SALON_LOGO_NEW-1.png'
+    },
+    {
+        name: 'Vision Dental',
+        src: 'assets/img/vision-dental-1.png'
+    },
+    {
+        name: 'Oncology',
+        src: 'assets/img/Oncology_logo-1.png'
+    }
+];
 
-if(mt){var one=LOGOS.map(function(n){return'<span><img src="https://prception.in/assets/imgs/client-logos/'+n+'.webp" alt="'+n.replace(/-/g,' ')+'" loading="lazy"></span>'}).join('');mt.innerHTML=one+one}
+var mt = $('#mt');
+
+if (mt) {
+
+    var one = LOGOS.map(function(logo) {
+
+        return '<span>' +
+                    '<img src="' + logo.src + '" ' +
+                    'alt="' + logo.name + '" ' +
+                    'loading="lazy" ' +
+                    'onerror="this.closest(\'span\').remove()">' +
+               '</span>';
+
+    }).join('');
+
+    /* duplicate logos = seamless infinite marquee */
+    mt.innerHTML = one + one;
+}
 
 /* chips */
 

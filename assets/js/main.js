@@ -328,3 +328,87 @@ window.buildWorkTiles = function (sites) {
 window.addEventListener("load", () => {
     ScrollTrigger.refresh();
 });
+
+
+
+
+window.buildWorkTiles = function (sites) {
+
+    var track = document.getElementById('wt');
+
+    if (!track) return;
+
+    track.innerHTML = '';
+
+    sites.forEach(function (site, index) {
+
+        var name     = site[0];
+        var tagline  = site[1];
+        var fallback = site[2];
+        var media    = site[3];
+        var url      = site[4];
+
+        var tile = document.createElement('a');
+
+        tile.className = 'tile';
+        tile.href = url;
+        tile.target = '_blank';
+        tile.rel = 'noopener';
+
+        tile.dataset.n = name;
+        tile.dataset.t = tagline;
+
+        tile.style.backgroundColor = fallback;
+
+
+        /* =====================================
+           Detect image or video automatically
+        ===================================== */
+
+        var isImage = /\.(jpg|jpeg|png|webp|gif|avif)$/i.test(media);
+
+        var isVideo = /\.(mp4|webm|ogg|mov)$/i.test(media);
+
+
+        if (isImage) {
+
+            tile.innerHTML =
+                '<img class="work-media work-image" ' +
+                'src="' + media + '" ' +
+                'alt="' + name + '" ' +
+                'loading="lazy">' +
+                '<span class="work-overlay"></span>';
+
+        }
+
+        else if (isVideo) {
+
+            tile.innerHTML =
+                '<video class="work-media work-video" ' +
+                'muted ' +
+                'loop ' +
+                'playsinline ' +
+                'preload="metadata">' +
+
+                    '<source src="' + media + '" type="video/mp4">' +
+
+                '</video>' +
+                '<span class="work-overlay"></span>';
+
+        }
+
+        else {
+
+            tile.innerHTML =
+                '<div class="work-fallback">' +
+                    name +
+                '</div>';
+
+        }
+
+
+        track.appendChild(tile);
+
+    });
+
+};

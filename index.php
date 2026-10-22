@@ -14,11 +14,11 @@
 
 <div class="wrap"><div>
 
-<p class="eyebrow h" style="--d:.6s">Strategy × Creativity × Results</p>
+<p class="eyebrow h" style="--d:.6s">India's Premium Branding & Creative Agency</p>
 
-<h1 class="h" style="--d:.72s">Facts Inform <em>Perception</em> shapes Reality</h1>
+<h1 class="h" style="--d:.72s">We Build <em>Brands</em> That People Remember.</h1>
 
-<p class="lead h" style="--d:.84s">We help brands turn complex ideas into clear stories that people understand, trust, and act on.</p>
+<p class="lead h" style="--d:.84s">We help businesses grow through branding, websites, creative content, digital marketing, and offline advertising that deliver real results.</p>
 
 <div class="acts h" style="--d:.96s"><a href="#cta" class="btn"><span class="bt"><span>Let's Talk</span><span aria-hidden="true">Let's Talk</span></span><b>→</b></a><a href="#brands" class="link">Our Work <span>→</span></a></div></div>
 
@@ -26,7 +26,7 @@
 
 <div><b data-n="3.5" data-s="x">0</b><p>Higher Visibility for brands with consistent presentation</p></div></div>
 
-<p>You don't have a marketing problem. You have a <span>perception</span> problem. We're here to fix it.</p></div></div>
+<p>You don't have a marketing problem. You have a <span>Bhavi Creations</span> problem. We're here to fix it.</p></div></div>
 
 <div class="hero-morph" aria-hidden="true">
 
@@ -36,9 +36,9 @@
 
 </div>
 
-<h1 class="giant big h" style="--d:1.2s;font-weight:400;color:var(--theme)">PRCEPTION</h1>
+<h1 class="giant big h" style="--d:1.2s;font-weight:400;color:var(--theme)">Bhavi Creations</h1>
 
-<p class="morph-caption">We founded PRception to bridge the gap between how a brand sees itself and how the world sees it.</p>
+<p class="morph-caption">We help businesses grow through branding, websites, creative content, digital marketing, and offline advertising that deliver real results.</p>
 
 <a href="#about" class="btn s morph-cta"><span class="bt"><span>Learn More</span><span aria-hidden="true">Learn More</span></span></a>
 
@@ -160,9 +160,13 @@
 
 </section>
 
-<section class="cl"><small>( Brands we've worked with )</small>
+<section class="cl">
+    <small>( Brands we've worked with )</small>
 
-<div class="mq"><div class="mt" id="mt"></div></div></section>
+    <div class="mq">
+        <div class="mt" id="mt"></div>
+    </div>
+</section>
 
 <section class="cta" id="cta"><div class="wrap">
 

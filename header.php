@@ -59,9 +59,11 @@ header('Cache-Control: no-cache, must-revalidate');
 <!-- Keep content visible while remote media and animation libraries load. -->
 
 <header>
-  <a href="#" class="logo">
-    <img src="assets/img/PRception_logo.png" alt="PRception Logo" style="height:60px; width:200px">
-  </a>
+  <a href="index.php" class="logo-brand-wrapper">
+    <img src="assets/img/Bhavi_Creations_Logo_0001.png" 
+         alt="Bhavi Creations Logo" 
+         class="header-logo-img">
+</a>
 
 <!-- <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a><a href="#how">Services</a><a href="#cta">Contact</a></nav> -->
  <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a>
