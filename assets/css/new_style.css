@@ -4620,7 +4620,7 @@ header.open nav {
     justify-content: center;
     min-height: 70px;
     margin-top: 0;
-    border-top: 1px solid #222222;
+    border-top: 1px solid #E8C978;
     text-align: center;
 }
 
@@ -4805,7 +4805,7 @@ header.open nav {
 
     .footer_new_section_brand,
     .footer_new_section_social_desktop {
-        border-right: 1px solid #222222;
+        border-right: 1px solid #E8C978;
     }
 
     .footer_new_section_logo {
@@ -4932,4 +4932,10 @@ header.open nav {
     vertical-align: middle;
     margin: 0;
     flex-shrink: 0;
+}
+
+
+
+.px-chip{
+border: 2px solid;
 }
