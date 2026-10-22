@@ -137,7 +137,7 @@
 
 <div class="px-zstage">
 
-<img class="px-zlogo" src="https://prception.in/assets/imgs/logo/white.png" alt="PRception">
+<img class="px-zlogo" src="./assets/img/Bhavi_Creations_Logo_0001.png" alt="Bhavi Creations">
 
 <span class="px-zfade"></span>
 
