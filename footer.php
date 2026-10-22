@@ -1,26 +1,122 @@
-<footer>
 
-<div class="fg">
+<footer class="footer_new_section">
+    <div class="container-fluid footer_new_section_container">
 
-<div><h4>Services</h4><ul><li><a href="#">Creator Marketing</a></li><li><a href="#">SEO</a></li><li><a href="#">Web Development</a></li><li><a href="#">Branding</a></li></ul></div>
+        <div class="row footer_new_section_top">
 
-<div><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Our Team</a></li><li><a href="#cta">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+            <!-- Column 1: Logo and About -->
+            <div class="col-12 col-md-6 col-xl-4 footer_new_section_column footer_new_section_brand">
+                <div class="footer_new_section_logo">
+                    <img src="./assets/img/Bhavi_Creations_Logo_0001.png" alt="Bhavi Creations Logo">
+                </div>
 
-<div><h4>Resources</h4><ul><li><a href="#">Blog</a></li><li><a href="#brands">Case Studies</a></li></ul></div>
+                <p class="footer_new_section_about">
+                    We are a premium branding &amp; creative agency,
+                    helping businesses stand out, attract customers and grow.
+                </p>
 
-<div><h4>Follow us</h4><div class="px-soc"><a href="https://www.facebook.com/profile.php?id=61580927244285" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/prception.in/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.linkedin.com/company/prception-in/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="px-awards"><img src="https://prception.in/assets/imgs/awards/Top%20Branding%20Agencies.png" alt="DesignRush Top Branding Agencies" loading="lazy"><a href="https://bhavicreations.com" target="_blank" rel="noopener"><img src="assets/img/Bhavi_Branding_Stamp.png" alt="BusinessFirms Certified" loading="lazy"></a></div></div>
+                <!-- Social Icons: Mobile and Tablet -->
+                <div class="footer_new_section_social footer_new_section_social_mobile">
+                    <a href="https://www.facebook.com/BhavicreationsPvtLtd/"
+                       target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/bhavicreations_pvtl"
+                       target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/bhavi-creations-pvt-ltd-926651235"
+                       target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@bhavicreationspvtltd"
+                       target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="https://in.pinterest.com/bhavicreations/"
+                       target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                        <i class="bi bi-pinterest"></i>
+                    </a>
+                </div>
+            </div>
 
-</div>
+            <!-- Column 2: Social Icons for Desktop -->
+            <div class="col-xl-4 footer_new_section_column footer_new_section_social_desktop">
+                <div class="footer_new_section_social_wrapper">
+                    <h6 class="footer_new_section_social_heading">CONNECT WITH US</h6>
 
-<div class="wm">connect</div>
+                    <div class="footer_new_section_social">
+                        <a href="https://www.facebook.com/BhavicreationsPvtLtd/"
+                           target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bhavicreations_pvtl"
+                           target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bhavi-creations-pvt-ltd-926651235"
+                           target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@bhavicreationspvtltd"
+                           target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="https://in.pinterest.com/bhavicreations/"
+                           target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                            <i class="bi bi-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<div class="cp">2025 <a href="https://tealcoreventures.in/">Tealcore Ventures.</a> All rights reserved</div>
+            <!-- Column 3: Contact Information -->
+            <div class="col-12 col-md-6 col-xl-4 footer_new_section_column footer_new_section_contact">
+                <div class="footer_new_section_contact_inner">
+                    <h6 class="footer_new_section_contact_heading">Contact Us</h6>
 
+                    <ul class="footer_new_section_contact_list">
+                        <li>
+                            <i class="bi bi-geo-alt"></i>
+                            <span>
+                                Plot no 28, RTO Office Rd, behind Lazza Ice Cream,
+                                Ranga Rao Nagar, Kakinada, Andhra Pradesh 533003
+                            </span>
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone"></i>
+                            <a href="tel:+919642343434">+91 96423 43434</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            <a href="mailto:admin@bhavicreations.com">
+                                admin@bhavicreations.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="footer_new_section_bottom">
+            <p class="footer_new_section_copyright">
+                
+              © 2022 Bhavi Creations Pvt Ltd. All Rights Reserved.
+                <a href="https://bhavicreations.com" style="text-decoration: none; color: #ffffff">Design with love @</a>
+                <img src="assets\img\Bhavi_Branding_Stamp.png" class="img-fluid brand_image" style="width:60px;height:60px"alt=""></a>
+            </p>
+        </div>
+
+    </div>
 </footer>
+
+
 
 <!-- Floating Widgets: WhatsApp Chat with us & Back to Top Arrow -->
 <div class="floating-widgets">
-  <a href="https://wa.me/917012998181?text=Hi%2C%20I%27m%20interested%20in%20your%20services" class="wa-widget" target="_blank" aria-label="Chat on WhatsApp">
+  <a href="https://api.whatsapp.com/send?phone=919642343434" class="wa-widget" target="_blank" aria-label="Chat on WhatsApp">
     <span class="wa-badge">Chat with us</span>
     <span class="wa-circle"><i class="fa-brands fa-whatsapp"></i></span>
   </a>
@@ -127,7 +223,7 @@ var SITES = [
     ],
 
     [
-        '',
+        'Care n Concern',
         'Care n Concern',
         '#444',
         'assets/video/Care_n_concern.png',
