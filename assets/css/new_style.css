@@ -5078,7 +5078,7 @@ border: 2px solid;
 @media (min-width:1400px){
   .hs6{row-gap:46px;margin-bottom:36px}
   .hs6 .hs6-i:not(:nth-child(3n+1)){padding-left:34px}
-  .hs6-i strong{font-size:3.2rem}
+  .hs6-i strong{font-size:35px}
   .hs6-i span{font-size:1.15rem}
 }
 
