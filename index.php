@@ -16,15 +16,21 @@
 
 <p class="eyebrow h" style="--d:.6s">India's Premium Branding & Creative Agency</p>
 
-<h1 class="h" style="--d:.72s">We Build <em>Brands</em> That People Remember.</h1>
+<h1 class="h" style="--d:.72s">We Build <em>Brands</em><br>That People Remember.</h1>
 
 <p class="lead h" style="--d:.84s">We help businesses grow through branding, websites, creative content, digital marketing, and offline advertising that deliver real results.</p>
 
 <div class="acts h" style="--d:.96s"><a href="#cta" class="btn"><span class="bt"><span>Let's Talk</span><span aria-hidden="true">Let's Talk</span></span><b>→</b></a><a href="#brands" class="link">Our Work <span>→</span></a></div></div>
 
-<div class="side h" style="--d:1.08s"><div class="stats"><div><b data-n="82" data-s="%">0</b><p>Investors rely on name recognition when making investment decisions</p></div>
-
-<div><b data-n="3.5" data-s="x">0</b><p>Higher Visibility for brands with consistent presentation</p></div></div>
+<div class="side h" style="--d:1.08s">
+<div class="hs6">
+  <div class="hs6-i"><strong data-n="1000" data-s="+">0</strong><span>Visitors</span></div>
+  <div class="hs6-i"><strong data-n="500" data-s="+">0</strong><span>Happy Clients</span></div>
+  <div class="hs6-i"><strong data-n="140" data-s="+">0</strong><span>Project Completed</span></div>
+  <div class="hs6-i"><strong data-n="11" data-s="+">0</strong><span>Years of Experience</span></div>
+  <div class="hs6-i"><strong data-n="90" data-s="%">0</strong><span>Client Satisfaction</span></div>
+  <div class="hs6-i"><strong data-n="2" data-s="+">0</strong><span>Awards Won</span></div>
+</div>
 
 <p>You don't have a marketing problem. You have a <span>Bhavi Creations</span> problem. We're here to fix it.</p></div></div>
 
@@ -90,7 +96,7 @@
 </section>
 
 <!-- ===== NEEDLE: text fill + zoom ===== -->
-<section class="nw" id="work-needle">
+<!-- <section class="nw" id="work-needle">
   <div class="nw-stage">
     <h2 class="nw-title" aria-label="The Work That Moves The Needle">
       <span class="nw-line" aria-hidden="true">The Work</span>
@@ -98,15 +104,46 @@
       <span class="nw-line" aria-hidden="true">The Needle</span>
     </h2>
   </div>
+</section> -->
+<!-- ===== ABOUT US ===== -->
+<section class="ab" id="about">
+  <div class="ab-grid">
+
+    <div class="ab-text">
+      <h2 class="ab-title">About Us</h2>
+
+      <p>Meet Mr. Ch. Naga Phaneendra, CEO of Bhavi Creations, nestled in Kakinada, behind the J.N.T.U. Engineering College Playground. Under his leadership, Bhavi Creations thrives with a commitment to innovation and excellence, propelling it to the forefront of the industry.</p>
+
+      <div class="ab-extra" id="abExtra">
+        <div class="ab-extra-in">
+          <p>Phaneendra's strategic insights and passion define the company's ethos, ensuring a journey towards artistic brilliance. Beyond business, he's a visionary with a profound love for the arts, rooted in Kakinada's cultural richness. Phaneendra fosters an environment of innovation and creativity, exploring the intersection of technology and art. Reach out for inquiries or collaborations at <a href="mailto:admin@bhavicreations.com">admin@bhavicreations.com</a> or <a href="tel:+919642343434">9642343434</a>. Join him on the creative journey at Bhavi Creations: <a href="https://bhavicreations.com/" target="_blank" rel="noopener">https://bhavicreations.com/</a>.</p>
+        </div>
+      </div>
+
+      <button type="button" class="ab-btn" id="abMore" aria-expanded="false" aria-controls="abExtra">
+        <span class="ab-lbl">Know More</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="ab-imgwrap">
+      <div class="ab-fold">
+        <div class="ab-float">
+          <img src="assets/img/phani_ceo_sir.png" alt="Mr. Ch. Naga Phaneendra, CEO of Bhavi Creations" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
 
 <section class="shift" id="how">
 
-<div class="hd"><div><small>( How it works )</small><h2>From the first call to the obvious choice.</h2></div><div class="cnt"><span id="sn">01</span> <s>/ 06</s></div></div>
+<div class="hd"><div><small>( OUR PROCESS )</small><h2>A Proven Process That Works.</h2></div><div class="cnt"><span id="sn">01</span> <s>/ 06</s></div></div>
 
-<div class="zone"><p class="bl">Another<br>option</p><p class="sh">The obvious<br>choice</p><span class="lens"></span></div>
+<div class="zone"><p class="bl">The Best<br>choice</p><p class="sh">Bhavi<br>Creations</p><span class="lens"></span></div>
 
 <ol class="stp" id="sp" style="list-style:none"><span class="fill"></span></ol>
 
@@ -130,19 +167,19 @@
 
 </section>
 
-<section class="stmt"><p>People do not buy what is best they buy what makes them feel certain. Perception is the engineering of certainty.</p></section>
+<!-- <section class="stmt"><p>People do not buy what is best they buy what makes them feel certain. Perception is the engineering of certainty.</p></section> -->
 
 <!-- ===== ADDED (live site): logo zoom transition ===== -->
 <section class="px-zoom" id="px-zoom">
-
 <div class="px-zstage">
 
 <img class="px-zlogo" src="./assets/img/Bhavi_Creations_Logo_0001.png" alt="Bhavi Creations">
 
+<p class="px-ztext">We are a premium branding &amp; creative agency, helping businesses stand out, attract customers and grow.</p>
+
 <span class="px-zfade"></span>
 
 </div>
-
 </section>
 
 <!-- ===== ADDED (live site): "Prception helps brands choose the right story" + physics chips ===== -->

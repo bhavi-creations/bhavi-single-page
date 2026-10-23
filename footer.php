@@ -236,42 +236,42 @@ var SITES = [
 function bi(alt,files){return files.map(function(f,i){return'<div><img src="assets/img/'+f+'.webp" alt="'+alt+(i?' board '+i:'')+'" onerror="this.parentNode.remove()"></div>'}).join('')}
 
 var BRANDS=[
-['Lynklead','CRM · Brand Identity','Two L’s linked into one mark, and a robot mascot, for a CRM built to connect, manage and convert.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],
- '<div><img src="assets/img/lynklead.webp" alt="Lynklead mascot"></div>'+
- '<div><img src="assets/img/lynklead-mascot.webp" alt="Lynklead name"></div>'+
- '<div><img src="assets/img/lynklead-name.webp" alt="Lynklead board 1"></div>'],
-['BlackBox','Learning · Identity & Mascot','A confident identity system and a red-panda mascot for a future-ready learning brand.','#FF6A3D','#fff',['#3D3D3D','#FF6A3D','#FAF9F7'],
- '<div><img src="assets/img/blackbox-identity.webp" alt="BlackBox identity"></div>'+
- '<div><img src="assets/img/blackbox-1.webp" alt="BlackBox mascot"></div>'+
- '<div><img src="assets/img/blackbox-2.webp" alt="BlackBox board 1"></div>'+
- '<div><img src="assets/img/blackbox-3.webp" alt="BlackBox board 2"></div>'+
- '<div><img src="assets/img/blackbox-4.webp" alt="BlackBox board 3"></div>'],
-['CocoGo','Beverage · Character Brand','Goodness on the go: a fresh coconut brand with a character to match.','#0E713A','#fff',['#FEF303','#0E713A','#FFF9DA','#C36A41'],
- '<div><img src="assets/img/cocogo.webp" alt="CocoGo brand"></div>'+
- '<div><img src="assets/img/cocogo-2.webp" alt="CocoGo board 1"></div>'+
- '<div><img src="assets/img/cocogo-3.webp" alt="CocoGo board 2"></div>'+
- '<div><img src="assets/img/cocogo-4.webp" alt="CocoGo board 3"></div>'],
-['Digital Mugavari','Local Discovery · Identity','A D, a location pin and a road: a digital address for every store, everywhere.','#EF2D2D','#fff',['#EF2D2D','#404145','#FFFFFF'],
- '<div><img src="assets/img/digital-mugavari.webp" alt="Digital Mugavari brand"></div>'+
- '<div><img src="assets/img/digital-mugavari-1.webp" alt="Digital Mugavari board 1"></div>'+
- '<div><img src="assets/img/digital-mugavari-2.webp" alt="Digital Mugavari board 2"></div>'+
- '<div><img src="assets/img/digital-mugavari-3.webp" alt="Digital Mugavari board 3"></div>'+
- '<div><img src="assets/img/digital-mugavari-4.webp" alt="Digital Mugavari board 4"></div>'],
-['Tech Grandha','EdTech · Identity & Mascot','A T, a G and a magnifying-glass robot: a friendly identity for learning, building and growing.','#02A7D9','#fff',['#02A7D9','#F7941D','#FFFFFF'],
- '<div><img src="assets/img/tech-grandha.webp" alt="Tech Grandha brand"></div>'+
- '<div><img src="assets/img/tech-grandha-1.webp" alt="Tech Grandha board 1"></div>'+
- '<div><img src="assets/img/tech-grandha-2.webp" alt="Tech Grandha board 2"></div>'+
- '<div><img src="assets/img/tech-grandha-3.webp" alt="Tech Grandha board 3"></div>'+
- '<div><img src="assets/img/tech-grandha-4.webp" alt="Tech Grandha board 4"></div>'],
-['Photonvolt','Solar Energy','Solar energy solutions with a sustainable brand design.','#FED700','#0a0a0a',['#D8B700','#FED700'],
- '<div><img src="assets/img/photonvolt.webp" alt="Photonvolt brand"></div>'+
- '<div><img src="assets/img/photonvolt-1.webp" alt="Photonvolt board 1"></div>'+
- '<div><img src="assets/img/photonvolt-2.webp" alt="Photonvolt board 2"></div>'],
-['Carb N Care','Car Air Purifier','Clean air, thoughtfully designed. Protection that blends into your lifestyle.','#68221B','#fff',['#D2AE6A'],
- '<div><img src="assets/img/carb-n-care.webp" alt="carb-n-care brand"></div>'+
- '<div><img src="assets/img/carb-n-care-1.webp" alt="carb-n-care board 1"></div>'+
- '<div><img src="assets/img/carb-n-care-2.webp" alt="carb-n-care board 2"></div>'+
- '<div><img src="assets/img/carb-n-care-3.webp" alt="carb-n-care board 3"></div>'],
+['Social media','Creative Content Creation & Visual Design','Build a powerful social media presence with creative content, strategic planning, and consistent engagement that increases brand awareness, attracts new customers, and drives real business growth across all major platforms.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],
+ '<div><img src="assets/img/Social-Media-Marketing.webp" alt="Social media"></div>'+
+ '<div><img src="assets/img/social-media-1.jpg" alt="social media 1"></div>'+
+ '<div><img src="assets/img/social-media-2.jfif" alt="social media 2"></div>'],
+['Paid Ads','Google & Meta ads','Reach the right audience with high-performing paid advertising campaigns that increase website traffic, generate quality leads, and maximize your return on investment across Google and social media platforms.','#FF6A3D','#fff',['#3D3D3D','#FF6A3D','#FAF9F7'],
+ '<div><img src="assets/img/paid-ads.png" alt="paid ads"></div>'+
+ '<div><img src="assets/img/meta-ads-1.png" alt="meta ads"></div>'+
+ '<div><img src="assets/img/facebook-ads-2.png" alt="facebook ads"></div>'+
+ '<div><img src="assets/img/google-ads-3.png" alt="google ads"></div>'+
+ '<div><img src="assets/img/linked-in-ads-4.png" alt="linked in ads"></div>'],
+['SEO','Search Engine Optimization that ranks','Improve your websites visibility with powerful SEO strategies that help your business rank higher on Google, attract qualified traffic, and generate more leads through sustainable organic growth.','#0E713A','#fff',['#FEF303','#0E713A','#FFF9DA','#C36A41'],
+ '<div><img src="assets/img/seo1.png" alt="seo ranking"></div>'+
+ '<div><img src="assets/img/seo-1.png" alt=""></div>'+
+ '<div><img src="assets/img/seo-2.png" alt=""></div>'+
+ '<div><img src="assets/img/seo-3.png" alt=""></div>'],
+['Website Development','Website design','A website helps people learn about your business, products, and services. We create modern, fast, and mobile-friendly websites that help your business grow online.','#EF2D2D','#fff',['#EF2D2D','#404145','#FFFFFF'],
+ '<div><img src="assets/img/website-design.png" alt="Digital Mugavari brand"></div>'+
+ '<div><img src="assets/img/website-design-1.png" alt="Digital Mugavari board 1"></div>'+
+ '<div><img src="assets/img/website-design-2.png" alt="Digital Mugavari board 2"></div>'+
+ '<div><img src="assets/img/website-design-3.png" alt="Digital Mugavari board 3"></div>'+
+ '<div><img src="assets/img/website-design-4.png" alt="Digital Mugavari board 4"></div>'],
+['Graphic Designing','Logo, website & brand identity design','We create visually compelling designs — from logos and branding to print and digital media — that capture attention, communicate clearly, and leave a lasting impression.','#02A7D9','#fff',['#02A7D9','#F7941D','#FFFFFF'],
+ '<div><img src="assets/img/Graphic-Design.png" alt="Graphic designing"></div>'+
+ '<div><img src="assets/img/graphic-design-2.png" alt="Graphic designing 1"></div>'+
+ '<div><img src="assets/img/graphic-design-1.png" alt="Graphic designing 2"></div>'+
+ '<div><img src="assets/img/graphic-design-3.png" alt="Graphic designing 3"></div>'+
+ '<div><img src="assets/img/graphic-design-4.png" alt="Graphic designing 4"></div>'],
+['Video editing','Create Engaging Videos that inspire','Creative Video Editing & Color Grading Motion Graphics & Animated Visuals','#FED700','#0a0a0a',['#D8B700','#FED700'],
+ '<div><img src="assets/img/Video-editing.png" alt="Video editing"></div>'+
+ '<div><img src="assets/img/video-editing-1.png" alt="Video editing 1"></div>'+
+ '<div><img src="assets/img/video-editing-2.png" alt="Video editing 2"></div>'],
+['GMB','Car Air Purifier','Clean air, thoughtfully designed. Protection that blends into your lifestyle.','#68221B','#fff',['#D2AE6A'],
+ '<div><img src="assets/img/gmb.png" alt="gmb"></div>'+
+ '<div><img src="assets/img/gmb-1.png" alt=""></div>'+
+ '<div><img src="assets/img/gmb-2.png" alt=""></div>'+
+ '<div><img src="assets/img/gmb-3.png" alt=""></div>'],
 ['Saki','Women’s Clothing','Crafted for women who wear confidence effortlessly.','#06332E','#fff',['#06332E','#F4D7B5'],
  '<div><img src="assets/img/saki.webp" alt="Tech Grandha brand"></div>'+
  '<div><img src="assets/img/saki-1.webp" alt="Tech Grandha board 1"></div>'+
@@ -285,7 +285,7 @@ var BRANDS=[
  '<div><img src="assets/img/eco-cleanser-2.webp" alt="Tech Grandha board 2"></div>'],
 ];
 
-var STEPS=[['Discovery','A conversation, not a pitch. We hear how you see your brand, and you leave with a first read of how the market sees it.'],['Perception audit','We map how customers, competitors and search really see you, and measure the gap.'],['Strategy','We define the new reality: the positioning, the story and the identity that will carry it.'],['Build','Designers, developers and marketers bring it to life: identity, website, content, campaigns.'],['Launch','The new perception goes live everywhere your brand is seen, at the same moment.'],['Repeat','We track how perception moves and keep sharpening it. From here, it compounds.']];
+var STEPS=[['Discover','We understand your goals, audience and business needs.'],['Strategy','We research, analyze and create a winning plan for you.'],['Design','Our creative team brings your brand to life.'],['Review','We refine, perfect and ensure everything is just right.'],['Launch','We launch with impact and support your growth.'],['Growth','We optimize and scale your brand for long-term success.']];
 
 var CLIENTS=['Amrut Veni','Arena Animation','BlackBox Learning','Brightwyn','Digital Mugavari','Eco Cleanser','Faceco','Leggo','Moster','NeuralNest','Parle','World Peace Board','Photonvolt','Saki','Staton','Tech Grandha','Zica'];
 
@@ -842,7 +842,10 @@ gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.px-feel',start:'t
 
 gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.px-zoom',start:'top top',end:'bottom bottom',scrub:.6}})
 
- .fromTo('.px-zlogo',{scale:1},{scale:40,duration:1,ease:'power2.in'},0)
+  .fromTo('.px-zlogo',{scale:1},{scale:40,duration:1,ease:'power2.in'},0)
+
+ /* tagline: zoom start avvagane slow ga fade + konchem paiki jarigi disappear */
+ .to('.px-ztext',{opacity:0,y:-18,filter:'blur(4px)',duration:.4,ease:'power1.out'},0)
 
  .to('.px-zfade',{opacity:1,duration:.14},.86);
 
@@ -1132,6 +1135,44 @@ dots.forEach(function(d,i){d.onclick=function(){vp.scrollTo({left:i*step(),behav
   fontReady.then(function(){return document.fonts?document.fonts.ready:0}).then(build);
 
   var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build,200)});
+})();
+</script>
+
+
+
+<script>
+(function(){
+  var btn=document.getElementById('abMore'),box=document.getElementById('abExtra');
+  if(!btn||!box)return;
+
+  /* Know More / Know Less */
+  btn.addEventListener('click',function(){
+    var open=box.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.querySelector('.ab-lbl').textContent=open?'Know Less':'Know More';
+    /* height maarindi kabatti pin positions malli measure */
+    setTimeout(function(){if(window.ScrollTrigger)ScrollTrigger.refresh()},650);
+  });
+
+  /* image fold animation (scroll based) */
+  function init(){
+    if(!window.gsap||!window.ScrollTrigger||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* section loki vachetappudu: image paper laga unfold */
+    gsap.fromTo('.ab-fold',
+      {rotateX:75,opacity:0},
+      {rotateX:0,opacity:1,ease:'power2.out',
+       scrollTrigger:{trigger:'.ab',start:'top 90%',end:'top 35%',scrub:.6}});
+
+    /* next section ki veltunnappudu: image fold ayyi close avtundi */
+    gsap.fromTo('.ab-fold',
+      {rotateX:0,opacity:1},
+      {rotateX:-90,opacity:0,ease:'power2.in',immediateRender:false,
+       scrollTrigger:{trigger:'.ab',start:'bottom 85%',end:'bottom 15%',scrub:.6}});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+  addEventListener('load',function(){if(window.ScrollTrigger)ScrollTrigger.refresh()});
 })();
 </script>
 
