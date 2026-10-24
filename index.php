@@ -218,7 +218,7 @@ We help businesses grow through branding, websites, creative content, digital ma
 
 <button class="go" aria-label="Submit"><span class="go-a">→</span><span class="go-a">→</span></button></form>
 
-<div class="loc"><div><h4>CONNECT</h4>+91 7012998181<br>admin@bhavicreations.com</div><div><h4>ADDRESS</h4>Citylink Tower, Bakery Jct Rd,<br>near Reserve Bank Of India,<br>Thampanoor, Kerala 695001</div></div></div>
+<div class="loc"><div><h4>CONNECT</h4>+91 9642343434<br>admin@bhavicreations.com</div><div><h4>ADDRESS</h4>Plot no 28, RTO Office Rd, behind Lazza Ice Cream, Ranga Rao Nagar, Kakinada, Andhra Pradesh 533003</div></div></div>
 
 </div></section>
 
