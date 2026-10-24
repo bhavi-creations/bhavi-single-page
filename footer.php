@@ -1009,7 +1009,7 @@ if(top){
 
 <script>
 (function(){
-var A='',U='https://bhavicreations.com/';
+var A='',U='https://bhavicreations.com';
 /* [tag, title, description, date, link slug, image url (paste here)] */
 var NEWS=[
 ['','','','','','assets/img/img-1.jpeg'],
