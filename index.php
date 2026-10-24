@@ -218,7 +218,7 @@ We help businesses grow through branding, websites, creative content, digital ma
 
 <button class="go" aria-label="Submit"><span class="go-a">→</span><span class="go-a">→</span></button></form>
 
-<div class="loc"><div><h4>CONNECT</h4>+91 7012998181<br>hello@prception.in</div><div><h4>ADDRESS</h4>Citylink Tower, Bakery Jct Rd,<br>near Reserve Bank Of India,<br>Thampanoor, Kerala 695001</div></div></div>
+<div class="loc"><div><h4>CONNECT</h4>+91 7012998181<br>admin@bhavicreations.com</div><div><h4>ADDRESS</h4>Citylink Tower, Bakery Jct Rd,<br>near Reserve Bank Of India,<br>Thampanoor, Kerala 695001</div></div></div>
 
 </div></section>
 
@@ -227,7 +227,7 @@ We help businesses grow through branding, websites, creative content, digital ma
  <div class="nws">
   <div class="nws-hd"><h3><b>Bhavi</b> Creations</h3><div class="nws-ar"><button type="button" id="nwsP" aria-label="Previous">‹</button><button type="button" id="nwsN" aria-label="Next">›</button></div></div>
   <div class="nws-vp" id="nwsVp"><div class="nws-tr" id="nwsTr"></div></div>
-  <div class="nws-ft"><div class="nws-dots" id="nwsD"></div><a href="https://medialab.prception.in/news/articles/" target="_blank" rel="noopener">Powered by Prception ↗</a></div>
+  <div class="nws-ft"><div class="nws-dots" id="nwsD"></div><a href="https://bhavicreations.com/" target="_blank" rel="noopener"> Bhavi creations site ↗</a></div>
  </div>
 </section>
 
