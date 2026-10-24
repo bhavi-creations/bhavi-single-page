@@ -1014,10 +1014,12 @@ var A='',U='https://bhavicreations.com/';
 var NEWS=[
 ['','','','','','assets/img/img-1.jpeg'],
 ['','','','','','assets/img/img-2.png'],
-['','',"",'','','assets/img/img-3.jpg'],
+['','',"",'','','assets/img/img-3.png'],
 ['','','','','','assets/img/social media.png'],
 ['','','','','','assets/img/website.png'],
-['','','','','','assets/img/seo.png']
+['','','','','','assets/img/seo.png'],
+['','','','','','assets/img/Graphic Design1.png'],
+['','','','','','assets/img/video-productions1.png']
 ];
 var tr=document.getElementById('nwsTr'),vp=document.getElementById('nwsVp'),dt=document.getElementById('nwsD');if(!tr)return;
 var e=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
