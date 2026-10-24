@@ -155,11 +155,12 @@
 
 <div class="px-stick">
 
-<img class="px-s" src="https://prception.in/assets/imgs/gallery/service_2.png" alt="" loading="lazy">
+<img class="px-s" src="assets/img/video-editing-1.png" alt="" loading="lazy">
 
-<img class="px-l" src="https://prception.in/assets/imgs/gallery/service_1.png" alt="" loading="lazy">
+<img class="px-l" src="assets/img/website-design-4.png" alt="" loading="lazy">
 
-<div class="px-copy"><p class="px-t">We don't just build brands we shape how they're perceived. Every satisfying detail is crafted to make your audience feel something real.</p></div>
+<div class="px-copy"><p class="px-t">We Build Brands That People Remember.
+We help businesses grow through branding, websites, creative content, digital marketing, and offline advertising that deliver real results.</p></div>
 
 <a href="https://prception.in/casestudy" class="px-btn">View All Work</a>
 
@@ -187,7 +188,7 @@
 
 <div class="px-hd">
 
-<h2 class="px-h2">Prception helps brands choose the right story, the right moment, and the right meaning.</h2>
+<h2 class="px-h2">Bhavi Creations help businesses grow through branding, websites, creative content, digital marketing, and offline advertising that deliver real results.</h2>
 
 <p class="px-p">We're a great team of creatives with a strongest capabilities to helping progressive fields achieve their goals. With the best talent on every project done successfully</p>
 
@@ -224,7 +225,7 @@
 <!-- ===== ADDED (live site): Medialab Dispatch widget ===== -->
 <section class="px-news" id="pxNews">
  <div class="nws">
-  <div class="nws-hd"><h3><b>MEDIALAB</b> DISPATCH</h3><div class="nws-ar"><button type="button" id="nwsP" aria-label="Previous">‹</button><button type="button" id="nwsN" aria-label="Next">›</button></div></div>
+  <div class="nws-hd"><h3><b>Bhavi</b> Creations</h3><div class="nws-ar"><button type="button" id="nwsP" aria-label="Previous">‹</button><button type="button" id="nwsN" aria-label="Next">›</button></div></div>
   <div class="nws-vp" id="nwsVp"><div class="nws-tr" id="nwsTr"></div></div>
   <div class="nws-ft"><div class="nws-dots" id="nwsD"></div><a href="https://medialab.prception.in/news/articles/" target="_blank" rel="noopener">Powered by Prception ↗</a></div>
  </div>

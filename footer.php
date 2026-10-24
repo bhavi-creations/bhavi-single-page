@@ -267,22 +267,22 @@ var BRANDS=[
  '<div><img src="assets/img/Video-editing.png" alt="Video editing"></div>'+
  '<div><img src="assets/img/video-editing-1.png" alt="Video editing 1"></div>'+
  '<div><img src="assets/img/video-editing-2.png" alt="Video editing 2"></div>'],
-['GMB','Car Air Purifier','Clean air, thoughtfully designed. Protection that blends into your lifestyle.','#68221B','#fff',['#D2AE6A'],
+['GMB','gmb','Improve your websites visibility with powerful SEO strategies that help your GMB business profile rank higher on Google, attract qualified traffic, and generate more leads through sustainable organic growth.','#68221B','#fff',['#D2AE6A'],
  '<div><img src="assets/img/gmb.png" alt="gmb"></div>'+
  '<div><img src="assets/img/gmb-1.png" alt=""></div>'+
  '<div><img src="assets/img/gmb-2.png" alt=""></div>'+
  '<div><img src="assets/img/gmb-3.png" alt=""></div>'],
-['Saki','Women’s Clothing','Crafted for women who wear confidence effortlessly.','#06332E','#fff',['#06332E','#F4D7B5'],
- '<div><img src="assets/img/saki.webp" alt="Tech Grandha brand"></div>'+
- '<div><img src="assets/img/saki-1.webp" alt="Tech Grandha board 1"></div>'+
- '<div><img src="assets/img/saki-2.webp" alt="Tech Grandha board 2"></div>'+
- '<div><img src="assets/img/saki-3.webp" alt="Tech Grandha board 3"></div>'+
- '<div><img src="assets/img/saki-4.webp" alt="Tech Grandha board 4"></div>'],
-['ZICA','Animation Academy · Mascot','Inspiring future animators to lead and create.','#EB6820','#fff',['#EB6820','#727272'],
- '<div><img src="assets/img/zica.webp" alt="Tech Grandha brand"></div>'],
-['Eco Cleanser','Pet Care · Packaging & Retail','A pet-care range redesigned on the shelf and at the stall: fresh green, friendly and clean.','#1F8A3B','#fff',['#1F8A3B','#FFFFFF'],
- '<div><img src="assets/img/eco-cleanser-1.webp" alt="Tech Grandha board 1"></div>'+
- '<div><img src="assets/img/eco-cleanser-2.webp" alt="Tech Grandha board 2"></div>'],
+['Mobile app','mobile apps development','Crafted for women who wear confidence effortlessly.','#06332E','#fff',['#06332E','#F4D7B5'],
+ '<div><img src="assets/img/mobile-app-development.png" alt=""></div>'+
+ '<div><img src="assets/img/mobile-app-1.png" alt="Tech Grandha board 1"></div>'+
+ '<div><img src="assets/img/mobile-app-2.png" alt="Tech Grandha board 2"></div>'+
+ '<div><img src="assets/img/mobile-app-3.png" alt="Tech Grandha board 3"></div>'+
+ '<div><img src="assets/img/mobile-app-4.png" alt="Tech Grandha board 4"></div>'],
+['Branding','Unique Logo & Visual Identity Design','Create a strong and memorable brand identity that builds trust, connects with your audience, and helps your business stand out in today competitive market with a consistent and professional image.','#EB6820','#fff',['#EB6820','#727272'],
+ '<div><img src="assets/img/branding1.png" alt="Mobile app development"></div>'],
+['Digital Marketing','Hoardings & banner promotions','Promote your business with theatre ads, website designing, banners, pamphlets, and other traditional marketing solutions. Reach more local customers and grow your brand with confidence.','#1F8A3B','#fff',['#1F8A3B','#FFFFFF'],
+ '<div><img src="assets/img/Digital-marketing-1.png" alt=""></div>'+
+ '<div><img src="assets/img/Digital-marketing-2.png" alt=""></div>'],
 ];
 
 var STEPS=[['Discover','We understand your goals, audience and business needs.'],['Strategy','We research, analyze and create a winning plan for you.'],['Design','Our creative team brings your brand to life.'],['Review','We refine, perfect and ensure everything is just right.'],['Launch','We launch with impact and support your growth.'],['Growth','We optimize and scale your brand for long-term success.']];
@@ -1009,10 +1009,10 @@ if(top){
 
 <script>
 (function(){
-var A='Fathima Farzana YS',U='https://medialab.prception.in/news/';
+var A='',U='https://medialab.prception.in/news/';
 /* [tag, title, description, date, link slug, image url (paste here)] */
 var NEWS=[
-['ai advertising','AI-Created Ads Spark Trust Crisis as Brands Double Down on Artificial Intelligence','Consumer distrust of AI-generated ads is rising as brands expand AI use, exposing a growing gap in transparency, governance, and consumer trust.','Jul 18, 2026','ai-created-ads-spark-trust-crisis-as-brands-double-down-on-artificial-intelligence','assets/img/img-6.jpg'],
+['','','','','','assets/img/img-1.jpeg'],
 ['fifa world cup 2026','Football AI Pro Powers FIFA World Cup 2026 with AI Referee View and Avatars','Football AI Pro, AI player avatars and Referee View are transforming match analysis and broadcasts at the FIFA World Cup 2026.','Jul 17, 2026','football-ai-pro-powers-fifa-world-cup-2026-with-ai-referee-view-and-avatars','assets/img/img-8.jpg'],
 ['ltimindtree','LTIMindtree Reports $150 Million Quarterly AI Revenue as Enterprise Demand Accelerates',"LTIMindtree's AI business reached a $150 million quarterly run rate, highlighting strong enterprise demand and India's growing AI services market.",'Jul 14, 2026','ltimindtree-reports-150-million-quarterly-ai-revenue-as-enterprise-demand-accelerates','assets/img/img-1.jpg'],
 ['hubspot','HubSpot Faces Triple Blow as AI, Privacy Concerns and Acquisition Drama Hit Hard','HubSpot faces mounting pressure as AI disruption, a failed acquisition and customer privacy concerns contribute to a sharp decline in investor confidence.','Jul 14, 2026','hubspot-faces-triple-blow-as-ai-privacy-concerns-and-acquisition-drama-hit-hard','assets/img/img-2.jpg'],
