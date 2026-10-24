@@ -1017,7 +1017,7 @@ var NEWS=[
 ['','',"",'','','assets/img/img-3.png'],
 ['','','','','','assets/img/social media.png'],
 ['','','','','','assets/img/website.png'],
-['','','','','','assets/img/seo.png'],
+['','','','','','assets/img/seo_1.png'],
 ['','','','','','assets/img/Graphic Design1.png'],
 ['','','','','','assets/img/video-productions1.png']
 ];
