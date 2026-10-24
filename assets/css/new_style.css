@@ -56,7 +56,8 @@ h2,
 h3 {
   font-family: var(--f-head);
   font-weight: 500;
-  color: var(--primary);
+  /* color: var(--primary); */
+  color: white;
   line-height: 1
 }
 
@@ -164,7 +165,8 @@ h3 {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: var(--soft);
+  /* background: var(--soft); */
+  background: #C0C0C0;
   color: #000;
   transition: transform .3s
 }
@@ -227,7 +229,8 @@ nav a {
   border-radius: 60px;
   font-size: 16px;
   /* color: var(--primary); */
-  color: #e8c978;
+  /* color: #e8c978; */
+  color: white;
   transition: .3s
 }
 
@@ -235,7 +238,8 @@ nav a {
 
 nav a:first-child {
   /* color: var(--theme); */
-  color: #e8c978;
+  /* color: #e8c978; */
+  color: white;
   background: rgba(111, 205, 193, .18)
 }
 
@@ -284,7 +288,8 @@ nav a:hover {
   font-size: 11px;
   letter-spacing: .12em;
   text-transform: uppercase;
-  margin-bottom: 34px
+  margin-bottom: 34px;
+  color: white;
 }
 
 
@@ -319,7 +324,8 @@ nav a:hover {
 .lead {
   max-width: 520px;
   margin-top: 28px;
-  font-size: 20px
+  font-size: 20px;
+  color: white;
 }
 
 
@@ -335,7 +341,8 @@ nav a:hover {
 
 
 .link {
-  color: var(--primary);
+  /* color: var(--primary); */
+  color: white;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 10px
@@ -385,11 +392,13 @@ nav a:hover {
 .side>p {
   margin-top: 36px;
   font-size: 20px;
-  color: var(--primary)
+  /* color: var(--primary); */
+  color: white;
 }
 
 .side>p span {
-  color: var(--theme)
+  /* color: var(--theme) */
+  color: #E8C978;
 }
 
 
@@ -430,7 +439,8 @@ nav a:hover {
   right: 180px;
   width: 200px;
   height: 200px;
-  background: #C89A3D;
+  /* background: #C89A3D; */
+  background: #C0C0C0;
   animation: fl 7s ease-in-out infinite alternate
 }
 
@@ -623,7 +633,8 @@ nav a:hover {
   font-size: 13px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  color:white
 }
 
 
@@ -648,7 +659,8 @@ nav a:hover {
 
 .gq p {
   margin-top: 28px;
-  font-size: 18px
+  font-size: 18px;
+  color:white
 }
 
 
@@ -899,7 +911,8 @@ nav a:hover {
 
 .hud small {
   display: block;
-  color: var(--theme);
+  /* color: var(--theme); */
+  color: white;
   letter-spacing: .02em;
   text-transform: uppercase;
   margin-bottom: 10px
@@ -967,17 +980,20 @@ nav a:hover {
 .brands .intro h2 {
   font-size: clamp(80px, 21vw, 400px);
   line-height: .8;
-  color: var(--primary)
+  /* color: var(--primary); */
+  color: white;
 }
 
 
 
 .brands .intro p {
-  text-transform: uppercase
+  text-transform: uppercase;
+  color:white
 }
 
 .brands .intro span {
-  color: var(--theme);
+  /* color: var(--theme); */
+  color: white;
   font: 400 clamp(40px, 5vw, 100px)/1 var(--f-big);
   margin-right: 14px
 }
@@ -1178,7 +1194,8 @@ nav a:hover {
 
 .shift small {
   display: block;
-  color: var(--theme);
+  /* color: var(--theme); */
+  color: white;
   letter-spacing: .12em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -1542,7 +1559,8 @@ nav a:hover {
   font-size: 12px;
   letter-spacing: .05em;
   line-height: 1.8;
-  text-align: center
+  text-align: center;
+  color:white;
 }
 
 
@@ -1550,7 +1568,8 @@ nav a:hover {
 .cta .loc h4 {
   font-weight: 400;
   opacity: .6;
-  margin-bottom: 12px
+  margin-bottom: 12px;
+  color:white
 }
 
 
@@ -2022,7 +2041,8 @@ footer {
 
 #genie .geasy {
   z-index: 3;
-  pointer-events: none
+  pointer-events: none;
+  color:white;
 }
 
 #genie .gone {
@@ -2754,10 +2774,19 @@ footer {
 /* help section + physics chips */
 .px-help{position:relative;background:var(--white);padding:120px 0 0;overflow:hidden}
 .px-hd{max-width:1650px;margin:auto;padding:0 4%}
-.px-help h2{ font-size:57px; letter-spacing:-.055em; color:var(--primary)}
+.px-help h2{ font-size:57px; letter-spacing:-.055em; 
+  /* color:var(--primary); */
+  color:white;
+}
 .px-hw{display:inline-block}
-.px-hw:first-child{color:var(--theme)}
-.px-p{max-width:620px;margin:clamp(40px,7vw,120px) 0 0 43%;font-size:28px;letter-spacing:-.02em;color:var(--secondary)}
+.px-hw:first-child{
+  /* color:var(--theme); */
+  color:white;
+}
+.px-p{max-width:620px;margin:clamp(40px,7vw,120px) 0 0 43%;font-size:28px;letter-spacing:-.02em;
+  /* color:var(--secondary); */
+  color:white;
+}
 .px-rows{position:relative;width:min(1612px,92%);height:clamp(380px,50vh,520px);margin:clamp(30px,5vw,80px) auto 0;overflow:hidden;border-bottom:4px double #111}
 .px-chip{position:absolute;left:0;top:0;width:clamp(120px,10.8vw,206px);height:clamp(50px,4.6vw,88px);display:flex;align-items:center;justify-content:center;padding:0 14px;border-radius:100px;color:#fff;font:700 clamp(10px,.85vw,15px)/1.15 var(--f-head);text-transform:uppercase;letter-spacing:.03em;text-align:center;opacity:0;cursor:grab;user-select:none;-webkit-user-select:none;will-change:transform}
 .px-chip.t{background:var(--theme)}
@@ -2919,7 +2948,10 @@ section.nw{
 .px-news{background:#f4f4f4;padding:0}
 .nws{max-width:1650px;margin:auto;padding:32px 30px 22px}
 .nws-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.nws-hd h3{font:700 20px var(--f-head);color:#111}.nws-hd b{color:var(--theme)}
+.nws-hd h3{font:700 20px var(--f-head);color:#111}.nws-hd b{
+  /* color:var(--theme); */
+  color:white;
+}
 .nws-ar{display:flex;gap:10px}
 .nws-ar button{width:34px;height:34px;border-radius:50%;border:1px solid #0002;background:var(--white);color:#111;font-size:18px;line-height:1;cursor:pointer;transition:.3s}
 .nws-ar button:hover{background:var(--theme);border-color:var(--theme);color:#fff}
@@ -3259,12 +3291,19 @@ header{
 .nav-dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:18px} /* hover bridge, menu close avvakunda */
 
 /* trigger + chevron */
-nav .nav-dd > a.dd-trigger{display:inline-flex;align-items:center;cursor:pointer;background:transparent;color:var(--primary)}
+nav .nav-dd > a.dd-trigger{display:inline-flex;align-items:center;cursor:pointer;background:transparent;
+  /* color:var(--primary); */
+  color:white;
+}
 nav .dd-trigger i{
   font-size:11px;margin-left:6px;
   transition:transform .45s cubic-bezier(.175,.885,.32,1.275);   /* bouncy flip */
 }
-nav .nav-dd.open > a.dd-trigger{color:var(--theme)}
+nav .nav-dd.open > a.dd-trigger
+{
+  /* color:var(--theme); */
+  color:white;
+}
 .nav-dd.open .dd-trigger i{transform:rotate(180deg)}
 
 /* panel */
@@ -3290,7 +3329,10 @@ nav .nav-dd.open > a.dd-trigger{color:var(--theme)}
 
 nav .sub-menu li a{
   display:block;padding:13px 18px;border-radius:14px;white-space:nowrap;
-  font-size:16px;color:var(--primary);background:transparent;
+  font-size:16px;
+  /* color:var(--primary); */
+  color:white;
+  background:transparent;
   transition:background .25s,color .25s,padding-left .3s;
 }
 nav .sub-menu li a:hover{background:rgba(1,143,135,.1);color:var(--theme);padding-left:24px}
@@ -3437,7 +3479,8 @@ nav a {
 /* ===== "WEB WORK": frosted glass text (same look as the header) ===== */
 .ww .intro h2{
   position:relative;
-  color:transparent;-webkit-text-fill-color:transparent;   /* real text stays for layout + accessibility */
+  color:transparent;
+  /* -webkit-text-fill-color:transparent;   real text stays for layout + accessibility */
 }
 /* fallback while the mask is being built / if unsupported: translucent letters */
 .ww .intro h2:not(.glass-on){
@@ -3473,7 +3516,9 @@ nav a {
 @keyframes ifs-rise{from{opacity:0;translate:0 50px}}
 
 /* giant text: GSAP owns its transform, so its entrance uses `top` (not translate) to avoid any clash */
-.index_first_section .giant.h{animation-name:ifs-rise-top}
+.index_first_section .giant.h{animation-name:ifs-rise-top;
+  color: white;
+}
 @keyframes ifs-rise-top{from{opacity:0;top:50px}to{opacity:1;top:0}}
 
 /* layout */
@@ -3484,7 +3529,10 @@ nav a {
 .index_first_section .wrap h1{font-size:70px;line-height:.92;max-width:7.2em;letter-spacing:-.02em}
 @media(min-width:992px) and (max-width:1200px){.index_first_section .wrap h1{font-size:43px}}
 @media(max-width:700px){.index_first_section .wrap h1{font-size:clamp(42px,12vw,64px)}}
-.index_first_section .wrap h1 em{font-style:normal;color:var(--theme)}
+.index_first_section .wrap h1 em{font-style:normal;
+  /* color:var(--theme); */
+  color:white;
+}
 
 .index_first_section .stats b{font:400 clamp(44px,5.5vw,90px)/.9 var(--f-head);letter-spacing:-.03em}
 
@@ -3498,7 +3546,9 @@ nav a {
   position:relative;z-index:7;display:block;width:max-content;max-width:none;
   left:50%;margin:42px 0 0;transform:translateX(-50%);transform-origin:center center;will-change:transform;
   font-family:var(--f-big);font-size:235px;line-height:.82;letter-spacing:-.035em;
-  white-space:nowrap;text-align:center;color:var(--theme);
+  white-space:nowrap;text-align:center;
+  /* color:var(--theme); */
+  color:white;
 }
 @media(max-width:1000px){.index_first_section .giant{font-size:clamp(110px,32vw,320px)}}
 @media(max-width:700px){.index_first_section .giant{margin-top:28px}}
@@ -3509,7 +3559,9 @@ nav a {
   position:absolute;z-index:8;left:0;right:0;margin-inline:auto;top:60%;
   width:min(63vw,1260px);max-width:none;white-space:normal;
   font:400 clamp(18px,1.9vw,38px)/1.3 var(--f-body);letter-spacing:-.025em;
-  text-align:center;color:var(--primary);
+  text-align:center;
+  /* color:var(--primary); */
+  color:white;
   opacity:0;visibility:hidden;pointer-events:none;
 }
 @media(min-width:601px) and (max-width:1000px){
@@ -3525,7 +3577,7 @@ nav a {
 }
 @media(min-width:601px) and (max-width:1000px){.index_first_section .morph-cta{padding:22px 42px;font-size:18px}}
 @media(max-width:600px){.index_first_section .morph-cta{padding:18px 34px;font-size:16px}}
-.index_first_section.morph-active .morph-cta{pointer-events:auto;background: #006b4a;}
+.index_first_section.morph-active .morph-cta{pointer-events:auto; background: #006b4a;   color: #E8C978;}
 
 /* ---------- buttons (live-site look) ---------- */
 
@@ -3898,7 +3950,8 @@ header.open nav {
 .nws-c,
 .nws-t h4,
 .menu-toggle span {
-  color: #F8F8F5;
+  /* color: #F8F8F5; */
+  color: white;
 }
 
 .ww .intro p,
@@ -4133,7 +4186,8 @@ header.open nav {
 .wa-circle,
 .nws-c,
 .nws-t h4 {
-  color: #E8C978;
+  /* color: #E8C978; */
+  color:white;
 }
 
 .ww .intro p,
@@ -4143,7 +4197,8 @@ header.open nav {
 .lamp .bot p,
 .nws-t p,
 .nws-t span {
-  color: rgba(232, 201, 120, .82);
+  /* color: rgba(232, 201, 120, .82); */
+  color: white;
 }
 
 .ww .intro h2:not(.glass-on) {
@@ -4156,7 +4211,8 @@ header.open nav {
 }
 
 .nws-hd h3 {
-  color: #E8C978;
+  /* color: #E8C978; */
+  color: white;
 }
 
 .gone {
@@ -4533,7 +4589,7 @@ header.open nav {
     position: relative;
     margin: 0 0 38px;
     padding-bottom: 15px;
-    color: #E8C978;
+    /* color: #E8C978; */
     font-size: 20px;
     font-weight: 700;
 }
@@ -4572,7 +4628,7 @@ header.open nav {
     display: table;
     margin: 0 0 28px;
     padding-bottom: 15px;
-    color: #E8C978;
+    /* color: #E8C978; */
     font-size: 21px;
     font-weight: 700;
 }
@@ -4958,7 +5014,13 @@ border: 2px solid;
   padding:clamp(70px,10vw,150px) 6vw;overflow:hidden;
 }
 .ab-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,90px);align-items:start}
-.ab-title{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin:0 0 22px;color:var(--ab-accent);font-weight:700}
+.ab-title{
+  font-size:clamp(2.2rem,5vw,3.6rem);
+  line-height:1.1;margin:0 0 22px;
+  /* color:var(--ab-accent); */
+  color:white;
+  font-weight:700
+}
 .ab-text p{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.75;margin:0 0 16px;color: white;}
 .ab-text a{color:var(--ab-accent);text-decoration:none;border-bottom:1px solid currentColor;word-break:break-word}
 
@@ -5010,7 +5072,8 @@ border: 2px solid;
   /* font-size:clamp(.95rem,1.4vw,1.2rem); */
   font-size:29px;
   line-height:1.6;
-  color:#e8c47a;                           /* logo gold */
+  /* color:#e8c47a;                           logo gold */
+  color:white;                           
   opacity:1;pointer-events:none;
   z-index:2;
 }
@@ -5068,12 +5131,13 @@ border: 2px solid;
 }
 .hs6-i strong{
   font-size:2.6rem;font-weight:600;line-height:1;letter-spacing:-.01em;
-  color:var(--theme);
+  color:white;
   white-space:nowrap;
 }
 .hs6-i span{
   font-size:1rem;font-weight:500;line-height:1.3;
-  color:#e8c47a;
+  /* color:#e8c47a; */
+  color:white;
 }
 
 /* 1400px and above -> 3 x 2, bigger */
@@ -5251,3 +5315,106 @@ border: 2px solid;
     margin-right: 24px;
   }
 }
+
+
+
+
+
+
+/* fonts chnaged for texts in all sections */
+/* =========================================================
+   ANISH DENTAL FONT STYLE -> Bhavi Creations
+   Poppins (body/UI) + Playfair Display (titles) + Caveat (script)
+   Fonts only. Layout, colors, animations unchanged.
+========================================================= */
+:root{
+  --f-head:"Poppins",sans-serif;              /* buttons, labels, UI */
+  --f-body:"Poppins",sans-serif;              /* paragraphs, nav, stats */
+  --f-serif:"Playfair Display",serif;         /* titles */
+  --f-script:"Caveat",cursive;                /* accent script words */
+  /* --f-big (Anton) is kept for the giant BHAVI CREATIONS / Web Work / Branding display text */
+}
+
+body{font-family:"Poppins",sans-serif}
+
+/* ---------- Titles: Playfair Display ---------- */
+h1,h2,h3,
+.nws-hd h3,
+.lamp .mid p,
+.px-t,
+.ab-title,
+.needle h2,
+.nw h2.nw-title{
+  font-family:var(--f-serif);
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+
+/* these had very tight letter-spacing for the old font; Playfair needs it relaxed */
+.index_first_section .wrap h1,
+.gq h2,
+.shift h2,
+.cta h2,
+.px-help h2,
+.lamp .mid p,
+.px-t,
+.nw h2.nw-title{
+  font-family:var(--f-serif);
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+.nw h2.nw-title{line-height:1}
+.nw .nw-ch{font-family:inherit}
+
+/* ---------- Script accent: Caveat ---------- */
+.index_first_section .wrap h1 em{
+  font-family:var(--f-script);
+  font-weight:700;
+  font-size:1.2em;
+  letter-spacing:0;
+  line-height:.8;
+  color: #E8C978;
+}
+.gq h2 em{
+  font-family:var(--f-script);
+  font-style:normal;
+  font-weight:700;
+  font-size:1.2em;
+  letter-spacing:0;
+}
+
+/* ---------- Poppins everywhere else ---------- */
+.eyebrow,.lead,.acts .link,.side>p,
+nav a,.sub-menu a,
+.btn,.px-btn,.gone,.ab-btn,
+.hs6-i strong,.hs6-i span,
+.ab-text p,
+.px-p,.px-chip,
+.st h3,.st p,.st b,
+.nws-t,.nws-t small,.nws-t h4,.nws-t p,.nws-t span,
+.footer_new_section,
+.cta input,.cta textarea,
+.wa-badge{
+  font-family:"Poppins",sans-serif;
+}
+.hs6-i strong{font-weight:600}
+.st h3{font-weight:600}
+
+
+
+/* Anton -> Playfair Display (all display text) */
+.big,
+.scene h3,.scene .gt,
+.hud h3,.tile,
+.shift .cnt,.zone p,
+.ww .intro span,.brands .intro span,
+.index_first_section .giant{
+  font-family:"Playfair Display",serif;
+  font-weight:800;
+  text-transform:none;
+  letter-spacing:-.01em;
+}
+.index_first_section .giant{font-size:150px}
+@media(max-width:1000px){.index_first_section .giant{font-size:clamp(70px,20vw,200px)}}
+
+

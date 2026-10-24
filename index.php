@@ -42,7 +42,7 @@
 
 </div>
 
-<h1 class="giant big h" style="--d:1.2s;font-weight:400;color:var(--theme)">Bhavi Creations</h1>
+<h1 class="giant big h" style="--d:1.2s;font-weight:800;color:white">Bhavi Creations</h1>
 
 <p class="morph-caption">We help businesses grow through branding, websites, creative content, digital marketing, and offline advertising that deliver real results.</p>
 
@@ -71,7 +71,7 @@
 
 <div class="mid"><p>The vision gets</p><h3 class="rare big">Rare</h3></div>
 
-<div class="bot"><p>PRception helps brands choose the right story, the right moment, and the right way to be remembered.</p><a href="#about">Find yours →</a></div></div>
+<div class="bot"><p>Bhavi creations helps brands choose the right story, the right moment, and the right way to be remembered.</p><a href="#about">Find yours →</a></div></div>
 
 </section>
 
