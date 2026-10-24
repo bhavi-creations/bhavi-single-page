@@ -1009,19 +1009,15 @@ if(top){
 
 <script>
 (function(){
-var A='',U='https://medialab.prception.in/news/';
+var A='',U='https://bhavicreations.com/';
 /* [tag, title, description, date, link slug, image url (paste here)] */
 var NEWS=[
 ['','','','','','assets/img/img-1.jpeg'],
-['fifa world cup 2026','Football AI Pro Powers FIFA World Cup 2026 with AI Referee View and Avatars','Football AI Pro, AI player avatars and Referee View are transforming match analysis and broadcasts at the FIFA World Cup 2026.','Jul 17, 2026','football-ai-pro-powers-fifa-world-cup-2026-with-ai-referee-view-and-avatars','assets/img/img-8.jpg'],
-['ltimindtree','LTIMindtree Reports $150 Million Quarterly AI Revenue as Enterprise Demand Accelerates',"LTIMindtree's AI business reached a $150 million quarterly run rate, highlighting strong enterprise demand and India's growing AI services market.",'Jul 14, 2026','ltimindtree-reports-150-million-quarterly-ai-revenue-as-enterprise-demand-accelerates','assets/img/img-1.jpg'],
-['hubspot','HubSpot Faces Triple Blow as AI, Privacy Concerns and Acquisition Drama Hit Hard','HubSpot faces mounting pressure as AI disruption, a failed acquisition and customer privacy concerns contribute to a sharp decline in investor confidence.','Jul 14, 2026','hubspot-faces-triple-blow-as-ai-privacy-concerns-and-acquisition-drama-hit-hard','assets/img/img-2.jpg'],
-['BGMI Gamers','How One Indie Game Built a Global Fan Army Without a Marketing Budget','Mecha Chameleon is proving how viral content and community engagement can outperform traditional advertising in building a successful global game.','Jul 14, 2026','how-one-indie-game-built-a-global-fan-army-without-a-marketing-budget','assets/img/img-3.jpg'],
-['spain vs france','The Biggest Match of the Tournament? Spain vs France Has Fans Losing Their Minds','Spain and France face off in a blockbuster World Cup semi final as millions of fans and brands fuel one of the biggest online conversations of the tournament.','Jul 14, 2026','the-biggest-match-of-the-tournament-spain-vs-france-has-fans-losing-their-minds','assets/img/img-7.jpg'],
-['spacexai','SpaceXAI Unveils Grok 4.5, Targets Software Developers With Faster AI Coding Performance','SpaceXAI has launched Grok 4.5, a high-performance AI model for coding and engineering with faster speeds, lower costs and advanced benchmarks.','Jul 09, 2026','spacexai-unveils-grok-4-5-targets-software-developers-with-faster-ai-coding-performance','assets/img/img-4.jpg'],
-['anthropic Claude','Anthropic Expands Claude With New Cowork Feature Across Web, Android and iPhone','Anthropic has launched Claude Cowork with cross-device support, background task processing and a unified workspace for paid users.','Jul 08, 2026','anthropic-expands-claude-with-new-cowork-feature-across-web-android-and-iphone','assets/img/img-5.jpg'],
-['google Gemini 3.5','Gemini 3.5 Pro Delayed: Google Extends Development Ahead of GPT-5.6 Showdown','Google has delayed Gemini 3.5 Pro to July 17 as DeepMind refines its flagship AI model to compete with OpenAI and Anthropic.','Jul 07, 2026','gemini-3-5-pro-delayed-google-extends-development-ahead-of-gpt-5-6-showdown','assets/img/img-9.jpg'],
-['meta','India Orders Meta to Remove Instagram Ads Linked to Child Abuse Material','India has ordered Meta to remove Instagram ads linked to child sexual abuse material and submit a detailed response within seven days.','Jul 06, 2026','india-orders-meta-to-remove-instagram-ads-linked-to-child-abuse-material','assets/img/img-10.jpg']
+['','','','','','assets/img/img-2.png'],
+['','',"",'','','assets/img/img-3.jpg'],
+['','','','','','assets/img/social media.png'],
+['','','','','','assets/img/website.png'],
+['','','','','','assets/img/seo.png']
 ];
 var tr=document.getElementById('nwsTr'),vp=document.getElementById('nwsVp'),dt=document.getElementById('nwsD');if(!tr)return;
 var e=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')};
