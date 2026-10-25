@@ -2306,7 +2306,7 @@ footer {
 
   .hud h3 {
     /* font-size: clamp(42px, 13vw, 64px) */
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .hud .tag {
@@ -3595,9 +3595,9 @@ nav a {
   .index_first_section .acts .link{font-size:18px}
 }
 @media(max-width:700px){
-  .index_first_section .acts .btn{gap:16px;padding:8px 8px 8px 23px;max-width:none;white-space:nowrap;font-size:12px}
+  .index_first_section .acts .btn{gap:16px;padding:8px 8px 8px 23px;max-width:none;white-space:nowrap;font-size:11px}
   .index_first_section .acts .btn b{width:46px;height:46px}
-  .index_first_section .acts .link{font-size:18px}
+  .index_first_section .acts .link{font-size:15px}
 }
 
 /* Our Work link: underlined label + separate underlined arrow with a gap, arrow nudges on hover */
@@ -3788,7 +3788,7 @@ header > .btn:hover .bt > span{transform:translateY(-100%)}
 @media only screen and (max-width: 768px) {
 
     .cta h2 {
-        font-size: 30px !important;
+        font-size: 26px !important;
         line-height: 1.2;
         letter-spacing: -0.5px;
         white-space: nowrap;
@@ -4526,8 +4526,9 @@ header.open nav {
     display: block;
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 100px;
     object-fit: contain;
+    margin-bottom: 5px;
 }
 
 .footer_new_section_about {
@@ -4908,8 +4909,9 @@ header.open nav {
 
     .footer_new_section_about {
         margin-bottom: 0;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 1.9;
+        margin-top: -27px;
     }
 
     .footer_new_section_social_mobile {
@@ -4919,7 +4921,7 @@ header.open nav {
     }
 
     .footer_new_section_social_mobile a {
-        flex-basis: 50px;
+        flex-basis: 46px;
         width: 50px;
         height: 50px;
         font-size: 18px;
@@ -4936,7 +4938,7 @@ header.open nav {
 
     .footer_new_section_copyright {
         padding: 20px 0;
-        font-size: 14px;
+        font-size: 11px;
         line-height: 1.7;
     }
 }
@@ -4974,7 +4976,7 @@ header.open nav {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
-    gap: 6px;
+    gap: 8px;
     margin: 0;
     padding: 15px 0;
     line-height: 1.4;
@@ -5455,4 +5457,178 @@ nav a,.sub-menu a,
 
 .wa-circle{
   color: #E8C978;
+}
+
+@media (max-width:767px) {
+  
+.index_first_section .wrap h1 em
+{
+  font-size: 27px;
+}
+
+.px-zlogo 
+{
+  height: 105px;
+  width: 186px;
+  margin-bottom: 244px;
+}
+
+.px-help h2 {
+  font-size: 18px;
+}
+
+.px-p 
+{
+  font-size: 16px;
+}
+
+.px-ztext {
+  font-size: 14px;
+}
+
+}
+
+/* logo zoom tagline: reduce gap under the logo (logo untouched) */
+.px-ztext{
+  top:calc(50% + clamp(34px,4vw,70px)) !important;   /* was 70px+ -> text moves up, closer to logo */
+}
+
+/* mobile: bigger text, tighter to the logo */
+@media (max-width:767px){
+  .px-ztext{
+    top:calc(50% + 40px) !important;
+    font-size:22px !important;      /* was 18px, so text is larger */
+    line-height:1.45;
+    margin-bottom:0 !important;     /* removes the 140px margin-bottom override */
+  }
+}
+
+/* very small phones (320px - 360px) */
+@media (max-width:360px){
+  .px-ztext{
+    top:calc(50% + 34px) !important;
+    font-size:20px !important;
+  }
+}
+
+
+
+
+
+
+/* =========================================================
+   px-feel section: mobile + tablet layout (CSS only)
+   images on top, text under them, button at the bottom
+========================================================= */
+
+/* ---------- TABLET: 768px - 1199px ---------- */
+@media (min-width:768px) and (max-width:1199px){
+  .px-s{
+    left:6%;
+    top:150px;
+    width:30vw;
+    height:32vh;
+    margin-top:0;
+  }
+  .px-l{
+    left:40%;
+    top:150px;
+    width:54vw;
+    height:42vh;
+    margin-top:0;
+  }
+  .px-copy{
+    left:6%;
+    right:6%;
+    width:auto;
+    bottom:18vh;
+  }
+  .px-t{
+    font-size:clamp(22px,3.4vw,32px);
+    line-height:1.25;
+    letter-spacing:-.02em;
+  }
+  .px-btn{
+    left:6%;
+    bottom:6vh;
+    height:64px;
+    padding:0 40px;
+    font-size:18px;
+  }
+}
+
+/* ---------- MOBILE: up to 767px ---------- */
+@media (max-width:767px){
+  .px-s{
+    left:6%;
+    top:135px;
+    width:36vw;
+    height:150px;
+    margin-top:0;
+  }
+  .px-l{
+    left:46%;
+    top:135px;
+    width:48vw;
+    height:230px;
+    margin-top:0;
+  }
+  .px-copy{
+    left:20px;
+    right:20px;
+    width:auto;
+    bottom:calc(4vh + 52px + 18px);   /* sits right above the button */
+  }
+  .px-t{
+    font-size:clamp(14px,4.4vw,18px);
+    line-height:1.4;
+    letter-spacing:-.01em;
+  }
+  .px-btn{
+    left:20px;
+    bottom:4vh;
+    height:52px;
+    padding:0 30px;
+    font-size:16px;
+  }
+}
+
+/* ---------- very small phones: 360px and below ---------- */
+@media (max-width:360px){
+  .px-s{top:130px;height:130px}
+  .px-l{top:130px;height:200px}
+  .px-t{font-size:14px;line-height:1.38}
+  .px-btn{height:48px;padding:0 26px;font-size:15px}
+  .px-copy{bottom:calc(4vh + 48px + 16px)}
+}
+
+/* short phones (landscape / small height): keep everything inside the screen */
+@media (max-width:767px) and (max-height:600px){
+  .px-s{height:100px}
+  .px-l{height:150px}
+}
+
+
+@media (min-width:768px) and (max-height:991px){
+.px-help h2 
+{
+  font-size: 40px;
+}
+
+.px-p
+{
+  font-size: 21px;
+}
+
+.px-zlogo 
+{
+  height: 115px;
+  width: 225px;
+  margin-bottom: 244px;
+}
+
+.hud h3{
+  font-size: 50px;
+}
+
 }
