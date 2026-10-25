@@ -236,51 +236,51 @@ var SITES = [
 function bi(alt,files){return files.map(function(f,i){return'<div><img src="assets/img/'+f+'.webp" alt="'+alt+(i?' board '+i:'')+'" onerror="this.parentNode.remove()"></div>'}).join('')}
 
 var BRANDS=[
-['Social media','Creative Content Creation & Visual Design','Build a powerful social media presence with creative content, strategic planning, and consistent engagement that increases brand awareness, attracts new customers, and drives real business growth across all major platforms.','#0F172A','#fff',['#0F172A','#3B82F6','#E0E7FF'],
+['Social media','Creative Content Creation & Visual Design','Build a powerful social media presence with creative content, strategic planning, and consistent engagement that increases brand awareness, attracts new customers, and drives real business growth across all major platforms.','','',['','',''],
  '<div><img src="assets/img/Social-Media-Marketing.webp" alt="Social media"></div>'+
  '<div><img src="assets/img/social-media-1.jpg" alt="social media 1"></div>'+
  '<div><img src="assets/img/social-media-2.jfif" alt="social media 2"></div>'],
-['Paid Ads','Google & Meta ads','Reach the right audience with high-performing paid advertising campaigns that increase website traffic, generate quality leads, and maximize your return on investment across Google and social media platforms.','#FF6A3D','#fff',['#3D3D3D','#FF6A3D','#FAF9F7'],
+['Paid Ads','Google & Meta ads','Reach the right audience with high-performing paid advertising campaigns that increase website traffic, generate quality leads, and maximize your return on investment across Google and social media platforms.','','',['','',''],
  '<div><img src="assets/img/paid-ads.png" alt="paid ads"></div>'+
  '<div><img src="assets/img/meta-ads-1.png" alt="meta ads"></div>'+
  '<div><img src="assets/img/facebook-ads-2.png" alt="facebook ads"></div>'+
  '<div><img src="assets/img/google-ads-3.png" alt="google ads"></div>'+
  '<div><img src="assets/img/linked-in-ads-4.png" alt="linked in ads"></div>'],
-['SEO','Search Engine Optimization that ranks','Improve your websites visibility with powerful SEO strategies that help your business rank higher on Google, attract qualified traffic, and generate more leads through sustainable organic growth.','#0E713A','#fff',['#FEF303','#0E713A','#FFF9DA','#C36A41'],
+['SEO','Search Engine Optimization that ranks','Improve your websites visibility with powerful SEO strategies that help your business rank higher on Google, attract qualified traffic, and generate more leads through sustainable organic growth.','','',['','','',''],
  '<div><img src="assets/img/seo1.png" alt="seo ranking"></div>'+
  '<div><img src="assets/img/seo-1.png" alt=""></div>'+
  '<div><img src="assets/img/seo-2.png" alt=""></div>'+
  '<div><img src="assets/img/seo-3.png" alt=""></div>'],
-['Website Development','Website design','A website helps people learn about your business, products, and services. We create modern, fast, and mobile-friendly websites that help your business grow online.','#EF2D2D','#fff',['#EF2D2D','#404145','#FFFFFF'],
+['Website Development','Website design','A website helps people learn about your business, products, and services. We create modern, fast, and mobile-friendly websites that help your business grow online.','','',['','',''],
  '<div><img src="assets/img/website-design.png" alt="Digital Mugavari brand"></div>'+
  '<div><img src="assets/img/website-design-1.png" alt="Digital Mugavari board 1"></div>'+
  '<div><img src="assets/img/website-design-2.png" alt="Digital Mugavari board 2"></div>'+
  '<div><img src="assets/img/website-design-3.png" alt="Digital Mugavari board 3"></div>'+
  '<div><img src="assets/img/website-design-4.png" alt="Digital Mugavari board 4"></div>'],
-['Graphic Designing','Logo, website & brand identity design','We create visually compelling designs — from logos and branding to print and digital media — that capture attention, communicate clearly, and leave a lasting impression.','#02A7D9','#fff',['#02A7D9','#F7941D','#FFFFFF'],
+['Graphic Designing','Logo, website & brand identity design','We create visually compelling designs — from logos and branding to print and digital media — that capture attention, communicate clearly, and leave a lasting impression.','','',['','',''],
  '<div><img src="assets/img/Graphic-Design.png" alt="Graphic designing"></div>'+
  '<div><img src="assets/img/graphic-design-2.png" alt="Graphic designing 1"></div>'+
  '<div><img src="assets/img/graphic-design-1.png" alt="Graphic designing 2"></div>'+
  '<div><img src="assets/img/graphic-design-3.png" alt="Graphic designing 3"></div>'+
  '<div><img src="assets/img/graphic-design-4.png" alt="Graphic designing 4"></div>'],
-['Video editing','Create Engaging Videos that inspire','Creative Video Editing & Color Grading Motion Graphics & Animated Visuals','#FED700','#0a0a0a',['#D8B700','#FED700'],
+['Video editing','Create Engaging Videos that inspire','Creative Video Editing & Color Grading Motion Graphics & Animated Visuals','','',['',''],
  '<div><img src="assets/img/Video-editing.png" alt="Video editing"></div>'+
  '<div><img src="assets/img/video-editing-1.png" alt="Video editing 1"></div>'+
  '<div><img src="assets/img/video-editing-2.png" alt="Video editing 2"></div>'],
-['GMB','gmb','Improve your websites visibility with powerful SEO strategies that help your GMB business profile rank higher on Google, attract qualified traffic, and generate more leads through sustainable organic growth.','#68221B','#fff',['#D2AE6A'],
+['GMB','gmb','Improve your websites visibility with powerful SEO strategies that help your GMB business profile rank higher on Google, attract qualified traffic, and generate more leads through sustainable organic growth.','','',[''],
  '<div><img src="assets/img/gmb.png" alt="gmb"></div>'+
  '<div><img src="assets/img/gmb-1.png" alt=""></div>'+
  '<div><img src="assets/img/gmb-2.png" alt=""></div>'+
  '<div><img src="assets/img/gmb-3.png" alt=""></div>'],
-['Mobile app','mobile apps development','Crafted for women who wear confidence effortlessly.','#06332E','#fff',['#06332E','#F4D7B5'],
+['Mobile app','mobile apps development','Crafted for women who wear confidence effortlessly.','','',['',''],
  '<div><img src="assets/img/mobile-app-development.png" alt=""></div>'+
  '<div><img src="assets/img/mobile-app-1.png" alt="Tech Grandha board 1"></div>'+
  '<div><img src="assets/img/mobile-app-2.png" alt="Tech Grandha board 2"></div>'+
  '<div><img src="assets/img/mobile-app-3.png" alt="Tech Grandha board 3"></div>'+
  '<div><img src="assets/img/mobile-app-4.png" alt="Tech Grandha board 4"></div>'],
-['Branding','Unique Logo & Visual Identity Design','Create a strong and memorable brand identity that builds trust, connects with your audience, and helps your business stand out in today competitive market with a consistent and professional image.','#EB6820','#fff',['#EB6820','#727272'],
+['Branding','Unique Logo & Visual Identity Design','Create a strong and memorable brand identity that builds trust, connects with your audience, and helps your business stand out in today competitive market with a consistent and professional image.','','',['',''],
  '<div><img src="assets/img/branding1.png" alt="Mobile app development"></div>'],
-['Digital Marketing','Hoardings & banner promotions','Promote your business with theatre ads, website designing, banners, pamphlets, and other traditional marketing solutions. Reach more local customers and grow your brand with confidence.','#1F8A3B','#fff',['#1F8A3B','#FFFFFF'],
+['Digital Marketing','Hoardings & banner promotions','Promote your business with theatre ads, website designing, banners, pamphlets, and other traditional marketing solutions. Reach more local customers and grow your brand with confidence.','','',['',''],
  '<div><img src="assets/img/Digital-marketing-1.png" alt=""></div>'+
  '<div><img src="assets/img/Digital-marketing-2.png" alt=""></div>'],
 ];
@@ -296,13 +296,28 @@ var WISHES=['a logo that pops','10x my sales','go viral','#1 on Google','a brand
 /* Web Work tiles: each tile is a live-site link with its preview video */
 window.buildWorkTiles(SITES);
 
-BRANDS.forEach(function(b){var s=document.createElement('article');s.className='scene';s.style.cssText='--b:'+b[3]+';--i:'+b[4];
+BRANDS.forEach(function(b){
+  var s=document.createElement('article');
+  s.className='scene';
 
-var imgs=b[6];
+  /* set the variables only when a colour is given, otherwise the CSS fallback is used */
+  var vars='';
+  if(b[3])vars+='--b:'+b[3]+';';
+  if(b[4])vars+='--i:'+b[4]+';';
+  if(vars)s.style.cssText=vars;
 
-s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p><div class="pal">'+b[5].map(function(c){return'<span><i style="background:'+c+'"></i>'+c+'</span>'}).join('')+'</div></div><div class="brand-gallery" aria-label="'+b[0]+' brand images"><div class="tr">'+imgs+'</div></div></div>';
+  var imgs=b[6];
 
-$('#bs').appendChild(s)});
+  /* palette only when there are real colour codes */
+  var colors=(b[5]||[]).filter(function(c){return c&&c.trim()});
+  var palHtml=colors.length
+    ?'<div class="pal">'+colors.map(function(c){return'<span><i style="background:'+c+'"></i>'+c+'</span>'}).join('')+'</div>'
+    :'';
+
+  s.innerHTML='<span class="gt">'+b[0]+'</span><div class="in"><div><small class="num"></small><h3>'+b[0]+'</h3><span class="tg">'+b[1]+'</span><p>'+b[2]+'</p>'+palHtml+'</div><div class="brand-gallery" aria-label="'+b[0]+' brand images"><div class="tr">'+imgs+'</div></div></div>';
+
+  $('#bs').appendChild(s);
+});
 
 $$('.scene .num').forEach(function(e,i){e.textContent=pad(i+1)+' / '+pad(BRANDS.length)});$('#bc').textContent=pad(BRANDS.length);
 /* split scene titles into letters (single line, animated per letter) */

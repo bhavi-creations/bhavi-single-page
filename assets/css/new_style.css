@@ -5273,7 +5273,8 @@ border: 2px solid;
     letter-spacing:-.02em;
   }
   .hs6-i span{
-    font-size:clamp(.78rem,3.5vw,.88rem);
+    /* font-size:clamp(.78rem,3.5vw,.88rem); */
+    font-size:10px;
     line-height:1.4;
     overflow-wrap:normal;
     word-break:normal;
@@ -5320,7 +5321,8 @@ border: 2px solid;
     letter-spacing:-.03em;
   }
   .hs6-i span{
-    font-size:.72rem;
+    /* font-size:.72rem; */
+    font-size:10px;
     line-height:1.35;
   }
   .side {
@@ -5631,4 +5633,112 @@ nav a,.sub-menu a,
   font-size: 50px;
 }
 
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   BRANDING gallery: Prception style
+   same height for every card, width follows each image
+   (rectangle = wide, square = square), nothing cropped
+   CSS only: no background / content / JS changes
+========================================================= */
+
+/* ---------- Desktop + tablet (701px and above) ---------- */
+@media (min-width:701px) and (max-width:1200px) {
+  #brands .scene .brand-gallery .tr{
+    --h:min(62vh,42vw);
+    height:var(--h);
+    align-items:stretch;
+    gap:24px;
+  }
+  #brands .scene .brand-gallery .tr > div,
+  #brands .scene .brand-gallery .tr > div:first-child{
+    flex:0 0 auto !important;
+    width:auto !important;
+    min-width:0 !important;
+    height:var(--h) !important;
+    display:block !important;
+    overflow:hidden;
+    border-radius:16px;
+    background:transparent !important;
+  }
+  #brands .scene .brand-gallery .tr > div img{
+    display:block !important;
+    height:100% !important;
+    width:auto !important;
+    max-width:none !important;
+    max-height:100% !important;
+    padding:0 !important;
+    object-fit:contain !important;
+    border-radius:16px;
+  }
+}
+
+/* tablet: slightly shorter so text + gallery fit */
+@media (min-width:701px) and (max-width:991px){
+  #brands .scene .brand-gallery .tr{--h:min(40vh,52vw)}
+}
+
+/* ---------- Mobile (up to 700px) ---------- */
+@media (max-width:700px){
+  #brands .scene .brand-gallery{
+    width:100%;
+    min-width:0;
+  }
+  #brands .scene .brand-gallery .tr{
+    --h:min(34vh,60vw);          /* one height for rectangle + square */
+    height:var(--h);
+    align-items:stretch;
+    gap:14px;
+  }
+  #brands .scene .brand-gallery .tr > div,
+  #brands .scene .brand-gallery .tr > div:first-child{
+    flex:0 0 auto !important;
+    width:auto !important;       /* width follows the image ratio */
+    min-width:0 !important;
+    height:var(--h) !important;
+    display:block !important;
+    overflow:hidden;
+    border-radius:12px;
+    background:transparent !important;
+  }
+  #brands .scene .brand-gallery .tr > div img{
+    display:block !important;
+    height:100% !important;
+    width:auto !important;
+    max-width:none !important;   /* wide images stay wide, never squeezed */
+    max-height:100% !important;
+    padding:0 !important;
+    object-fit:contain !important;
+    border-radius:12px;
+  }
+}
+
+/* very small phones */
+@media (max-width:360px){
+  #brands .scene .brand-gallery .tr{--h:min(30vh,56vw)}
+}
+
+
+
+
+
+
+/* Branding scenes: default look when no brand colour is set */
+#brands .scene{
+  background:var(--b,linear-gradient(140deg,#003A24 0%,#002818 78%));
+  color:var(--i,#fff);
+}
+#brands .scene h3,
+#brands .scene h3 .tc,
+#brands .scene .num,
+#brands .scene p,
+#brands .scene .tg{
+  color:var(--i,#fff);
 }
