@@ -5914,7 +5914,7 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
 .index_first_section .wrap h1
 {
   font-weight:750!important;
-  font-size: 27px;
+  /* font-size: 27px; */
   text-shadow:0 12px 38px rgba(0,0,0,.14)
 }
 .index_first_section .wrap h1 em{background:linear-gradient(100deg,#E8C978,#C89A3D,#F5E6B3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -6267,4 +6267,24 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
 
 
 
+@media (max-width:767px){
+.index_first_section .wrap h1 
+{
+  font-size: 27px;
 
+}
+}
+
+
+@media (min-width:992px) and (max-width:1200px){
+.index_first_section .wrap h1 
+{
+  font-size: 40px;
+
+}
+
+.index_first_section .wrap h1 em 
+{
+    font-size: 41px;
+}
+}
