@@ -215,7 +215,7 @@
 <section class="px-zoom" id="px-zoom">
   <div class="px-zstage">
 
-    <img class="px-zlogo" src="./assets/img/Bhavi_Creations_Logo_0001.png" alt="Bhavi Creations">
+    <img class="px-zlogo" src="./assets/img/Bhavi Creations Gold Logo.png" alt="Bhavi Creations">
 
     <p class="px-ztext">We are a premium branding &amp; creative agency, helping businesses stand out, attract customers and grow.</p>
 
