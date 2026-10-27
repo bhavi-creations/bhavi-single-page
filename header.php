@@ -79,7 +79,7 @@ header('Cache-Control: no-cache, must-revalidate');
 
   <header>
     <a href="index.php" class="logo-brand-wrapper">
-      <img src="assets/img/Bhavi_Creations_Logo_0001.png"
+      <img src="assets/img/Bhavi Creations Gold Logo.png"
         alt="Bhavi Creations Logo"
         class="header-logo-img">
     </a>

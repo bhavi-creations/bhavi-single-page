@@ -6,7 +6,7 @@
       <!-- Column 1: Logo and About -->
       <div class="col-12 col-md-6 col-xl-4 footer_new_section_column footer_new_section_brand">
         <div class="footer_new_section_logo">
-          <img src="./assets/img/Bhavi_Creations_Logo_0001.png" alt="Bhavi Creations Logo">
+          <img src="./assets/img/Bhavi Creations Gold Logo.png" alt="Bhavi Creations Logo">
         </div>
 
         <p class="footer_new_section_about">
