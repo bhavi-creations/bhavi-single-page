@@ -1221,36 +1221,48 @@
         },
         last = -1;
 
+            var vert = matchMedia('(max-width:991px)');
+
       function lay() {
-        var z = zone.getBoundingClientRect(),
-          tr = $('.stp').getBoundingClientRect(),
-          f = st.p * (steps.length - 1),
+        var f = st.p * (steps.length - 1),
           a = Math.floor(f),
           b = Math.min(steps.length - 1, a + 1),
           m = f - a;
 
-        var xa = steps[a].getBoundingClientRect().left + 5,
-          xb = steps[b].getBoundingClientRect().left + 5,
-          xa2 = xa + (xb - xa) * m,
-          cx = xa2 - z.left,
-          cy = z.height / 2,
-          D = Math.min(z.height * .9, 340),
-          R = Math.hypot(z.width, z.height),
-          r = D / 2 + st.o * (R - D / 2);
+        if (vert.matches) {
+          /* mobile + tab: vertical zig-zag timeline, no lens */
+          var sp = $('#sp');
+          var ya = steps[a].offsetTop + 19,
+            yb = steps[b].offsetTop + 19,
+            y = ya + (yb - ya) * m;
+          fill.style.height = y + 'px';
+          var max = sp.scrollHeight - sp.clientHeight;
+          sp.scrollTop = max > 0 ? Math.max(0, Math.min(max, y - sp.clientHeight * .45)) : 0;
+        } else {
+          var z = zone.getBoundingClientRect(),
+            tr = $('.stp').getBoundingClientRect();
 
-        gsap.set(lens, {
-          x: cx - D / 2,
-          y: cy - D / 2,
-          width: D,
-          height: D,
-          opacity: Math.max(0, 1 - st.o * 3)
-        });
+          var xa = steps[a].getBoundingClientRect().left + 5,
+            xb = steps[b].getBoundingClientRect().left + 5,
+            xa2 = xa + (xb - xa) * m,
+            cx = xa2 - z.left,
+            cy = z.height / 2,
+            D = Math.min(z.height * .9, 340),
+            R = Math.hypot(z.width, z.height),
+            r = D / 2 + st.o * (R - D / 2);
 
-        sh.style.clipPath = 'circle(' + r + 'px at ' + cx + 'px ' + cy + 'px)';
-
-        gsap.set(fill, {
-          scaleX: Math.max(0, Math.min(1, (xa2 - tr.left) / tr.width))
-        });
+          gsap.set(lens, {
+            x: cx - D / 2,
+            y: cy - D / 2,
+            width: D,
+            height: D,
+            opacity: Math.max(0, 1 - st.o * 3)
+          });
+          sh.style.clipPath = 'circle(' + r + 'px at ' + cx + 'px ' + cy + 'px)';
+          gsap.set(fill, {
+            scaleX: Math.max(0, Math.min(1, (xa2 - tr.left) / tr.width))
+          });
+        }
 
         var idx = Math.min(steps.length - 1, Math.round(f));
         if (idx !== last) {
