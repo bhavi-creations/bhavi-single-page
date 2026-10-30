@@ -5173,7 +5173,11 @@ border: 2px solid;
   .hs6 .hs6-i:nth-child(odd){border-left:0;padding-left:0}
   .hs6 .hs6-i:nth-child(even){border-left:1px solid rgba(232,196,122,.22);padding-left:24px}
   .hs6-i strong{font-size:2.3rem}
-  .hs6-i span{font-size:.95rem}
+  .hs6-i span
+  {
+    /* font-size:.95rem; */
+    font-size: 15px;
+  }
 }
 
 /* Tablet 768px - 991px -> 3 columns x 2 rows */
@@ -5422,7 +5426,10 @@ nav a,.sub-menu a,
 .wa-badge{
   font-family:"Poppins",sans-serif;
 }
-.hs6-i strong{font-weight:600}
+.hs6-i strong
+{
+  font-weight:600;
+}
 .st h3{font-weight:600}
 
 
@@ -6173,7 +6180,11 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   .ww,.brands,.shift,.genie{min-height:100svh;height:100svh!important;}
   .ww .intro,.brands .intro{gap:9px!important;padding:14px 18px!important;}
   .ww .intro h2,.brands .intro h2
-  {font-size:clamp(58px,16vw,96px)!important;line-height:.91!important;margin:0!important;}
+  {
+    font-size:clamp(58px,16vw,96px)!important;
+    line-height:.91!important;
+    margin:0!important;
+  }
   .ww .intro p,.brands .intro p{font-size:clamp(10px,2.8vw,13px)!important;line-height:1.4!important;max-width:320px;text-align:center;margin:0!important;}
   .brands .intro span{font-size:clamp(25px,7vw,44px)!important;margin-right:5px!important;}
   .brands .scene .in{padding-top:12px!important;padding-bottom:12px!important;}
@@ -6298,15 +6309,22 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
 
 
 
-@media (max-width: 768px) {
-    /* Branding section lo intro container paina unna padding mariyu space tagginchadaniki */
-    section#brands .intro,
-    .brands .intro {
-        padding-top: 10px !important; /* Avsaram batti 10px nundi 20px ki adjust cheukovachu */
-        margin-top: 0 !important;
-    }
+
+@media (min-width:992px) and (max-width:1200px) 
+{
+  .hs6-i strong
+{
+  font-size: 23px;
+}
+  
+.side>p 
+{    
+  font-size: 14px;
 }
 
+.index_first_section .lead 
+{
+  font-size: 17px;
+}
 
-
-
+}
