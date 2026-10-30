@@ -989,7 +989,8 @@ nav a:hover {
 
 .brands .intro p {
   text-transform: uppercase;
-  color:white
+  color:white;
+  text-align: center;
 }
 
 .brands .intro span {
@@ -5525,8 +5526,8 @@ nav a,.sub-menu a,
 /* very small phones (320px - 360px) */
 @media (max-width:360px){
   .px-ztext{
-    top:calc(50% + 34px) !important;
-    font-size:20px !important;
+    top:calc(35% + 34px) !important;
+    font-size:23px !important;
   }
 }
 
@@ -6133,7 +6134,10 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   .cl small{margin-bottom:16px!important}
   .px-help{padding-top:42px!important}
   .px-hd{padding-inline:18px!important}
-  .px-help h2{font-size:clamp(29px,7.3vw,42px)!important}
+  .px-help h2
+  {
+    font-size:clamp(27px,7.3vw,42px)!important
+  }
   .px-p{margin:16px 0 0!important;font-size:clamp(17px,4vw,21px)!important}
   .px-rows{margin-top:20px!important;height:clamp(285px,42vh,365px)!important}
   .px-rows.static{height:auto!important}
@@ -6185,7 +6189,14 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
     line-height:.91!important;
     margin:0!important;
   }
-  .ww .intro p,.brands .intro p{font-size:clamp(10px,2.8vw,13px)!important;line-height:1.4!important;max-width:320px;text-align:center;margin:0!important;}
+  .ww .intro p,.brands .intro p
+  {
+    font-size:clamp(16px,2.8vw,13px)!important;
+    line-height:1.4!important;
+    max-width:320px;
+    text-align:center;
+    margin:0!important;
+  }
   .brands .intro span{font-size:clamp(25px,7vw,44px)!important;margin-right:5px!important;}
   .brands .scene .in{padding-top:12px!important;padding-bottom:12px!important;}
   .brands .scene h3{margin-top:0!important;margin-bottom:8px!important;}
@@ -6209,7 +6220,11 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   .px-feel .px-btn{bottom:clamp(22px,4svh,40px)!important;}
   /* Logo zoom: retain zoom and fade sequence, remove idle scroll. */
   .px-zoom{height:155svh!important;}
-  .px-zstage{height:100svh!important;}
+  .px-zstage
+  {
+    /* height:100svh!important; */
+    height:576px!important;
+  }
   /* Standalone logo/agency statement and CTA: avoid tall empty bands. */
   .stmt{padding:42px 18px!important;min-height:0!important;}
   .stmt p{font-size:clamp(18px,4.7vw,23px)!important;line-height:1.45!important;}
@@ -6327,4 +6342,49 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   font-size: 17px;
 }
 
+}
+
+
+
+
+
+@media (max-width:767px){
+  .px-feel{height:170svh !important}
+
+  .px-stick{
+    height:100svh !important;          /* was 430px */
+    padding-top:124px;                 /* fixed header height */
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    gap:18px;
+  }
+
+  /* images: row, placed in flow so nothing goes under the header */
+  .px-feel .px-s,
+  .px-feel .px-l{
+    position:absolute !important;
+    top:calc(124px + clamp(12px,3svh,28px)) !important;
+    margin-top:0 !important;
+  }
+  .px-feel .px-s{left:6% !important;width:36vw !important;height:clamp(110px,22svh,170px) !important}
+  .px-feel .px-l{left:46% !important;width:48vw !important;height:clamp(150px,30svh,230px) !important}
+
+  /* text sits right under the images, button below the text */
+  .px-feel .px-copy{
+    position:absolute !important;
+    left:20px !important;right:20px !important;width:auto !important;
+    top:calc(124px + clamp(12px,3svh,28px) + clamp(150px,30svh,230px) + 22px) !important;
+    bottom:auto !important;
+  }
+  .px-feel .px-t{font-size:clamp(14px,4.2vw,18px) !important;line-height:1.4 !important}
+  .px-feel .px-btn{
+    left:20px !important;
+    bottom:clamp(24px,6svh,50px) !important;
+    height:50px !important;
+    padding:0 28px !important;
+    font-size:15px !important;
+  }
 }

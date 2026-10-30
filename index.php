@@ -117,7 +117,7 @@
 
   <div class="intro">
     <h2 class="big">Branding</h2>
-    <p><span id="bc">05</span>Identities we built. Scroll into each world.</p>
+    <p><span id="bc">05</span>Identities we built. Scroll into each world.</p><p>Create a strong and memorable brand identity that builds trust, connects with your audience, and helps your business stand out in today competitive market with a consistent and professional image.</p>
   </div>
 
   <div id="bs"></div>
