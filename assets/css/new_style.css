@@ -631,7 +631,7 @@ nav a:hover {
 
 
 .gq small {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: .14em;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -3513,7 +3513,14 @@ nav a {
   position:sticky;top:0;height:100vh;padding-top:150px;
   overflow:hidden;isolation:isolate;
 }
-@media(max-width:700px){.index_first_section .ifs-stage{padding-top:105px}}
+@media(max-width:700px)
+{
+  .index_first_section .ifs-stage
+  {
+    /* padding-top:105px; */
+    padding-top:165px;
+  }
+}
 
 /* entrance: CSS only, cannot leave anything hidden */
 .index_first_section .h{animation:ifs-rise 1s cubic-bezier(.215,.61,.355,1) var(--d,0s) backwards}
@@ -3578,7 +3585,13 @@ nav a {
   }
 }
 @media(max-width:600px){
-  .index_first_section .morph-caption{width:90vw;font-size:clamp(13px,3.8vw,20px);line-height:1.3;text-wrap:balance}
+  .index_first_section .morph-caption
+  {
+    width:90vw;
+    font-size:clamp(19px,3.8vw,20px);
+    line-height:1.3;
+    text-wrap:balance
+  }
 }
 .index_first_section .morph-cta{
   position:absolute;z-index:8;left:0;right:0;margin-inline:auto;top:76%;
@@ -6410,5 +6423,37 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   .lamp .mid 
   {
     margin-bottom: 40px;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 320px) 
+{
+    .index_first_section .morph-cta 
+    {
+        
+      margin-top: -29px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+  #genie .gone {
+    display: inline-block; /* leda display: block; */
+    margin-top: -100px;
+    /* migatha styles */
+  }
+}
+
+
+@media (max-width: 320px) {
+  .index_first_section .wrap {
+    margin-top: -55px; /* Mee requirement batti value adjust cheyandi */
   }
 }
