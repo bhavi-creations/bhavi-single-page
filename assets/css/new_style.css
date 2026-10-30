@@ -742,7 +742,7 @@ nav a:hover {
 
 
 .lamp .mid {
-  text-align: center
+  text-align: center;
 }
 
 
@@ -5873,7 +5873,11 @@ header nav a:first-child {background:rgba(200,154,61,.16);}
   .gq h2 {font-size:clamp(32px,8vw,60px);line-height:1.1;}
   .gq p {font-size:14px;}
   .lamp {padding:90px 18px 30px;}
-  .lamp .top {gap:14px;flex-wrap:wrap;}
+  .lamp .top 
+  {
+    gap:14px;
+    flex-wrap:wrap;
+  }
   .lamp .bot p {font-size:14px;}
   .ww .intro h2,.brands .intro h2 {font-size:clamp(52px,17vw,120px);}
   .hud {padding:24px 18px 20px;}
@@ -5963,7 +5967,11 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
 /* BRANDING: bold editorial, inset image frames */
 .brands{background:linear-gradient(135deg,#003A24,#001d13)!important}
 .brands .intro h2{color:#F8F8F5!important;text-shadow:0 10px 35px rgba(0,0,0,.18)}
-.brands .intro p{letter-spacing:.13em}
+.brands .intro p
+{
+  /* letter-spacing:.13em; */
+  letter-spacing:1.08px;
+}
 .brands .scene{border-top:1px solid rgba(232,201,120,.3)}
 .brands .scene .in{gap:clamp(18px,4vw,75px)}
 .brands .scene h3
@@ -6188,6 +6196,7 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
     font-size:clamp(58px,16vw,96px)!important;
     line-height:.91!important;
     margin:0!important;
+    font-weight: 400;
   }
   .ww .intro p,.brands .intro p
   {
@@ -6382,9 +6391,24 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   .px-feel .px-t{font-size:clamp(14px,4.2vw,18px) !important;line-height:1.4 !important}
   .px-feel .px-btn{
     left:20px !important;
-    bottom:clamp(24px,6svh,50px) !important;
+    /* bottom:clamp(24px,6svh,50px) !important; */
+    bottom:103px !important;
     height:50px !important;
     padding:0 28px !important;
     font-size:15px !important;
+  }
+}
+
+
+
+@media (max-width: 767px){
+.lamp .top 
+  {
+    margin-block: auto;
+  }
+
+  .lamp .mid 
+  {
+    margin-bottom: 40px;
   }
 }
