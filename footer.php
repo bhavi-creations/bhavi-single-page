@@ -159,12 +159,32 @@
       }
     });
 
-    btnTop.addEventListener('click', function(e) {
+        btnTop.addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
+
+      /* smooth scroll aipoyaka hero timeline ni 0 ki force reset */
+      var tries = 0;
+      var chk = setInterval(function() {
+        tries++;
+        if (window.scrollY <= 1 || tries > 60) {
+          clearInterval(chk);
+          if (window.ScrollTrigger) {
+            ScrollTrigger.update();
+            var m = ScrollTrigger.getAll().filter(function(t) {
+              return t.trigger && t.trigger.classList && t.trigger.classList.contains('index_first_section');
+            })[0];
+            if (m && m.animation) {
+              m.animation.progress(0);
+            }
+          }
+          var ifsEl = document.querySelector('.index_first_section');
+          if (ifsEl) ifsEl.classList.remove('morph-active');
+        }
+      }, 50);
     });
 
     /* ---- data (edit here) ---- */
@@ -536,7 +556,8 @@
           trigger: ifs,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: 0.65,
+          // scrub: 0.65,
+             scrub: 0.3,
           invalidateOnRefresh: true,
 
           onUpdate: function(self) {
@@ -1289,7 +1310,7 @@
       lay();
       ScrollTrigger.addEventListener('refresh', lay);
 
-      gsap.timeline({
+            gsap.timeline({
           scrollTrigger: {
             trigger: '#how',
             start: 'top top',
@@ -1297,8 +1318,18 @@
               return '+=' + (steps.length * scrollDistance(.8, .5) + scrollDistance(1.2, .8)) * innerHeight
             },
             pin: true,
+            pinSpacing: true,
+            pinReparent: false,
             scrub: .6,
-            anticipatePin: 1
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onLeave: function() {
+              /* pin release ayyaka mobile leftovers clear */
+              $('#sp').scrollTop = 0;
+            },
+            onEnterBack: function() {
+              lay();
+            }
           }
         })
 

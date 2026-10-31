@@ -3588,7 +3588,8 @@ nav a {
     width:max-content;
     max-width:94vw;
     /* white-space:nowrap; */
-    font-size:clamp(12.5px,1.75vw,17px)
+    /* font-size:clamp(12.5px,1.75vw,17px); */
+    font-size: 14px;
   }
 }
 @media(max-width:600px){
@@ -6754,4 +6755,37 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
     color:rgba(248,248,245,.85) !important;
     text-align:center !important;
   }
+}
+
+
+
+
+@media (max-width:991px){
+  #how.shift
+  {
+    height:100svh !important;
+    min-height:100svh !important;
+    max-height:100svh !important;
+    overflow:hidden !important;
+  }
+  /* pin-spacer lo section okate ga undali, repeat avvakunda */
+  .pin-spacer:has(> #how)
+  {
+    overflow:hidden;
+    background:#002818;
+  }
+}
+
+
+html{scroll-behavior:auto !important}
+
+
+
+@media (min-width:992px) and (max-width:1200px) 
+{  
+.cta h2 
+{
+  font-size: 111px;
+}
+
 }
