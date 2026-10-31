@@ -6534,3 +6534,22 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   .shift .st.on::before,
   .shift .st.dn::before{background:#E8C978;box-shadow:0 0 0 3px #002818,0 0 12px rgba(232,201,120,.9)}
 }
+
+
+
+
+@media (min-width:992px){
+  .shift .zone{display:block !important}
+  .shift .stp{
+    display:grid !important;
+    overflow:visible !important;
+    padding-top:40px !important;
+  }
+  .shift .stp .fill{
+    left:0 !important;right:0 !important;
+    top:40px !important;
+    width:auto !important;
+    height:2px !important;
+    transform-origin:left;
+  }
+}

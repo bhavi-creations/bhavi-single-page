@@ -1221,7 +1221,7 @@
         },
         last = -1;
 
-            var vert = matchMedia('(max-width:991px)');
+                  var vert = matchMedia('(max-width:991px)');
 
       function lay() {
         var f = st.p * (steps.length - 1),
@@ -1236,9 +1236,14 @@
             yb = steps[b].offsetTop + 19,
             y = ya + (yb - ya) * m;
           fill.style.height = y + 'px';
+          fill.style.transform = 'translateX(-50%)';
           var max = sp.scrollHeight - sp.clientHeight;
           sp.scrollTop = max > 0 ? Math.max(0, Math.min(max, y - sp.clientHeight * .45)) : 0;
         } else {
+          /* desktop + 992-1200px: original lens animation, clear any mobile leftovers */
+          fill.style.height = '';
+          $('#sp').scrollTop = 0;
+
           var z = zone.getBoundingClientRect(),
             tr = $('.stp').getBoundingClientRect();
 
@@ -1274,6 +1279,12 @@
           $('#sn').textContent = pad(idx + 1)
         }
       }
+
+      /* switching between mobile and desktop widths: re-measure and redraw */
+      vert.addEventListener('change', function() {
+        ScrollTrigger.refresh();
+        lay();
+      });
 
       lay();
       ScrollTrigger.addEventListener('refresh', lay);
