@@ -514,12 +514,12 @@
         var W = sr.width,
           H = sr.height;
         var target = W > 1200 ? Math.min(W * .36, 720) : (W > 991 ? W * .6 : W * .7);
-        var s = Math.min(1, target / w0),
-          th = h0 * s;
+               var s = Math.min(1, target / w0),
+          th = h0 * s * .78;
         var capH = cap.offsetHeight,
           btnH = cta.offsetHeight,
-          g1 = H * .06,
-          g2 = H * .09;
+                    g1 = Math.min(H * .06, 36),
+          g2 = Math.min(H * .09, 48);
         var top = (H - (th + g1 + capH + g2 + btnH)) / 2 + H * .03;
         return {
           x: W / 2 - cx0,
