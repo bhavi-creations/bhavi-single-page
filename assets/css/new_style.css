@@ -6813,3 +6813,15 @@ html{scroll-behavior:auto !important}
     max-width:100%;
   }
 }
+
+
+
+@media (min-width:992px) and (max-width:1200px) 
+{
+.gone 
+{
+  top: 61%;
+}
+}
+
+
