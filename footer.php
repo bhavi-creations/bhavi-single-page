@@ -1361,33 +1361,40 @@
        Existing marquee animation remains exactly the same
     ========================================================= */
 
-    var LOGOS = [{
+        var LOGOS = [{
         name: 'Krishna Dental',
-        src: 'assets/img/krishna-dental-1.png'
+        src: 'assets/img/krishna-dental-1.png',
+        url: 'https://krishnadentacureclinic.com/'
       },
       {
         name: 'Care N Concern',
-        src: 'assets/img/care_n_concern.jpg'
+        src: 'assets/img/care_n_concern.jpg',
+        url: 'https://carenconcern.com/'
       },
       {
         name: 'Apple Dental',
-        src: 'assets/img/apple-dental-1.png'
+        src: 'assets/img/apple-dental-1.png',
+        url: 'https://appledentalspecialities.in/'
       },
       {
         name: 'Dr Subhash Center',
-        src: 'assets/img/Subash_logo_white-1.png'
+        src: 'assets/img/Subash_logo_white-1.png',
+        url: '#'   /* ikkada aa site link pettandi */
       },
       {
         name: 'V & V Salons',
-        src: 'assets/img/V_AND_V_SALON_LOGO_NEW-1.png'
+        src: 'assets/img/V_AND_V_SALON_LOGO_NEW-1.png',
+        url: 'https://vnvsalons.com/'
       },
       {
         name: 'Vision Dental',
-        src: 'assets/img/vision-dental-1.png'
+        src: 'assets/img/vision-dental-1.png',
+        url: 'https://visiondentalguntur.com/'
       },
       {
         name: 'Oncology',
-        src: 'assets/img/Oncology_logo-1.png'
+        src: 'assets/img/Oncology_logo-1.png',
+        url: 'https://www.askoncologist.com/'   /* ikkada aa site link pettandi */
       }
     ];
 
@@ -1397,12 +1404,17 @@
 
       var one = LOGOS.map(function(logo) {
 
-        return '<span>' +
-          '<img src="' + logo.src + '" ' +
+        var img = '<img src="' + logo.src + '" ' +
           'alt="' + logo.name + '" ' +
           'loading="lazy" ' +
-          'onerror="this.closest(\'span\').remove()">' +
-          '</span>';
+          'onerror="this.closest(\'span\').remove()">';
+
+        /* link undi ante <a> tho wrap, lekapothe image matrame */
+        var inner = (logo.url && logo.url !== '#') ?
+          '<a href="' + logo.url + '" target="_blank" rel="noopener noreferrer" aria-label="' + logo.name + '">' + img + '</a>' :
+          img;
+
+        return '<span>' + inner + '</span>';
 
       }).join('');
 
