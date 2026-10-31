@@ -6789,3 +6789,25 @@ html{scroll-behavior:auto !important}
 }
 
 }
+
+
+
+
+/* Contact: 1400px+ : close the gap between title and form card */
+@media (min-width:1400px){
+  .cta .wrap{
+    justify-content:center !important;
+    align-items:center !important;
+    gap:clamp(24px,3vw,56px) !important;
+    max-width:1320px;
+  }
+  .cta h2{
+    font-size:clamp(90px,8.4vw,150px) !important;
+    flex:0 0 auto;
+  }
+  .cta .wrap > div.rv{
+    flex:0 1 600px !important;
+    width:600px !important;
+    max-width:100%;
+  }
+}
