@@ -6600,3 +6600,21 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
 
 }
 }
+
+
+
+
+/* px-feel desktop: images start below the fixed header, nothing cut */
+@media (min-width:1200px){
+  .px-feel .px-s{
+    top:calc(158px + 4vh) !important;
+    height:clamp(190px,30vh,300px) !important;
+  }
+  .px-feel .px-l{
+    top:calc(158px + 2vh) !important;
+    height:calc(100vh - 158px - 2vh - 40px) !important;   /* fits exactly between header and screen bottom */
+    max-height:640px;
+    width:34vw;
+    object-fit:cover;
+  }
+}
