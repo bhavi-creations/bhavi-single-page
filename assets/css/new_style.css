@@ -988,7 +988,7 @@ nav a:hover {
 
 
 .brands .intro p {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color:white;
   text-align: center;
 }
@@ -5992,7 +5992,8 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
 {
   /* letter-spacing:.13em; */
   letter-spacing:1.08px;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 17px;
 }
 .brands .scene{border-top:1px solid rgba(232,201,120,.3)}
 .brands .scene .in{gap:clamp(18px,4vw,75px)}
@@ -6000,7 +6001,8 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
 {
   line-height:.95!important;
   letter-spacing:-.03em;
-  font-size: 43px;
+  /* font-size: 43px; */
+  font-size: 36px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
