@@ -6565,3 +6565,38 @@ header .btn b,.index_first_section .btn b{box-shadow:inset 0 0 0 1px rgba(232,20
   margin-bottom: 137px;
 
 }
+
+
+
+/* Genie: 1400px+ : reduce gap between "The wish gets easy" and the pill */
+@media (min-width:1400px){
+  #genie .geasy{
+    top:54% !important;                       /* was 50% : title slightly lower */
+    font-size:clamp(90px,9.5vw,170px) !important;   /* a bit bigger */
+  }
+  #genie .gone{
+    top:68% !important;                       /* was 78% : pill moves up, closer to title */
+  }
+}
+
+
+
+
+/* Branding intro: 1400px+ description paragraph, neat centered block */
+@media (min-width:1400px){
+  #brands .intro p:nth-of-type(2){
+    max-width:640px;
+    margin:14px auto 0;
+    text-align:center;
+    text-transform:none;          /* uppercase teesesanu */
+    letter-spacing:.01em;
+    font-size:18px;
+    line-height:1.7;
+    opacity:.85;
+  }
+.brands .intro p {
+    /* letter-spacing: .13em; */
+    font-size: 18px;
+
+}
+}

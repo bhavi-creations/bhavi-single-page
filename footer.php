@@ -513,7 +513,7 @@
           cy0 = r.top - sr.top + r.height / 2 - py;
         var W = sr.width,
           H = sr.height;
-        var target = W > 1000 ? Math.min(W * .36, 720) : W * .7;
+        var target = W > 1200 ? Math.min(W * .36, 720) : (W > 991 ? W * .6 : W * .7);
         var s = Math.min(1, target / w0),
           th = h0 * s;
         var capH = cap.offsetHeight,
