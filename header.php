@@ -98,9 +98,9 @@ header('Cache-Control: no-cache, must-revalidate');
       <div class="nav-dd">
         <a href="#" class="dd-trigger" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="sub-menu">
-          <li><a href="#">Creator Marketing</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">SEO Services</a></li>
+          <li><a href="#brands">Branding</a></li>
+          <li><a href="#work">Web Development</a></li>
+          <!-- <li><a href="#">SEO Services</a></li> -->
         </ul>
       </div>
 
