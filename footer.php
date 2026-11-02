@@ -6,7 +6,13 @@
       <!-- Column 1: Logo and About -->
       <div class="col-12 col-md-6 col-xl-4 footer_new_section_column footer_new_section_brand">
         <div class="footer_new_section_logo">
-          <img src="./assets/img/Bhavi Creations Gold Logo.png" alt="Bhavi Creations Logo">
+          <!-- <img src="./assets/img/Bhavi Creations Gold Logo.png" alt="Bhavi Creations Logo"> -->
+           <a href="index.php" class="logo-brand-wrapper">
+              <span class="bc-white-logo">
+              <span class="bc-logo-main">BHAVI</span>
+              <span class="bc-logo-sub">CREATIONS</span>
+              </span>
+           </a>
         </div>
 
         <p class="footer_new_section_about">
@@ -2372,6 +2378,38 @@
       if (window.ScrollTrigger) ScrollTrigger.refresh()
     });
   })();
+</script>
+
+
+
+
+
+<script>
+(function(){
+  var sec=document.getElementById('bhavi-packages');
+  if(!sec)return;
+  sec.classList.add('bp-js');
+
+  /* reveal when visible */
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es,ob){
+      es.forEach(function(e){
+        if(e.isIntersecting){sec.classList.add('is-in');ob.disconnect()}
+      })
+    },{threshold:.12}).observe(sec);
+  }else{sec.classList.add('is-in')}
+
+  /* mouse spotlight on cards (desktop) */
+  if(matchMedia('(hover:hover)').matches){
+    sec.querySelectorAll('.bhavi-plan').forEach(function(c){
+      c.addEventListener('pointermove',function(e){
+        var r=c.getBoundingClientRect();
+        c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        c.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
+    });
+  }
+})();
 </script>
 
 </body>

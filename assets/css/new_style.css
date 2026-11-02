@@ -6835,3 +6835,551 @@ html{scroll-behavior:auto !important}
     font-size:clamp(24px,7vw,48px) !important;
   }
 }
+
+
+
+
+/* Scoped styles: no global website overrides */
+.bhavi-packages {
+  --bg: #002818;
+  --deep: #003a24;
+  --emerald: #006b4a;
+  --gold: #c89a3d;
+  --gold-light: #e8c978;
+  --champagne: #bfa878;
+  --white: #f8f8f5;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(ellipse 50% 55% at 0% 0%, #0b6146 0%, transparent 75%),
+              radial-gradient(ellipse 55% 70% at 100% 100%, #07412f 0%, transparent 72%),
+              linear-gradient(120deg, #002818, #003a24 60%, #002818);
+  color: var(--white);
+  padding: clamp(54px, 7vw, 108px) 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  clear: both; /* Footer overlap avvakunda safe ga ఉంచుతుంది */
+}
+
+.bhavi-packages::before,
+.bhavi-packages::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 430px;
+  height: 430px;
+  border: 1px solid rgba(232, 201, 120, .18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.bhavi-packages::before { top: -300px; right: -100px; }
+.bhavi-packages::after { bottom: -330px; left: -140px; }
+
+.bhavi-packages__container { max-width: 1600px; }
+.bhavi-packages__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 17px;
+  border: 1px solid rgba(232, 201, 120, .22);
+  background: rgba(232, 201, 120, .07);
+  border-radius: 100px;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+.bhavi-packages__sparkle { font-size: 16px; }
+.bhavi-packages__title {
+  font-size: clamp(34px, 3.9vw, 62px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+  margin: 20px 0 0;
+}
+.bhavi-packages__title span { color: var(--gold-light); }
+.bhavi-packages__intro {
+  color: #c6d7cd;
+  line-height: 1.75;
+  font-size: clamp(14px, 1.1vw, 16px);
+  max-width: 390px;
+  margin: 0 0 4px auto;
+}
+
+.bhavi-plan {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  padding: clamp(20px, 1.7vw, 28px);
+  border: 1px solid rgba(232, 201, 120, .23);
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(9, 83, 61, .82), rgba(0, 34, 24, .94));
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .12);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.bhavi-plan:hover {
+  transform: translateY(-5px);
+  border-color: rgba(232, 201, 120, .65);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, .23);
+}
+.bhavi-plan--featured {
+  border-color: var(--gold);
+  background: radial-gradient(circle at 100% 0%, rgba(200, 154, 61, .2), transparent 48%),
+              linear-gradient(150deg, #07563d, #002a1d);
+  box-shadow: 0 0 0 1px rgba(200, 154, 61, .25), 0 16px 40px rgba(0, 0, 0, .18);
+}
+.bhavi-plan__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.bhavi-plan__pill {
+  font-size: 11px;
+  letter-spacing: .055em;
+  font-weight: 800;
+  color: var(--gold-light);
+  padding: 10px 13px;
+  border-radius: 100px;
+  background: rgba(200, 154, 61, .14);
+  white-space: nowrap;
+}
+.bhavi-plan--featured .bhavi-plan__pill {
+  background: var(--gold);
+  color: #092b20;
+}
+.bhavi-plan__symbol {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  background: linear-gradient(140deg, rgba(232, 201, 120, .22), rgba(200, 154, 61, .06));
+  border: 1px solid rgba(232, 201, 120, .22);
+  color: var(--gold-light);
+  font-size: 27px;
+}
+.bhavi-plan h3 {
+  font-size: clamp(23px, 1.7vw, 29px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin: 0 0 7px;
+}
+.bhavi-plan__price {
+  font-size: clamp(23px, 1.7vw, 28px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.bhavi-plan__price span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #c4d6cc;
+  letter-spacing: 0;
+}
+.bhavi-plan__desc {
+  color: #b6cdc1;
+  font-size: 13px;
+  line-height: 1.55;
+  min-height: 40px;
+  margin: 15px 0 17px;
+}
+.bhavi-plan__features {
+  border-top: 1px solid rgba(232, 201, 120, .17);
+  padding: 19px 0 16px;
+  margin: 0 0 18px;
+  list-style: none;
+  display: grid;
+  gap: 15px;
+  flex: 1;
+}
+.bhavi-plan__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #e0eae3;
+}
+.bhavi-plan__features li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(200, 154, 61, .2);
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: -2px;
+}
+.bhavi-plan__button {
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border: 1px solid rgba(232, 201, 120, .68);
+  border-radius: 12px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: background .2s, color .2s;
+}
+.bhavi-plan__button:hover {
+  background: var(--gold-light);
+  color: #002818;
+}
+.bhavi-plan--featured .bhavi-plan__button {
+  background: linear-gradient(100deg, #e8c978, #c89a3d);
+  border-color: transparent;
+  color: #002818;
+}
+.bhavi-plan--featured .bhavi-plan__button:hover {
+  filter: brightness(1.08);
+}
+.bhavi-plan__button span {
+  font-size: 21px;
+  line-height: 1;
+}
+.bhavi-packages__note {
+  font-size: 12px;
+  color: #b6cbbf;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+@media(min-width: 1400px) {
+  .bhavi-plan { padding: 29px; }
+  .bhavi-plan__features { gap: 17px; }
+  .bhavi-plan__features li { font-size: 14px; }
+}
+@media(min-width: 992px) and (max-width: 1199.98px) {
+  .bhavi-plan { padding: 24px; }
+  .bhavi-packages__title { font-size: 46px; }
+  .bhavi-plan__top { margin-bottom: 20px; }
+  .bhavi-plan__desc { min-height: 0; }
+}
+@media(min-width: 1200px) and (max-width: 1399.98px) {
+  .bhavi-plan { padding: 19px; }
+  .bhavi-plan__pill { font-size: 10px; padding: 9px; }
+  .bhavi-plan__symbol { width: 42px; height: 42px; }
+  .bhavi-plan__price { font-size: 23px; }
+  .bhavi-plan__features li { font-size: 12px; }
+}
+@media(max-width: 991.98px) {
+  .bhavi-packages__intro { margin: 0; max-width: 640px; }
+  .bhavi-plan__desc { min-height: 0; }
+}
+@media(max-width: 575.98px) {
+  .bhavi-packages { padding: 55px 0; }
+  .bhavi-packages__title { font-size: clamp(32px, 9vw, 43px); }
+  .bhavi-plan { padding: 22px; border-radius: 20px; }
+  .bhavi-plan__top { margin-bottom: 18px; }
+  .bhavi-plan__features { gap: 13px; }
+  .bhavi-plan__features li { font-size: 13px; }
+  .bhavi-packages__note { font-size: 11px; }
+}
+@media(prefers-reduced-motion: reduce) {
+  .bhavi-plan, .bhavi-plan__button { transition: none; }
+  .bhavi-plan:hover { transform: none; }
+}
+
+
+
+
+
+
+/* Bhavi Creations logo in text typography white color new stylings */
+/* White Typography Logo */
+
+.px-zoom .px-zlogo-type {
+    width: clamp(220px, 28vw, 390px);
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #fff;
+    text-align: center;
+    font-family: var(--f-head, Arial, sans-serif);
+    font-weight: 900;
+    line-height: .9;
+    text-transform: uppercase;
+    transform-origin: center center;
+}
+
+.px-zoom .px-zlogo-main {
+    display: block;
+    color: #fff;
+    font-size: clamp(48px, 7.5vw, 100px);
+    font-weight: 900;
+    letter-spacing: .045em;
+    line-height: .92;
+}
+
+.px-zoom .px-zlogo-sub {
+    display: block;
+    color: #fff;
+    font-size: clamp(19px, 3vw, 38px);
+    font-weight: 800;
+    letter-spacing: .24em;
+    line-height: 1.15;
+    padding-left: .24em;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 767.98px) {
+    .px-zoom .px-zlogo-type {
+        width: min(78vw, 310px);
+        min-height: 82px;
+    }
+
+    .px-zoom .px-zlogo-main {
+        font-size: clamp(43px, 12vw, 68px);
+    }
+
+    .px-zoom .px-zlogo-sub {
+        font-size: clamp(17px, 5vw, 25px);
+    }
+}
+
+
+
+
+/* White Typography Logo - Header & Footer */
+
+.bc-white-logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.bc-logo-main {
+    font-size: 50px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.bc-logo-sub {
+    margin-top: 5px;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #ffffff;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .bc-logo-main {
+        font-size: 24px;
+    }
+
+    .bc-logo-sub {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+}
+
+
+
+
+
+
+/* =========================================================
+   BHAVI PACKAGES (scoped, no Bootstrap needed)
+========================================================= */
+@property --bp-ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+
+.bhavi-packages{
+  position:relative;
+  padding:clamp(60px,7vw,110px) 0;
+  background:
+    radial-gradient(ellipse at 15% 0%,rgba(0,107,74,.55),transparent 55%),
+    radial-gradient(ellipse at 90% 100%,rgba(152,104,32,.14),transparent 55%),
+    linear-gradient(140deg,#003A24,#002818);
+  color:#F8F8F5;
+  overflow:hidden;
+  isolation:isolate;
+  border-top:1px solid rgba(232,201,120,.25);
+}
+.bhavi-packages::before{ /* soft grid lines */
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(232,201,120,.05) 1px,transparent 1px),
+    linear-gradient(rgba(232,201,120,.05) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse at center,#000,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000,transparent 75%);
+}
+.bhavi-packages__container{
+  width:100%;max-width:1400px;margin:0 auto;
+  padding:0 clamp(16px,4vw,48px);
+}
+
+/* ---- layout (replaces Bootstrap grid) ---- */
+.bhavi-packages .row{display:grid;gap:18px}
+.bhavi-packages [class*="col-"]{min-width:0;width:auto}
+.bhavi-packages .row.align-items-end{align-items:end;margin-bottom:clamp(26px,4vw,48px)}
+@media(min-width:992px){
+  .bhavi-packages .row.align-items-end{grid-template-columns:2fr 1fr}
+}
+.bhavi-packages .row.align-items-stretch{grid-template-columns:1fr;gap:20px}
+@media(min-width:576px){.bhavi-packages .row.align-items-stretch{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1200px){.bhavi-packages .row.align-items-stretch{grid-template-columns:repeat(4,1fr);gap:22px}}
+.bhavi-packages .h-100{height:100%}
+
+/* ---- heading ---- */
+.bhavi-packages__eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 16px;border:1px solid rgba(232,201,120,.35);border-radius:50px;
+  background:rgba(0,40,24,.45);
+  font:600 12px/1 "Poppins",sans-serif;letter-spacing:.2em;color:#E8C978;
+}
+.bhavi-packages__sparkle{animation:bpSpin 6s linear infinite;display:inline-block}
+@keyframes bpSpin{to{transform:rotate(360deg)}}
+.bhavi-packages__title{
+  margin-top:18px;
+  font-size:clamp(32px,4.6vw,64px)!important;
+  line-height:1.1!important;letter-spacing:-.01em!important;color:#F8F8F5;
+}
+.bhavi-packages__title span{
+  background:linear-gradient(100deg,#E8C978,#C89A3D,#F5E6B3,#C89A3D);
+  background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:bpShine 5s linear infinite;
+}
+@keyframes bpShine{to{background-position:200% 0}}
+.bhavi-packages__intro{
+  font:400 clamp(14px,1.2vw,17px)/1.75 "Poppins",sans-serif;
+  color:rgba(248,248,245,.82);max-width:420px;
+}
+
+/* ---- card with rotating light border ---- */
+.bhavi-plan{
+  --mx:50%;--my:0%;
+  position:relative;display:flex;flex-direction:column;
+  padding:clamp(20px,2vw,30px);
+  border:1.5px solid transparent;border-radius:22px;
+  background:
+    linear-gradient(160deg,rgba(0,58,36,.96),rgba(0,32,20,.98)) padding-box,
+    conic-gradient(from var(--bp-ang),rgba(232,201,120,.18) 0 55%,#E8C978 75%,#fff4cc 82%,#E8C978 89%,rgba(232,201,120,.18) 100%) border-box;
+  animation:bpRotate 6s linear infinite;
+  box-shadow:0 18px 50px rgba(0,0,0,.28);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;
+  overflow:hidden;
+}
+@keyframes bpRotate{to{--bp-ang:360deg}}
+.bhavi-plan:nth-child(n){animation-duration:6s}
+.bhavi-packages .col-sm-6:nth-child(2) .bhavi-plan{animation-delay:-1.5s}
+.bhavi-packages .col-sm-6:nth-child(3) .bhavi-plan{animation-delay:-3s}
+.bhavi-packages .col-sm-6:nth-child(4) .bhavi-plan{animation-delay:-4.5s}
+
+.bhavi-plan::before{ /* mouse spotlight */
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:radial-gradient(320px circle at var(--mx) var(--my),rgba(232,201,120,.18),transparent 60%);
+  opacity:0;transition:opacity .35s;
+}
+.bhavi-plan:hover{transform:translateY(-8px);box-shadow:0 28px 70px rgba(0,0,0,.4),0 0 40px rgba(232,201,120,.18)}
+.bhavi-plan:hover::before{opacity:1}
+
+.bhavi-plan--featured{
+  box-shadow:0 22px 60px rgba(0,0,0,.35),0 0 46px rgba(232,201,120,.22);
+  background:
+    linear-gradient(160deg,rgba(0,84,56,.96),rgba(0,40,24,.98)) padding-box,
+    conic-gradient(from var(--bp-ang),rgba(232,201,120,.3) 0 40%,#E8C978 62%,#fff4cc 72%,#E8C978 82%,rgba(232,201,120,.3) 100%) border-box;
+}
+@media(min-width:1200px){.bhavi-plan--featured{transform:translateY(-12px)}
+  .bhavi-plan--featured:hover{transform:translateY(-20px)}}
+
+.bhavi-plan__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.bhavi-plan__pill{
+  padding:7px 13px;border-radius:40px;border:1px solid rgba(232,201,120,.4);
+  background:rgba(232,201,120,.08);
+  font:600 11px/1 "Poppins",sans-serif;letter-spacing:.14em;color:#E8C978;
+}
+.bhavi-plan--featured .bhavi-plan__pill{background:linear-gradient(120deg,#986820,#C89A3D,#E8C978);color:#002818;border-color:transparent}
+.bhavi-plan__symbol{
+  width:38px;height:38px;display:grid;place-items:center;border-radius:50%;
+  border:1px solid rgba(232,201,120,.35);color:#E8C978;font-size:17px;
+  transition:transform .5s,background .3s,color .3s;
+}
+.bhavi-plan:hover .bhavi-plan__symbol{transform:rotate(360deg);background:#E8C978;color:#002818}
+
+.bhavi-plan h3{font-size:clamp(24px,2.2vw,32px)!important;color:#F8F8F5;margin-bottom:10px}
+.bhavi-plan__price{
+  font:700 clamp(22px,2vw,28px)/1.2 "Poppins",sans-serif;color:#E8C978;margin-bottom:12px;
+}
+.bhavi-plan__price span{font-size:13px;font-weight:400;color:rgba(248,248,245,.65)}
+.bhavi-plan__desc{font:400 14px/1.6 "Poppins",sans-serif;color:rgba(248,248,245,.8);margin-bottom:18px;
+  padding-bottom:18px;border-bottom:1px dashed rgba(232,201,120,.28)}
+
+.bhavi-plan__features{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:11px;flex:1}
+.bhavi-plan__features li{
+  position:relative;padding-left:26px;
+  font:400 14px/1.45 "Poppins",sans-serif;color:rgba(248,248,245,.9);
+}
+.bhavi-plan__features li::before{
+  content:"✓";position:absolute;left:0;top:1px;width:18px;height:18px;
+  display:grid;place-items:center;border-radius:50%;
+  background:rgba(232,201,120,.16);color:#E8C978;font-size:11px;font-weight:700;
+}
+
+.bhavi-plan__button{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 20px;border-radius:12px 30px 30px 12px;
+  background:linear-gradient(120deg,#986820,#C89A3D,#E8C978);
+  color:#002818;font:600 15px/1 "Poppins",sans-serif;
+  box-shadow:0 10px 26px rgba(200,154,61,.25);
+  transition:transform .3s,box-shadow .3s;
+}
+.bhavi-plan__button::after{ /* light sweep */
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-20deg);transition:left .7s;
+}
+.bhavi-plan__button:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(200,154,61,.4)}
+.bhavi-plan__button:hover::after{left:130%}
+.bhavi-plan__button span{transition:transform .3s}
+.bhavi-plan__button:hover span{transform:translateX(5px)}
+
+.bhavi-packages__note{
+  margin-top:clamp(24px,3vw,40px);text-align:center;
+  font:400 12px/1.6 "Poppins",sans-serif;color:rgba(248,248,245,.55);
+}
+
+/* ---- scroll reveal (only when JS is active) ---- */
+.bhavi-packages.bp-js .row.align-items-end,
+.bhavi-packages.bp-js .col-sm-6,
+.bhavi-packages.bp-js .bhavi-packages__note{
+  opacity:0;transform:translateY(40px);
+  transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.bhavi-packages.bp-js.is-in .row.align-items-end,
+.bhavi-packages.bp-js.is-in .col-sm-6,
+.bhavi-packages.bp-js.is-in .bhavi-packages__note{opacity:1;transform:none}
+.bhavi-packages.bp-js.is-in .col-sm-6:nth-child(1){transition-delay:.15s}
+.bhavi-packages.bp-js.is-in .col-sm-6:nth-child(2){transition-delay:.3s}
+.bhavi-packages.bp-js.is-in .col-sm-6:nth-child(3){transition-delay:.45s}
+.bhavi-packages.bp-js.is-in .col-sm-6:nth-child(4){transition-delay:.6s}
+
+@media(prefers-reduced-motion:reduce){
+  .bhavi-plan,.bhavi-packages__title span,.bhavi-packages__sparkle{animation:none}
+  .bhavi-packages.bp-js .row.align-items-end,
+  .bhavi-packages.bp-js .col-sm-6,
+  .bhavi-packages.bp-js .bhavi-packages__note{opacity:1;transform:none;transition:none}
+}

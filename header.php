@@ -26,6 +26,7 @@ header('Cache-Control: no-cache, must-revalidate');
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+  
   <!-- FontAwesome Icons for WhatsApp and Back to Top Arrow -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -78,14 +79,21 @@ header('Cache-Control: no-cache, must-revalidate');
   <!-- Keep content visible while remote media and animation libraries load. -->
 
   <header>
-    <a href="index.php" class="logo-brand-wrapper">
+    <!-- <a href="index.php" class="logo-brand-wrapper">
       <img src="assets/img/Bhavi Creations Gold Logo.png"
         alt="Bhavi Creations Logo"
         class="header-logo-img">
+    </a> -->
+
+    <a href="index.php" class="logo-brand-wrapper">
+    <span class="bc-white-logo">
+        <span class="bc-logo-main">BHAVI</span>
+        <span class="bc-logo-sub">CREATIONS</span>
+    </span>
     </a>
 
     <!-- <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a><a href="#how">Services</a><a href="#cta">Contact</a></nav> -->
-    <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a>
+    <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#bhavi-packages">Packages</a><a href="#brands">Case Study</a><a href="#how">Who we are</a>
 
       <div class="nav-dd">
         <a href="#" class="dd-trigger" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down"></i></a>

@@ -209,13 +209,121 @@
 
 </section>
 
+
+
+<section class="bhavi-packages" id="bhavi-packages" aria-labelledby="bhavi-packages-title">
+  <div class="container-xxl bhavi-packages__container">
+    <div class="row align-items-end gy-3 mb-4 mb-xl-5">
+      <div class="col-lg-8">
+        <span class="bhavi-packages__eyebrow"><span class="bhavi-packages__sparkle">✦</span> OUR PACKAGES</span>
+        <h2 id="bhavi-packages-title" class="bhavi-packages__title">Choose a package<br><span>that fits your vision.</span></h2>
+      </div>
+      <div class="col-lg-4">
+        <p class="bhavi-packages__intro">Flexible creative solutions for growing brands. Every plan can be customized to your business goals.</p>
+      </div>
+    </div>
+
+    <div class="row g-3 g-xl-4 align-items-stretch">
+      <!-- Card 1: Basic -->
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
+        <article class="bhavi-plan h-100">
+          <div class="bhavi-plan__top">
+            <span class="bhavi-plan__pill">✦ &nbsp; BASIC</span>
+            <span class="bhavi-plan__symbol" aria-hidden="true">↗</span>
+          </div>
+          <h3>Basic</h3>
+          <div class="bhavi-plan__price">₹ XX,XXX <span>/ month</span></div>
+          <p class="bhavi-plan__desc">A smart start for your brand presence.</p>
+          <ul class="bhavi-plan__features">
+            <li>Social media creatives</li>
+            <li>Short-form video support</li>
+            <li>Monthly content planning</li>
+            <li>Standard creative support</li>
+          </ul>
+          <a class="bhavi-plan__button" href="mailto:hello@example.com?subject=Enquiry%20-%20Basic%20Package">Choose Plan <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <!-- Card 2: Standard -->
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
+        <article class="bhavi-plan bhavi-plan--featured h-100">
+          <div class="bhavi-plan__top">
+            <span class="bhavi-plan__pill">★ &nbsp; POPULAR</span>
+            <span class="bhavi-plan__symbol" aria-hidden="true">✧</span>
+          </div>
+          <h3>Standard</h3>
+          <div class="bhavi-plan__price">₹ XX,XXX <span>/ month</span></div>
+          <p class="bhavi-plan__desc">Consistent content for a growing business.</p>
+          <ul class="bhavi-plan__features">
+            <li>Regular social creatives</li>
+            <li>Reels and stories</li>
+            <li>Monthly content strategy</li>
+            <li>Creative campaign support</li>
+            <li>Priority revisions</li>
+          </ul>
+          <a class="bhavi-plan__button" href="mailto:hello@example.com?subject=Enquiry%20-%20Standard%20Package">Choose Plan <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <!-- Card 3: Premium -->
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
+        <article class="bhavi-plan h-100">
+          <div class="bhavi-plan__top">
+            <span class="bhavi-plan__pill">✦ &nbsp; PREMIUM</span>
+            <span class="bhavi-plan__symbol" aria-hidden="true">◇</span>
+          </div>
+          <h3>Premium</h3>
+          <div class="bhavi-plan__price">Custom <span>/ scope based</span></div>
+          <p class="bhavi-plan__desc">A complete creative partnership.</p>
+          <ul class="bhavi-plan__features">
+            <li>Branding and design support</li>
+            <li>Social and video creatives</li>
+            <li>Campaign creative direction</li>
+            <li>Website creative support</li>
+            <li>Dedicated coordination</li>
+          </ul>
+          <a class="bhavi-plan__button" href="mailto:hello@example.com?subject=Enquiry%20-%20Premium%20Package">Talk to Us <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <!-- Card 4: Growth -->
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
+        <article class="bhavi-plan h-100">
+          <div class="bhavi-plan__top">
+            <span class="bhavi-plan__pill">✦ &nbsp; GROWTH</span>
+            <span class="bhavi-plan__symbol" aria-hidden="true">★</span>
+          </div>
+          <h3>Growth</h3>
+          <div class="bhavi-plan__price">₹ XX,XXX <span>/ month</span></div>
+          <p class="bhavi-plan__desc">More creative momentum as you scale.</p>
+          <ul class="bhavi-plan__features">
+            <li>High-volume social creatives</li>
+            <li>Reels and short videos</li>
+            <li>Advanced content calendar</li>
+            <li>Campaign design support</li>
+            <li>Fast-track revisions</li>
+          </ul>
+          <a class="bhavi-plan__button" href="mailto:hello@example.com?subject=Enquiry%20-%20Growth%20Package">Choose Plan <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+
+    <p class="bhavi-packages__note">Pricing and inclusions shown are editable examples. Final deliverables depend on your agreed package.</p>
+  </div>
+</section>
+
+
 <!-- <section class="stmt"><p>People do not buy what is best they buy what makes them feel certain. Perception is the engineering of certainty.</p></section> -->
 
 <!-- ===== ADDED (live site): logo zoom transition ===== -->
 <section class="px-zoom" id="px-zoom">
   <div class="px-zstage">
 
-    <img class="px-zlogo" src="./assets/img/Bhavi Creations Gold Logo.png" alt="Bhavi Creations">
+    <!-- <img class="px-zlogo" src="./assets/img/Bhavi Creations Gold Logo.png" alt="Bhavi Creations"> -->
+     <div class="px-zlogo px-zlogo-type" role="img" aria-label="Bhavi Creations">
+       <span class="px-zlogo-main">BHAVI</span>
+       <span class="px-zlogo-sub">CREATIONS</span>
+     </div>
 
     <p class="px-ztext">We are a premium branding &amp; creative agency, helping businesses stand out, attract customers and grow.</p>
 
