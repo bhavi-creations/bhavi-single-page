@@ -6825,3 +6825,13 @@ html{scroll-behavior:auto !important}
 }
 
 
+
+
+/* mobile + tablet: hide the line breaks, keep the spaces, so it stays on one line */
+@media (max-width:991px){
+  .cta h2.rv br.dbr{display:none !important}
+  .cta h2.rv{
+    white-space:nowrap !important;
+    font-size:clamp(24px,7vw,48px) !important;
+  }
+}
