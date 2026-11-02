@@ -225,13 +225,13 @@
         'https://visiondentalguntur.com/'
       ],
 
-      [
-        'Anish Dental',
-        'Anish',
-        '#12685f',
-        'assets/video/anish_dental_bg1.png',
-        'https://anishdental.in/'
-      ],
+      // [
+      //   'Anish Dental',
+      //   'Anish',
+      //   '#12685f',
+      //   'assets/video/anish_dental_bg1.png',
+      //   'https://anishdental.in/'
+      // ],
 
       [
         'Apple dental',
