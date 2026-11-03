@@ -100,8 +100,6 @@ header('Cache-Control: no-cache, must-revalidate');
 <body>
 
 <!-- Original SVG logo sprite retained below as requested (inactive). -->
-<!--
- Bhavi Creations original logo sprite (hidden)
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="bcGold" x1="0" y1="0" x2="0.15" y2="1">
@@ -267,7 +265,6 @@ header('Cache-Control: no-cache, must-revalidate');
     </g>
   </symbol>
 </svg>
--->
 
 
   <!-- Keep content visible while remote media and animation libraries load. -->

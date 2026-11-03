@@ -8556,3 +8556,12 @@ html{scroll-behavior:auto !important}
     }
 }
 
+/* Tighten the mobile hero start below the fixed navbar without changing its layout. */
+@media(max-width:700px){
+    .index_first_section .ifs-stage{
+        padding-top:clamp(88px,12svh,112px)!important;
+    }
+    .index_first_section .wrap{margin-top:0!important}
+    .index_first_section .eyebrow{margin-top:0!important}
+}
+
