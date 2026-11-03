@@ -267,7 +267,7 @@
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Social Media Management</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Graphic Design</li>
                 </ul>
-                <a href="#cta" class="package-select-btn package-basic-btn">Choose Basic <i class="bi bi-arrow-right"></i></a>
+                <a href="#cta" data-package="Basic" class="package-select-btn package-basic-btn">Choose Basic <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="package-mobile-panel" data-package-panel="premium" hidden>
                 <h3>Premium <span>Complete brand support</span></h3>
@@ -281,7 +281,7 @@
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Monthly Reports</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Priority Support</li>
                 </ul>
-                <a href="#cta" class="package-select-btn package-premium-btn">Choose Premium <i class="bi bi-arrow-right"></i></a>
+                <a href="#cta" data-package="Premium" class="package-select-btn package-premium-btn">Choose Premium <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="package-mobile-panel" data-package-panel="standard" hidden>
                 <h3>Standard <span>Build your brand consistently</span></h3>
@@ -292,7 +292,7 @@
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Content Strategy</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Monthly Reports</li>
                 </ul>
-                <a href="#cta" class="package-select-btn package-standard-btn">Choose Standard <i class="bi bi-arrow-right"></i></a>
+                <a href="#cta" data-package="Standard" class="package-select-btn package-standard-btn">Choose Standard <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="package-mobile-panel" data-package-panel="growth" hidden>
                 <h3>Growth <span>Scale with performance</span></h3>
@@ -307,7 +307,7 @@
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Monthly Reports</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Priority Support</li>
                 </ul>
-                <a href="#cta" class="package-select-btn package-growth-btn">Choose Growth <i class="bi bi-arrow-right"></i></a>
+                <a href="#cta" data-package="Growth" class="package-select-btn package-growth-btn">Choose Growth <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
 
@@ -833,7 +833,7 @@
 
                         <td class="package-action-cell">
 
-                            <a href="#contact"
+                            <a href="#cta" data-package="Basic"
                                class="package-select-btn package-basic-btn">
 
                                 Basic
@@ -847,7 +847,7 @@
 
                         <td class="package-action-cell">
 
-                            <a href="#contact"
+                            <a href="#cta" data-package="Standard"
                                class="package-select-btn package-standard-btn">
 
                                 Standard
@@ -861,7 +861,7 @@
 
                         <td class="package-action-cell package-premium-cell">
 
-                            <a href="#contact"
+                            <a href="#cta" data-package="Premium"
                                class="package-select-btn package-premium-btn">
 
                                 Choose Premium
@@ -875,7 +875,7 @@
 
                         <td class="package-action-cell">
 
-                            <a href="#contact"
+                            <a href="#cta" data-package="Growth"
                                class="package-select-btn package-growth-btn">
 
                                 Growth
@@ -1060,6 +1060,15 @@
     <div class="rv" style="flex:0 1 550px;width:100%">
       <form id="f"><input name="name" placeholder="FULL NAME" required>
 
+        <label class="contact-package-label" for="packageChoice">Choose a plan</label>
+        <select name="package" id="packageChoice" class="contact-package-select">
+          <option value="">Select a plan (optional)</option>
+          <option value="Basic">Basic</option>
+          <option value="Standard">Standard</option>
+          <option value="Premium">Premium</option>
+          <option value="Growth">Growth</option>
+        </select>
+
         <div class="two"><input type="email" name="email" placeholder="EMAIL" required><input type="tel" name="number" placeholder="PHONE"></div>
 
         <textarea name="remarks" rows="4" placeholder="MESSAGE"></textarea>
@@ -1079,6 +1088,15 @@
 
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('[data-package]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var packageField = document.getElementById('packageChoice');
+      if (packageField) packageField.value = link.dataset.package;
+    });
+  });
+</script>
 
 <!-- ===== ADDED (live site): Medialab Dispatch widget ===== -->
 <section class="px-news" id="pxNews">

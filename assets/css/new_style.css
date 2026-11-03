@@ -8364,3 +8364,195 @@ html{scroll-behavior:auto !important}
     .package-mobile-panel .package-select-btn{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:20px}
 }
 
+/* Signature Packages: emerald and gold finish to match the Bhavi brand. */
+.package-section{
+    background:
+        radial-gradient(ellipse at 16% 12%,rgba(0,116,77,.30),transparent 34%),
+        radial-gradient(ellipse at 88% 78%,rgba(200,154,61,.12),transparent 30%),
+        linear-gradient(135deg,#003a29 0%,#002d20 52%,#001f16 100%);
+}
+.package-section::before{
+    background:rgba(232,199,120,.11);
+    filter:blur(34px);
+}
+.package-section::after{
+    background:rgba(0,151,99,.2);
+    filter:blur(42px);
+}
+.package-tag{
+    color:#f0cc72;
+    background:rgba(0,76,52,.58);
+    border-color:rgba(232,199,120,.42);
+    box-shadow:0 0 24px rgba(200,154,61,.12),inset 0 1px rgba(255,255,255,.08);
+}
+.package-heading h2 span{
+    background:linear-gradient(90deg,#f6d77f,#c89a3d);
+    -webkit-background-clip:text;
+    background-clip:text;
+}
+.package-heading p{color:rgba(244,247,241,.76)}
+.package-table-wrapper{
+    background:linear-gradient(145deg,rgba(0,66,46,.96),rgba(0,39,28,.98));
+    border:1px solid rgba(232,199,120,.42);
+    box-shadow:0 28px 90px rgba(0,0,0,.36),0 0 34px rgba(0,133,87,.16),inset 0 1px rgba(255,255,255,.07);
+}
+.package-table-wrapper::before{
+    background:linear-gradient(90deg,transparent,#b98028,#f2d477,#b98028,transparent);
+    box-shadow:0 0 18px rgba(232,199,120,.52);
+}
+.package-table th,.package-table td{
+    border-right-color:rgba(232,199,120,.14);
+    border-bottom-color:rgba(232,199,120,.14);
+}
+.package-service-head{
+    background:linear-gradient(145deg,#003c2b,#00543a)!important;
+}
+.package-service-head strong{color:#fff}
+.package-plan-head{background:linear-gradient(160deg,#064d38,#033725)}
+.package-plan-name{color:#fff}
+.package-plan-text{color:rgba(239,244,237,.64)}
+.package-basic .package-plan-icon,.package-standard .package-plan-icon{
+    color:#f0cc72;
+    background:rgba(232,199,120,.1);
+    border:1px solid rgba(232,199,120,.3);
+    box-shadow:0 0 20px rgba(232,199,120,.1);
+}
+.package-growth .package-plan-icon{
+    color:#002818;
+    background:linear-gradient(135deg,#f2d477,#bc842d);
+    box-shadow:0 0 24px rgba(232,199,120,.26);
+}
+.package-premium{
+    background:linear-gradient(160deg,#08704d,#03452f 58%,#002d20)!important;
+    box-shadow:inset 0 0 0 1px rgba(242,212,119,.42),0 0 32px rgba(0,153,99,.2);
+}
+.package-premium::after{border-color:rgba(242,212,119,.28)}
+.package-premium .package-plan-text{color:rgba(255,255,255,.78)}
+.package-popular{
+    color:#003322;
+    background:linear-gradient(135deg,#c18a32,#f2d477);
+    box-shadow:0 0 20px rgba(232,199,120,.28);
+}
+.package-premium-cell{
+    background:linear-gradient(180deg,rgba(0,116,77,.2),rgba(0,52,36,.18));
+}
+.package-service,.package-action-cell{background:rgba(0,51,36,.72)}
+.package-service-title{color:#f8f7ef}
+.package-service-sub{color:rgba(236,241,232,.58)}
+.package-service-icon{
+    color:#f0cc72;
+    background:linear-gradient(145deg,rgba(0,104,71,.82),rgba(0,58,40,.9));
+    border-color:rgba(232,199,120,.2);
+    box-shadow:inset 0 1px rgba(255,255,255,.06);
+}
+.package-check{
+    color:#f2d477;
+    background:linear-gradient(135deg,#07583d,#003b29);
+    border:1px solid rgba(232,199,120,.26);
+    box-shadow:0 0 14px rgba(0,145,93,.2);
+}
+.package-cross{color:rgba(239,244,237,.38);background:rgba(255,255,255,.07)}
+.package-premium-cell .package-check{
+    color:#003322;
+    background:linear-gradient(135deg,#f2d477,#bc842d);
+    border:0;
+    box-shadow:0 0 18px rgba(232,199,120,.3);
+}
+.package-table tbody tr:hover{background:rgba(0,119,79,.18)}
+.package-table tbody tr:hover .package-service{background:rgba(0,94,64,.72)}
+.package-action-cell{background:rgba(0,40,28,.84)}
+.package-basic-btn,.package-standard-btn,.package-growth-btn{
+    color:#f2d477;
+    background:rgba(0,92,63,.48);
+    border-color:rgba(232,199,120,.36);
+    box-shadow:0 0 18px rgba(0,120,81,.14);
+}
+.package-basic-btn:hover,.package-standard-btn:hover,.package-growth-btn:hover{
+    color:#002b1e;
+    background:linear-gradient(135deg,#f2d477,#bc842d);
+}
+.package-premium-btn{
+    color:#002b1e;
+    background:linear-gradient(135deg,#f2d477,#bc842d);
+    border-color:#f2d477;
+    box-shadow:0 8px 25px rgba(200,154,61,.28);
+}
+.package-select-btn:hover{box-shadow:0 10px 28px rgba(232,199,120,.24)}
+.package-note{color:rgba(239,244,237,.68)}
+.package-note i{color:#f2d477}
+.package-mobile{
+    border-color:rgba(232,199,120,.38);
+    background:linear-gradient(145deg,rgba(0,66,46,.96),rgba(0,39,28,.98));
+    box-shadow:0 16px 40px rgba(0,0,0,.28),0 0 26px rgba(0,133,87,.16);
+}
+.package-mobile-label{color:#f0cc72}
+.package-mobile-select{
+    color:#fff;
+    background:#03432f;
+    border-color:rgba(232,199,120,.45);
+}
+.package-mobile-select option{color:#fff;background:#03432f}
+.package-mobile-select-wrap>i{color:#f2d477}
+.package-mobile-panel{
+    background:linear-gradient(145deg,rgba(0,96,65,.7),rgba(0,48,34,.82));
+    border:1px solid rgba(232,199,120,.25);
+    box-shadow:inset 0 1px rgba(255,255,255,.05);
+}
+.package-mobile-panel h3{color:#fff}
+.package-mobile-panel h3 span{color:rgba(239,244,237,.68)}
+.package-mobile-panel li{color:#f2f1e9}
+.package-mobile-panel li i{color:#f2d477;text-shadow:0 0 10px rgba(232,199,120,.28)}
+
+.contact-package-label{
+    display:block;
+    margin:18px 0 0;
+    color:var(--primary);
+    font:12px var(--f-body);
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+.contact-package-select{
+    width:100%;
+    padding:14px 0;
+    border:0;
+    border-bottom:1px solid #0003;
+    border-radius:0;
+    background:transparent;
+    color:var(--primary);
+    font:14px var(--f-body);
+    letter-spacing:.06em;
+    outline:0;
+}
+.contact-package-select:focus{border-bottom-color:var(--theme)}
+.contact-package-select option{color:#002818;background:#fff}
+
+/* Keep the WhatsApp, chatbot, and back-to-top controls in one responsive column. */
+:root{
+    --floating-edge:clamp(12px,2.2vw,25px);
+    --floating-gap:clamp(10px,1.35vw,16px);
+    --floating-chat-size:66px;
+}
+.floating-widgets{
+    right:var(--floating-edge)!important;
+    bottom:calc(env(safe-area-inset-bottom,0px) + var(--floating-edge))!important;
+    gap:var(--floating-gap)!important;
+    align-items:flex-end!important;
+    z-index:999999!important;
+}
+.wa-widget{
+    position:relative!important;
+    top:calc(-1 * (var(--floating-chat-size) + var(--floating-gap)))!important;
+}
+.chat-bot{
+    position:fixed!important;
+    right:var(--floating-edge)!important;
+    bottom:calc(env(safe-area-inset-bottom,0px) + var(--floating-edge) + 44px + var(--floating-gap))!important;
+    z-index:1000000!important;
+}
+@media(max-width:575.98px){
+    :root{--floating-chat-size:62px}
+    .chat-bot{
+        bottom:calc(env(safe-area-inset-bottom,0px) + var(--floating-edge) + 44px + var(--floating-gap))!important;
+    }
+}
+
