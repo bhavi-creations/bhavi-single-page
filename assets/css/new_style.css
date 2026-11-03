@@ -8549,6 +8549,18 @@ html{scroll-behavior:auto !important}
     bottom:calc(env(safe-area-inset-bottom,0px) + var(--floating-edge) + 44px + var(--floating-gap))!important;
     z-index:1000000!important;
 }
+@media(min-width:768px){
+    .chat-bot-box{
+        bottom:calc(var(--floating-chat-size) + var(--floating-gap) + 12px)!important;
+        width:min(410px,calc(100vw - 48px))!important;
+        height:min(625px,calc(100dvh - 187px))!important;
+        max-height:calc(100dvh - 187px)!important;
+    }
+    .chat-bot-body{
+        height:calc(100% - 185px)!important;
+        min-height:0!important;
+    }
+}
 @media(max-width:575.98px){
     :root{--floating-chat-size:62px}
     .chat-bot{
