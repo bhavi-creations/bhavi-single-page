@@ -8574,7 +8574,7 @@ html{scroll-behavior:auto !important}
         padding-top:clamp(88px,12svh,112px)!important;
     }
     .index_first_section .wrap{margin-top:0!important}
-    .index_first_section .eyebrow{margin-top:0!important}
+    .index_first_section .eyebrow{margin-top:21px!important}
 }
 
 /* Hover highlight for the four Signature Packages plan titles. */
