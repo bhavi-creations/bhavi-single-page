@@ -8602,6 +8602,14 @@ html{scroll-behavior:auto !important}
     }
 }
 
+/* Move only the brand slide counter slightly above the title on tablets. */
+@media(min-width:768px) and (max-width:991.98px){
+    #brands .scene .num{
+        position:relative;
+        top:-7px;
+    }
+}
+
 /* Center the px-zoom logo and tagline as one stack on the requested desktop ranges. */
 @media(min-width:992px) and (max-width:1200px), (min-width:1400px){
     #px-zoom .px-zstage{
