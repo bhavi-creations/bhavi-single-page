@@ -250,6 +250,67 @@
         </div>
 
 
+        <div class="package-mobile" aria-label="Mobile package comparison">
+            <label class="package-mobile-label" for="package-mobile-select">Choose a package</label>
+            <div class="package-mobile-select-wrap">
+                <select id="package-mobile-select" class="package-mobile-select" onchange="document.querySelectorAll('[data-package-panel]').forEach(panel => panel.hidden = panel.dataset.packagePanel !== this.value)">
+                    <option value="basic">Basic</option>
+                    <option value="standard">Standard</option>
+                    <option value="premium">Premium</option>
+                    <option value="growth">Growth</option>
+                </select>
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </div>
+            <div class="package-mobile-panel" data-package-panel="basic">
+                <h3>Basic <span>Start your digital presence</span></h3>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Social Media Management</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Graphic Design</li>
+                </ul>
+                <a href="#cta" class="package-select-btn package-basic-btn">Choose Basic <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="package-mobile-panel" data-package-panel="premium" hidden>
+                <h3>Premium <span>Complete brand support</span></h3>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Social Media Management</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Graphic Design</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Video Editing</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Content Strategy</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>SEO Optimization</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Paid Ads Management</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Monthly Reports</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Priority Support</li>
+                </ul>
+                <a href="#cta" class="package-select-btn package-premium-btn">Choose Premium <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="package-mobile-panel" data-package-panel="standard" hidden>
+                <h3>Standard <span>Build your brand consistently</span></h3>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Social Media Management</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Graphic Design</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Video Editing</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Content Strategy</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Monthly Reports</li>
+                </ul>
+                <a href="#cta" class="package-select-btn package-standard-btn">Choose Standard <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="package-mobile-panel" data-package-panel="growth" hidden>
+                <h3>Growth <span>Scale with performance</span></h3>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Social Media Management</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Graphic Design</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Video Editing</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Content Strategy</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>SEO Optimization</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Website Support</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Paid Ads Management</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Monthly Reports</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Priority Support</li>
+                </ul>
+                <a href="#cta" class="package-select-btn package-growth-btn">Choose Growth <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+
         <!-- Table -->
 
         <div class="package-table-wrapper">
@@ -847,7 +908,7 @@
 
 </section>
 
-<section class="bhavi-packages" id="bhavi-packages" aria-labelledby="bhavi-packages-title">
+<!-- <section class="bhavi-packages" id="bhavi-packages" aria-labelledby="bhavi-packages-title">
   <div class="container-xxl bhavi-packages__container">
     <div class="row align-items-end gy-3 mb-4 mb-xl-5">
       <div class="col-lg-8">
@@ -860,7 +921,7 @@
     </div>
 
     <div class="row g-3 g-xl-4 align-items-stretch">
-      <!-- Card 1: Basic -->
+      Card 1: Basic
       <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
         <article class="bhavi-plan h-100">
           <div class="bhavi-plan__top">
@@ -880,7 +941,7 @@
         </article>
       </div>
 
-      <!-- Card 2: Standard -->
+      Card 2: Standard
       <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
         <article class="bhavi-plan bhavi-plan--featured h-100">
           <div class="bhavi-plan__top">
@@ -901,7 +962,7 @@
         </article>
       </div>
 
-      <!-- Card 3: Premium -->
+      Card 3: Premium
       <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
         <article class="bhavi-plan h-100">
           <div class="bhavi-plan__top">
@@ -922,7 +983,7 @@
         </article>
       </div>
 
-      <!-- Card 4: Growth -->
+      Card 4: Growth
       <div class="col-12 col-sm-6 col-lg-6 col-xl-3">
         <article class="bhavi-plan h-100">
           <div class="bhavi-plan__top">
@@ -946,7 +1007,7 @@
 
     <p class="bhavi-packages__note">Pricing and inclusions shown are editable examples. Final deliverables depend on your agreed package.</p>
   </div>
-</section>
+</section> -->
 
 
 <!-- <section class="stmt"><p>People do not buy what is best they buy what makes them feel certain. Perception is the engineering of certainty.</p></section> -->
@@ -956,8 +1017,8 @@
   <div class="px-zstage">
 
     <!-- <img class="px-zlogo" src="./assets/img/Bhavi Creations Gold Logo.png" alt="Bhavi Creations"> -->
-     <svg class="px-zlogo px-zlogo-svg" viewBox="0 0 660 285" role="img" aria-label="Bhavi Creations">
-        <use href="#bc-logo"></use>
+     <svg class="px-zlogo px-zlogo-svg" viewBox="0 0 1326 470" role="img" aria-label="Bhavi Creations">
+        <use href="#bc-header-logo"></use>
      </svg>
 
     <p class="px-ztext">We are a premium branding &amp; creative agency, helping businesses stand out, attract customers and grow.</p>
