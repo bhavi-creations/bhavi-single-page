@@ -373,6 +373,13 @@
 
       s.innerHTML = '<span class="gt">' + b[0] + '</span><div class="in"><div><small class="num"></small><h3>' + b[0] + '</h3><span class="tg">' + b[1] + '</span><p>' + b[2] + '</p>' + palHtml + '</div><div class="brand-gallery" aria-label="' + b[0] + ' brand images"><div class="tr">' + imgs + '</div></div></div>';
 
+      var brandIndex = BRANDS.indexOf(b);
+      var slideControls = document.createElement('div');
+      slideControls.className = 'brand-slide-controls';
+      slideControls.innerHTML = '<button type="button" data-brand-step="-1" aria-label="Previous branding slide"><i class="bi bi-arrow-left" aria-hidden="true"></i></button><button type="button" data-brand-step="1" aria-label="Next branding slide"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>';
+      $('.brand-gallery', s).appendChild(slideControls);
+      s.dataset.brandIndex = brandIndex;
+
       $('#bs').appendChild(s);
     });
 
@@ -1230,6 +1237,20 @@
             duration: pan + 1,
             ease: 'none'
           }, '<-.6');
+      });
+
+      $$('.brand-slide-controls button').forEach(function(button) {
+        button.addEventListener('click', function() {
+          var current = Number(button.closest('.scene').dataset.brandIndex);
+          var target = (current + Number(button.dataset.brandStep) + scenes.length) % scenes.length;
+          var trigger = bt.scrollTrigger;
+          if (!trigger) return;
+          var destination = trigger.labelToScroll('sc' + target);
+          window.scrollTo({
+            top: destination,
+            behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+          });
+        });
       });
 
       /* shift lens */

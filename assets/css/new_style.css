@@ -979,7 +979,8 @@ nav a:hover {
 
 
 .brands .intro h2 {
-  font-size: clamp(80px, 21vw, 400px);
+  /* font-size: clamp(80px, 21vw, 400px); */
+  font-size: 245px;
   line-height: .8;
   /* color: var(--primary); */
   color: white;
@@ -8608,6 +8609,47 @@ html{scroll-behavior:auto !important}
         position:relative;
         top:-7px;
     }
+}
+
+/* Previous/next controls below each branding image strip. */
+#brands .scene .brand-gallery{
+    position:relative;
+    clip-path:inset(-40px -80px -60px 0)!important;
+}
+#brands .brand-slide-controls{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:50%;
+    z-index:8;
+    display:flex;
+    gap:12px;
+    transform:translateX(-50%);
+}
+#brands .brand-slide-controls button{
+    display:grid;
+    width:44px;
+    height:44px;
+    padding:0;
+    place-items:center;
+    border:1px solid rgba(232,201,120,.5);
+    border-radius:50%;
+    background:#f8f8f5;
+    color:#00503b;
+    box-shadow:0 8px 22px rgba(0,0,0,.22),0 0 14px rgba(232,201,120,.12);
+    font-size:18px;
+    cursor:pointer;
+    transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease;
+}
+#brands .brand-slide-controls button:hover{
+    transform:translateY(-2px);
+    background:#e8c978;
+    color:#002818;
+    box-shadow:0 10px 24px rgba(0,0,0,.26),0 0 18px rgba(232,201,120,.32);
+}
+#brands .brand-slide-controls button:active{transform:scale(.96)}
+@media(max-width:700px){
+    #brands .brand-slide-controls{top:calc(100% + 8px);gap:10px}
+    #brands .brand-slide-controls button{width:40px;height:40px;font-size:16px}
 }
 
 /* Center the px-zoom logo and tagline as one stack on the requested desktop ranges. */

@@ -14,7 +14,10 @@
 
       <span class="orb"></span>
 
-      <span class="pic"><img src="https://prception.in/assets/imgs/gallery/prception_marketing.jpeg" alt=""></span>
+      <span class="pic">
+        <!-- <img src="https://prception.in/assets/imgs/gallery/prception_marketing.jpeg" alt=""> -->
+        <img src="./assets/img/favicon.png" alt="">
+      </span>
     </div>
 
     <div class="wrap">
@@ -274,6 +277,7 @@
                 <ul>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Social Media Management</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Graphic Design</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Logo Designing</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Video Editing</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Content Strategy</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>SEO Optimization</li>
@@ -299,6 +303,7 @@
                 <ul>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Social Media Management</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Graphic Design</li>
+                    <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Logo Designing</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Video Editing</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Content Strategy</li>
                     <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>SEO Optimization</li>
@@ -510,6 +515,25 @@
 
                         <td><span class="package-check"><i class="bi bi-check-lg"></i></span></td>
 
+                    </tr>
+
+
+                    <!-- Logo Designing -->
+
+                    <tr>
+                        <td class="package-service">
+                            <div class="package-service-box">
+                                <span class="package-service-icon"><i class="bi bi-vector-pen"></i></span>
+                                <span>
+                                    <span class="package-service-title">Logo Designing</span>
+                                    <span class="package-service-sub">Custom brand mark creation</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td><span class="package-cross"><i class="bi bi-x-lg"></i></span></td>
+                        <td><span class="package-cross"><i class="bi bi-x-lg"></i></span></td>
+                        <td class="package-premium-cell"><span class="package-check"><i class="bi bi-check-lg"></i></span></td>
+                        <td><span class="package-check"><i class="bi bi-check-lg"></i></span></td>
                     </tr>
 
 
