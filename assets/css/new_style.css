@@ -8676,3 +8676,15 @@ html{scroll-behavior:auto !important}
     }
 }
 
+
+
+
+
+@media (min-width: 992px) and (max-width: 1200px) 
+{
+  nav#siteNav 
+  {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
