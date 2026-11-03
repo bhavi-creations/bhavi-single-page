@@ -282,7 +282,7 @@ header('Cache-Control: no-cache, must-revalidate');
 </a>
 
     <!-- <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#brands">Case Study</a><a href="#how">Who we are</a><a href="#how">Services</a><a href="#cta">Contact</a></nav> -->
-    <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#bhavi-packages">Packages</a><a href="#brands">Case Study</a><a href="#how">Who we are</a>
+    <nav id="siteNav"><a href="#">Home</a><a href="#about">About Us</a><a href="#packages">Packages</a><a href="#brands">Case Study</a><a href="#how">Who we are</a>
 
       <div class="nav-dd">
         <a href="#" class="dd-trigger" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down"></i></a>
