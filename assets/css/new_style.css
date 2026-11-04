@@ -8688,3 +8688,28 @@ html{scroll-behavior:auto !important}
     margin-right: 10px;
   }
 }
+/* Use the same compact package selector on tablets as on phones. */
+@media (min-width:768px) and (max-width:991.98px){
+    .package-section .package-table-wrapper{display:none}
+    .package-section .package-mobile{
+        display:block;
+        margin:0 10px;
+        padding:20px;
+        border:1px solid rgba(152,104,32,.18);
+        border-radius:20px;
+        background:rgba(255,255,255,.92);
+        box-shadow:0 14px 36px rgba(42,34,19,.08);
+    }
+    .package-section .package-mobile-label{display:block;margin-bottom:9px;color:#76613b;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .package-section .package-mobile-select-wrap{position:relative;margin-bottom:18px}
+    .package-section .package-mobile-select{width:100%;min-height:50px;padding:0 42px 0 15px;appearance:none;border:1px solid rgba(152,104,32,.3);border-radius:12px;background:#fff;color:#29251d;font:inherit;font-weight:700}
+    .package-section .package-mobile-select-wrap>i{position:absolute;top:50%;right:16px;transform:translateY(-50%);color:#986820;pointer-events:none}
+    .package-section .package-mobile-panel{padding:18px;border-radius:15px;background:#faf8f3}
+    .package-section .package-mobile-panel[hidden]{display:none}
+    .package-section .package-mobile-panel h3{margin:0 0 15px;color:#29251d;font-size:21px}
+    .package-section .package-mobile-panel h3 span{display:block;margin-top:5px;color:#766f62;font-size:12px;font-weight:400}
+    .package-section .package-mobile-panel ul{display:grid;gap:11px;margin:0;padding:0;list-style:none}
+    .package-section .package-mobile-panel li{display:flex;align-items:flex-start;gap:9px;color:#39362f;font-size:13px;line-height:1.45}
+    .package-section .package-mobile-panel li i{margin-top:2px;color:#a87a2c}
+    .package-section .package-mobile-panel .package-select-btn{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:20px}
+}

@@ -1602,8 +1602,7 @@
 
         /* DIRECT EMAIL APPLICATION */
 
-        window.location.href =
-            mailLink;
+        window.open(mailLink, "_blank", "noopener,noreferrer");
 
     }
 

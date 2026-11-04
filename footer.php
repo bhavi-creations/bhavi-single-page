@@ -87,11 +87,11 @@
             </li>
             <li>
               <i class="bi bi-telephone"></i>
-              <a href="tel:+919642343434">+91 96423 43434</a>
+              <a href="tel:+919642343434" target="_blank" rel="noopener noreferrer">+91 96423 43434</a>
             </li>
             <li>
               <i class="bi bi-envelope"></i>
-              <a href="mailto:admin@bhavicreations.com">
+              <a href="mailto:admin@bhavicreations.com" target="_blank" rel="noopener noreferrer">
                 admin@bhavicreations.com
               </a>
             </li>
@@ -106,7 +106,7 @@
       <p class="footer_new_section_copyright">
 
         © 2022 Bhavi Creations Pvt Ltd. All Rights Reserved.
-        <a href="https://bhavicreations.com" style="text-decoration: none; color: #ffffff">Design with love @</a>
+        <a href="https://bhavicreations.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #ffffff">Design with love @</a>
         <img src="assets\img\Bhavi_Branding_Stamp.png" class="img-fluid brand_image" style="width:60px;height:60px" alt=""></a>
       </p>
     </div>
