@@ -8713,3 +8713,11 @@ html{scroll-behavior:auto !important}
     .package-section .package-mobile-panel li i{margin-top:2px;color:#a87a2c}
     .package-section .package-mobile-panel .package-select-btn{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:20px}
 }
+
+/* Prevent sticky touch/emulator hover transforms from making package alignment jump. */
+@media (hover:none), (pointer:coarse){
+    .bhavi-plan:hover{transform:none!important}
+    .package-table tbody tr:hover .package-service-icon{transform:none!important}
+    .package-table td:hover .package-check,
+    .package-table td:hover .package-cross{transform:none!important}
+}
