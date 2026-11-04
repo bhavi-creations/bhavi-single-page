@@ -52,6 +52,7 @@ header('Cache-Control: no-cache, must-revalidate');
   <?php endif; ?>
   <!-- Common Stylesheet -->
   <link rel="stylesheet" href="assets/css/new_style.css?v=<?= filemtime(__DIR__ . '/assets/css/new_style.css') ?>">
+  <?php if ($isWorksPage): ?><link rel="stylesheet" href="our_works.css?v=<?= filemtime(__DIR__ . '/our_works.css') ?>"><?php endif; ?>
 
   <!-- FIX: grid column was growing to the width of all cards, so there was nothing left to scroll. min-width:0 lets the column keep its size and the cards overflow (GSAP then moves them). -->
   <style>
@@ -102,7 +103,7 @@ header('Cache-Control: no-cache, must-revalidate');
 </style>
 </head>
 
-<body>
+<body<?= $isWorksPage ? ' class="our-works-body"' : '' ?>>
 
 <!-- Original SVG logo sprite retained below as requested (inactive). -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -296,7 +297,7 @@ header('Cache-Control: no-cache, must-revalidate');
         <li><a href="#work">Web Development</a></li>
       </ul>
       -->
-      <a href="our_works.php" data-section="portfolio">Portfolio</a>
+      <a href="index.php#portfolio" data-section="portfolio">Portfolio</a>
       <a href="#packages" data-section="packages">Packages</a>
       <a href="#cta" data-section="contact">Contact</a>
     </nav>
@@ -317,13 +318,13 @@ header('Cache-Control: no-cache, must-revalidate');
       home:document.querySelector('.index_first_section'),
       about:document.getElementById('about'),
       services:document.getElementById('brands'),
-      portfolio:document.getElementById('work'),
+      portfolio:document.getElementById('portfolio'),
       packages:document.getElementById('packages'),
       contact:document.getElementById('cta')
     };
     var isWorksPage=/\/our_works\.php$/i.test(window.location.pathname);
     if(isWorksPage){
-      var destinations={home:'index.php',about:'index.php#about',services:'index.php#brands',portfolio:'our_works.php',packages:'index.php#packages',contact:'index.php#cta'};
+      var destinations={home:'index.php',about:'index.php#about',services:'index.php#brands',portfolio:'index.php#portfolio',packages:'index.php#packages',contact:'index.php#cta'};
       links.forEach(function(link){link.href=destinations[link.dataset.section]||link.href});
     }
     function activate(key){
