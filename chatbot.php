@@ -1405,6 +1405,20 @@
                             </span>
 
                         </button>
+                        <button type="button" class="chat-bot-service-btn" onclick="chatBotService('Digital Marketing')">
+                            <span class="chat-bot-service-icon"><i class="bi bi-megaphone"></i></span>
+                            <span><span class="chat-bot-service-title">Digital Marketing</span><span class="chat-bot-service-small">Online Campaigns & Growth</span></span>
+                        </button>
+
+                        <button type="button" class="chat-bot-service-btn" onclick="chatBotService('Offline Marketing')">
+                            <span class="chat-bot-service-icon"><i class="bi bi-signpost-2"></i></span>
+                            <span><span class="chat-bot-service-title">Offline Marketing</span><span class="chat-bot-service-small">Outdoor & Print Promotion</span></span>
+                        </button>
+
+                        <button type="button" class="chat-bot-service-btn" onclick="chatBotService('Traditional Marketing')">
+                            <span class="chat-bot-service-icon"><i class="bi bi-broadcast"></i></span>
+                            <span><span class="chat-bot-service-title">Traditional Marketing</span><span class="chat-bot-service-small">Local Media & Outreach</span></span>
+                        </button>
 
 
                     </div>
@@ -1740,6 +1754,26 @@
         },
 
 
+        "Digital Marketing": {
+            icon: "📣",
+            title: "Digital Marketing",
+            text: "We plan and manage digital campaigns that improve online visibility, attract qualified audiences and support measurable business growth.",
+            points: ["Digital campaign strategy", "Paid advertising", "Audience targeting", "Performance tracking"]
+        },
+
+        "Offline Marketing": {
+            icon: "📍",
+            title: "Offline Marketing & Advertising",
+            text: "We help brands reach local audiences through outdoor advertising, print materials and on-ground promotional campaigns.",
+            points: ["Outdoor advertising", "Print and promotional materials", "Local campaign planning", "On-ground brand visibility"]
+        },
+
+        "Traditional Marketing": {
+            icon: "📻",
+            title: "Traditional Marketing",
+            text: "We build awareness through established media and community outreach, planned around your market and campaign goals.",
+            points: ["Local media planning", "Radio and print promotions", "Community outreach", "Campaign coordination"]
+        },
         Branding: {
 
             icon: "✨",

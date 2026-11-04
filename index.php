@@ -1095,6 +1095,18 @@
 
         <div class="two"><input type="email" name="email" placeholder="EMAIL" required><input type="tel" name="number" placeholder="PHONE"></div>
 
+        <label class="contact-package-label" for="contactPlace">Place</label>
+        <select name="place" id="contactPlace" class="contact-package-select">
+          <option value="">Select a place</option>
+          <option value="Vizag">Vizag</option>
+          <option value="Kakinada">Kakinada</option>
+          <option value="Rajahmundry">Rajahmundry</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+        </select>
+
         <textarea name="remarks" rows="4" placeholder="MESSAGE"></textarea>
 
         <button class="go" aria-label="Submit"><span class="go-a">→</span><span class="go-a">→</span></button>
@@ -1104,9 +1116,7 @@
         <div>
           <h4>CONNECT</h4>+91 9642343434<br>admin@bhavicreations.com
         </div>
-        <div>
-          <h4>ADDRESS</h4>Plot no 28, RTO Office Rd, behind Lazza Ice Cream, Ranga Rao Nagar, Kakinada, Andhra Pradesh 533003
-        </div>
+        <!-- Address display hidden; location is captured by the Place form field. -->
       </div>
     </div>
 
@@ -1133,7 +1143,7 @@
       <div class="nws-tr" id="nwsTr"></div>
     </div>
     <div class="nws-ft">
-      <div class="nws-dots" id="nwsD"></div><a href="https://bhavicreations.com/" target="_blank" rel="noopener"> Bhavi creations site ↗</a>
+      <div class="nws-dots" id="nwsD"></div><!-- <a href="https://bhavicreations.com/" target="_blank" rel="noopener"> Bhavi creations site ↗</a> -->
     </div>
   </div>
 </section>

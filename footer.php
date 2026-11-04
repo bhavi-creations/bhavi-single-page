@@ -1417,9 +1417,29 @@
     ========================================================= */
 
         var LOGOS = [{
+        name: 'Srinivasa Dental',
+        src: 'assets/img/Srinivasa-bg.png',
+        url: 'https://srinivasadentalkakinada.com/'
+      }, 
+        {
         name: 'Krishna Dental',
         src: 'assets/img/krishna-dental-1.png',
         url: 'https://krishnadentacureclinic.com/'
+      },
+      {
+        name: 'ialign signature',
+        src: 'assets/img/IALIGN-1.png',
+        url: 'https://ialignsignaturedentalcare.com/'
+      },
+      {
+        name: 'Anish Dental',
+        src: 'assets/img/Anish-dental-1.png',
+        url: 'https://anishdental.in/'
+      },
+      {
+        name: 'Dr.Subhash plastic surgeon',
+        src: 'assets/img/Subash logo white.png',
+        url: 'https://drsubhashplasticsurgeon.com/'
       },
       {
         name: 'Care N Concern',
@@ -1456,6 +1476,7 @@
     var mt = $('#mt');
 
     if (mt) {
+      mt.style.setProperty('--client-logo-count', LOGOS.length);
 
       var one = LOGOS.map(function(logo) {
 
@@ -2084,7 +2105,7 @@
       U = 'https://bhavicreations.com';
     /* [tag, title, description, date, link slug, image url (paste here)] */
     var NEWS = [
-      ['', '', '', '', '', 'assets/img/img-1.jpeg'],
+      // ['', '', '', '', '', 'assets/img/img-1.jpeg'], // Bhavi Creations outdoor building photo hidden as requested.
       ['', '', '', '', '', 'assets/img/img-2.png'],
       ['', '', "", '', '', 'assets/img/img-3.png'],
       ['', '', '', '', '', 'assets/img/social media.png'],
