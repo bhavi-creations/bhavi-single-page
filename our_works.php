@@ -170,7 +170,7 @@
                         }
                         // Unsupported type
                         else {
-                            echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                            echo "<p class='text-white text-center'>Unsupported file format</p>";
                         }
 
                         if (!empty($link)) echo "</a>";
@@ -181,7 +181,7 @@
                 </div>";
                     }
                 } else {
-                    echo "<div class='col-12'><p class='text-muted text-center'>No media uploaded yet.</p></div>";
+                    echo "<div class='col-12'><p class='text-white text-center'>No media uploaded yet.</p></div>";
                 }
 
                 $conn->close();
@@ -192,64 +192,48 @@
             <div id="all" class="media-tab-content active">
                 <div class="row">
                     <?php
-                    include 'db.connection/db_connection.php'; // Adjust path as necessary
-
-                    $sql = "SELECT * FROM our_works ORDER BY id DESC";
-                    $result = $conn->query($sql);
+                    include 'db.connection/db_connection.php';
+                    $result = $conn->query("SELECT media_type, title, file_path, media_link FROM our_works ORDER BY id DESC");
+                    $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp'];
+                    $videoExtensions = ['mp4', 'webm', 'mov', 'avi'];
 
                     if ($result && $result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            $file = htmlspecialchars($row['file_path']);
-                            $title = htmlspecialchars($row['title']);
-                            $link = htmlspecialchars($row['media_link']);
+                            $file = basename((string) $row['file_path']);
+                            $title = trim((string) ($row['title'] ?? ''));
+                            $type = trim((string) ($row['media_type'] ?? ''));
+                            $link = trim((string) ($row['media_link'] ?? ''));
                             $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-                            $path = "admin/public/uploads/staff/" . $file; // Update path if needed
+                            $src = 'admin/public/uploads/staff/' . rawurlencode($file);
+                            $safeSrc = htmlspecialchars($src, ENT_QUOTES, 'UTF-8');
+                            $safeTitle = htmlspecialchars($title !== '' ? $title : ($type !== '' ? $type : 'Our work'), ENT_QUOTES, 'UTF-8');
+                            $safeType = htmlspecialchars($type, ENT_QUOTES, 'UTF-8');
+                            $safeLink = filter_var($link, FILTER_VALIDATE_URL) && in_array(strtolower((string) parse_url($link, PHP_URL_SCHEME)), ['http', 'https'], true)
+                                ? htmlspecialchars($link, ENT_QUOTES, 'UTF-8') : '';
 
-                            echo "<div class='col-md-4 mb-4'>
-                    <div class='card shadow-sm h-100' style='overflow: hidden;'>
-                        <div class='card-body p-2'>";
-
-                            // Wrap in link if available
-                            if (!empty($link)) echo "<a href='$link' target='_blank'>";
-
-                            // Display image (centered)
-                            if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp'])) {
-                                echo "<div class='d-flex justify-content-center'>
-                            <img src='$path' class='img-fluid'  border-radius: 8px;'>
-                          </div>";
+                            echo "<div class='col-12 col-sm-6 col-lg-4 mb-4'><article class='card shadow-sm h-100'><div class='card-body p-3'>";
+                            if ($safeLink !== '') echo "<a href='{$safeLink}' target='_blank' rel='noopener noreferrer' aria-label='Open {$safeTitle}'>";
+                            if (in_array($ext, $imageExtensions, true)) {
+                                echo "<img src='{$safeSrc}' alt='{$safeTitle}' loading='lazy' class='img-fluid w-100' style='object-fit:contain;max-height:360px;border-radius:8px;'>";
+                            } elseif (in_array($ext, $videoExtensions, true)) {
+                                echo "<video controls preload='metadata' class='w-100' style='max-height:420px;border-radius:8px;'><source src='{$safeSrc}' type='video/" . htmlspecialchars($ext, ENT_QUOTES, 'UTF-8') . "'>Your browser does not support video playback.</video>";
+                            } elseif ($ext === 'pdf') {
+                                echo "<span class='btn btn-outline-info btn-sm'>View PDF</span>";
+                            } else {
+                                echo "<p class='text-white text-center'>Unsupported media format</p>";
                             }
-                            // Display video
-                            elseif (in_array($ext, ['mp4', 'webm', 'mov', 'avi'])) {
-                                echo "<video controls   border-radius: 8px;'>
-                            <source src='$path' type='video/$ext'>
-                          </video>";
-                            }
-                            // Display PDF
-                            elseif ($ext === 'pdf') {
-                                echo "<p class='text-center'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
-                            }
-                            // Unsupported type
-                            else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
-                            }
-
-                            if (!empty($link)) echo "</a>";
-
-                            echo "<p class='mt-2 mb-0 text-center'><strong>$title</strong></p>
-                        </div>
-                    </div>
-                </div>";
+                            if ($safeLink !== '') echo '</a>';
+                            echo "<p class='mt-3 mb-0 text-center'><strong>{$safeTitle}</strong></p>";
+                            if ($safeType !== '') echo "<p class='mb-0 text-center small text-white-50'>{$safeType}</p>";
+                            echo '</div></article></div>';
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No media uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No media uploaded yet.</p></div>";
                     }
-
-                    $conn->close();
+                    if (isset($conn) && $conn instanceof mysqli) $conn->close();
                     ?>
                 </div>
             </div>
-
-
             <div id="logo" class="media-tab-content">
                 <div class="row">
                     <?php
@@ -288,7 +272,7 @@
                             elseif ($ext === 'pdf') {
                                 echo "<a href='$path' target='_blank' class='btn btn-outline-primary'>📄 View PDF</a>";
                             } else {
-                                echo "<p class='text-muted'>Unsupported file</p>";
+                                echo "<p class='text-white'>Unsupported file</p>";
                             }
 
                             echo "</div>"; // end media wrapper
@@ -301,7 +285,7 @@
                     </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No logo media uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No logo media uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -344,10 +328,10 @@
                     </video>";
                             } elseif ($ext === 'pdf') {
                                 echo "<div class='w-100 h-100 d-flex align-items-center justify-content-center'>
-                            <span class='text-muted'>📄 PDF</span>
+                            <span class='text-white'>📄 PDF</span>
                         </div>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported format</p>";
+                                echo "<p class='text-white text-center'>Unsupported format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -367,7 +351,7 @@
                             echo "</div></div></div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No Website media uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No Website media uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -409,7 +393,7 @@
                             } elseif ($ext === 'pdf') {
                                 echo "<p><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted'>Unsupported file format</p>";
+                                echo "<p class='text-white'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -420,7 +404,7 @@
                     </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No Posters uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No Posters uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -466,7 +450,7 @@
                             }
                             // Unsupported format
                             else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -477,7 +461,7 @@
                     </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No Reels uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No Reels uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -518,7 +502,7 @@
                             } elseif ($ext === 'pdf') {
                                 echo "<p class='text-center'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -529,7 +513,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No Photo Shoot media uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No Photo Shoot media uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -575,7 +559,7 @@
                             }
                             // OTHER
                             else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -586,7 +570,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No video media uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No video media uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -626,7 +610,7 @@
                             } elseif ($ext === 'pdf') {
                                 echo "<p class='text-center'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -637,7 +621,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No testimonials uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No testimonials uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -679,7 +663,7 @@
                             } elseif ($ext === 'pdf') {
                                 echo "<p class='text-center'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -690,7 +674,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No animated videos uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No animated videos uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -731,7 +715,7 @@
                             } elseif ($ext === 'pdf') {
                                 echo "<p class='text-center'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -742,7 +726,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No visiting cards uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No visiting cards uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -784,7 +768,7 @@
                             } elseif ($ext === 'pdf') {
                                 echo "<p class='text-center'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -795,7 +779,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No pamphlets uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No pamphlets uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -839,7 +823,7 @@
                           </div>";
                                 // echo "<p class='mt-2'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 Open Full PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -850,7 +834,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No brochures uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No brochures uploaded yet.</p></div>";
                     }
 
                     $conn->close();
@@ -891,7 +875,7 @@
                             } elseif ($ext === 'pdf') {
                                 echo "<p class='text-center'><a href='$path' target='_blank' class='btn btn-outline-info btn-sm'>📄 View PDF</a></p>";
                             } else {
-                                echo "<p class='text-muted text-center'>Unsupported file format</p>";
+                                echo "<p class='text-white text-center'>Unsupported file format</p>";
                             }
 
                             if (!empty($link)) echo "</a>";
@@ -902,7 +886,7 @@
                 </div>";
                         }
                     } else {
-                        echo "<div class='col-12'><p class='text-muted text-center'>No hoardings uploaded yet.</p></div>";
+                        echo "<div class='col-12'><p class='text-white text-center'>No hoardings uploaded yet.</p></div>";
                     }
 
                     $conn->close();

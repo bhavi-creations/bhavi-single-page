@@ -5938,7 +5938,15 @@ header nav a:first-child {background:rgba(200,154,61,.16);}
    ============================================================== */
 :root{--lux-ink:#002818;--lux-forest:#003A24;--lux-jade:#006B4A;--lux-gold:#C89A3D;--lux-glow:#E8C978;--lux-cream:#F8F8F5;--lux-champagne:#BFA878}
 body{background:var(--lux-ink);-webkit-font-smoothing:antialiased}
-header{padding:14px clamp(16px,3vw,54px);background:rgba(0,30,19,.84)!important;border-bottom:1px solid rgba(232,201,120,.24);box-shadow:0 12px 45px rgba(0,0,0,.18);backdrop-filter:blur(24px)}
+header
+{
+  /* padding:14px clamp(16px,3vw,54px); */
+  padding:7px clamp(16px,3vw,54px);
+  background:rgba(0,30,19,.84)!important;
+  border-bottom:1px solid rgba(232,201,120,.24);
+  box-shadow:0 12px 45px rgba(0,0,0,.18);
+  backdrop-filter:blur(24px)
+}
 header .logo-brand-wrapper{filter:drop-shadow(0 3px 13px rgba(232,201,120,.13))}
 header #siteNav{padding:7px 9px;background:rgba(255,255,255,.055)!important;border:1px solid rgba(232,201,120,.26);box-shadow:inset 0 1px rgba(255,255,255,.09),0 10px 30px rgba(0,0,0,.15)}
 header #siteNav>a,header #siteNav .dd-trigger{font-size:clamp(12px,.9vw,15px);font-weight:600;letter-spacing:.01em}
