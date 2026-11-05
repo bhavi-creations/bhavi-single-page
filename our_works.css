@@ -104,3 +104,4 @@ body.our-works-body {
 @media (max-width: 359.98px) {
     .our-works-page .media-tab-buttons { grid-template-columns: 1fr; }
 }
+.our-works-body .footer_new_section_top > .footer_new_section_column { width: auto; }

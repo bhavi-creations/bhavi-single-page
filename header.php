@@ -297,7 +297,7 @@ header('Cache-Control: no-cache, must-revalidate');
         <li><a href="#work">Web Development</a></li>
       </ul>
       -->
-      <a href="index.php#portfolio" data-section="portfolio">Portfolio</a>
+      <a href="our_works.php" data-section="portfolio">Portfolio</a>
       <a href="#packages" data-section="packages">Packages</a>
       <a href="#cta" data-section="contact">Contact</a>
     </nav>
@@ -324,7 +324,7 @@ header('Cache-Control: no-cache, must-revalidate');
     };
     var isWorksPage=/\/our_works\.php$/i.test(window.location.pathname);
     if(isWorksPage){
-      var destinations={home:'index.php',about:'index.php#about',services:'index.php#brands',portfolio:'index.php#portfolio',packages:'index.php#packages',contact:'index.php#cta'};
+      var destinations={home:'index.php',about:'index.php#about',services:'index.php#brands',portfolio:'our_works.php',packages:'index.php#packages',contact:'index.php#cta'};
       links.forEach(function(link){link.href=destinations[link.dataset.section]||link.href});
     }
     function activate(key){
