@@ -8805,3 +8805,7 @@ header #siteNav>a.is-current{
         line-height:1.45!important;
     }
 }
+/* Keep the Home nav pill unhighlighted unless Home is the current section. */
+header #siteNav > a:first-child:not(.is-current) {
+    background: transparent !important;
+}

@@ -1452,10 +1452,25 @@
         url: 'https://appledentalspecialities.in/'
       },
       {
-        name: 'Dr Subhash Center',
-        src: 'assets/img/Subash_logo_white-1.png',
-        url: '#'   /* ikkada aa site link pettandi */
+        name: 'Nayana Groups',
+        src: 'assets/img/Nayana-groups-logo.png',
+        url: 'https://nayanagroups.com/'
       },
+      {
+        name: 'Neurostar Hospital',
+        src: 'assets/img/neurostar-logo-11.png',
+        url: 'https://neurostarhospital.com/'
+      },
+      {
+        name: 'Mega Modulars',
+        src: 'assets/img/megamodulars-logo-1.png',
+        url: 'https://megamodularindustries.com/'
+      },
+      {
+        name: 'Smart Physio Care',
+        src: 'assets/img/smart-physio-care-1.png',
+        url: 'https://smartphysiocarehospitals.com/'
+      },    
       {
         name: 'V & V Salons',
         src: 'assets/img/V_AND_V_SALON_LOGO_NEW-1.png',
