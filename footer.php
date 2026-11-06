@@ -1462,6 +1462,11 @@
         url: 'https://neurostarhospital.com/'
       },
       {
+        name: 'Rajahmundry Steels',
+        src: 'assets/img/rajahmundry-steels-logo_1.png',
+        url: ''
+      },
+      {
         name: 'Mega Modulars',
         src: 'assets/img/megamodulars-logo-1.png',
         url: 'https://megamodularindustries.com/'
