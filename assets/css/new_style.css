@@ -8959,3 +8959,14 @@ header #siteNav > a:first-child:not(.is-current) {
   .media-tab-content .card,
   .media-tab-content.active .card{animation:none;transition:none}
 }
+
+
+
+
+@media (max-width: 1200px)
+{
+.media-tab-buttons button
+{
+  font-size: 13px;
+}
+}
