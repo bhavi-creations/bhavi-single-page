@@ -23,7 +23,7 @@
             target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <i class="bi bi-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/bhavicreations_pvtltd"
+          <a href="https://www.instagram.com/bhavicreations_pvtltd/"
             target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="bi bi-instagram"></i>
           </a>
@@ -52,7 +52,7 @@
               target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/bhavicreations_pvtl"
+            <a href="https://www.instagram.com/bhavicreations_pvtltd/"
               target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <i class="bi bi-instagram"></i>
             </a>
