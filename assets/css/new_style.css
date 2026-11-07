@@ -9155,3 +9155,21 @@ html
 {
   scroll-behavior:auto !important
 }
+
+@media (min-width: 1025px) and (max-width: 1440px) { /* width ni mee screen ki match chey */
+  #px-zoom .px-ztext {
+    top: calc(50% + 17vw) !important;   /* logo height batti adjust */
+    bottom: auto !important;
+    max-width: min(70vw, 720px);
+    text-align: center;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) { /* width ni mee screen ki match chey */
+  #px-zoom .px-ztext {
+    top: calc(50% + 9.5vw) !important;   /* logo center + logo half-height (7.8vw) + gap */
+    bottom: auto !important;
+    max-width: min(70vw, 720px);
+    text-align: center;
+  }
+}
