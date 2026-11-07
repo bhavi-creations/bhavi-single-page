@@ -9156,3 +9156,26 @@ html
   scroll-behavior:auto !important
 }
 
+/* Footer social icons: hover background = #006B4A, icon yellow ga unchutundi */
+.footer_new_section_social a:hover,
+.footer_new_section_social a:focus-visible {
+  background: #006B4A !important;
+  border-color: #E8C978 !important;
+  color: #E8C978 !important;
+  box-shadow: 0 8px 22px rgba(0, 107, 74, .45);
+}
+.footer_new_section_social a:hover i,
+.footer_new_section_social a:focus-visible i {
+  color: #E8C978 !important;
+}
+
+/* Hero "Learn More": hover fill = #006B4A, text yellow ga unchutundi */
+.index_first_section .morph-cta::before {
+  background: #006B4A !important;
+}
+.index_first_section.morph-active .morph-cta:hover {
+  background: #006B4A !important;
+  color: #E8C978 !important;
+  border-color: rgba(232, 201, 120, .6);
+  box-shadow: 0 12px 30px rgba(0, 107, 74, .45);
+}
