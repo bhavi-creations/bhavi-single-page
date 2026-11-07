@@ -8733,7 +8733,7 @@ html{scroll-behavior:auto !important}
 /* Requested navigation, contact and Signature Packages refinements. */
 header #siteNav>a.is-current{
     color:#002818!important;
-    background:#E8C978!important;
+    background:linear-gradient(120deg, var(--gold-dark), var(--gold), var(--gold-light)) !important;
     border-radius:999px!important;
     box-shadow:0 0 0 2px rgba(232,201,120,.22),0 5px 18px rgba(200,154,61,.2);
 }
