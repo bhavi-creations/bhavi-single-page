@@ -222,7 +222,7 @@
                 if (event && event.currentTarget) event.currentTarget.classList.add("active");
 
                 // Update URL hash
-                window.location.hash = tabName;
+                window.history.replaceState(null, '', window.location.pathname + window.location.search + '#' + tabName);
             }
 
             // Function to show the correct tab on page load based on URL hash
