@@ -29,7 +29,7 @@
 
         <p class="lead h" style="--d:.84s">We help businesses grow through branding, websites, creative content, digital marketing, and offline advertising that deliver real results.</p>
 
-        <div class="acts h" style="--d:.96s"><a href="#cta" class="btn"><span class="bt"><span>Let's Talk</span><span aria-hidden="true">Let's Talk</span></span><b>→</b></a><a href="#brands" class="link">Our Work <span>→</span></a></div>
+        <div class="acts h" style="--d:.96s"><a href="#brands" class="btn"><span class="bt"><span>Services</span><span aria-hidden="true">Services</span></span><b>→</b></a><a href="#work" class="link">Our Work <span>→</span></a></div>
       </div>
 
       <div class="side h" style="--d:1.08s">

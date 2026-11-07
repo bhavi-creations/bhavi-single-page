@@ -9143,3 +9143,15 @@ header #siteNav > a:first-child:not(.is-current) {
     }
 }
 
+
+
+
+/* arrows: keep them above the sliding images */
+#brands .scene .brand-gallery .brand-slide-controls
+{
+  z-index:100
+}
+html
+{
+  scroll-behavior:auto !important
+}

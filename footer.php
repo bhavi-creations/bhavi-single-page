@@ -1223,13 +1223,14 @@
             stagger: .035,
             ease: 'power3.out'
           }, 'sc' + i + '+=.15')
-          .to(tr, {
+                    .to(tr, {
             x: function() {
               return -dist()
             },
             duration: pan,
             ease: 'none'
           }, 'sc' + i + '+=.8')
+          .call(function() {}, null, '<')
           .fromTo($('.gt', s), {
             xPercent: 0
           }, {
@@ -1237,19 +1238,77 @@
             duration: pan + 1,
             ease: 'none'
           }, '<-.6');
+                  /* save this scene's pan time range for the arrows */
+        (function(sc, trEl, cnt) {
+          var startT = bt.labels['sc' + i] + .8;
+          sc.__pan = { start: startT, end: startT + pan, count: cnt };
+        })(s, tr, tr.children.length);
       });
+
+            /* arrows: slide image-by-image inside the current scene (smooth + slow) */
+      var panTweens = {};
+      scenes.forEach(function(s, i) {
+        panTweens[i] = s.__pan;
+      });
+
+      var slideBusy = false;
+
+      function smoothScrollTo(y, ms) {
+        var start = window.scrollY, dist = y - start, t0 = null;
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches || Math.abs(dist) < 2) {
+          window.scrollTo(0, y);
+          return Promise.resolve();
+        }
+        return new Promise(function(res) {
+          function ease(t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2 }
+          function step(ts) {
+            if (t0 === null) t0 = ts;
+            var p = Math.min(1, (ts - t0) / ms);
+            window.scrollTo(0, start + dist * ease(p));
+            if (p < 1) requestAnimationFrame(step); else res();
+          }
+          requestAnimationFrame(step);
+        });
+      }
 
       $$('.brand-slide-controls button').forEach(function(button) {
         button.addEventListener('click', function() {
-          var current = Number(button.closest('.scene').dataset.brandIndex);
-          var target = (current + Number(button.dataset.brandStep) + scenes.length) % scenes.length;
+          if (slideBusy) return;
+          var scene = button.closest('.scene');
+          var idx = Number(scene.dataset.brandIndex);
+          var dir = Number(button.dataset.brandStep);
           var trigger = bt.scrollTrigger;
-          if (!trigger) return;
-          var destination = trigger.labelToScroll('sc' + target);
-          window.scrollTo({
-            top: destination,
-            behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-          });
+          var info = scene.__pan;
+          if (!trigger || !info) return;
+
+          var count = info.count;                 /* images in this scene */
+          var tl = bt.duration();
+          var totalScroll = trigger.end - trigger.start;
+          function toScroll(time) { return trigger.start + (time / tl) * totalScroll }
+
+          var a = toScroll(info.start), b = toScroll(info.end);
+          var cur = window.scrollY;
+
+          /* current slide position inside this scene's pan range */
+          var slide = count > 1 ? Math.round((cur - a) / (b - a) * (count - 1)) : 0;
+          slide = Math.max(0, Math.min(count - 1, slide));
+          var next = slide + dir;
+
+          var dest;
+          if (next < 0) {
+            /* previous scene, last image */
+            var pi = (idx - 1 + scenes.length) % scenes.length, pinfo = scenes[pi].__pan;
+            dest = toScroll(pinfo.end);
+          } else if (next > count - 1) {
+            /* next scene, first image */
+            var ni = (idx + 1) % scenes.length, ninfo = scenes[ni].__pan;
+            dest = toScroll(ninfo.start);
+          } else {
+            dest = a + (b - a) * (next / (count - 1));
+          }
+
+          slideBusy = true;
+          smoothScrollTo(dest, 850).then(function() { slideBusy = false });
         });
       });
 
