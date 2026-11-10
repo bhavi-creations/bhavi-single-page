@@ -5,8 +5,8 @@
 ========================================================= */
 
     :root {
-        --chat-green: #006B4A;
-        --chat-green-dark: #003A24;
+        --chat-blue: #0140a7;
+        --chat-blue-dark: #0140a7;
         --chat-gold: #C89A3D;
         --chat-gold-dark: #986820;
         --chat-gold-light: #E8C978;
@@ -57,14 +57,14 @@
                 rgba(232, 199, 120, .20),
                 transparent 32%),
             linear-gradient(135deg,
-                #006B4A,
-                #003A24);
+                #0140a7,
+                #0140a7);
 
         border:
             1px solid rgba(232, 199, 120, .25);
 
         box-shadow:
-            0 16px 40px rgba(0, 58, 36, .28),
+            0 16px 40px rgba(1, 64, 167, .28),
             0 6px 18px rgba(200, 154, 61, .14);
 
         transition: .35s ease;
@@ -79,7 +79,7 @@
             translateY(-5px) rotate(-3deg);
 
         box-shadow:
-            0 22px 50px rgba(0, 58, 36, .36),
+            0 22px 50px rgba(1, 64, 167, .36),
             0 8px 25px rgba(200, 154, 61, .20);
     }
 
@@ -184,7 +184,7 @@
             1px solid rgba(200, 154, 61, .16);
 
         box-shadow:
-            0 35px 90px rgba(0, 40, 24, .22),
+            0 35px 90px rgba(1, 64, 167, .22),
             0 10px 30px rgba(200, 154, 61, .06);
 
         opacity: 0;
@@ -232,9 +232,9 @@
                 transparent 34%),
 
             linear-gradient(135deg,
-                #003A24,
-                #006B4A 58%,
-                #003A24);
+                #0140a7,
+                #0140a7 58%,
+                #0140a7);
 
         border-bottom:
             1px solid rgba(232, 199, 120, .15);
@@ -436,17 +436,17 @@
 
     .chat-bot-message.bot .chat-bot-message-content {
 
-        color: #45584e;
+        color: #0140a7;
 
         background: #fff;
 
         border:
-            1px solid rgba(0, 107, 74, .09);
+            1px solid rgba(1, 64, 167, .09);
 
         border-bottom-left-radius: 6px;
 
         box-shadow:
-            0 10px 28px rgba(0, 58, 36, .05);
+            0 10px 28px rgba(1, 64, 167, .05);
     }
 
 
@@ -456,8 +456,8 @@
 
         background:
             linear-gradient(135deg,
-                #006B4A,
-                #003A24);
+                #0140a7,
+                #0140a7);
 
         border-bottom-right-radius: 6px;
     }
@@ -504,7 +504,7 @@
 
         margin-bottom: 6px;
 
-        color: #003A24;
+        color: #0140a7;
 
         font-size: 17px;
 
@@ -513,7 +513,7 @@
 
 
     .chat-bot-intro-description {
-        color: #607168;
+        color: #0140a7;
 
         font-size: 12px;
 
@@ -527,7 +527,7 @@
         margin-top: 16px;
         margin-bottom: 4px;
 
-        color: #003A24;
+        color: #0140a7;
 
         font-size: 12.5px;
 
@@ -567,14 +567,14 @@
         border-radius: 15px;
 
         border:
-            1px solid rgba(0, 107, 74, .10);
+            1px solid rgba(1, 64, 167, .10);
 
         background:
             linear-gradient(180deg,
                 #fff,
                 #f8fbf9);
 
-        color: #33483e;
+        color: #0140a7;
 
         cursor: pointer;
 
@@ -598,7 +598,7 @@
         align-items: center;
         justify-content: center;
 
-        color: #006B4A;
+        color: #0140a7;
 
         background:
             rgba(232, 199, 120, .17);
@@ -613,7 +613,7 @@
     .chat-bot-service-title {
         display: block;
 
-        color: #003A24;
+        color: #0140a7;
 
         font-size: 11.5px;
 
@@ -626,7 +626,7 @@
 
         margin-top: 2px;
 
-        color: #829087;
+        color: #0140a7;
 
         font-size: 8.8px;
     }
@@ -641,11 +641,11 @@
 
         background:
             linear-gradient(135deg,
-                #006B4A,
-                #003A24);
+                #0140a7,
+                #0140a7);
 
         box-shadow:
-            0 13px 28px rgba(0, 58, 36, .20);
+            0 13px 28px rgba(1, 64, 167, .20);
     }
 
 
@@ -657,7 +657,7 @@
 
 
     .chat-bot-service-btn:hover .chat-bot-service-icon {
-        color: #003A24;
+        color: #0140a7;
 
         background:
             linear-gradient(135deg,
@@ -735,13 +735,13 @@
 
         background:
             linear-gradient(135deg,
-                #006B4A,
-                #003A24);
+                #0140a7,
+                #0140a7);
     }
 
 
     .chat-bot-more-btn:hover {
-        color: #003A24;
+        color: #0140a7;
 
         background:
             linear-gradient(135deg,
@@ -756,13 +756,13 @@
     /* call */
 
     .chat-bot-call-btn {
-        color: #006B4A;
+        color: #0140a7;
 
         background:
-            rgba(0, 107, 74, .06);
+            rgba(1, 64, 167, .06);
 
         border:
-            1px solid rgba(0, 107, 74, .18);
+            1px solid rgba(1, 64, 167, .18);
     }
 
 
@@ -771,8 +771,8 @@
 
         background:
             linear-gradient(135deg,
-                #006B4A,
-                #003A24);
+                #0140a7,
+                #0140a7);
 
         transform:
             translateY(-2px);
@@ -793,7 +793,7 @@
 
 
     .chat-bot-mail-btn:hover {
-        color: #003A24;
+        color: #0140a7;
 
         background:
             linear-gradient(135deg,
@@ -824,7 +824,7 @@
         background: #fff;
 
         border:
-            1px solid rgba(0, 107, 74, .10);
+            1px solid rgba(1, 64, 167, .10);
 
         border-radius:
             15px 15px 15px 5px;
@@ -843,7 +843,7 @@
 
 
     .chat-bot-typing span:nth-child(1) {
-        background: #006B4A;
+        background: #0140a7;
     }
 
     .chat-bot-typing span:nth-child(2) {
@@ -870,7 +870,7 @@
         background: #fff;
 
         border-top:
-            1px solid rgba(0, 107, 74, .10);
+            1px solid rgba(1, 64, 167, .10);
     }
 
 
@@ -881,7 +881,7 @@
 
         text-align: center;
 
-        color: #7d8b83;
+        color: #0140a7;
 
         font-size: 9px;
     }
@@ -1109,6 +1109,29 @@
             grid-template-columns: 1fr;
         }
 
+    }
+
+    .chat-bot-toggle,
+    .chat-bot-header,
+    .chat-bot-message.user .chat-bot-message-content,
+    .chat-bot-service-btn:hover {
+        background:
+            radial-gradient(circle at 85% 5%, rgba(22, 119, 232, .42), transparent 38%),
+            linear-gradient(135deg, #061943, #0A53B8 58%, #082766) !important;
+    }
+
+    .chat-bot-toggle {
+        box-shadow:
+            0 16px 40px rgba(6, 25, 67, .34),
+            0 6px 20px rgba(22, 119, 232, .2),
+            0 4px 18px rgba(200, 154, 61, .14);
+    }
+
+    .chat-bot-box {
+        border-color: rgba(10, 83, 184, .2);
+        box-shadow:
+            0 35px 90px rgba(6, 25, 67, .3),
+            0 10px 30px rgba(200, 154, 61, .08);
     }
 </style>
 
@@ -1858,7 +1881,7 @@
                         <i
                             class="bi bi-check-circle-fill"
                             style="
-                                color:#006B4A;
+                                color:#0140a7;
                                 font-size:10px;
                             ">
                         </i>
@@ -1892,7 +1915,7 @@
 
                 <strong style="
                     display:block;
-                    color:#003A24;
+                    color:#0140a7;
                     font-size:14px;
                     margin-bottom:7px;
                 ">
@@ -2033,7 +2056,7 @@
 
                 <strong style="
                     display:block;
-                    color:#003A24;
+                    color:#0140a7;
                     font-size:14px;
                     margin-bottom:7px;
                 ">
@@ -2046,7 +2069,7 @@
                 Looking for more details about
 
                 <strong style="
-                    color:#006B4A;
+                    color:#0140a7;
                 ">
 
                     ${service}
@@ -2221,4 +2244,3 @@
         }
     );
 </script>
-

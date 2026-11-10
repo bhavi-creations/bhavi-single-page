@@ -225,7 +225,7 @@
       // [
       //   'Anish Dental',
       //   'Anish',
-      //   '#12685f',
+      //   '#0140a7',
       //   'assets/video/anish_dental_bg1.png',
       //   'https://anishdental.in/'
       // ],
@@ -249,7 +249,7 @@
       [
         'V&V Salons',
         'Software Development',
-        '#018f87',
+        '#0140a7',
         'assets/video/vnv_saloon.png',
         'https://vnvsalons.com/'
       ],
@@ -1585,7 +1585,7 @@
       box = $('#pxr'),
       chips = [];
 
-    /* mobile (700px & below): only 8 chips, 4 black + 4 green (alternating); other screens keep all 14 */
+    /* mobile (700px & below): only 8 chips, 4 black + 4 blue (alternating); other screens keep all 14 */
     var MOBILE_CHIPS = [0, 1, 3, 2, 5, 4, 8, 6];
     var chipList = matchMedia('(max-width:700px)').matches ? MOBILE_CHIPS : CHIPS.map(function(c, i) {
       return i
